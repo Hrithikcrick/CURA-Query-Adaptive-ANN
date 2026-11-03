@@ -1,0 +1,11 @@
+{
+  "review_type": "Human-authored analysis of fixed HNSW efSearch=10 failures",
+  "important": "NOT failures of deployed CURA-FiQA. Not a model-selection set.",
+  "total_selected": 50,
+  "completed_human_reviews": 1,
+  "remaining": 49,
+  "category_counts_among_completed": {
+    "Judged-relevant document missed by approximate search": 1
+  },
+  "ready_for_final_taxonomy": false
+}
