@@ -36,6 +36,12 @@ The reported 1.0% risk rate is an observed outcome below a nominal 5% target, **
 
 Detailed provenance, limitations, and comparisons are in **[CURA results and limitations](reports/CURA_RESULTS_AND_LIMITATIONS.md)**.
 
+## Final-paper preparation
+
+- [Evidence-grounded SIGIR-style paper draft](reports/CURA_SIGIR_STYLE_FINAL_DRAFT.md) — includes both MS MARCO positive findings and FiQA negative results; manual taxonomy and fresh-run verification pending.
+- [Final saved-artifact audit script](17_final_submission_audit.py) — read-only checks of headline result tables, hashes, and local human-review progress. Execute with `python 17_final_submission_audit.py` and inspect `reports/final_submission_audit.json`.
+- [Detailed results and limitations](reports/CURA_RESULTS_AND_LIMITATIONS.md) — source-backed research claim boundaries.
+
 ## Repository map
 
 | File / folder | Purpose |
