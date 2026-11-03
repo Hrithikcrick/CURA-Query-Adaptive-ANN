@@ -36,6 +36,11 @@ The reported 1.0% risk rate is an observed outcome below a nominal 5% target, **
 
 Detailed provenance, limitations, and comparisons are in **[CURA results and limitations](reports/CURA_RESULTS_AND_LIMITATIONS.md)**.
 
+## Overleaf paper source
+
+- [Two-column LaTeX manuscript](paper/main.tex) — revised with FiQA results and honest manual-review status.
+- [Overleaf import/compile instructions](paper/README.md) — upload as main.tex, use pdfLaTeX.
+
 ## Final-paper preparation
 
 - [Evidence-grounded SIGIR-style paper draft](reports/CURA_SIGIR_STYLE_FINAL_DRAFT.md) — includes both MS MARCO positive findings and FiQA negative results; manual taxonomy and fresh-run verification pending.
