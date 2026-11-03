@@ -1,0 +1,57 @@
+{
+  "experiment": "FiQA within-domain query-disjoint CURA-style risk controller",
+  "NOT_zero_shot_MSMARCO_transfer": true,
+  "limitations": "Uses query text and ef=10 probe work/latency only, not MS MARCO CURA's full partial-score features. Calibration and policy selection reuse the calibration query split.",
+  "seed": 42,
+  "split": {
+    "train_queries": 388,
+    "cal_queries": 129,
+    "heldout_queries": 131
+  },
+  "target_risk": 0.05,
+  "calibration_choice": {
+    "Fixed-HNSW": {
+      "parameter": 32.0,
+      "met_calibration_Wilson": true
+    },
+    "CURA-FiQA": {
+      "parameter": 0.015384615384615385,
+      "met_calibration_Wilson": true
+    }
+  },
+  "heldout_work_saving_percent": -75.27101685244716,
+  "paired_work_difference_CI_95": [
+    -1028.6763358778626,
+    -644.2914122137404
+  ],
+  "heldout_summary": [
+    {
+      "method": "Fixed-HNSW",
+      "calibration_parameter": 32.0,
+      "calibration_met_wilson_target": true,
+      "query_count": 131,
+      "mean_ef": 32.0,
+      "mean_work": 1097.0839694656488,
+      "mean_latency_ms": 0.21490458017375091,
+      "p95_latency_ms": 0.2893999990192242,
+      "IR_violation_rate": 0.030534351145038167,
+      "Wilson_95_upper": 0.07588067164955446,
+      "mean_nDCG10": 0.22013950583253894,
+      "mean_ANN_Recall10": 0.9229007633587787
+    },
+    {
+      "method": "CURA-FiQA",
+      "calibration_parameter": 0.015384615384615385,
+      "calibration_met_wilson_target": true,
+      "query_count": 131,
+      "mean_ef": 47.74045801526717,
+      "mean_work": 1922.8702290076335,
+      "mean_latency_ms": 0.38563511426558805,
+      "p95_latency_ms": 0.8664500019222032,
+      "IR_violation_rate": 0.030534351145038167,
+      "Wilson_95_upper": 0.07588067164955446,
+      "mean_nDCG10": 0.2178672216143444,
+      "mean_ANN_Recall10": 0.917557251908397
+    }
+  ]
+}

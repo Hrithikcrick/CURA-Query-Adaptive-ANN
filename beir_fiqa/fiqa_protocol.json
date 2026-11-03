@@ -1,0 +1,24 @@
+{
+  "dataset": "BEIR FiQA-2018 test",
+  "encoder": "sentence-transformers/msmarco-MiniLM-L6-cos-v5",
+  "seed": 42,
+  "n_docs": 57638,
+  "n_queries": 648,
+  "ef_values": [
+    10,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192,
+    256
+  ],
+  "hnsw_M": 32,
+  "efConstruction": 200,
+  "nDCG_loss_tolerance": 0.025,
+  "ANN_recall_target": 0.9,
+  "warning": "Baseline and diagnostic oracles only: NOT a CURA transfer experiment"
+}
