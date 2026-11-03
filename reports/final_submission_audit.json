@@ -1,0 +1,81 @@
+{
+  "created_utc": "2026-11-03T18:10:28.547414+00:00",
+  "project": "COL764 CURA",
+  "git_commit": "efa2d99f91c1060ee14ab7752f4d1a4839acb2b3",
+  "python_version": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "source": "Saved artifacts; no fresh experiment rerun",
+  "msmarco": {
+    "queries": 200,
+    "fixed_work": 3431.77,
+    "cura_work": 2727.965,
+    "work_saving_percent": 20.50851309965411,
+    "cura_ir_violation_rate": 0.01,
+    "paired_work_difference": 703.805,
+    "paired_randomization_p": 4.999750012499375e-05,
+    "saved_numbers_consistent": true
+  },
+  "fiqa": {
+    "heldout_queries": 131,
+    "fixed_work": 1097.0839694656488,
+    "cura_work": 1922.8702290076335,
+    "work_saving_percent": -75.27101685244716,
+    "fixed_violation_rate": 0.030534351145038167,
+    "cura_violation_rate": 0.030534351145038167,
+    "saved_numbers_consistent": true,
+    "zero_shot_msmarco_transfer": false,
+    "official_test_untouched": false
+  },
+  "manual_review": {
+    "selected_fixed_ef10_cases": 50,
+    "reconstruction_matching_saved_metrics": 50,
+    "human_reviews_with_all_required_fields": 1,
+    "human_reviews_remaining": 49,
+    "YES_rows_missing_required_fields": [],
+    "assistant_drafts_count_as_human_reviews": false
+  },
+  "files": {
+    "msmarco_ablation": {
+      "path": "msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv",
+      "sha256": "a24f51772cf6b58bea27322cd6cb60e71d5463e19fefeef418a55399bb6ae278"
+    },
+    "msmarco_pairwise": {
+      "path": "msmarco_large/msmarco_1000000_q1000/final_ablation_package/pairwise_cura_tests.csv",
+      "sha256": "50645142376e5ff62f5fc818bf1cd0e5e37804abe49a4f1696e249c5efc53d47"
+    },
+    "fiqa_heldout": {
+      "path": "beir_fiqa/fiqa_cura_controller/heldout_comparison.csv",
+      "sha256": "e4199a760c4775d6ee9ae04301da109350b7bef05a4e421f365e8eb63fd5f407"
+    },
+    "fiqa_protocol": {
+      "path": "beir_fiqa/fiqa_cura_controller/protocol_and_findings.json",
+      "sha256": "732ce7f90b5ad8adef84d3875b431aab9a92e10196a15c7835aa40772f0c94c6"
+    },
+    "fiqa_failure_diagnostics": {
+      "path": "beir_fiqa/fiqa_cura_controller/fiqa_failure_diagnostics_summary.json",
+      "sha256": "6fff9ebc6597075bed01b104fa51261da0e9a1f5d160ddbbdf67cb544f85ebf0"
+    },
+    "review_worksheet": {
+      "path": "beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv",
+      "sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    "final_paper_draft": {
+      "path": "reports/CURA_SIGIR_STYLE_FINAL_DRAFT.md",
+      "sha256": "0534acc343d0c4d4307720dc0ce94cf84502dc0a30a3e9687fe0667128ee6454"
+    },
+    "research_results_report": {
+      "path": "reports/CURA_RESULTS_AND_LIMITATIONS.md",
+      "sha256": "354ea142a779f5f375314caf6e54e0c6fbf86333e039f6c8e2e7531f625d9093"
+    },
+    "model_source": {
+      "path": "07_cura_controller.py",
+      "sha256": "5e2b8c1827245029a1bca1a4ea0d8281bb10ee7700a541276d968d90bf92070e"
+    },
+    "fiqa_controller_source": {
+      "path": "13_fiqa_cura_controller.py",
+      "sha256": "a1ef178dd4e986bce831385c94b2da242513470313d3b22c43757457ad31cbfe"
+    }
+  },
+  "submission_ready": false,
+  "note": "submission_ready is a partial artifact check only: even True does not verify independent clean-environment reproducibility, official recent baselines, final manuscript references, AI-use approval, or viva readiness."
+}
