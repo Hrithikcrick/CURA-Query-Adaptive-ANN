@@ -1,0 +1,1 @@
+STRONG FINAL RESULT: CURA meets the held-out downstream-risk target and achieves statistically supported search-work reductions relative to both fixed search and the Patience-inspired stability baseline. ANN-Risk and query-only ablations quantify the contributions of the downstream objective and search-state features.

@@ -1,0 +1,6 @@
+A1 PASS: adaptive downstream-risk allocation reduces search work relative to fixed search while meeting the 5% IR-risk target.
+A2 PASS: targeting downstream IR risk is more efficient than targeting ANN-recall risk under comparable downstream safety.
+A3 PASS: cheap search-state features improve efficiency over query-only CURA.
+A4 PASS: CURA uses less realized search work than the Patience-inspired stability baseline.
+A5: positive oracle headroom remains; CURA does not exhaust all theoretically available downstream-safe efficiency.
+OOD PASS: CURA-Full remains within the 5% downstream IR-risk target on TREC-DL-2019.

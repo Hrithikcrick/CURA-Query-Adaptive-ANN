@@ -1,0 +1,5 @@
+predicted_risk_band,queries,actual_IR_failures,mean_predicted_risk,mean_nDCG_loss,observed_failure_rate
+HIGH_>=10%,1,0,0.1111111111111111,0.0,0.0
+LOW_1-5%,4,0,0.0305335255948089,0.0,0.0
+MEDIUM_5-10%,6,0,0.05234375,0.0,0.0
+VERY_LOW_<1%,39,3,0.008443908323281,0.0232989501458954,0.07692307692307693

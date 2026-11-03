@@ -1,0 +1,1 @@
+STRONG GO: CURA reduces search work on held-out MS MARCO while meeting the downstream-risk target, the paired search-work reduction is statistically supported, and the risk target transfers to TREC-DL OOD.

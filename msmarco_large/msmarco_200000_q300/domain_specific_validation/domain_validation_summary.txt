@@ -1,0 +1,28 @@
+DOMAIN-SPECIFIC VALIDATION
+======================================================================
+
+PRIMARY TOP-10 RESULT
+nDCG tolerance = 0.025
+
+Source: msmarco-dev-small
+Queries: 300
+Mean ANN-safe ef: 25.9200
+Mean nDCG-safe ef: 12.0333
+Relative reduction: 53.58%
+IR allows lower rate: 0.3767
+Gap 95% CI: [10.1998, 17.9068]
+p-value: 4.99975e-05
+
+Source: trec-dl-2019
+Queries: 43
+Mean ANN-safe ef: 10.7907
+Mean nDCG-safe ef: 10.5116
+Relative reduction: 2.59%
+IR allows lower rate: 0.0465
+Gap 95% CI: [-0.9767, 1.6744]
+p-value: 0.745013
+
+
+INTERPRETATION
+msmarco-dev-small: STRONG: statistically supported and substantively frequent utility gap.
+trec-dl-2019: WEAK: positive mean gap, but current evidence is insufficient.

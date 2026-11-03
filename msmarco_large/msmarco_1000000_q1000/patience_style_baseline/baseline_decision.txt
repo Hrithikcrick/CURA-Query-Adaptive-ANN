@@ -1,0 +1,1 @@
+CURA STRONGER THAN STABILITY BASELINE: both are evaluated on the same held-out split, and CURA uses significantly less realized search work while satisfying the downstream IR-risk target.

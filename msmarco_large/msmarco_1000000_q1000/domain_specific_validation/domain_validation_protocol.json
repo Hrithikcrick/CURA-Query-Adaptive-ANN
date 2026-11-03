@@ -1,0 +1,26 @@
+{
+  "seed": 42,
+  "corpus_experiment": "msmarco_1000000_q1000",
+  "bootstrap_samples": 10000,
+  "permutation_samples": 20000,
+  "ANN_target": 0.9,
+  "primary_nDCG_tolerance": 0.025,
+  "primary_Recall100_tolerance": 0.05,
+  "top10_tolerances": [
+    0.0,
+    0.01,
+    0.025,
+    0.05
+  ],
+  "top100_tolerances": [
+    0.0,
+    0.05,
+    0.1
+  ],
+  "sources": [
+    "msmarco-dev-small",
+    "trec-dl-2019"
+  ],
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0"
+}

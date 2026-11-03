@@ -1,0 +1,3 @@
+split,method,queries,mean_ef,median_ef,IR_violation_rate,IR_Wilson_upper,ANN_violation_rate,mean_ANN_Recall@10,mean_nDCG@10,mean_nDCG_loss,mean_selected_search_work,mean_realized_search_work,mean_realized_latency_ms,p95_realized_latency_ms,mean_number_of_searches
+MSMARCO_TEST,Patience-Inspired-Stability,200,62.32,32.0,0.005,0.02777439986977148,0.05,0.9784999999999999,0.6252604466630513,0.0019342640361727078,2469.255,8413.945,2.1692906,6.349965999999997,5.23
+TREC_DL_2019_OOD,Patience-Inspired-Stability,43,45.02325581395349,32.0,0.0,0.08201257002322722,0.0,1.0,0.6309795740976547,0.0,1479.1627906976744,4753.6511627906975,1.287861860465116,2.8318099999999995,4.627906976744186

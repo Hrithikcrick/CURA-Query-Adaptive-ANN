@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.npy
+*.npz
+*.faiss
+*.memmap
+*.bin
+ir_datasets_tmp/
+huggingface_cache/
+.cache/
+data/

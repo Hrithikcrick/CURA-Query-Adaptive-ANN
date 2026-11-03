@@ -1,0 +1,41 @@
+{
+  "method": "CURA",
+  "full_name": "Calibrated Utility-Risk Allocation",
+  "seed": 42,
+  "corpus_run": "msmarco_1000000_q1000",
+  "nDCG_loss_tolerance": 0.025,
+  "ANN_recall_target": 0.9,
+  "risk_alpha": 0.05,
+  "probe_ef": 10,
+  "candidate_ef_values": [
+    10,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192,
+    256
+  ],
+  "split": {
+    "MSMARCO_train": 600,
+    "MSMARCO_calibration": 200,
+    "MSMARCO_test": 200,
+    "TREC_OOD": 43
+  },
+  "CURA_query_threshold": 0.001,
+  "CURA_full_threshold": 0.009000000000000001,
+  "ANN_risk_threshold": 0.009000000000000001,
+  "fixed_ef": 96,
+  "CURA_query_threshold_mode": "Wilson-SLA satisfied",
+  "CURA_full_threshold_mode": "Wilson-SLA satisfied",
+  "ANN_threshold_mode": "Wilson-SLA satisfied",
+  "fixed_mode": "Wilson-SLA satisfied",
+  "bootstrap": 5000,
+  "permutations": 10000,
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "faiss_version": "1.15.1"
+}

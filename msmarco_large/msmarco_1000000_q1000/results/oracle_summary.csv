@@ -1,0 +1,4 @@
+group,queries,mean_ANN_safe_ef,median_ANN_safe_ef,mean_IR_safe_ef,median_IR_safe_ef,same_budget_rate,IR_allows_lower_rate,IR_requires_higher_rate
+ALL,1043,103.02013422818791,100.0,101.67785234899328,100.0,0.9702780441035475,0.023969319271332695,0.005752636625119847
+msmarco-dev-small,1000,103.15,100.0,101.75,100.0,0.969,0.025,0.006
+trec-dl-2019,43,100.0,100.0,100.0,100.0,1.0,0.0,0.0

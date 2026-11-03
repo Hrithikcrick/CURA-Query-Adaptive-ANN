@@ -1,0 +1,3 @@
+manual_error_category,actual_failure_count,share_of_actual_failures_%
+IR_FAILURE_DESPITE_HIGH_ANN_RECALL,2,66.66666666666667
+EARLY_STOP_TOO_AGGRESSIVE,1,33.333333333333336

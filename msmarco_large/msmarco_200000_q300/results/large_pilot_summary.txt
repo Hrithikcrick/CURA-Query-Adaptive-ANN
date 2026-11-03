@@ -1,0 +1,17 @@
+MS MARCO LARGE HNSW PILOT
+======================================================================
+Selected passages: 201103
+Evaluation queries: 343
+MS MARCO dev queries: 300
+TREC DL 2019 queries: 43
+
+Fixed ANN-safe ef: 100
+Fixed IR-safe ef: 100
+
+Mean ANN-safe oracle ef: 103.0612
+Mean IR-safe oracle ef: 100.4373
+Oracle budget reduction: 2.55%
+
+Same ANN/IR oracle budget: 0.9738
+IR allows lower budget: 0.0262
+IR requires higher budget: 0.0000

@@ -1,0 +1,50 @@
+{
+  "seed": 42,
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+  "machine": "AMD64",
+  "faiss_version": "1.15.1",
+  "numpy_version": "2.3.3",
+  "corpus_run": "msmarco_200000_q300",
+  "queries": 343,
+  "HNSW_M": 32,
+  "efConstruction": 200,
+  "query_time_faiss_threads": 1,
+  "timing_repeats": 5,
+  "bootstrap_samples": 5000,
+  "permutation_samples": 10000,
+  "ANN_target": 0.9,
+  "TOP10_efSearch": [
+    10,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192,
+    256
+  ],
+  "TOP100_efSearch": [
+    100,
+    150,
+    200,
+    300,
+    400,
+    600,
+    800
+  ],
+  "nDCG_tolerances": [
+    0.0,
+    0.01,
+    0.025,
+    0.05
+  ],
+  "Recall100_tolerances": [
+    0.0,
+    0.05,
+    0.1
+  ]
+}
