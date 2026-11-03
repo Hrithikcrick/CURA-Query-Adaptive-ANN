@@ -1,0 +1,15 @@
+{
+  "dataset": "BEIR FiQA 2018",
+  "source": "Saved fiqa_query_budget_results.csv",
+  "selection": "50 unique queries with actual IR_unsafe=1 at fixed HNSW efSearch=10; sorted by descending nDCG loss",
+  "n_unique_available_failures_at_ef10": 65,
+  "n_selected": 50,
+  "n_human_reviews_completed": 0,
+  "n_reconstruction_matches_saved_metrics": 50,
+  "queries_with_reconstruction_mismatch": [],
+  "do_not_claim": [
+    "These are NOT 50 failures of deployed CURA-FiQA.",
+    "The automatically populated worksheet is NOT 50 completed human analyses.",
+    "Do not tune CURA on these failure cases or change already viewed held-out conclusions."
+  ]
+}
