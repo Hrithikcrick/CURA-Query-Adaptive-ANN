@@ -5,7 +5,7 @@
 **Version:** 2026-11-03  
 **Implementation and results:** [CURA GitHub repository](https://github.com/Hrithikcrick/CURA-Query-Adaptive-ANN)
 
-> **Submission audit:** This draft integrates later FiQA results absent from the earlier \`main_corrected.tex\` manuscript. In particular, the earlier manuscript's claim of 50 *manually inspected* cases is **not substantiated by the published human-review worksheet**, so this draft correctly describes the 50 cases as *selected for manual review*. This draft should be cross-checked against exact code, plots, bibliography and final manually reviewed records before submission.
+> **Submission audit:** This draft integrates later FiQA results and the 6 November 2026 MS MARCO failure-analysis status. The earlier manuscript's claim of 50 *manually inspected* cases is **not substantiated by the public human-review worksheet**. A separate 50-case MS MARCO analysis is now structurally validated and model-assisted, with eight initially uncertain cases resolved in a second model-assisted pass; it is **not** independent human annotation.
 
 ## Abstract
 
@@ -122,7 +122,7 @@ The main cost is **actual FAISS/HNSW distance computations**, not the chosen \`e
 
 † Oracle numbers indicate potential headroom only; do not compare them as deployment-ready methods.
 
-**Core finding:** CURA-Full reduces realized work by **20.5085%**, corresponding to **703.805 fewer distance computations/query** relative to Fixed-IR. The paired bootstrap 95% CI for the **mean work difference** is **[401.434, 984.115]** and the paired work randomization test returns **p≈5.0×10⁻⁵**. This is evidence for an efficiency improvement on this particular held-out setting, **not a significance claim about the nDCG difference**.
+**Core finding:** CURA-Full reduces realized work by **20.5085%**, corresponding to **703.805 fewer distance computations/query** relative to Fixed-IR. The paired bootstrap 95% CI for the **mean work difference** is **[401.434, 984.115]** and the paired work randomization test returns **p≈5.0×10⁻⁵**. This is evidence for an efficiency improvement on this particular held-out setting, **not a significance claim about the nDCG difference**. The recorded mean latency also improves (0.8329→0.6907 ms), but p95 latency worsens (1.1280→1.9850 ms), so the current implementation does not improve the tail.
 
 The observed downstream violation rate is **1.0%** (versus **0.5%** for fixed); the mean nDCG@10 also falls slightly from **0.625260** to **0.623363**. Both quality and efficiency must be reported.
 
@@ -160,9 +160,11 @@ This does **not** show that *MS MARCO-trained CURA-Full* fails in zero-shot fina
 
 The earlier MS MARCO manuscript describes **50 high-priority diagnostic cases** with a nine-category summary; only **three** of those selected cases are recorded as actual downstream violations. The existing public records are insufficient to label that selection a verified independent manual analysis of 50 genuine failures.
 
+A separate MS MARCO analysis now selects **50 actual IR-unsafe query-budget cases** from the HNSW budget sweep. The structured annotation file passes automatic validation over all 50 rows. **Eight initially uncertain cases were resolved in a second model-assisted pass** using predefined numerical and semantic decision rules. This is useful diagnostic evidence, but it remains **model-assisted rather than independently human-verified**. The cases are query-budget failures from the sweep, not 50 failures of the final deployed CURA policy.
+
 In the FiQA budget sweep, **65 unique queries** have a recorded IR-unsafe outcome at fixed \`efSearch=10\`. A separate worksheet selected **50 actual low-budget HNSW failures** and reconstructed the saved metrics successfully for all 50. Of the selected outcomes, **44** have approximate nDCG@10 equal to zero, and **6** have degraded but nonzero approximate nDCG@10.
 
-**Annotation status:** assistant-prepared evidence descriptions are available, but the public source worksheet initially showed **0 completed human analyses**; the local interactive tool has separately shown a user-reviewed first case. Until committed and audited human judgments are present, do **not** report a completed 50-failure human taxonomy.
+**FiQA annotation status:** assistant-prepared evidence descriptions are available, but independent human review remains incomplete. Until committed and audited human judgments are present, do **not** report a completed 50-failure human taxonomy.
 
 **Boundary:** these 50 failures belong to **fixed HNSW at ef=10**, not to the deployed CURA-FiQA controller. They can help explain low-budget ANN behavior, but are not a sample of 50 CURA policy failures.
 
@@ -183,7 +185,7 @@ A stronger implementation could reuse the HNSW search frontier/visited state aft
 5. **No official adaptive-baseline reproduction:** ANN-Risk and Patience-inspired comparisons do not substitute for Ada-ef/DARTH or published Patience code on matched conditions.
 6. **Reproducibility gap:** source and many result artifacts are public, but raw corpora, embedding caches, FAISS indexes, index hashes, and some run conditions are not included. Full independent reruns remain to be verified.
 7. **System cost:** extra probe searches, model inference, CPU setup and wall-clock variance should be accounted for; distance computations are a strong counter but not the only deployment cost.
-8. **Manual annotations not yet complete:** assistant-generated drafts cannot be reported as independent human judgments.
+8. **Annotation boundary:** the new 50-case MS MARCO taxonomy is model-assisted (including second-pass resolution of eight uncertain cases), while the FiQA independent human review remains incomplete. Neither should be overstated as 50 independently reviewed failures.
 9. **Domain transfer not tested:** the FiQA variant is trained anew; direct zero-shot transfer of the exact CURA-Full model was not evaluated.
 
 ## 10. Conclusion
@@ -205,7 +207,8 @@ Use the bibliography already in the earlier \`main_corrected.tex\` manuscript as
 - [ ] Insert correctly cited literature references and verify each novelty comparison.
 - [ ] Reproduce the saved-result audit; document exact environment and hardware.
 - [ ] Add the original figures from saved experiment artifacts with source captions.
-- [ ] Finish the 50 **actual human-reviewed** failure analyses and replace the pending subsection with the verified taxonomy.
+- [x] Complete a structurally validated **model-assisted** 50-case MS MARCO IR-unsafe analysis.
+- [ ] Commit the exact generated taxonomy CSVs and complete independent human review if required by the course.
 - [ ] Confirm that a clean-environment implementation re-creates at least the key saved output tables.
 - [ ] Explicitly label official FiQA query-split reuse and the absence of zero-shot transfer.
 - [ ] Provide an accurate, detailed AI-usage statement consistent with course policy.
