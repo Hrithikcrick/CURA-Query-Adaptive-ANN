@@ -47,6 +47,7 @@ Detailed provenance, limitations, and comparisons are in **[CURA results and lim
 - [Evidence-grounded SIGIR-style paper draft](reports/CURA_SIGIR_STYLE_FINAL_DRAFT.md) — includes both MS MARCO positive findings and FiQA negative results; manual taxonomy and fresh-run verification pending.
 - [Final saved-artifact audit script](17_final_submission_audit.py) — read-only checks of headline result tables, hashes, and local human-review progress. Execute with `python 17_final_submission_audit.py` and inspect `reports/final_submission_audit.json`.
 - [Detailed results and limitations](reports/CURA_RESULTS_AND_LIMITATIONS.md) — source-backed research claim boundaries.
+- [Final metric audit](reports/FINAL_METRIC_AUDIT.md) — checked headline MS MARCO/TREC numbers, including the p95 latency trade-off.
 
 ## Repository map
 
