@@ -15,10 +15,11 @@ CURA studies whether HNSW's `efSearch` can be chosen **per query** according to 
 |---|---:|---:|
 | Mean realized search computations / query ↓ | 3,431.77 | **2,727.97** |
 | Mean latency (ms) ↓ | 0.8329 | **0.6907** |
+| p95 latency (ms) ↓ | **1.1280** | 1.9850 |
 | Mean nDCG@10 ↑ | **0.6253** | 0.6234 |
 | Observed IR violation rate ↓ | **0.5%** | 1.0% |
 
-**20.51% less realized search work** and **17.06% lower mean latency**. Realized work includes CURA's extra probe overhead. The paired search-work difference is **703.805** computations/query (bootstrap 95% CI **[401.43, 984.11]**, paired randomization `p≈5.0e-5`).
+**20.51% less realized search work** and **17.06% lower mean latency**. Realized work includes CURA's extra probe overhead. The paired search-work difference is **703.805** computations/query (bootstrap 95% CI **[401.43, 984.11]**, paired randomization `p≈5.0e-5`). **Tail-latency caveat:** CURA-Full has worse recorded p95 latency than Fixed-IR (**1.9850 ms vs 1.1280 ms**), so the current implementation improves average cost/latency but not the p95 tail.
 
 The reported 1.0% risk rate is an observed outcome below a nominal 5% target, **not a universal guarantee**.
 
@@ -100,13 +101,21 @@ python 16_interactive_fiqa_review.py --limit 5
 
 **Do not rerun** `15_fiqa_50_failure_review.py` after adding human annotations; it overwrites the review worksheet. The first MS MARCO experiments require reconstructing downloaded raw data, embeddings and FAISS indexes that are intentionally not committed. Follow each script's configuration and verify its saved input prerequisites.
 
-## Manual error analysis: pending
+## Failure-analysis status
 
-- [50 FiQA fixed-HNSW ef=10 failure cases](beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv) identified from genuine recorded nDCG losses; reconstructed scores match saved data.
+### MS MARCO actual IR-unsafe query-budget cases
+
+A separate 50-case analysis now targets **actual IR-unsafe query-budget pairs** from the MS MARCO HNSW budget sweep (nDCG@10 loss > 0.025). The structured annotation pass completed automatic validation over all 50 rows. **Eight initially uncertain cases were resolved in a second model-assisted pass using predefined numerical/semantic decision rules.** This analysis is therefore **model-assisted, not independent human annotation**; no claim of 50 manually reviewed failures is made. The cases are query-budget failures from the sweep, not 50 failures of the deployed CURA operating policy.
+
+A status note is available in [reports/MODEL_ASSISTED_50_FAILURE_STATUS.md](reports/MODEL_ASSISTED_50_FAILURE_STATUS.md). Exact generated taxonomy CSVs should be committed from the local finalization workspace before using category-count claims in a submission.
+
+### FiQA human-review worksheet
+
+- [50 FiQA fixed-HNSW ef=10 failure cases](beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv) were identified from genuine recorded nDCG losses; reconstructed scores match saved data.
 - [Assistant-prepared drafts](beir_fiqa/manual_failure_review/ASSISTANT_DRAFT_ALL_50.md) provide reference evidence, **not completed manual judgments**.
 - [Human-review instructions](beir_fiqa/manual_failure_review/HOW_TO_REVIEW.md) and [interactive tool](16_interactive_fiqa_review.py) support actual annotation.
-- The current committed worksheet initially records **0/50 completed human reviews**; local progress may be newer. Do not claim all 50 were manually reviewed until documented evidence supports that.
-- The cases are **fixed low-budget HNSW failures**, not 50 violations by a deployed CURA policy.
+- The committed FiQA worksheet is still not evidence of 50 independent human reviews. Do not claim otherwise until the reviewed records themselves are committed and audited.
+- These FiQA cases are **fixed low-budget HNSW failures**, not 50 violations by a deployed CURA policy.
 
 ## Interpretation and current limitations
 
@@ -123,7 +132,8 @@ python 16_interactive_fiqa_review.py --limit 5
 - [x] Saved MS MARCO, TREC-DL and FiQA experiments
 - [x] Query-level ablations and MS MARCO significance testing
 - [x] Results and limitations summary
-- [ ] 50 **human-verified** failure analyses and aggregate taxonomy
+- [x] 50 **model-assisted** MS MARCO actual IR-unsafe case analyses with structural validation
+- [ ] 50 **independently human-verified** failure analyses and aggregate taxonomy
 - [ ] Independent clean-environment reproduction and experiment manifests
 - [ ] Strong published-method baseline verification where practical
 - [ ] Final SIGIR-style paper, transparent AI-use statement, presentation/demo
