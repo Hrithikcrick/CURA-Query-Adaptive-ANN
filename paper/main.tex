@@ -115,7 +115,7 @@ We evaluate the method on a controlled million-scale MS MARCO experiment contain
 
 On held-out MS MARCO, \cura{}-Full maintains a \textbf{1.0\% downstream utility violation rate under a 5\% risk target} while reducing realized HNSW distance computations from \textbf{3431.77 to 2727.97 per query}, corresponding to a \textbf{20.5\% reduction relative to fixed-budget retrieval}. The paired mean reduction is \textbf{703.81 distance computations/query}, with a bootstrap 95\% confidence interval of \textbf{[401.43, 984.11]} and paired-randomization \textbf{$p\approx5\times10^{-5}$}.
 
-Compared with an ANN-risk adaptive controller, \cura{} requires approximately \textbf{30.6\% less realized search work}. Ablations show that cheap partial-search-state features are essential: a query-only variant requires substantially more computation. A second BEIR FiQA financial-domain experiment finds that a reduced-feature controller fitted separately on FiQA requires 75.3\% more work than calibrated fixed HNSW despite identical observed violations. Fifty actual low-budget FiQA failures have been selected for human review, which is not yet complete.
+Compared with an ANN-risk adaptive controller, \cura{} requires approximately \textbf{30.6\% less realized search work}. Ablations show that cheap partial-search-state features are essential: a query-only variant requires substantially more computation. A second BEIR FiQA financial-domain experiment finds that a reduced-feature controller fitted separately on FiQA requires 75.3\% more work than calibrated fixed HNSW despite identical observed violations. Separately, 50 actual MS MARCO IR-unsafe query--budget cases are analyzed with a structured model-assisted taxonomy; eight initially uncertain cases receive a second model-assisted resolution pass. These annotations are not presented as independent human review.
 
 These results support treating ANN recall and downstream retrieval utility as related but non-interchangeable objectives for adaptive retrieval.
 \end{minipage}
@@ -516,6 +516,9 @@ IR-Oracle & 11.51 & 0.0\% & 29.0\% & 0.630348 & 779.835 & 77.3\% & 0.2697 \\
 }
 \end{table*}
 
+\paragraph{Tail-latency trade-off.}
+The saved MS MARCO run improves mean latency from 0.8329~ms for Fixed-IR to 0.6907~ms for \cura{}-Full, but the p95 latency worsens from 1.1280~ms to 1.9850~ms. Thus the current implementation improves average search cost and latency but does not improve the recorded p95 tail.
+
 \begin{figure*}[!t]
 \centering
 \begin{tikzpicture}
@@ -690,6 +693,8 @@ Simplified CURA-FiQA & 47.74 & 3.05\% & 0.21787 & 1922.87 & 0.38564 & 7.59\%\\
 \label{sec:manual}
 The earlier MS MARCO 50-case diagnostic table contains only three actual downstream violations, so it does \emph{not} establish a human-reviewed taxonomy of 50 genuine CURA policy failures.
 
+Separately, we analyze 50 \emph{actual IR-unsafe query--budget cases} from the MS MARCO HNSW budget sweep using a structured model-assisted taxonomy. Automatic structural validation passes for all 50 rows, and eight initially uncertain cases are resolved in a second model-assisted pass using predefined numerical and semantic decision rules. This analysis is \emph{not} independent human annotation; we therefore do not describe it as 50 manually reviewed failures. The cases are failures of particular query--budget pairs in the sweep, not 50 failures of the final deployed CURA operating policy.
+
 In FiQA, 65 distinct queries exhibit an IR-unsafe outcome under fixed HNSW at \ef$=10$. We prepare a separate 50-query review worksheet, each case including relevant passages, exact-search passages, approximate top-ranked passages and the measured nDCG loss. All 50 reconstructed results match previously saved scores. Of these selected cases, 44 have HNSW nDCG@10 equal to zero and six have degraded but nonzero nDCG@10.
 
 \begin{table}[!t]
@@ -750,7 +755,9 @@ The IR oracle requires $779.835$ mean distance computations, while \cura{}-Full 
 \item Patience-Inspired is not an official Patience reproduction.
 \item The current evidence does not establish universal cross-domain generalization or a formal 5\% risk guarantee.
 \item FiQA uses a separately fitted reduced-feature controller and reuses official test queries for development.
+\item The MS MARCO 50-case taxonomy is model-assisted; eight initially uncertain cases were resolved in a second model-assisted pass rather than independently human-verified.
 \item The 50 fixed-budget FiQA failures are not yet fully human-reviewed.
+\item CURA-Full improves recorded mean latency but has worse p95 latency than Fixed-IR in the saved MS MARCO run.
 \end{itemize}
 \end{tcolorbox}
 
