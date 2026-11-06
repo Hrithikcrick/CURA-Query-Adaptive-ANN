@@ -15,6 +15,7 @@ Can a calibrated, query-specific HNSW search budget reduce total search computat
 - Comparison: Fixed-IR HNSW (`ef=96`) vs CURA-Full.
 - Total realized search work (distance computations/query, including adaptive-probe overhead): **3,431.770 → 2,727.965** = **20.5085% reduction**.
 - Mean search latency: **0.8328545 → 0.6907383 ms**, a **17.06%** mean reduction under recorded conditions.
+- p95 latency moves in the opposite direction: **1.128008 → 1.985027 ms** (Fixed-IR → CURA-Full). Thus the saved run supports an average-latency improvement but **not** a tail-latency improvement.
 - Mean nDCG@10: **0.6252604 → 0.6233629**.
 - Downstream IR-violation rate: **0.5% fixed**, **1.0% CURA**, both observed rates below the nominal 5% target.
 - Paired mean search-work difference (fixed minus CURA): **703.805**, bootstrap 95% CI **[401.434, 984.115]**, paired work randomization `p≈5.0e-5`.
@@ -58,8 +59,9 @@ Can a calibrated, query-specific HNSW search budget reduce total search computat
 2. **Training versus transfer:** FiQA used a newly trained and calibrated reduced-feature risk controller. Its failure does not, by itself, measure zero-shot MS MARCO→FiQA transfer of CURA-Full.
 3. **Comparative baselines:** ANN-Risk is a local proxy, **not** official DARTH; Patience-Inspired is **not** an official reproduction of published Patience. The existing evidence should not claim superiority over untested official implementations.
 4. **Latency and work:** Counts are from saved experiment outputs. CPU/software settings, warmup, caching, and paired end-to-end latency should be inspected and rerun for a systems-level reproducibility claim.
-5. **Manual failures:** The [50-case FiQA worksheet](../beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv) consists of **true fixed-HNSW `ef=10` nDCG-loss violations**, not 50 deployed CURA failures. Reconstructed rankings matched the saved scores for all 50, but the published worksheet currently records **0 human reviews**. [Assistant-prepared drafts](../beir_fiqa/manual_failure_review/ASSISTANT_DRAFT_ALL_50.md) are not verified human annotation. Complete and record human analysis separately.
-6. **Dataset/artifact packaging:** Raw MS MARCO data, embeddings, FAISS indexes and other large artifacts were excluded from GitHub. A full-from-scratch reproduction, pinned versions/hashes, and independent data-validation check remain to be verified.
+5. **MS MARCO model-assisted failure analysis:** A separate 50-case pass analyzes **actual IR-unsafe query-budget cases** from the MS MARCO HNSW sweep. Automatic structural validation passed for all 50 rows; **8 initially uncertain cases were resolved in a second model-assisted pass** using predefined decision rules. This is not independent human annotation and must not be described as "50 manually reviewed failures." See [MODEL_ASSISTED_50_FAILURE_STATUS.md](MODEL_ASSISTED_50_FAILURE_STATUS.md).
+6. **FiQA manual failures:** The [50-case FiQA worksheet](../beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv) consists of **true fixed-HNSW `ef=10` nDCG-loss violations**, not 50 deployed CURA failures. Reconstructed rankings matched the saved scores for all 50. [Assistant-prepared drafts](../beir_fiqa/manual_failure_review/ASSISTANT_DRAFT_ALL_50.md) are not verified human annotation; independent human review remains separate work.
+7. **Dataset/artifact packaging:** Raw MS MARCO data, embeddings, FAISS indexes and other large artifacts were excluded from GitHub. A full-from-scratch reproduction, pinned versions/hashes, and independent data-validation check remain to be verified.
 
 ## Interpretation suitable for a COL764 final paper
 
@@ -69,7 +71,7 @@ Can a calibrated, query-specific HNSW search budget reduce total search computat
 
 ## Highest-priority remaining work
 
-1. Complete and audit 50 independent human failure explanations (with evidence) and produce a validated taxonomy.
+1. Commit the exact locally generated MS MARCO 50-case taxonomy CSVs and, if the course requires independent manual review, complete and audit 50 human failure explanations with evidence.
 2. Verify or faithfully reproduce a stronger published adaptive-search baseline; document any unavailable comparison.
 3. Package exact commands and hashes to regenerate result CSVs; check dependencies and one clean environment.
 4. Produce the short SIGIR-style final paper, limitations, transparent AI-use statement, and demo.
