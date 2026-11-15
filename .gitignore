@@ -13,3 +13,4 @@ ir_datasets_tmp/
 huggingface_cache/
 .cache/
 data/
+/msmarco_large/*/cache/

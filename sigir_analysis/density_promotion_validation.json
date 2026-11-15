@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "prepared_seed_hashes_matched": 151,
+  "stochastic_seeds_per_condition": 50,
+  "query_seed_condition_budget_rows": 64930,
+  "rankings_constant": true,
+  "ANN_recall_invariant": true,
+  "ANN_safe_budget_invariant": true,
+  "work_and_timing_invariant": true,
+  "frozen_analysis_hashes": {
+    "exact_ndcg_stratified_results.csv": "280a0007678f563db48402ee776e7f72647e245bc04d4a5d1a7c107369d57ec0",
+    "exact_ndcg_stratified_per_query.csv": "4dd20048a2f1ce81b54815cfc2182c09a252de09c62a36b633cae804647438d7",
+    "oracle_budget_gap_analysis.csv": "1bc57ab2c17f7b82943d65bcfc2ed9d52e01b720fc053caa6bac6da1b3fc60c5",
+    "oracle_budget_gap_per_query.csv": "427de4c593c563f74fc8ec87ac4086e8ed08cb651229e4c28dec1a469827b35e",
+    "fixed_risk_work_frontier.csv": "a672286895299a2889632556be7d3c2226e71035c0917e5dad927b12c4c6f5fd",
+    "statistical_tests_saved.csv": "04db13f5fe9acef73446ba7ebd2cd4692916143e80f6fdcf3bea8aa2ecdb99dc"
+  },
+  "original_analyses_recomputed": false,
+  "promoted_hashes": {
+    "trec_judgment_density_per_query.csv": "4159edb769fc2cb66252089ea05f4e54e8d762236ee4b1a662c4907bec1fde09",
+    "trec_judgment_density_per_seed.csv": "7e9d9ff2d5630f41eaa0bbfcca09c40a1c0ec695a4d8541cb4e3a688a885d03d",
+    "trec_judgment_density_summary.csv": "89ca5ac0cd7ff8cd3585203e24b2c0106752bad4d726089fe1105a963c092578",
+    "trec_fixed_risk_work_by_density.csv": "4b287697ba98f62c755e848575e3cd8300f5aecd521e8108989daab9e5b2c429",
+    "trec_cura_by_density.csv": "4eaf1401596c0483dd7b108bd688d0ad6423e0fefc6453e39f34b9c414e1612f",
+    "judgment_density_vs_budget_gap.png": "bad643019f79261df349775b8a6bc06201fbe6feb0a5e10d35f42828c53bb99d",
+    "judgment_density_vs_zero_ndcg.png": "3478ecdb18732cdcdae0bdd36365914d3d45e060f59c7d0654fa7e1d2a3b2c90",
+    "judgment_density_vs_ir_safe_budget.png": "bbd1956bb9937bf016267a47d2c9b4a51d9898616e677e121adee7fb4916489a",
+    "judgment_density_vs_risk_work.png": "226a2f5f726bd1adfdfba7b133b485a91bb20bbf47b68401ba411485498a9f02"
+  },
+  "frontier_sha256": "4b287697ba98f62c755e848575e3cd8300f5aecd521e8108989daab9e5b2c429"
+}
