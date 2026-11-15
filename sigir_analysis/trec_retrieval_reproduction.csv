@@ -1,62 +1,474 @@
-method,efSearch,query_count,metric,archived_value,reproduced_value,absolute_difference,tolerance,comparison_completed,status,reference_source,reference_sha256,notes
-Exact,,43,mean_nDCG_at_10,0.6309795740976547,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/exact_query_reference.csv,d84f36f10935a8b832b2fae8c478730a2f8db652d05bcf076268552348b7b7d7,Saved reference only; FULL nDCG has not been reproduced from document IDs.
-HNSW,10.0,43,mean_ANN_Recall_at_10,0.9232558139534884,,,1e-09,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,10.0,43,mean_nDCG_at_10,0.5677961913606274,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,10.0,43,IR_violation_rate,0.18604651162790697,,,0.0,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,10.0,43,mean_nDCG_loss,0.06424970626920506,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,10.0,43,mean_distance_computations,574.1627906976744,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Original graph and measurement environment are absent; work reproduction cannot be assessed.
-HNSW,10.0,43,mean_latency_ms,0.21446837209302325,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Archived five-repeat per-query search means; no comparable timing rerun was performed.
-HNSW,16.0,43,mean_ANN_Recall_at_10,0.9767441860465116,,,1e-09,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,16.0,43,mean_nDCG_at_10,0.6183763035122,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,16.0,43,IR_violation_rate,0.06976744186046512,,,0.0,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,16.0,43,mean_nDCG_loss,0.013062722460265021,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,16.0,43,mean_distance_computations,730.7674418604652,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Original graph and measurement environment are absent; work reproduction cannot be assessed.
-HNSW,16.0,43,mean_latency_ms,0.2359716279069768,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Archived five-repeat per-query search means; no comparable timing rerun was performed.
-HNSW,24.0,43,mean_ANN_Recall_at_10,0.9813953488372094,,,1e-09,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,24.0,43,mean_nDCG_at_10,0.6228646211680414,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,24.0,43,IR_violation_rate,0.046511627906976744,,,0.0,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,24.0,43,mean_nDCG_loss,0.009211581498698584,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,24.0,43,mean_distance_computations,918.4186046511628,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Original graph and measurement environment are absent; work reproduction cannot be assessed.
-HNSW,24.0,43,mean_latency_ms,0.20653953488372095,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Archived five-repeat per-query search means; no comparable timing rerun was performed.
-HNSW,32.0,43,mean_ANN_Recall_at_10,0.9930232558139536,,,1e-09,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,32.0,43,mean_nDCG_at_10,0.6240220780544425,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,32.0,43,IR_violation_rate,0.023255813953488372,,,0.0,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,32.0,43,mean_nDCG_loss,0.008054124612297563,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,32.0,43,mean_distance_computations,1109.3255813953488,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Original graph and measurement environment are absent; work reproduction cannot be assessed.
-HNSW,32.0,43,mean_latency_ms,0.25823348837209303,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Archived five-repeat per-query search means; no comparable timing rerun was performed.
-HNSW,48.0,43,mean_ANN_Recall_at_10,1.0,,,1e-09,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,48.0,43,mean_nDCG_at_10,0.6309795740976547,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,48.0,43,IR_violation_rate,0.0,,,0.0,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,48.0,43,mean_nDCG_loss,0.0,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,48.0,43,mean_distance_computations,1513.1162790697674,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Original graph and measurement environment are absent; work reproduction cannot be assessed.
-HNSW,48.0,43,mean_latency_ms,0.4107325581395349,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Archived five-repeat per-query search means; no comparable timing rerun was performed.
-HNSW,64.0,43,mean_ANN_Recall_at_10,1.0,,,1e-09,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,64.0,43,mean_nDCG_at_10,0.6309795740976547,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,64.0,43,IR_violation_rate,0.0,,,0.0,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,64.0,43,mean_nDCG_loss,0.0,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,64.0,43,mean_distance_computations,1898.9767441860465,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Original graph and measurement environment are absent; work reproduction cannot be assessed.
-HNSW,64.0,43,mean_latency_ms,0.526206046511628,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Archived five-repeat per-query search means; no comparable timing rerun was performed.
-HNSW,96.0,43,mean_ANN_Recall_at_10,1.0,,,1e-09,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,96.0,43,mean_nDCG_at_10,0.6309795740976547,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,96.0,43,IR_violation_rate,0.0,,,0.0,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,96.0,43,mean_nDCG_loss,0.0,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,96.0,43,mean_distance_computations,2721.8837209302324,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Original graph and measurement environment are absent; work reproduction cannot be assessed.
-HNSW,96.0,43,mean_latency_ms,0.6820376744186045,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Archived five-repeat per-query search means; no comparable timing rerun was performed.
-HNSW,128.0,43,mean_ANN_Recall_at_10,1.0,,,1e-09,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,128.0,43,mean_nDCG_at_10,0.6309795740976547,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,128.0,43,IR_violation_rate,0.0,,,0.0,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,128.0,43,mean_nDCG_loss,0.0,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,128.0,43,mean_distance_computations,3550.720930232558,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Original graph and measurement environment are absent; work reproduction cannot be assessed.
-HNSW,128.0,43,mean_latency_ms,0.8396493023255814,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Archived five-repeat per-query search means; no comparable timing rerun was performed.
-HNSW,192.0,43,mean_ANN_Recall_at_10,1.0,,,1e-09,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,192.0,43,mean_nDCG_at_10,0.6309795740976547,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,192.0,43,IR_violation_rate,0.0,,,0.0,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,192.0,43,mean_nDCG_loss,0.0,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,192.0,43,mean_distance_computations,5256.093023255814,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Original graph and measurement environment are absent; work reproduction cannot be assessed.
-HNSW,192.0,43,mean_latency_ms,1.2499502325581395,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Archived five-repeat per-query search means; no comparable timing rerun was performed.
-HNSW,256.0,43,mean_ANN_Recall_at_10,1.0,,,1e-09,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,256.0,43,mean_nDCG_at_10,0.6309795740976547,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,256.0,43,IR_violation_rate,0.0,,,0.0,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,256.0,43,mean_nDCG_loss,0.0,,,1e-06,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists.
-HNSW,256.0,43,mean_distance_computations,6946.325581395349,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Original graph and measurement environment are absent; work reproduction cannot be assessed.
-HNSW,256.0,43,mean_latency_ms,1.6956567441860466,,,,False,NOT_RUN_MISSING_ORIGINAL_RANKINGS_AND_RETRIEVAL_STATE,msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv,8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe,Saved metric only; no recreated observation exists. Archived five-repeat per-query search means; no comparable timing rerun was performed.
+method,query_key,query_id,efSearch,archived_nDCG_at_10,recomputed_nDCG_at_10,nDCG_absolute_difference,archived_nDCG_loss,recomputed_nDCG_loss,loss_absolute_difference,archived_ANN_Recall_at_10,recomputed_ANN_Recall_at_10,recall_absolute_difference,archived_IR_violation,recomputed_IR_violation,comparison_completed,comparison_passed
+Exact,trec19::1037798,1037798,,0.19080559485628876,0.19080559485628876,0.0,,,,,,,,,True,True
+Exact,trec19::104861,104861,,0.6410457898283652,0.6410457898283652,0.0,,,,,,,,,True,True
+Exact,trec19::1063750,1063750,,0.33537530312230324,0.3353753031223032,5.551115123125783e-17,,,,,,,,,True,True
+Exact,trec19::1103812,1103812,,0.3542043966694627,0.35420439666946263,5.551115123125783e-17,,,,,,,,,True,True
+Exact,trec19::1106007,1106007,,0.6842374886427064,0.6842374886427063,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::1110199,1110199,,0.686218442153884,0.686218442153884,0.0,,,,,,,,,True,True
+Exact,trec19::1112341,1112341,,0.44804947421528746,0.4480494742152875,5.551115123125783e-17,,,,,,,,,True,True
+Exact,trec19::1113437,1113437,,0.36308648814769134,0.3630864881476914,5.551115123125783e-17,,,,,,,,,True,True
+Exact,trec19::1114646,1114646,,0.7950494721903744,0.7950494721903746,2.220446049250313e-16,,,,,,,,,True,True
+Exact,trec19::1114819,1114819,,0.6385477257480165,0.6385477257480165,0.0,,,,,,,,,True,True
+Exact,trec19::1115776,1115776,,0.4080920078074992,0.4080920078074992,0.0,,,,,,,,,True,True
+Exact,trec19::1117099,1117099,,1.0,1.0,0.0,,,,,,,,,True,True
+Exact,trec19::1121402,1121402,,0.9575861412006988,0.9575861412006988,0.0,,,,,,,,,True,True
+Exact,trec19::1121709,1121709,,0.5978050661969246,0.5978050661969246,0.0,,,,,,,,,True,True
+Exact,trec19::1124210,1124210,,0.38213164652254855,0.3821316465225485,5.551115123125783e-17,,,,,,,,,True,True
+Exact,trec19::1129237,1129237,,0.6915791970315962,0.6915791970315963,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::1133167,1133167,,0.808681630660337,0.808681630660337,0.0,,,,,,,,,True,True
+Exact,trec19::130510,130510,,0.9199432477288016,0.9199432477288016,0.0,,,,,,,,,True,True
+Exact,trec19::131843,131843,,0.8579809428223729,0.857980942822373,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::146187,146187,,0.7826878991387006,0.7826878991387005,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::148538,148538,,0.4544103275344639,0.4544103275344638,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::156493,156493,,0.7731227354521711,0.773122735452171,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::168216,168216,,0.6897126142958495,0.6897126142958495,0.0,,,,,,,,,True,True
+Exact,trec19::182539,182539,,0.5770417917644656,0.5770417917644655,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::183378,183378,,1.0,1.0,0.0,,,,,,,,,True,True
+Exact,trec19::19335,19335,,0.07271507642909085,0.07271507642909084,1.3877787807814457e-17,,,,,,,,,True,True
+Exact,trec19::207786,207786,,0.47234322786561717,0.4723432278656173,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::264014,264014,,0.6884824121473816,0.6884824121473817,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::359349,359349,,0.6212617474104504,0.6212617474104504,0.0,,,,,,,,,True,True
+Exact,trec19::405717,405717,,0.7407173334712391,0.7407173334712392,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::443396,443396,,0.40855517542174086,0.4085551754217409,5.551115123125783e-17,,,,,,,,,True,True
+Exact,trec19::451602,451602,,0.499640771237488,0.499640771237488,0.0,,,,,,,,,True,True
+Exact,trec19::47923,47923,,0.6079222395308352,0.6079222395308352,0.0,,,,,,,,,True,True
+Exact,trec19::489204,489204,,0.27349767664325164,0.27349767664325164,0.0,,,,,,,,,True,True
+Exact,trec19::490595,490595,,0.49144499634412314,0.49144499634412303,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::527433,527433,,0.8183436012986375,0.8183436012986375,0.0,,,,,,,,,True,True
+Exact,trec19::573724,573724,,0.49455765755147113,0.49455765755147113,0.0,,,,,,,,,True,True
+Exact,trec19::833860,833860,,0.8809750481083818,0.8809750481083819,1.1102230246251565e-16,,,,,,,,,True,True
+Exact,trec19::855410,855410,,0.9935774939007994,0.9935774939007994,0.0,,,,,,,,,True,True
+Exact,trec19::87181,87181,,0.9510907186004267,0.9510907186004267,0.0,,,,,,,,,True,True
+Exact,trec19::87452,87452,,0.4763244360190243,0.4763244360190243,0.0,,,,,,,,,True,True
+Exact,trec19::915593,915593,,0.7520405563289557,0.7520405563289557,0.0,,,,,,,,,True,True
+Exact,trec19::962179,962179,,0.8512360941594272,0.8512360941594274,1.1102230246251565e-16,,,,,,,,,True,True
+HNSW,trec19::1037798,1037798,10.0,0.19080559485628876,0.19080559485628876,0.0,0.0,0.0,0.0,0.8,0.8,0.0,False,False,True,True
+HNSW,trec19::1037798,1037798,16.0,0.19080559485628876,0.19080559485628876,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1037798,1037798,24.0,0.19080559485628876,0.19080559485628876,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1037798,1037798,32.0,0.19080559485628876,0.19080559485628876,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1037798,1037798,48.0,0.19080559485628876,0.19080559485628876,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1037798,1037798,64.0,0.19080559485628876,0.19080559485628876,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1037798,1037798,96.0,0.19080559485628876,0.19080559485628876,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1037798,1037798,128.0,0.19080559485628876,0.19080559485628876,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1037798,1037798,192.0,0.19080559485628876,0.19080559485628876,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1037798,1037798,256.0,0.19080559485628876,0.19080559485628876,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::104861,104861,10.0,0.6410457898283652,0.6410457898283652,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::104861,104861,16.0,0.6410457898283652,0.6410457898283652,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::104861,104861,24.0,0.6410457898283652,0.6410457898283652,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::104861,104861,32.0,0.6410457898283652,0.6410457898283652,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::104861,104861,48.0,0.6410457898283652,0.6410457898283652,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::104861,104861,64.0,0.6410457898283652,0.6410457898283652,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::104861,104861,96.0,0.6410457898283652,0.6410457898283652,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::104861,104861,128.0,0.6410457898283652,0.6410457898283652,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::104861,104861,192.0,0.6410457898283652,0.6410457898283652,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::104861,104861,256.0,0.6410457898283652,0.6410457898283652,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1063750,1063750,10.0,0.38122721500594753,0.3812272150059475,5.551115123125783e-17,0.0,0.0,0.0,0.8,0.8,0.0,False,False,True,True
+HNSW,trec19::1063750,1063750,16.0,0.3551317337391486,0.3551317337391485,5.551115123125783e-17,0.0,0.0,0.0,0.8,0.8,0.0,False,False,True,True
+HNSW,trec19::1063750,1063750,24.0,0.38253033159297495,0.3825303315929748,1.6653345369377348e-16,0.0,0.0,0.0,0.9,0.9,0.0,False,False,True,True
+HNSW,trec19::1063750,1063750,32.0,0.38253033159297495,0.3825303315929748,1.6653345369377348e-16,0.0,0.0,0.0,0.9,0.9,0.0,False,False,True,True
+HNSW,trec19::1063750,1063750,48.0,0.33537530312230324,0.3353753031223032,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1063750,1063750,64.0,0.33537530312230324,0.3353753031223032,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1063750,1063750,96.0,0.33537530312230324,0.3353753031223032,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1063750,1063750,128.0,0.33537530312230324,0.3353753031223032,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1063750,1063750,192.0,0.33537530312230324,0.3353753031223032,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1063750,1063750,256.0,0.33537530312230324,0.3353753031223032,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1103812,1103812,10.0,0.3542043966694627,0.35420439666946263,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1103812,1103812,16.0,0.3542043966694627,0.35420439666946263,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1103812,1103812,24.0,0.3542043966694627,0.35420439666946263,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1103812,1103812,32.0,0.3542043966694627,0.35420439666946263,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1103812,1103812,48.0,0.3542043966694627,0.35420439666946263,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1103812,1103812,64.0,0.3542043966694627,0.35420439666946263,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1103812,1103812,96.0,0.3542043966694627,0.35420439666946263,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1103812,1103812,128.0,0.3542043966694627,0.35420439666946263,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1103812,1103812,192.0,0.3542043966694627,0.35420439666946263,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1103812,1103812,256.0,0.3542043966694627,0.35420439666946263,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1106007,1106007,10.0,0.6372397093693978,0.6372397093693977,1.1102230246251565e-16,0.046997779273308615,0.046997779273308615,0.0,0.9,0.9,0.0,True,True,True,True
+HNSW,trec19::1106007,1106007,16.0,0.6842374886427064,0.6842374886427063,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1106007,1106007,24.0,0.6842374886427064,0.6842374886427063,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1106007,1106007,32.0,0.6842374886427064,0.6842374886427063,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1106007,1106007,48.0,0.6842374886427064,0.6842374886427063,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1106007,1106007,64.0,0.6842374886427064,0.6842374886427063,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1106007,1106007,96.0,0.6842374886427064,0.6842374886427063,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1106007,1106007,128.0,0.6842374886427064,0.6842374886427063,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1106007,1106007,192.0,0.6842374886427064,0.6842374886427063,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1106007,1106007,256.0,0.6842374886427064,0.6842374886427063,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1110199,1110199,10.0,0.686218442153884,0.686218442153884,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1110199,1110199,16.0,0.686218442153884,0.686218442153884,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1110199,1110199,24.0,0.686218442153884,0.686218442153884,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1110199,1110199,32.0,0.686218442153884,0.686218442153884,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1110199,1110199,48.0,0.686218442153884,0.686218442153884,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1110199,1110199,64.0,0.686218442153884,0.686218442153884,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1110199,1110199,96.0,0.686218442153884,0.686218442153884,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1110199,1110199,128.0,0.686218442153884,0.686218442153884,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1110199,1110199,192.0,0.686218442153884,0.686218442153884,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1110199,1110199,256.0,0.686218442153884,0.686218442153884,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1112341,1112341,10.0,0.40109288613633787,0.40109288613633787,0.0,0.04695658807894959,0.046956588078949646,5.551115123125783e-17,0.7,0.7,0.0,True,True,True,True
+HNSW,trec19::1112341,1112341,16.0,0.3982788281000435,0.39827882810004356,5.551115123125783e-17,0.049770646115243955,0.049770646115243955,0.0,0.8,0.8,0.0,True,True,True,True
+HNSW,trec19::1112341,1112341,24.0,0.3982788281000435,0.39827882810004356,5.551115123125783e-17,0.049770646115243955,0.049770646115243955,0.0,0.8,0.8,0.0,True,True,True,True
+HNSW,trec19::1112341,1112341,32.0,0.44804947421528746,0.4480494742152875,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1112341,1112341,48.0,0.44804947421528746,0.4480494742152875,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1112341,1112341,64.0,0.44804947421528746,0.4480494742152875,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1112341,1112341,96.0,0.44804947421528746,0.4480494742152875,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1112341,1112341,128.0,0.44804947421528746,0.4480494742152875,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1112341,1112341,192.0,0.44804947421528746,0.4480494742152875,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1112341,1112341,256.0,0.44804947421528746,0.4480494742152875,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1113437,1113437,10.0,0.36308648814769134,0.3630864881476914,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1113437,1113437,16.0,0.36308648814769134,0.3630864881476914,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1113437,1113437,24.0,0.36308648814769134,0.3630864881476914,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1113437,1113437,32.0,0.36308648814769134,0.3630864881476914,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1113437,1113437,48.0,0.36308648814769134,0.3630864881476914,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1113437,1113437,64.0,0.36308648814769134,0.3630864881476914,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1113437,1113437,96.0,0.36308648814769134,0.3630864881476914,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1113437,1113437,128.0,0.36308648814769134,0.3630864881476914,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1113437,1113437,192.0,0.36308648814769134,0.3630864881476914,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1113437,1113437,256.0,0.36308648814769134,0.3630864881476914,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114646,1114646,10.0,0.7950494721903744,0.7950494721903746,2.220446049250313e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114646,1114646,16.0,0.7950494721903744,0.7950494721903746,2.220446049250313e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114646,1114646,24.0,0.7950494721903744,0.7950494721903746,2.220446049250313e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114646,1114646,32.0,0.7950494721903744,0.7950494721903746,2.220446049250313e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114646,1114646,48.0,0.7950494721903744,0.7950494721903746,2.220446049250313e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114646,1114646,64.0,0.7950494721903744,0.7950494721903746,2.220446049250313e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114646,1114646,96.0,0.7950494721903744,0.7950494721903746,2.220446049250313e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114646,1114646,128.0,0.7950494721903744,0.7950494721903746,2.220446049250313e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114646,1114646,192.0,0.7950494721903744,0.7950494721903746,2.220446049250313e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114646,1114646,256.0,0.7950494721903744,0.7950494721903746,2.220446049250313e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114819,1114819,10.0,0.6385477257480165,0.6385477257480165,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114819,1114819,16.0,0.6385477257480165,0.6385477257480165,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114819,1114819,24.0,0.6385477257480165,0.6385477257480165,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114819,1114819,32.0,0.6385477257480165,0.6385477257480165,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114819,1114819,48.0,0.6385477257480165,0.6385477257480165,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114819,1114819,64.0,0.6385477257480165,0.6385477257480165,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114819,1114819,96.0,0.6385477257480165,0.6385477257480165,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114819,1114819,128.0,0.6385477257480165,0.6385477257480165,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114819,1114819,192.0,0.6385477257480165,0.6385477257480165,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1114819,1114819,256.0,0.6385477257480165,0.6385477257480165,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1115776,1115776,10.0,0.06176464947870402,0.06176464947870402,0.0,0.3463273583287952,0.3463273583287952,0.0,0.8,0.8,0.0,True,True,True,True
+HNSW,trec19::1115776,1115776,16.0,0.06176464947870402,0.06176464947870402,0.0,0.3463273583287952,0.3463273583287952,0.0,0.8,0.8,0.0,True,True,True,True
+HNSW,trec19::1115776,1115776,24.0,0.06176464947870402,0.06176464947870402,0.0,0.3463273583287952,0.3463273583287952,0.0,0.8,0.8,0.0,True,True,True,True
+HNSW,trec19::1115776,1115776,32.0,0.06176464947870402,0.06176464947870402,0.0,0.3463273583287952,0.3463273583287952,0.0,0.8,0.8,0.0,True,True,True,True
+HNSW,trec19::1115776,1115776,48.0,0.4080920078074992,0.4080920078074992,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1115776,1115776,64.0,0.4080920078074992,0.4080920078074992,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1115776,1115776,96.0,0.4080920078074992,0.4080920078074992,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1115776,1115776,128.0,0.4080920078074992,0.4080920078074992,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1115776,1115776,192.0,0.4080920078074992,0.4080920078074992,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1115776,1115776,256.0,0.4080920078074992,0.4080920078074992,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1117099,1117099,10.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,True,True,True,True
+HNSW,trec19::1117099,1117099,16.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1117099,1117099,24.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1117099,1117099,32.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1117099,1117099,48.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1117099,1117099,64.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1117099,1117099,96.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1117099,1117099,128.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1117099,1117099,192.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1117099,1117099,256.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121402,1121402,10.0,0.9575861412006988,0.9575861412006988,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121402,1121402,16.0,0.9575861412006988,0.9575861412006988,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121402,1121402,24.0,0.9575861412006988,0.9575861412006988,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121402,1121402,32.0,0.9575861412006988,0.9575861412006988,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121402,1121402,48.0,0.9575861412006988,0.9575861412006988,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121402,1121402,64.0,0.9575861412006988,0.9575861412006988,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121402,1121402,96.0,0.9575861412006988,0.9575861412006988,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121402,1121402,128.0,0.9575861412006988,0.9575861412006988,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121402,1121402,192.0,0.9575861412006988,0.9575861412006988,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121402,1121402,256.0,0.9575861412006988,0.9575861412006988,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121709,1121709,10.0,0.5978050661969246,0.5978050661969246,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121709,1121709,16.0,0.5978050661969246,0.5978050661969246,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121709,1121709,24.0,0.5978050661969246,0.5978050661969246,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121709,1121709,32.0,0.5978050661969246,0.5978050661969246,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121709,1121709,48.0,0.5978050661969246,0.5978050661969246,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121709,1121709,64.0,0.5978050661969246,0.5978050661969246,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121709,1121709,96.0,0.5978050661969246,0.5978050661969246,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121709,1121709,128.0,0.5978050661969246,0.5978050661969246,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121709,1121709,192.0,0.5978050661969246,0.5978050661969246,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1121709,1121709,256.0,0.5978050661969246,0.5978050661969246,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1124210,1124210,10.0,0.38213164652254855,0.3821316465225485,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1124210,1124210,16.0,0.38213164652254855,0.3821316465225485,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1124210,1124210,24.0,0.38213164652254855,0.3821316465225485,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1124210,1124210,32.0,0.38213164652254855,0.3821316465225485,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1124210,1124210,48.0,0.38213164652254855,0.3821316465225485,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1124210,1124210,64.0,0.38213164652254855,0.3821316465225485,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1124210,1124210,96.0,0.38213164652254855,0.3821316465225485,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1124210,1124210,128.0,0.38213164652254855,0.3821316465225485,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1124210,1124210,192.0,0.38213164652254855,0.3821316465225485,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1124210,1124210,256.0,0.38213164652254855,0.3821316465225485,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1129237,1129237,10.0,0.6915791970315962,0.6915791970315963,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1129237,1129237,16.0,0.6915791970315962,0.6915791970315963,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1129237,1129237,24.0,0.6915791970315962,0.6915791970315963,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1129237,1129237,32.0,0.6915791970315962,0.6915791970315963,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1129237,1129237,48.0,0.6915791970315962,0.6915791970315963,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1129237,1129237,64.0,0.6915791970315962,0.6915791970315963,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1129237,1129237,96.0,0.6915791970315962,0.6915791970315963,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1129237,1129237,128.0,0.6915791970315962,0.6915791970315963,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1129237,1129237,192.0,0.6915791970315962,0.6915791970315963,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1129237,1129237,256.0,0.6915791970315962,0.6915791970315963,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1133167,1133167,10.0,0.808681630660337,0.808681630660337,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1133167,1133167,16.0,0.808681630660337,0.808681630660337,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1133167,1133167,24.0,0.808681630660337,0.808681630660337,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1133167,1133167,32.0,0.808681630660337,0.808681630660337,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1133167,1133167,48.0,0.808681630660337,0.808681630660337,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1133167,1133167,64.0,0.808681630660337,0.808681630660337,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1133167,1133167,96.0,0.808681630660337,0.808681630660337,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1133167,1133167,128.0,0.808681630660337,0.808681630660337,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1133167,1133167,192.0,0.808681630660337,0.808681630660337,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::1133167,1133167,256.0,0.808681630660337,0.808681630660337,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::130510,130510,10.0,0.9199432477288016,0.9199432477288016,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::130510,130510,16.0,0.9199432477288016,0.9199432477288016,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::130510,130510,24.0,0.9199432477288016,0.9199432477288016,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::130510,130510,32.0,0.9199432477288016,0.9199432477288016,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::130510,130510,48.0,0.9199432477288016,0.9199432477288016,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::130510,130510,64.0,0.9199432477288016,0.9199432477288016,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::130510,130510,96.0,0.9199432477288016,0.9199432477288016,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::130510,130510,128.0,0.9199432477288016,0.9199432477288016,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::130510,130510,192.0,0.9199432477288016,0.9199432477288016,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::130510,130510,256.0,0.9199432477288016,0.9199432477288016,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::131843,131843,10.0,0.8579809428223729,0.857980942822373,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::131843,131843,16.0,0.8579809428223729,0.857980942822373,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::131843,131843,24.0,0.8579809428223729,0.857980942822373,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::131843,131843,32.0,0.8579809428223729,0.857980942822373,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::131843,131843,48.0,0.8579809428223729,0.857980942822373,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::131843,131843,64.0,0.8579809428223729,0.857980942822373,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::131843,131843,96.0,0.8579809428223729,0.857980942822373,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::131843,131843,128.0,0.8579809428223729,0.857980942822373,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::131843,131843,192.0,0.8579809428223729,0.857980942822373,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::131843,131843,256.0,0.8579809428223729,0.857980942822373,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::146187,146187,10.0,0.6170888377913438,0.6170888377913437,1.1102230246251565e-16,0.1655990613473568,0.1655990613473568,0.0,0.9,0.9,0.0,True,True,True,True
+HNSW,trec19::146187,146187,16.0,0.6170888377913438,0.6170888377913437,1.1102230246251565e-16,0.1655990613473568,0.1655990613473568,0.0,0.9,0.9,0.0,True,True,True,True
+HNSW,trec19::146187,146187,24.0,0.7826878991387006,0.7826878991387005,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::146187,146187,32.0,0.7826878991387006,0.7826878991387005,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::146187,146187,48.0,0.7826878991387006,0.7826878991387005,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::146187,146187,64.0,0.7826878991387006,0.7826878991387005,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::146187,146187,96.0,0.7826878991387006,0.7826878991387005,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::146187,146187,128.0,0.7826878991387006,0.7826878991387005,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::146187,146187,192.0,0.7826878991387006,0.7826878991387005,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::146187,146187,256.0,0.7826878991387006,0.7826878991387005,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::148538,148538,10.0,0.4544103275344639,0.4544103275344638,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::148538,148538,16.0,0.4544103275344639,0.4544103275344638,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::148538,148538,24.0,0.4544103275344639,0.4544103275344638,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::148538,148538,32.0,0.4544103275344639,0.4544103275344638,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::148538,148538,48.0,0.4544103275344639,0.4544103275344638,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::148538,148538,64.0,0.4544103275344639,0.4544103275344638,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::148538,148538,96.0,0.4544103275344639,0.4544103275344638,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::148538,148538,128.0,0.4544103275344639,0.4544103275344638,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::148538,148538,192.0,0.4544103275344639,0.4544103275344638,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::148538,148538,256.0,0.4544103275344639,0.4544103275344638,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::156493,156493,10.0,0.7731227354521711,0.773122735452171,1.1102230246251565e-16,0.0,0.0,0.0,0.9,0.9,0.0,False,False,True,True
+HNSW,trec19::156493,156493,16.0,0.7731227354521711,0.773122735452171,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::156493,156493,24.0,0.7731227354521711,0.773122735452171,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::156493,156493,32.0,0.7731227354521711,0.773122735452171,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::156493,156493,48.0,0.7731227354521711,0.773122735452171,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::156493,156493,64.0,0.7731227354521711,0.773122735452171,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::156493,156493,96.0,0.7731227354521711,0.773122735452171,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::156493,156493,128.0,0.7731227354521711,0.773122735452171,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::156493,156493,192.0,0.7731227354521711,0.773122735452171,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::156493,156493,256.0,0.7731227354521711,0.773122735452171,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::168216,168216,10.0,0.6897126142958495,0.6897126142958495,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::168216,168216,16.0,0.6897126142958495,0.6897126142958495,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::168216,168216,24.0,0.6897126142958495,0.6897126142958495,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::168216,168216,32.0,0.6897126142958495,0.6897126142958495,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::168216,168216,48.0,0.6897126142958495,0.6897126142958495,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::168216,168216,64.0,0.6897126142958495,0.6897126142958495,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::168216,168216,96.0,0.6897126142958495,0.6897126142958495,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::168216,168216,128.0,0.6897126142958495,0.6897126142958495,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::168216,168216,192.0,0.6897126142958495,0.6897126142958495,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::168216,168216,256.0,0.6897126142958495,0.6897126142958495,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::182539,182539,10.0,0.5770417917644656,0.5770417917644655,1.1102230246251565e-16,0.0,0.0,0.0,0.9,0.9,0.0,False,False,True,True
+HNSW,trec19::182539,182539,16.0,0.5770417917644656,0.5770417917644655,1.1102230246251565e-16,0.0,0.0,0.0,0.9,0.9,0.0,False,False,True,True
+HNSW,trec19::182539,182539,24.0,0.5770417917644656,0.5770417917644655,1.1102230246251565e-16,0.0,0.0,0.0,0.9,0.9,0.0,False,False,True,True
+HNSW,trec19::182539,182539,32.0,0.5770417917644656,0.5770417917644655,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::182539,182539,48.0,0.5770417917644656,0.5770417917644655,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::182539,182539,64.0,0.5770417917644656,0.5770417917644655,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::182539,182539,96.0,0.5770417917644656,0.5770417917644655,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::182539,182539,128.0,0.5770417917644656,0.5770417917644655,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::182539,182539,192.0,0.5770417917644656,0.5770417917644655,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::182539,182539,256.0,0.5770417917644656,0.5770417917644655,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::183378,183378,10.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::183378,183378,16.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::183378,183378,24.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::183378,183378,32.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::183378,183378,48.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::183378,183378,64.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::183378,183378,96.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::183378,183378,128.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::183378,183378,192.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::183378,183378,256.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::19335,19335,10.0,0.07271507642909085,0.07271507642909084,1.3877787807814457e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::19335,19335,16.0,0.07271507642909085,0.07271507642909084,1.3877787807814457e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::19335,19335,24.0,0.07271507642909085,0.07271507642909084,1.3877787807814457e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::19335,19335,32.0,0.07271507642909085,0.07271507642909084,1.3877787807814457e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::19335,19335,48.0,0.07271507642909085,0.07271507642909084,1.3877787807814457e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::19335,19335,64.0,0.07271507642909085,0.07271507642909084,1.3877787807814457e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::19335,19335,96.0,0.07271507642909085,0.07271507642909084,1.3877787807814457e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::19335,19335,128.0,0.07271507642909085,0.07271507642909084,1.3877787807814457e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::19335,19335,192.0,0.07271507642909085,0.07271507642909084,1.3877787807814457e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::19335,19335,256.0,0.07271507642909085,0.07271507642909084,1.3877787807814457e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::207786,207786,10.0,0.47234322786561717,0.4723432278656173,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::207786,207786,16.0,0.47234322786561717,0.4723432278656173,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::207786,207786,24.0,0.47234322786561717,0.4723432278656173,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::207786,207786,32.0,0.47234322786561717,0.4723432278656173,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::207786,207786,48.0,0.47234322786561717,0.4723432278656173,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::207786,207786,64.0,0.47234322786561717,0.4723432278656173,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::207786,207786,96.0,0.47234322786561717,0.4723432278656173,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::207786,207786,128.0,0.47234322786561717,0.4723432278656173,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::207786,207786,192.0,0.47234322786561717,0.4723432278656173,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::207786,207786,256.0,0.47234322786561717,0.4723432278656173,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::264014,264014,10.0,0.6884824121473816,0.6884824121473817,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::264014,264014,16.0,0.6884824121473816,0.6884824121473817,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::264014,264014,24.0,0.6884824121473816,0.6884824121473817,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::264014,264014,32.0,0.6884824121473816,0.6884824121473817,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::264014,264014,48.0,0.6884824121473816,0.6884824121473817,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::264014,264014,64.0,0.6884824121473816,0.6884824121473817,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::264014,264014,96.0,0.6884824121473816,0.6884824121473817,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::264014,264014,128.0,0.6884824121473816,0.6884824121473817,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::264014,264014,192.0,0.6884824121473816,0.6884824121473817,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::264014,264014,256.0,0.6884824121473816,0.6884824121473817,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::359349,359349,10.0,0.6212617474104504,0.6212617474104504,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::359349,359349,16.0,0.6212617474104504,0.6212617474104504,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::359349,359349,24.0,0.6212617474104504,0.6212617474104504,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::359349,359349,32.0,0.6212617474104504,0.6212617474104504,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::359349,359349,48.0,0.6212617474104504,0.6212617474104504,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::359349,359349,64.0,0.6212617474104504,0.6212617474104504,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::359349,359349,96.0,0.6212617474104504,0.6212617474104504,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::359349,359349,128.0,0.6212617474104504,0.6212617474104504,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::359349,359349,192.0,0.6212617474104504,0.6212617474104504,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::359349,359349,256.0,0.6212617474104504,0.6212617474104504,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::405717,405717,10.0,0.7407173334712391,0.7407173334712392,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::405717,405717,16.0,0.7407173334712391,0.7407173334712392,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::405717,405717,24.0,0.7407173334712391,0.7407173334712392,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::405717,405717,32.0,0.7407173334712391,0.7407173334712392,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::405717,405717,48.0,0.7407173334712391,0.7407173334712392,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::405717,405717,64.0,0.7407173334712391,0.7407173334712392,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::405717,405717,96.0,0.7407173334712391,0.7407173334712392,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::405717,405717,128.0,0.7407173334712391,0.7407173334712392,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::405717,405717,192.0,0.7407173334712391,0.7407173334712392,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::405717,405717,256.0,0.7407173334712391,0.7407173334712392,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::443396,443396,10.0,0.34230095196735183,0.34230095196735183,0.0,0.06625422345438903,0.06625422345438908,5.551115123125783e-17,0.9,0.9,0.0,True,True,True,True
+HNSW,trec19::443396,443396,16.0,0.40855517542174086,0.4085551754217409,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::443396,443396,24.0,0.40855517542174086,0.4085551754217409,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::443396,443396,32.0,0.40855517542174086,0.4085551754217409,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::443396,443396,48.0,0.40855517542174086,0.4085551754217409,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::443396,443396,64.0,0.40855517542174086,0.4085551754217409,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::443396,443396,96.0,0.40855517542174086,0.4085551754217409,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::443396,443396,128.0,0.40855517542174086,0.4085551754217409,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::443396,443396,192.0,0.40855517542174086,0.4085551754217409,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::443396,443396,256.0,0.40855517542174086,0.4085551754217409,5.551115123125783e-17,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::451602,451602,10.0,0.499640771237488,0.499640771237488,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::451602,451602,16.0,0.499640771237488,0.499640771237488,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::451602,451602,24.0,0.499640771237488,0.499640771237488,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::451602,451602,32.0,0.499640771237488,0.499640771237488,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::451602,451602,48.0,0.499640771237488,0.499640771237488,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::451602,451602,64.0,0.499640771237488,0.499640771237488,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::451602,451602,96.0,0.499640771237488,0.499640771237488,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::451602,451602,128.0,0.499640771237488,0.499640771237488,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::451602,451602,192.0,0.499640771237488,0.499640771237488,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::451602,451602,256.0,0.499640771237488,0.499640771237488,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::47923,47923,10.0,0.6079222395308352,0.6079222395308352,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::47923,47923,16.0,0.6079222395308352,0.6079222395308352,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::47923,47923,24.0,0.6079222395308352,0.6079222395308352,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::47923,47923,32.0,0.6079222395308352,0.6079222395308352,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::47923,47923,48.0,0.6079222395308352,0.6079222395308352,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::47923,47923,64.0,0.6079222395308352,0.6079222395308352,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::47923,47923,96.0,0.6079222395308352,0.6079222395308352,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::47923,47923,128.0,0.6079222395308352,0.6079222395308352,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::47923,47923,192.0,0.6079222395308352,0.6079222395308352,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::47923,47923,256.0,0.6079222395308352,0.6079222395308352,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::489204,489204,10.0,0.27349767664325164,0.27349767664325164,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::489204,489204,16.0,0.27349767664325164,0.27349767664325164,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::489204,489204,24.0,0.27349767664325164,0.27349767664325164,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::489204,489204,32.0,0.27349767664325164,0.27349767664325164,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::489204,489204,48.0,0.27349767664325164,0.27349767664325164,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::489204,489204,64.0,0.27349767664325164,0.27349767664325164,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::489204,489204,96.0,0.27349767664325164,0.27349767664325164,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::489204,489204,128.0,0.27349767664325164,0.27349767664325164,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::489204,489204,192.0,0.27349767664325164,0.27349767664325164,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::489204,489204,256.0,0.27349767664325164,0.27349767664325164,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::490595,490595,10.0,0.49144499634412314,0.49144499634412303,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::490595,490595,16.0,0.49144499634412314,0.49144499634412303,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::490595,490595,24.0,0.49144499634412314,0.49144499634412303,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::490595,490595,32.0,0.49144499634412314,0.49144499634412303,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::490595,490595,48.0,0.49144499634412314,0.49144499634412303,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::490595,490595,64.0,0.49144499634412314,0.49144499634412303,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::490595,490595,96.0,0.49144499634412314,0.49144499634412303,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::490595,490595,128.0,0.49144499634412314,0.49144499634412303,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::490595,490595,192.0,0.49144499634412314,0.49144499634412303,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::490595,490595,256.0,0.49144499634412314,0.49144499634412303,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::527433,527433,10.0,0.7213187361064186,0.7213187361064188,2.220446049250313e-16,0.09702486519221887,0.09702486519221865,2.220446049250313e-16,0.8,0.8,0.0,True,True,True,True
+HNSW,trec19::527433,527433,16.0,0.8183436012986375,0.8183436012986375,0.0,0.0,0.0,0.0,0.9,0.9,0.0,False,False,True,True
+HNSW,trec19::527433,527433,24.0,0.8183436012986375,0.8183436012986375,0.0,0.0,0.0,0.0,0.9,0.9,0.0,False,False,True,True
+HNSW,trec19::527433,527433,32.0,0.8183436012986375,0.8183436012986375,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::527433,527433,48.0,0.8183436012986375,0.8183436012986375,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::527433,527433,64.0,0.8183436012986375,0.8183436012986375,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::527433,527433,96.0,0.8183436012986375,0.8183436012986375,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::527433,527433,128.0,0.8183436012986375,0.8183436012986375,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::527433,527433,192.0,0.8183436012986375,0.8183436012986375,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::527433,527433,256.0,0.8183436012986375,0.8183436012986375,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::573724,573724,10.0,0.49455765755147113,0.49455765755147113,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::573724,573724,16.0,0.49455765755147113,0.49455765755147113,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::573724,573724,24.0,0.49455765755147113,0.49455765755147113,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::573724,573724,32.0,0.49455765755147113,0.49455765755147113,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::573724,573724,48.0,0.49455765755147113,0.49455765755147113,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::573724,573724,64.0,0.49455765755147113,0.49455765755147113,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::573724,573724,96.0,0.49455765755147113,0.49455765755147113,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::573724,573724,128.0,0.49455765755147113,0.49455765755147113,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::573724,573724,192.0,0.49455765755147113,0.49455765755147113,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::573724,573724,256.0,0.49455765755147113,0.49455765755147113,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::833860,833860,10.0,0.8809750481083818,0.8809750481083819,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::833860,833860,16.0,0.8809750481083818,0.8809750481083819,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::833860,833860,24.0,0.8809750481083818,0.8809750481083819,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::833860,833860,32.0,0.8809750481083818,0.8809750481083819,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::833860,833860,48.0,0.8809750481083818,0.8809750481083819,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::833860,833860,64.0,0.8809750481083818,0.8809750481083819,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::833860,833860,96.0,0.8809750481083818,0.8809750481083819,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::833860,833860,128.0,0.8809750481083818,0.8809750481083819,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::833860,833860,192.0,0.8809750481083818,0.8809750481083819,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::833860,833860,256.0,0.8809750481083818,0.8809750481083819,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::855410,855410,10.0,0.0,0.0,0.0,0.9935774939007994,0.9935774939007994,0.0,0.3,0.3,0.0,True,True,True,True
+HNSW,trec19::855410,855410,16.0,0.9935774939007994,0.9935774939007994,0.0,0.0,0.0,0.0,0.9,0.9,0.0,False,False,True,True
+HNSW,trec19::855410,855410,24.0,0.9935774939007994,0.9935774939007994,0.0,0.0,0.0,0.0,0.9,0.9,0.0,False,False,True,True
+HNSW,trec19::855410,855410,32.0,0.9935774939007994,0.9935774939007994,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::855410,855410,48.0,0.9935774939007994,0.9935774939007994,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::855410,855410,64.0,0.9935774939007994,0.9935774939007994,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::855410,855410,96.0,0.9935774939007994,0.9935774939007994,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::855410,855410,128.0,0.9935774939007994,0.9935774939007994,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::855410,855410,192.0,0.9935774939007994,0.9935774939007994,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::855410,855410,256.0,0.9935774939007994,0.9935774939007994,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87181,87181,10.0,0.9510907186004267,0.9510907186004267,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87181,87181,16.0,0.9510907186004267,0.9510907186004267,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87181,87181,24.0,0.9510907186004267,0.9510907186004267,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87181,87181,32.0,0.9510907186004267,0.9510907186004267,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87181,87181,48.0,0.9510907186004267,0.9510907186004267,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87181,87181,64.0,0.9510907186004267,0.9510907186004267,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87181,87181,96.0,0.9510907186004267,0.9510907186004267,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87181,87181,128.0,0.9510907186004267,0.9510907186004267,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87181,87181,192.0,0.9510907186004267,0.9510907186004267,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87181,87181,256.0,0.9510907186004267,0.9510907186004267,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87452,87452,10.0,0.4763244360190243,0.4763244360190243,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87452,87452,16.0,0.4763244360190243,0.4763244360190243,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87452,87452,24.0,0.4763244360190243,0.4763244360190243,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87452,87452,32.0,0.4763244360190243,0.4763244360190243,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87452,87452,48.0,0.4763244360190243,0.4763244360190243,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87452,87452,64.0,0.4763244360190243,0.4763244360190243,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87452,87452,96.0,0.4763244360190243,0.4763244360190243,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87452,87452,128.0,0.4763244360190243,0.4763244360190243,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87452,87452,192.0,0.4763244360190243,0.4763244360190243,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::87452,87452,256.0,0.4763244360190243,0.4763244360190243,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::915593,915593,10.0,0.7520405563289557,0.7520405563289557,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::915593,915593,16.0,0.7520405563289557,0.7520405563289557,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::915593,915593,24.0,0.7520405563289557,0.7520405563289557,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::915593,915593,32.0,0.7520405563289557,0.7520405563289557,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::915593,915593,48.0,0.7520405563289557,0.7520405563289557,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::915593,915593,64.0,0.7520405563289557,0.7520405563289557,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::915593,915593,96.0,0.7520405563289557,0.7520405563289557,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::915593,915593,128.0,0.7520405563289557,0.7520405563289557,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::915593,915593,192.0,0.7520405563289557,0.7520405563289557,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::915593,915593,256.0,0.7520405563289557,0.7520405563289557,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::962179,962179,10.0,0.8512360941594272,0.8512360941594274,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::962179,962179,16.0,0.8512360941594272,0.8512360941594274,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::962179,962179,24.0,0.8512360941594272,0.8512360941594274,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::962179,962179,32.0,0.8512360941594272,0.8512360941594274,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::962179,962179,48.0,0.8512360941594272,0.8512360941594274,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::962179,962179,64.0,0.8512360941594272,0.8512360941594274,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::962179,962179,96.0,0.8512360941594272,0.8512360941594274,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::962179,962179,128.0,0.8512360941594272,0.8512360941594274,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::962179,962179,192.0,0.8512360941594272,0.8512360941594274,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True
+HNSW,trec19::962179,962179,256.0,0.8512360941594272,0.8512360941594274,1.1102230246251565e-16,0.0,0.0,0.0,1.0,1.0,0.0,False,False,True,True

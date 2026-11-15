@@ -1,31 +1,11 @@
-# TREC retrieval reproduction: NOT RUN
+# TREC FULL-qrel reproduction: PASS
 
-Original qrels and the 43 query identities are recovered. Exact and all ten
-HNSW ranked-document outputs remain missing. The original controlled corpus
-mapping/order, document vectors, query vectors and built HNSW index are also
-missing, so a faithful retrieval-only rerun is impossible from available inputs.
+Original cached rankings were recovered from `~/Downloads/IR_PROJECT.zip`, under `IR_PROJECT/PILOT`. Seven archived source/config/query/sweep files match the current project byte-for-byte. The original ordered map contains 1,000,629 unique document IDs.
 
-[trec_retrieval_reproduction.csv](trec_retrieval_reproduction.csv) contains 61
-archived comparison targets: exact mean nDCG and six metrics for each of ten
-HNSW budgets. Reproduced values and differences are blank; every comparison is
-explicitly incomplete. These are saved references, not reconstructed results or
-a FULL-qrel ranking validation. Numerical comparison tolerances are prospective
-(nDCG/loss 1e-6, ANN Recall 1e-9, identical violation rate); no tolerance was
-applied to missing observations. Work and timing tolerances are unset because
-their reproducibility conditions cannot be checked.
+The strict input gate independently reproduced all 43 exact nDCG@10 results and all 430 HNSW query-budget results over efSearch 10,16,24,32,48,64,96,128,192,256. nDCG and loss agree within 1e-6, ANN Recall@10 within 1e-9, and every violation indicator agrees exactly at loss > 0.025.
 
-No retrieval, embedding generation, index rebuild or controller retraining was
-performed. No alternative corpus was used. Configured encoder, normalization,
-similarity and HNSW parameters can be read from source; that does not verify
-the contents of an unavailable index or vector cache.
+[Per-query comparisons](trec_retrieval_reproduction.csv), [input validation](recovered_ranking_validation.json), and [archive/member provenance](trec_ranking_provenance.json) contain the actual observations. Exact rank order comes from the cached exact top100 arrays; HNSW rank order comes from the original stability top10 cache. Approximate score evidence was reconstructed from original cached query/document vectors without reordering any result.
 
-Restore original exact/HNSW document rankings for all 43 queries (and HNSW at
-efSearch 10,16,24,32,48,64,96,128,192,256), or restore original cached vectors,
-document map and built index. Verify corpus membership/order and query mapping,
-then compare FULL per-query nDCG, ANN Recall and fixed violation rates before
-thinning. Stop if recreated metrics disagree materially with the saved runs.
-Latency is comparable only if hardware and timing conditions are established.
+No retrieval, encoder execution, index construction or controller training was performed. Original recorded work and timing remain fixed. There is no independently logged historical map checksum; co-archived sources, the supplied ordered-map hash and FULL scalar consistency provide the documented identity evidence. The encoder revision remains historically unpinned, but no encoder was invoked for this recovery.
 
-See [ranking validation](trec_ranking_recovery_validation.json),
-[retrieval-state audit](trec_retrieval_state_audit.json) and
-[detailed original settings](trec_retrieval_state.json).
+The density experiment is now eligible to run on these fixed rankings. A successful reproduction alone is not a completed density result.

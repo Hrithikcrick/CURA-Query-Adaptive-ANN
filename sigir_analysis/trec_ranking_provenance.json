@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "original_corpus_document_count": 1000629,
+  "corpus_docids_path": "msmarco_large/msmarco_1000000_q1000/cache/docids.txt",
+  "corpus_docids_sha256": "544952aff441982efdc0970578c825f523865f8d0164e08051e0333a41dd0351",
+  "exact_rankings_sha256": "af12e06cd4c2216f6d6e1f9ce35f0747e10d0e693a49090fafd03b59176c7d74",
+  "hnsw_rankings_sha256": "88ecf52072c28faadff12f15da7e1140d6e96c47436fce1a0cc659cfab57f943",
+  "original_corpus_identity_confirmed": true,
+  "original_run_provenance": "Recovered directly from Downloads/IR_PROJECT.zip, IR_PROJECT/PILOT. Seven original source/config/query/sweep files match the current archived run byte-for-byte. The original 1,000,629-row document map translates exact_top100_indices and stability_top10_searches indices. Source08 defines cache axes as sorted archived ef values and unchanged queries.csv row order. No rankings were generated or reordered. Original HNSW scores were not cached; score evidence is reconstructed by inner products of original cached vectors, without changing ranks. FULL per-query reproduction is a separate mandatory gate.",
+  "archive": {
+    "path": "~/Downloads/IR_PROJECT.zip",
+    "bytes": 3780386484,
+    "sha256": "0d5d0e1e712bd555bd9171d6f4a84884eb9a62b2d230706caae5b180265ec21a"
+  },
+  "archive_source_byte_checks": {
+    "04_msmarco_large_pilot.py": "8f600fee772b6326dbac226f7bc85e7fb7c4f7dcdae90a09952059259137b12e",
+    "05_research_grade_validation.py": "2ee6db81386d6f1c811a87a428ddbc0c0a8f12b2df645fcd319993b3e14a576c",
+    "08_patience_style_baseline.py": "a2d85f273a92c81c393e8d1a1b543c0c58fa4a22ddae2e7839c783441496e4a4",
+    "msmarco_large/msmarco_1000000_q1000/results/queries.csv": "acd8fbe2ac804548ca79ec096d825d9ef502b42e5556796fcf1c7662eaeab4dc",
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv": "8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe",
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/experiment_protocol.json": "4508fdeb2b3a6521bc89cf0f7f0059d6c47efebf7c47c82ff56b2d717d3ce7d1",
+    "msmarco_large/msmarco_1000000_q1000/cura_controller/cura_protocol.json": "8914e88ce363bc72e32327340d6b1b37be57ef752e5c50a753a2364a9f432905"
+  },
+  "archive_member_checks": {
+    "04_msmarco_large_pilot.py": {
+      "bytes": 65498,
+      "sha256": "8f600fee772b6326dbac226f7bc85e7fb7c4f7dcdae90a09952059259137b12e",
+      "zip_crc32": "08373dc7"
+    },
+    "05_research_grade_validation.py": {
+      "bytes": 64141,
+      "sha256": "2ee6db81386d6f1c811a87a428ddbc0c0a8f12b2df645fcd319993b3e14a576c",
+      "zip_crc32": "08bc3c19"
+    },
+    "08_patience_style_baseline.py": {
+      "bytes": 27608,
+      "sha256": "a2d85f273a92c81c393e8d1a1b543c0c58fa4a22ddae2e7839c783441496e4a4",
+      "zip_crc32": "9f2be293"
+    },
+    "msmarco_large/msmarco_1000000_q1000/results/queries.csv": {
+      "bytes": 76009,
+      "sha256": "acd8fbe2ac804548ca79ec096d825d9ef502b42e5556796fcf1c7662eaeab4dc",
+      "zip_crc32": "fb269a40"
+    },
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv": {
+      "bytes": 1720199,
+      "sha256": "8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe",
+      "zip_crc32": "0d2df523"
+    },
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/experiment_protocol.json": {
+      "bytes": 916,
+      "sha256": "4508fdeb2b3a6521bc89cf0f7f0059d6c47efebf7c47c82ff56b2d717d3ce7d1",
+      "zip_crc32": "1806f99e"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cura_controller/cura_protocol.json": {
+      "bytes": 1059,
+      "sha256": "8914e88ce363bc72e32327340d6b1b37be57ef752e5c50a753a2364a9f432905",
+      "zip_crc32": "9b36ad27"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/corpus_meta.json": {
+      "bytes": 150,
+      "sha256": "facc8b32beb12de79af57286174901510083a950413708cc9afb823dc2e3ad84",
+      "zip_crc32": "32dce9fb"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/docids.txt": {
+      "bytes": 8879633,
+      "sha256": "544952aff441982efdc0970578c825f523865f8d0164e08051e0333a41dd0351",
+      "zip_crc32": "22eb4c7d"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/exact_top100_indices.npy": {
+      "bytes": 834528,
+      "sha256": "db5c22374dc1b0fa225c840258f4543e3853d6baa50e62c92ef9a277903d9fca",
+      "zip_crc32": "645b960b"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/exact_top100_scores.npy": {
+      "bytes": 417328,
+      "sha256": "ff115803a4542451da918c18e3a4982c6a76db524799bf8491dffa5516182ff9",
+      "zip_crc32": "676c9003"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/query_embeddings.npy": {
+      "bytes": 1602176,
+      "sha256": "aa81a1c2a2e3e8fd15cc78a4766727fd4cbd78f569060b7fe2bce27d5a30995b",
+      "zip_crc32": "4905dbf9"
+    },
+    "msmarco_large/msmarco_1000000_q1000/patience_style_baseline/stability_top10_searches.npz": {
+      "bytes": 343967,
+      "sha256": "dc29e98c9ecf897756814ba4f7c9eac30cebef8baec5b531191c1fd2d5a9083e",
+      "zip_crc32": "411e4704"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/corpus_embeddings.f32": {
+      "bytes": 1536966144,
+      "sha256": "fd294df146bddd574da3588479fbe57668e1d26d3245448a751e381fb3f77de7",
+      "zip_crc32": "a2357358",
+      "squared_norm_min": 0.9999995231628418,
+      "squared_norm_max": 1.0000004768371582
+    }
+  },
+  "exact_status": "RECOVERED",
+  "hnsw_status": "RECOVERED",
+  "exact_depth": 100,
+  "hnsw_depth": 10,
+  "cache_axis_order": {
+    "efSearch": [
+      10,
+      16,
+      24,
+      32,
+      48,
+      64,
+      96,
+      128,
+      192,
+      256
+    ],
+    "query_rows": "original queries.csv row order"
+  },
+  "recovered_score_evidence_max_difference_vs_exact_cache": 3.5762786865234375e-07,
+  "independent_historical_corpus_map_checksum_available": false,
+  "provenance_limitation": "Archive lineage, matching original sources, supplied map checksum and subsequent FULL consistency support identity; there was no separately logged historical map checksum or encoder revision.",
+  "retrieval_executed": false,
+  "embeddings_regenerated": false,
+  "index_rebuilt": false,
+  "controller_retrained": false
+}
