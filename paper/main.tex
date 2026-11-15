@@ -107,13 +107,15 @@
 \begin{minipage}{0.97\textwidth}
 \small
 \textbf{Abstract.}
+\textbf{Research update (15 November 2026).} This course report's ef96 comparison does not establish an adaptive advantage. A post-hoc frontier analysis finds fixed ef48 matches CURA's 2/200 observed violations using 28.29\% less distance work. Exact-positive queries contribute 92.59\% of CURA's original reduction versus ef96. Original TREC qrels are now recovered and 50 judgment seeds per stochastic condition are prepared. Same-ranking evaluation remains blocked by missing ranked document IDs and original recovery caches; zero ranking seeds were evaluated. The active research draft is \texttt{sigir\_short.tex}; the revised question concerns judgment completeness and risk calibration.
+
 Approximate nearest neighbor (ANN) retrieval systems commonly allocate search effort according to ANN-centric criteria such as neighbor recall. However, recovering the exact nearest-neighbor set may require more computation than is necessary to preserve downstream information-retrieval quality.
 
 We investigate this mismatch for HNSW retrieval and introduce \textbf{\cura{} (Calibrated Utility-Risk Allocation)}, a query-specific search-budget controller that predicts the probability that a candidate search budget will cause downstream nDCG@10 degradation greater than a predefined tolerance. Rather than optimizing exact-neighbor recovery directly, \cura{} selects the smallest search budget whose calibrated probability of unacceptable downstream degradation is sufficiently low.
 
 We evaluate the method on a controlled million-scale MS MARCO experiment containing \textbf{1,000,629 passages}. MS MARCO development queries are partitioned into query-disjoint training, calibration, and held-out test sets, while TREC-DL-2019 is reserved for out-of-distribution evaluation.
 
-On held-out MS MARCO, \cura{}-Full maintains a \textbf{1.0\% downstream utility violation rate under a 5\% risk target} while reducing realized HNSW distance computations from \textbf{3431.77 to 2727.97 per query}, corresponding to a \textbf{20.5\% reduction relative to fixed-budget retrieval}. The paired mean reduction is \textbf{703.81 distance computations/query}, with a bootstrap 95\% confidence interval of \textbf{[401.43, 984.11]} and paired-randomization \textbf{$p\approx5\times10^{-5}$}.
+On held-out MS MARCO, \cura{}-Full records an \textbf{observed 1.0\% downstream utility violation rate} against a \textbf{nominal 5\% risk target} while reducing realized HNSW distance computations from \textbf{3431.77 to 2727.97 per query}, corresponding to a \textbf{20.5\% reduction relative to calibration-selected fixed ef96}. The paired mean reduction is \textbf{703.81 distance computations/query}, with a bootstrap 95\% confidence interval of \textbf{[401.43, 984.11]} and paired-randomization \textbf{$p\approx5\times10^{-5}$}. This original comparison must be read alongside the cheaper fixed-frontier result above.
 
 Compared with an ANN-risk adaptive controller, \cura{} requires approximately \textbf{30.6\% less realized search work}. Ablations show that cheap partial-search-state features are essential: a query-only variant requires substantially more computation. A second BEIR FiQA financial-domain experiment finds that a reduced-feature controller fitted separately on FiQA requires 75.3\% more work than calibrated fixed HNSW despite identical observed violations. Separately, 50 actual MS MARCO IR-unsafe query--budget cases are analyzed with a structured model-assisted taxonomy; eight initially uncertain cases receive a second model-assisted resolution pass. These annotations are not presented as independent human review.
 
@@ -186,7 +188,7 @@ The experimental design follows four principles.
 \subsection{Hypothesis}
 \begin{tcolorbox}[colback=CuraLight,colframe=CuraGreen,boxrule=0.8pt,arc=3pt,left=5pt,right=5pt,top=4pt,bottom=4pt]
 \small
-\textbf{H1.} At a matched downstream-quality risk target, a query-specific policy using query and partial-search-state features can require significantly fewer HNSW distance computations than globally fixed search.
+\textbf{Original H1, not established against the observed fixed frontier.} At a matched downstream-quality risk target, a query-specific policy using query and partial-search-state features might require fewer HNSW distance computations than globally fixed search. The new fixed-frontier diagnostic instead favors a cheap fixed budget for this implementation.
 \end{tcolorbox}
 
 The backoff hypothesis is that even if a learned adaptive controller does not yield consistent savings, ANN-safe and downstream-IR-safe search budgets will exhibit systematic query-dependent differences that can be explained by query hardness and evaluation regime.
@@ -202,7 +204,7 @@ P(\deltandcg>\delta\mid q,S,e)
 instead of directly predicting ANN recall.
 \item \textbf{Leakage-safe million-scale evaluation.} Training, calibration, and testing are separated by query, with TREC-DL-2019 held out for OOD evaluation.
 \item \textbf{Substantive ablations.} We evaluate fixed search, ANN-risk adaptation, query-only \cura{}, full \cura{}, a Patience-inspired stability baseline, and oracle references.
-\item \textbf{Statistical and qualitative validation.} We report paired randomization tests, bootstrap confidence intervals, probability calibration, hardness analysis, and a 50-case evidence worksheet awaiting complete human verification.
+\item \textbf{Statistical and qualitative validation.} We report paired randomization tests, bootstrap confidence intervals, probability calibration, hardness analysis, and a structured model-assisted taxonomy of 50 actual budget-sweep failures, including eight automatic second-review resolutions.
 \end{enumerate}
 
 % ======================================================================
@@ -442,7 +444,7 @@ MS MARCO development queries are divided by query ID into 60\% training, 20\% ca
 \end{figure*}
 
 \subsection{Metrics}
-Effectiveness measures include ANN Recall@10, nDCG@10, Recall@100, MRR@10, and downstream violation rate. Efficiency measures include HNSW distance computations, mean latency, p95 latency, selected \ef{}, and adaptive-controller overhead. Calibration metrics include Brier score, Expected Calibration Error (ECE), and ROC-AUC.
+Effectiveness measures include ANN Recall@10, nDCG@10, Recall@100, MRR@10, and downstream violation rate. Efficiency measures include HNSW distance computations, mean latency, p95 latency, selected \ef{}, and probe/repeated-search overhead; classifier inference is not timed. Calibration metrics include Brier score, Expected Calibration Error (ECE), and ROC-AUC.
 
 \subsection{Realized Adaptive Cost}
 Adaptive systems require additional computation to decide when to stop. Therefore our primary cost measure is \textbf{realized HNSW distance computations}. For \cura{}-Full this includes the cheap $\ef=10$ probe and the selected search when a larger budget is required. For the stability baseline, realized work includes every search executed along the increasing budget ladder.
@@ -482,7 +484,7 @@ The central question is whether the deployable \cura{} controller can convert or
 
 \begin{tcolorbox}[colback=CuraLight,colframe=CuraGreen,title=\textbf{Primary Held-Out Result},fonttitle=\small,coltitle=CuraDark,boxrule=0.9pt,arc=3pt,left=5pt,right=5pt,top=4pt,bottom=4pt]
 \small
-On held-out MS MARCO, \textbf{\cura{}-Full} maintains a \textbf{1.0\% downstream violation rate} under the predefined \textbf{5\% risk SLA}, while reducing realized HNSW work from
+On held-out MS MARCO, \textbf{\cura{}-Full} maintains a \textbf{1.0\% downstream violation rate} under the predefined \textbf{nominal 5\% risk target}, while reducing realized HNSW work from
 \[
 3431.77\quad\longrightarrow\quad2727.97
 \]
@@ -555,6 +557,27 @@ The saved MS MARCO run improves mean latency from 0.8329~ms for Fixed-IR to 0.69
 \label{fig:risktradeoff}
 \end{figure*}
 
+% BEGIN CURA FINAL MEAN AND TAIL METRICS
+\begin{table*}[!t]
+\centering
+\caption{Mean and tail metrics on held-out MS MARCO. Latency uses saved per-query search estimates; p95 is across those estimates.}
+\label{tab:mean_tail_metrics}
+\resizebox{0.96\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Method & Mean ANN Recall@10 & Mean nDCG@10 & Mean work & p95 work & Mean latency (ms) & p95 latency (ms) \\
+\midrule
+Fixed-IR & 0.9840 & 0.625260 & 3,431.770 & 4,485.10 & 0.832854 & 1.128008 \\
+CURA-Full & 0.9595 & 0.623363 & 2,727.965 & 8,532.65 & 0.690738 & 1.985027 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+\paragraph{Mean--tail tradeoff and timing scope.}
+Although average search latency decreases, CURA-Full's p95 rises from 1.128008 to 1.985027 ms (75.98\% higher). Its p95 search work is also greater. The latency values combine a saved probe timing with the selected budget's mean search timing when a second search is needed. The p95 is a quantile across these per-query estimates, not an end-to-end request-latency percentile. Feature-processing and classifier-inference time are not included.
+% END CURA FINAL MEAN AND TAIL METRICS
+
 \subsection{CURA versus Fixed Search}
 The fixed baseline requires $3431.770$ distance computations per query, while \cura{}-Full requires $2727.965$. The relative reduction is
 \[
@@ -575,6 +598,35 @@ The query-only \cura{} ablation requires $7130.760$ distance computations, compa
 \boxed{61.74\%}
 \]
 less work than the query-only model.
+
+% BEGIN CURA COURSE SCORE GAP BASELINE
+\subsection{Cached Score-Gap Budget Baseline}
+We add a simple two-stage score-gap policy using only the observed approximate top-1 minus top-10 score spread from the $\ef=10$ probe. Threshold candidates are training-only score quantiles; the fallback budget is drawn from the unchanged candidate grid. We require pointwise training and calibration Wilson upper bounds below the nominal 5\% target and minimize calibration realized work. The frozen threshold is $0.266384125$ and fallback $\ef=96$. Test and OOD outcomes are not used for selection. Reusing calibration for candidate selection limits the interpretation of these pointwise intervals; no selection-adjusted risk guarantee is claimed.
+
+This is a cached probe-then-budget simulation, not an implementation of in-traversal early termination. Stopping charges the saved probe work and timing; otherwise the probe and selected-budget search are both charged. No continuation reuse is assumed. The policy never uses exact-reference score gaps. Effectiveness is looked up at the selected cached budget; separate probe document IDs were not saved, so correspondence to the deterministic same-index ef10 result is assumed. Recall@100 is unavailable for this compatible top-10 task.
+
+\begin{table*}[!t]
+\centering
+\caption{Cached score-gap policy compared within the same 200 MS MARCO test and 43 TREC OOD queries. Timings are saved search estimates, not end-to-end request latency.}
+\label{tab:score_gap_budget}
+\resizebox{0.99\textwidth}{!}{%
+\begin{tabular}{llrrrrrr}
+\toprule
+Cohort & Method & ANN Recall@10 & nDCG@10 & IR violations & Mean work & Mean ms & p95 ms \\
+\midrule
+MS MARCO & Fixed-IR & 0.9840 & 0.625260 & 0.50\% & 3431.770 & 0.832854 & 1.128008 \\
+MS MARCO & Score-Gap-Budget & 0.9600 & 0.625260 & 0.50\% & 3266.290 & 0.807623 & 1.317973 \\
+MS MARCO & CURA-Full & 0.9595 & 0.623363 & 1.00\% & 2727.965 & 0.690738 & 1.985027 \\
+TREC OOD & Fixed-IR & 1.0000 & 0.630980 & 0.00\% & 2721.884 & 0.682038 & 0.953098 \\
+TREC OOD & Score-Gap-Budget & 0.9977 & 0.627128 & 2.33\% & 3133.442 & 0.763193 & 1.102646 \\
+TREC OOD & CURA-Full & 0.9930 & 0.627128 & 2.33\% & 2384.581 & 0.581502 & 1.682058 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+On the held-out test set, \cura{} uses 16.48\% less work than the score-gap baseline. The paired mean difference is 538.325 computations/query, with bootstrap 95\% CI [210.230, 852.786] and paired-randomization $p=0.001100$. These new lightweight tests use 5000 query bootstrap replicates (seed 42) and 20000 paired sign permutations (seed 1042). However, the score-gap policy has lower observed IR violations (0.50\% versus 1.00\%) and lower p95 search latency (1.317973 versus 1.985027 ms). Thus the work advantage coexists with safety and tail trade-offs; it is not uniform superiority.
+% END CURA COURSE SCORE GAP BASELINE
 
 \subsection{Patience-Inspired Stability Baseline}
 The stability baseline searches with progressively increasing budgets and stops once the top-10 result set remains stable for a calibrated patience window. Calibration selects stability threshold $1.0$ and patience $3$. It achieves a downstream violation rate of $0.5\%$ but requires $8413.945$ realized distance computations because several searches are executed for each query. \cura{} uses approximately
@@ -689,11 +741,48 @@ Simplified CURA-FiQA & 47.74 & 3.05\% & 0.21787 & 1922.87 & 0.38564 & 7.59\%\\
 \paragraph{Overhead diagnosis.} The probe contributes about 451.32 computations per query, 112/131 queries require a second search, and 51/131 receive budgets greater than the fixed \ef$=32$. Feature weakness, conservative calibration and repeated graph traversal are plausible but not causally isolated explanations. The evaluated held-out split is kept frozen.
 
 
-\section{Failure Evidence and Manual-Review Status}
+\section{Failure Evidence and Annotation Provenance}
 \label{sec:manual}
+% BEGIN CURA FINAL FINAL CURA DIAGNOSTIC HEADING
+\subsection{Final-CURA Diagnostic Review}
+% END CURA FINAL FINAL CURA DIAGNOSTIC HEADING
+
 The earlier MS MARCO 50-case diagnostic table contains only three actual downstream violations, so it does \emph{not} establish a human-reviewed taxonomy of 50 genuine CURA policy failures.
 
-Separately, we analyze 50 \emph{actual IR-unsafe query--budget cases} from the MS MARCO HNSW budget sweep using a structured model-assisted taxonomy. Automatic structural validation passes for all 50 rows, and eight initially uncertain cases are resolved in a second model-assisted pass using predefined numerical and semantic decision rules. This analysis is \emph{not} independent human annotation; we therefore do not describe it as 50 manually reviewed failures. The cases are failures of particular query--budget pairs in the sweep, not 50 failures of the final deployed CURA operating policy.
+% BEGIN CURA FINAL ACTUAL FAILURE TAXONOMY
+\subsection{Actual Budget-Sweep Failures: Model-Assisted Review}
+We analyzed 50 actual IR-unsafe query-budget cases using a structured model-assisted taxonomy. Cases initially flagged as uncertain were resolved through a second evidence-based model-assisted review using predefined numerical and semantic decision rules.
+
+These are failures of query--budget pairs in the sweep, not 50 failures of the final deployed CURA operating policy. All 50 cases were selected from the existing HNSW sweep, each with nDCG@10 loss greater than 0.025. The eight initially uncertain cases have second-review auto-resolution provenance; the other 42 retain their initial model labels. All 50 annotations remain model assisted and human verification is not claimed. Earlier manual fields remain preserved without additional provenance promotion.
+
+The selected sample includes 28 training, 8 calibration, 6 held-out test, and 8 TREC queries. It contains 16/50 (32\%) cases with ANN Recall@10 $\geq0.90$, 34 with lower recall, and 19/50 with exact rank-10/11 score gap $\leq0.001$.
+
+\begin{table}[!t]
+\centering
+\caption{Primary labels for 50 selected actual budget-sweep failures. All labels are model assisted; eight initially uncertain cases received automatic second review.}
+\label{tab:actual_budget_failure_taxonomy}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrr}
+\toprule
+Primary label & Cases & Share \\
+\midrule
+Near-tie boundary (provisional) & 17 & 34.00\% \\
+High ANN recall, IR failure & 16 & 32.00\% \\
+Low ANN recall, IR failure & 9 & 18.00\% \\
+Specialized entity/term & 7 & 14.00\% \\
+Ambiguous query & 1 & 2.00\% \\
+Long or complex query & 0 & 0.00\% \\
+Distribution shift & 0 & 0.00\% \\
+Other & 0 & 0.00\% \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+Incomplete ANN recovery is common, while substantial downstream loss also coexists with high neighbor overlap. Selection deliberately enriches high-recall, TREC, small-gap, and severe failures; the shares are not population failure prevalence or final CURA-policy failure rates. A small rank-10/11 margin suggests possible cutoff sensitivity but cannot identify the missed relevant documents or establish a causal mechanism. Semantic labels describe plausible query properties rather than measured entity rarity or retrieval causation.
+
+\subsection{Separate FiQA Review Evidence}
+% END CURA FINAL ACTUAL FAILURE TAXONOMY
 
 In FiQA, 65 distinct queries exhibit an IR-unsafe outcome under fixed HNSW at \ef$=10$. We prepare a separate 50-query review worksheet, each case including relevant passages, exact-search passages, approximate top-ranked passages and the measured nDCG loss. All 50 reconstructed results match previously saved scores. Of these selected cases, 44 have HNSW nDCG@10 equal to zero and six have degraded but nonzero nDCG@10.
 
@@ -716,17 +805,22 @@ Human reviews remaining & 49\\
 \end{tabular}
 \end{table}
 
-The existing assistant-prepared notes are evidence \emph{drafts}, not verified human judgments. A reviewer must inspect the actual passages, confirm or change the failure category and document supporting IDs/ranks and a plausible remedy. The full 50-case human-reviewed taxonomy remains pending before the final course submission.
+The existing assistant-prepared notes are evidence \emph{drafts}, not verified human judgments. A reviewer must inspect the actual passages, confirm or change the failure category and document supporting IDs/ranks and a plausible remedy. The separate FiQA worksheet remains incompletely human reviewed; it is not substituted for the model-assisted MS MARCO/TREC analysis above.
 
+
+% BEGIN CURA COURSE MANUAL REVIEW STATUS
+\paragraph{Current literal manual-review status.}
+The evidence-rich FiQA checkpoint contains 1/50 completed human decisions with matching decision-log evidence; 49 cases remain. Model suggestions and the separate model-assisted MS MARCO/TREC taxonomy do not satisfy the literal 50-manual-failure requirement. We do not report a completed FiQA human taxonomy while this checkpoint is incomplete.
+% END CURA COURSE MANUAL REVIEW STATUS
 
 \section{Discussion}
 \label{sec:discussion}
 \subsection{What Did the Project Establish?}
 The initial research question was whether different queries require different ANN budgets. The results support a more precise conclusion:
 \begin{quote}
-\textbf{On the controlled MS MARCO queries, adaptive budgets can reduce computation for an observed downstream-risk tolerance; that benefit need not transfer to a separately fitted controller or another domain.}
+\textbf{On the controlled MS MARCO queries, CURA reduces work versus calibration-selected ef96, but fixed ef48 uses 28.29\% less work at the same observed test risk. No adaptive advantage is demonstrated on the observed frontier.}
 \end{quote}
-This formulation is stronger than merely predicting query difficulty because it connects search effort directly to an application-level quality constraint.
+The revised contribution examines metric-dependent oracle headroom, judgment completeness and baseline calibration, while retaining this negative adaptive result. The risk-matched setting is a post-hoc diagnostic rather than a prospectively calibrated policy.
 
 \subsection{Why Query-Only Allocation Is Insufficient}
 The query-only variant is extremely conservative. It achieves no observed downstream violations but requires $7130.76$ distance computations per query. The full model reduces this to $2727.97$. Thus the state of the actual search process is much more informative than query semantics alone.
@@ -738,7 +832,7 @@ ANN-Risk chooses a lower mean \ef{} than fixed search: $84.46<96$. Nevertheless,
 Our simpler FiQA controller is slower than fixed HNSW, underscoring the importance of informative partial-search features and avoiding a second graph search after the probe. Continuation-based search that reuses its frontier remains future work, not a measured gain.
 
 \subsection{Remaining Oracle Headroom}
-The IR oracle requires $779.835$ mean distance computations, while \cura{}-Full requires $2727.965$. The difference is approximately $1948.13$ distance computations per query. Therefore the controller captures meaningful efficiency but still leaves substantial downstream-safe headroom for improved risk estimation and single-pass early termination.
+The IR oracle requires $779.835$ mean distance computations, while \cura{}-Full requires $2727.965$. This oracle headroom does not establish a learned adaptive advantage: fixed ef48 uses only $1956.345$ at CURA's observed test risk. First-safe oracle budgets are grid-dependent, and saved maximum-grid fallback values are not certified safe minima. Same-ranking full-versus-thinned judgments remain necessary to evaluate how much headroom reflects judgment sparsity.
 
 % ======================================================================
 % 13 LIMITATIONS
@@ -760,6 +854,11 @@ The IR oracle requires $779.835$ mean distance computations, while \cura{}-Full 
 \item CURA-Full improves recorded mean latency but has worse p95 latency than Fixed-IR in the saved MS MARCO run.
 \end{itemize}
 \end{tcolorbox}
+
+% BEGIN CURA FINAL LIMITATIONS
+\paragraph{Tail latency and annotation provenance.}
+The average search-work gain coexists with 75.98\% higher p95 search-latency estimates. The recorded timings exclude controller inference and do not establish end-to-end tail performance. The actual budget-sweep taxonomy has 50 model-assisted labels, including eight automatically resolved uncertain cases; this workflow provides no independent human verification. Neither the earlier diagnostic selection nor this enriched failure sample estimates a deployed policy's population failure rate.
+% END CURA FINAL LIMITATIONS
 
 \paragraph{Controlled corpus.}
 The final primary experiment uses approximately one million passages rather than the complete 8.8M MS MARCO collection.
@@ -793,19 +892,19 @@ We then introduce \cura{}, a calibrated utility-risk controller that predicts th
 
 On held-out million-scale MS MARCO, \cura{}-Full:
 \begin{itemize}
-\item maintains only \textbf{1.0\% downstream violations} under a \textbf{5\% risk SLA};
-\item reduces realized search work by \textbf{20.5\% relative to fixed HNSW};
+\item maintains only \textbf{1.0\% downstream violations} under a \textbf{nominal 5\% risk target};
+\item reduces realized search work by \textbf{20.5\% relative to calibration-selected fixed ef96};
 \item reduces work by \textbf{30.6\% relative to ANN-risk adaptation};
 \item uses \textbf{61.7\% less work than query-only CURA};
 \item uses \textbf{67.6\% less realized work than the Patience-inspired stability baseline};
 \item records 2.33\% observed violations and 12.39\% lower work on the 43-query TREC-DL-2019 query-shift set.
 \end{itemize}
 
-The separately fitted reduced-feature FiQA controller instead requires \textbf{75.27\% more} work than fixed HNSW for the same observed violation rate. We therefore conclude that preserving downstream utility is distinct from exact-neighbor recovery, but success of practical adaptive policies depends on domain, features and probe overhead.
+The new post-hoc frontier qualifies these historical comparisons: fixed ef48 matches CURA's 1\% MS MARCO observed risk with \textbf{28.29\% less work}; fixed ef32 matches CURA's 1/43 TREC violations with \textbf{53.48\% less work}. These settings were diagnosed on test outcomes, not selected for deployment. Exact-positive queries explain most savings versus ef96, but no advantage over the observed fixed frontier is demonstrated. The separately fitted reduced-feature FiQA controller also requires \textbf{75.27\% more} work than its fixed baseline. Original TREC qrels are recovered and 50 judgment seeds per stochastic condition are prepared, but same-ranking evaluation is blocked by missing rankings and original recovery caches. Judgment completeness remains an open explanation, not a completed result.
 
 \begin{tcolorbox}[colback=CuraLight,colframe=CuraGreen,boxrule=0.8pt,arc=3pt,left=5pt,right=5pt,top=4pt,bottom=4pt]
 \centering\small
-\textbf{Future direction: adaptive ANN computation under calibrated downstream-risk constraints across multiple index families, encoders, and retrieval domains.}
+\textbf{Revised direction: when does utility-aware ANN stopping save work after accounting for relevance-judgment completeness and the full fixed-budget risk/work frontier?}
 \end{tcolorbox}
 
 % ======================================================================
@@ -837,7 +936,8 @@ Classical system baseline & Fixed HNSW & 3431.77 realized work \\
 Adaptive ANN baseline & ANN-Risk & 3930.62 realized work \\
 Early-exit baseline & Patience-inspired stability & 8413.95 realized work \\
 Statistics & Bootstrap + paired randomization & 95\% CIs and query-level $p$ values \\
-Manual case preparation & 50 low-budget FiQA failures & 1/50 independently reviewed \\
+Actual budget-sweep taxonomy & 50 unsafe cases & 50 model assisted; 8 auto resolutions \\
+FiQA manual case preparation & 50 low-budget failures & 1/50 recorded human reviews \\
 Reproducibility & Scripts and saved artifacts & Fresh full rerun pending \\
 \bottomrule
 \end{tabular}%
@@ -866,7 +966,8 @@ Repeated-search cost included & Yes \\
 Exact reference cached & Yes \\
 Bootstrap confidence intervals & Yes \\
 Paired randomization tests & Yes \\
-Manual 50-case human review & 1/50 pending \\
+Actual failure annotations & 50 model assisted; 0 newly human verified \\
+FiQA human review & 1 complete; 49 pending \\
 OOD evaluation & Yes \\
 Official DARTH reproduction & No \\
 Official Patience reproduction & No \\
@@ -878,6 +979,14 @@ Full 8.8M run & No \\
 
 \section{Generative-AI Assistance Statement}
 Generative-AI tools helped with code drafting and debugging, experiment organization, literature navigation, document editing, and preliminary failure-analysis notes. Numerical results are transcribed from recorded experimental output rather than generated by the assistant; writing this manuscript did not run new training. AI-prepared case notes must not be reported as independent human judgments. The author is responsible for verifying the final experimental claims, compliance and bibliography.
+
+% BEGIN CURA COURSE AI AND HUMAN DECISIONS
+The added score-gap baseline and query-paired statistics were computed by assistant-written code from existing search caches; no retrieval experiment was rerun. The separate FiQA manual checkpoint has 1/50 genuine completed decisions supported by the saved human-decision log. Assistant-proposed labels alone do not count toward manual completion.
+% END CURA COURSE AI AND HUMAN DECISIONS
+
+% BEGIN CURA FINAL AI ANNOTATION PROVENANCE
+The 50-case actual budget-sweep taxonomy was produced with model assistance. Eight initially uncertain cases were resolved through a second evidence-based model-assisted review using predefined numerical and semantic rules. All 50 final annotations remain model assisted; none is newly certified as human verified. Generating this analysis and updating the manuscript used existing saved outputs without rerunning retrieval experiments. Earlier manual markers were preserved without independently establishing their provenance.
+% END CURA FINAL AI ANNOTATION PROVENANCE
 
 % ======================================================================
 % REFERENCES

@@ -1,0 +1,10 @@
+{
+  "density_outcome": "UNRESOLVED",
+  "outcome_A_supported": null,
+  "outcome_B_supported": null,
+  "outcome_C_supported": null,
+  "reason": "No same-ranking density observations; none of A/B/C can be selected",
+  "risk_matched_fixed_beats_current_cura": true,
+  "post_hoc_diagnostic": true,
+  "adaptive_advantage_over_observed_fixed_frontier_demonstrated": false
+}

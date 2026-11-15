@@ -1,0 +1,8 @@
+{
+  "exact_ndcg_stratified_results.csv": "280a0007678f563db48402ee776e7f72647e245bc04d4a5d1a7c107369d57ec0",
+  "exact_ndcg_stratified_per_query.csv": "4dd20048a2f1ce81b54815cfc2182c09a252de09c62a36b633cae804647438d7",
+  "oracle_budget_gap_analysis.csv": "1bc57ab2c17f7b82943d65bcfc2ed9d52e01b720fc053caa6bac6da1b3fc60c5",
+  "oracle_budget_gap_per_query.csv": "427de4c593c563f74fc8ec87ac4086e8ed08cb651229e4c28dec1a469827b35e",
+  "fixed_risk_work_frontier.csv": "a672286895299a2889632556be7d3c2226e71035c0917e5dad927b12c4c6f5fd",
+  "statistical_tests_saved.csv": "04db13f5fe9acef73446ba7ebd2cd4692916143e80f6fdcf3bea8aa2ecdb99dc"
+}

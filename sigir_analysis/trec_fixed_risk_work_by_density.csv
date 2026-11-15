@@ -1,0 +1,1 @@
+condition,seed,efSearch,query_count,IR_violations,IR_violation_rate,wilson95_low,wilson95_upper,mean_nDCG_at_10,mean_nDCG_loss,ANN_Recall_at_10,mean_distance_computations,mean_latency_ms,p95_latency_ms,ranking_sha256

@@ -1,0 +1,17 @@
+# Revised SIGIR research direction
+
+**Research question:** When do downstream-utility-aware ANN search budgets provide genuine efficiency gains, and how are those gains affected by relevance-judgment completeness and risk calibration?
+
+**Supported finding:** CURA beats calibration-selected ef96 in recorded MS MARCO work; post-hoc fixed ef48 matches its observed 2/200 violations using 28.29% less work. This implementation has not demonstrated an advantage over the observed fixed risk/work frontier. ef48 remains a diagnostic, not a prospectively calibrated replacement.
+
+1. **Metric-dependent oracle opportunity:** jointly feasible exact-positive MS MARCO queries retain an ANN-minus-IR gap of 7.611 ef (95% CI [5.933, 9.387]). Preserve infeasible-grid flags and fallback sensitivity.
+2. **Exact-zero explanation:** the 159 positive-reference test queries contribute 92.59% of the original saving versus ef96. This rejects a purely zero-reference explanation, not all sparse-judgment effects.
+3. **Judgment completeness remains pending:** original qrels are recovered, with 9,260 judgments and exact matches to saved query IDs and positive counts. FULL plus 50 paired seeds for each stochastic condition are prepared. Exact/HNSW rankings and recovery caches remain absent; **zero ranking seeds evaluated**. No density effect, CI or plot is claimed.
+4. **Fixed frontier and overhead:** retain all ten fixed settings and distinguish calibration selection from retrospective matching. On TREC, fixed ef32 also matches CURA's observed 1/43 violations with 53.48% less work. Charge probe work. This is two-stage budget allocation, not integrated traversal exit.
+5. **When adaptivity is justified:** demonstrate an independently validated full-cost improvement over a fixed risk/work frontier. That condition has not been shown here. The contribution is an analysis of boundaries, including negative results and a clearly blocked completeness experiment.
+
+Positive-only thinning tests missing positive judgments under the original graded nDCG protocol; FULL is pooled available judgments. Recompute IDCG, preserve unjudged=0, freeze rankings and CURA choices, and require ANN Recall invariance. Seed uncertainty is conditional on the 43 queries; paired query/seed inference must avoid pseudo-replication.
+
+The overall statistical analysis remains INCOMPLETE: saved-data primary comparisons P1-P4 are complete, while P5/P6 (FULL versus thinned gap and exact-zero fraction) have no estimable effects or CIs. A, B and C cannot be selected; judgment sparsity's effect is UNRESOLVED. Full-study validation is FAIL because missing ranking-based requirements cannot be checked, even though available-input and saved-analysis checks pass. The short-paper source remains unchanged until the evidence gate opens. No commit or push was performed.
+
+Read the [main research report](../reports/SIGIR_RESEARCH_ANALYSIS.md), [analysis index](../sigir_analysis/README.md), [qrels recovery](../sigir_analysis/qrels_recovery.json), [exhaustive audit](../sigir_analysis/local_retrieval_audit.json), [density protocol/status](../sigir_analysis/trec_judgment_density_status.md) and [short-paper source](sigir_short.tex). The historical course manuscript discloses the new findings. No retrieval, embedding generation, index construction or retraining was performed for this continuation.

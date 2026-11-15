@@ -1,0 +1,7 @@
+{
+  "status": "BLOCKED",
+  "qrels_status": "RECOVERED",
+  "comprehensive_audit": "local_retrieval_audit.json",
+  "requirements": "ranking_recovery_requirements.csv",
+  "details": "ranking_recovery_status.json"
+}

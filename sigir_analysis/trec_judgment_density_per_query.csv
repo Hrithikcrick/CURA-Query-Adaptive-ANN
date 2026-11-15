@@ -1,0 +1,1 @@
+condition,seed,query_key,query_id,efSearch,exact_nDCG_at_10,HNSW_nDCG_at_10,nDCG_loss,IR_unsafe,ANN_Recall_at_10,min_ANN_safe_ef,min_IR_safe_ef,ANN_safe_found,IR_safe_found,ANN_minus_IR_budget_gap,IR_allows_lower,same_budget,IR_requires_higher,ranking_sha256

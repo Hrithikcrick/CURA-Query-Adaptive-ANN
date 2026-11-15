@@ -1,0 +1,85 @@
+{
+  "checks": "input and saved-data integrity checks passed; requested full-study requirements unmet",
+  "validation_pass": false,
+  "overall_validation": "FAIL",
+  "input_validation_passed": true,
+  "saved_data_validation_passed": true,
+  "density_experiment_completed": false,
+  "required_experiment_checks": {
+    "43_original_queries_retained": "PASS",
+    "full_original_qrels_present": "PASS",
+    "all_10_ef_values_in_archived_scalar_runs": "PASS",
+    "all_10_ef_values_in_verified_rankings": "BLOCKED_MISSING_RANKINGS",
+    "same_rankings_across_qrel_conditions": "NOT_VERIFIED_MISSING_RANKINGS",
+    "ANN_recall_invariant_across_conditions": "NOT_VERIFIED_MISSING_RANKINGS",
+    "50_thinning_seeds_scored_per_condition": "FAIL_ZERO_COMPLETED_EVALUATIONS",
+    "query_ID_and_exact_text_leakage": "PASS",
+    "duplicate_query_budget_rows_in_archived_metrics": "PASS",
+    "no_duplicate_query_rank_doc_rows": "NOT_VERIFIED_MISSING_RANKINGS",
+    "FULL_recomputed_metric_reproduction": "NOT_RUN_MISSING_RANKINGS",
+    "source_hashes_saved_and_unchanged": "PASS",
+    "no_embedding_generation_or_index_rebuild": "PASS",
+    "no_controller_retraining": "PASS",
+    "short_paper_unchanged_until_evidence_complete": "PASS"
+  },
+  "input_hashes_unchanged": 14,
+  "preserved_numerical_CSV_hashes": 6,
+  "qrels_recovery": "passed: original checksum, exact query identities and all positive counts",
+  "original_qrel_rows": 9260,
+  "prepared_qrel_records": 6450,
+  "stochastic_qrel_seeds_prepared_per_condition": 50,
+  "prepared_seed_rows": 151,
+  "ranking_seed_evaluations": 0,
+  "condition_checks": "passed: nested sets, original grades, retained counts, preserved nonpositive judgments and canonical hashes",
+  "ranking_metrics_unavailable_and_blank": true,
+  "ANN_recall_invariance": "not verified: rankings absent",
+  "local_report_links": "passed",
+  "python_compile_check": "passed",
+  "audit_errors": 0,
+  "figures": {
+    "calibration_fixed_frontier.png": [
+      1879,
+      753
+    ],
+    "exact_ndcg_stratified_work.png": [
+      1339,
+      929
+    ],
+    "fixed_risk_work_frontier.png": [
+      2069,
+      846
+    ],
+    "fixed_risk_work_frontier_trec_saved_full.png": [
+      2069,
+      846
+    ],
+    "oracle_budget_gap_analysis.png": [
+      2246,
+      939
+    ]
+  },
+  "unproduced_density_plots": [
+    "judgment_density_vs_budget_gap.png",
+    "judgment_density_vs_zero_ndcg.png",
+    "judgment_density_vs_ir_safe_budget.png",
+    "judgment_density_vs_risk_work.png"
+  ],
+  "short_paper_unchanged": true,
+  "statistical_analysis_complete": false,
+  "completed_primary_tests": [
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "blocked_primary_tests": [
+    "P5",
+    "P6"
+  ],
+  "scientific_judgment_density_outcome": "UNRESOLVED; cannot select A/B/C",
+  "manuscript_compilation": "not run; evidence gate remains closed",
+  "retrieval_executed": false,
+  "embedding_generation": false,
+  "index_construction": false,
+  "controller_retraining": false
+}

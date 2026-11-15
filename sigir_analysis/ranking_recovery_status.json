@@ -1,0 +1,42 @@
+{
+  "status": "BLOCKED",
+  "experiment_completed": false,
+  "input_validation_passed": true,
+  "reason": "Original exact/HNSW ranked document IDs are absent; original query/corpus embeddings, document map and HNSW index are also absent. Qrels have been recovered.",
+  "query_count": 43,
+  "required_ef_values": [
+    10,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192,
+    256
+  ],
+  "qrels_status": "RECOVERED",
+  "qrels_sha256": "8a1f10d550732e4cd91d7fc49846a3784de4040972f583e69285a88f3c5fee92",
+  "qrel_seeds_prepared_per_stochastic_condition": 50,
+  "ranking_seeds_evaluated": 0,
+  "qrel_record_count": 6450,
+  "qrel_checks": "passed: nested sets, preserved grades/nonpositive judgments, original query identities",
+  "retrieval_executed": false,
+  "embedding_generation": false,
+  "index_construction": false,
+  "controller_retraining": false,
+  "source_hashes": {
+    "local_data/trec2019/2019qrels-pass.txt": "8a1f10d550732e4cd91d7fc49846a3784de4040972f583e69285a88f3c5fee92",
+    "msmarco_large/msmarco_1000000_q1000/results/queries.csv": "acd8fbe2ac804548ca79ec096d825d9ef502b42e5556796fcf1c7662eaeab4dc",
+    "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv": "f7e2bb45223343700f711c1683404954381f5be5f0369ff86c89ff6941c3496b",
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv": "8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe"
+  },
+  "ANN_recall_invariance": "Required per-query/per-ef invariant for future reevaluation; not newly verified without rankings",
+  "unavailable_plots": [
+    "judgment_density_vs_budget_gap.png",
+    "judgment_density_vs_zero_ndcg.png",
+    "judgment_density_vs_ir_safe_budget.png",
+    "judgment_density_vs_risk_work.png"
+  ]
+}

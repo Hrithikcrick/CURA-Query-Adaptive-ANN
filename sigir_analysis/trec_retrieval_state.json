@@ -1,0 +1,245 @@
+{
+  "encoder": "sentence-transformers/msmarco-MiniLM-L6-cos-v5",
+  "encoder_provenance": "04_msmarco_large_pilot.py MODEL_NAME",
+  "dimension": 384,
+  "normalization": "normalize_embeddings=True for query and document encoding",
+  "similarity": "inner product on normalized float32 vectors",
+  "exact_reference": "IndexFlatIP; exact top100 arrays saved by Phase04; original exact index not serialized",
+  "hnsw_type": "IndexHNSWFlat",
+  "HNSW_M": 32,
+  "efConstruction": 200,
+  "search_k_for_this_study": 10,
+  "exact_cache_depth": 100,
+  "efSearch_values": [
+    10,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192,
+    256
+  ],
+  "search_threads": 1,
+  "timing_repeats": 5,
+  "original_faiss_version": "1.15.1",
+  "reported_original_corpus_documents": 1000629,
+  "corpus_size_provenance": "results/large_pilot_summary.txt",
+  "original_subset_membership_verifiable": false,
+  "query_key_mapping": [
+    {
+      "query_key": "trec19::1037798",
+      "raw_query_id": "1037798"
+    },
+    {
+      "query_key": "trec19::104861",
+      "raw_query_id": "104861"
+    },
+    {
+      "query_key": "trec19::1063750",
+      "raw_query_id": "1063750"
+    },
+    {
+      "query_key": "trec19::1103812",
+      "raw_query_id": "1103812"
+    },
+    {
+      "query_key": "trec19::1106007",
+      "raw_query_id": "1106007"
+    },
+    {
+      "query_key": "trec19::1110199",
+      "raw_query_id": "1110199"
+    },
+    {
+      "query_key": "trec19::1112341",
+      "raw_query_id": "1112341"
+    },
+    {
+      "query_key": "trec19::1113437",
+      "raw_query_id": "1113437"
+    },
+    {
+      "query_key": "trec19::1114646",
+      "raw_query_id": "1114646"
+    },
+    {
+      "query_key": "trec19::1114819",
+      "raw_query_id": "1114819"
+    },
+    {
+      "query_key": "trec19::1115776",
+      "raw_query_id": "1115776"
+    },
+    {
+      "query_key": "trec19::1117099",
+      "raw_query_id": "1117099"
+    },
+    {
+      "query_key": "trec19::1121402",
+      "raw_query_id": "1121402"
+    },
+    {
+      "query_key": "trec19::1121709",
+      "raw_query_id": "1121709"
+    },
+    {
+      "query_key": "trec19::1124210",
+      "raw_query_id": "1124210"
+    },
+    {
+      "query_key": "trec19::1129237",
+      "raw_query_id": "1129237"
+    },
+    {
+      "query_key": "trec19::1133167",
+      "raw_query_id": "1133167"
+    },
+    {
+      "query_key": "trec19::130510",
+      "raw_query_id": "130510"
+    },
+    {
+      "query_key": "trec19::131843",
+      "raw_query_id": "131843"
+    },
+    {
+      "query_key": "trec19::146187",
+      "raw_query_id": "146187"
+    },
+    {
+      "query_key": "trec19::148538",
+      "raw_query_id": "148538"
+    },
+    {
+      "query_key": "trec19::156493",
+      "raw_query_id": "156493"
+    },
+    {
+      "query_key": "trec19::168216",
+      "raw_query_id": "168216"
+    },
+    {
+      "query_key": "trec19::182539",
+      "raw_query_id": "182539"
+    },
+    {
+      "query_key": "trec19::183378",
+      "raw_query_id": "183378"
+    },
+    {
+      "query_key": "trec19::19335",
+      "raw_query_id": "19335"
+    },
+    {
+      "query_key": "trec19::207786",
+      "raw_query_id": "207786"
+    },
+    {
+      "query_key": "trec19::264014",
+      "raw_query_id": "264014"
+    },
+    {
+      "query_key": "trec19::359349",
+      "raw_query_id": "359349"
+    },
+    {
+      "query_key": "trec19::405717",
+      "raw_query_id": "405717"
+    },
+    {
+      "query_key": "trec19::443396",
+      "raw_query_id": "443396"
+    },
+    {
+      "query_key": "trec19::451602",
+      "raw_query_id": "451602"
+    },
+    {
+      "query_key": "trec19::47923",
+      "raw_query_id": "47923"
+    },
+    {
+      "query_key": "trec19::489204",
+      "raw_query_id": "489204"
+    },
+    {
+      "query_key": "trec19::490595",
+      "raw_query_id": "490595"
+    },
+    {
+      "query_key": "trec19::527433",
+      "raw_query_id": "527433"
+    },
+    {
+      "query_key": "trec19::573724",
+      "raw_query_id": "573724"
+    },
+    {
+      "query_key": "trec19::833860",
+      "raw_query_id": "833860"
+    },
+    {
+      "query_key": "trec19::855410",
+      "raw_query_id": "855410"
+    },
+    {
+      "query_key": "trec19::87181",
+      "raw_query_id": "87181"
+    },
+    {
+      "query_key": "trec19::87452",
+      "raw_query_id": "87452"
+    },
+    {
+      "query_key": "trec19::915593",
+      "raw_query_id": "915593"
+    },
+    {
+      "query_key": "trec19::962179",
+      "raw_query_id": "962179"
+    }
+  ],
+  "cache_files": {
+    "query_embeddings": {
+      "path": "msmarco_large/msmarco_1000000_q1000/cache/query_embeddings.npy",
+      "present": false
+    },
+    "corpus_embeddings": {
+      "path": "msmarco_large/msmarco_1000000_q1000/cache/corpus_embeddings.f32",
+      "present": false
+    },
+    "HNSW_index": {
+      "path": "msmarco_large/msmarco_1000000_q1000/cache/hnsw_M32_efC200.faiss",
+      "present": false
+    },
+    "docid_map": {
+      "path": "msmarco_large/msmarco_1000000_q1000/cache/docids.txt",
+      "present": false
+    },
+    "exact_ranked_indices": {
+      "path": "msmarco_large/msmarco_1000000_q1000/cache/exact_top100_indices.npy",
+      "present": false
+    },
+    "exact_scores": {
+      "path": "msmarco_large/msmarco_1000000_q1000/cache/exact_top100_scores.npy",
+      "present": false
+    },
+    "corpus_meta": {
+      "path": "msmarco_large/msmarco_1000000_q1000/cache/corpus_meta.json",
+      "present": false
+    }
+  },
+  "retrieval_only_fallback_possible": false,
+  "reason": "Original index, query vectors, corpus vectors, exact arrays and document mapping are absent; FiQA cache is for a different corpus",
+  "source_hashes": {
+    "04_msmarco_large_pilot.py": "8f600fee772b6326dbac226f7bc85e7fb7c4f7dcdae90a09952059259137b12e",
+    "05_research_grade_validation.py": "2ee6db81386d6f1c811a87a428ddbc0c0a8f12b2df645fcd319993b3e14a576c",
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/experiment_protocol.json": "4508fdeb2b3a6521bc89cf0f7f0059d6c47efebf7c47c82ff56b2d717d3ce7d1",
+    "msmarco_large/msmarco_1000000_q1000/results/large_pilot_summary.txt": "66c4efbaf8aa8ef080e330f299414e8521a234f990094a413a783339a15aa200",
+    "msmarco_large/msmarco_1000000_q1000/results/queries.csv": "acd8fbe2ac804548ca79ec096d825d9ef502b42e5556796fcf1c7662eaeab4dc",
+    "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv": "f7e2bb45223343700f711c1683404954381f5be5f0369ff86c89ff6941c3496b"
+  }
+}

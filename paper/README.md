@@ -1,6 +1,12 @@
 # Overleaf instructions — CURA research paper
 
-This directory contains a revised two-column LaTeX draft derived from the earlier `main_corrected.tex` manuscript, retaining diagrams, tables, references, and the underlying paper structure.
+**Active research draft:** [sigir_short.tex](sigir_short.tex), **When Do Utility-Aware ANN Search Budgets Really Save Work? The Role of Relevance-Judgment Completeness and Risk Calibration.** See [the revised direction](SIGIR_REVISED_DIRECTION.md) and [research report](../reports/SIGIR_RESEARCH_ANALYSIS.md). Fixed ef=48 uses 28.29% less work than CURA at the same observed MS MARCO test risk; this comparison is post hoc. Original TREC passage qrels are recovered and 50 deterministic seeds per stochastic judgment condition are prepared. Same-ranking evaluation is blocked by missing exact/HNSW document rankings and original recovery caches; zero ranking seeds were evaluated. No completed density result or general adaptive advantage is claimed. The source has not been compiled or checked against the official ACM template.
+
+The existing `main.tex` remains the historical course report, retaining diagrams, tables, references and review evidence, with prominent notices of the new fixed-frontier finding. Instructions below describe that older course artifact. For the new standalone research draft, upload `sigir_short.tex` as the main source instead; it has no external figure dependencies.
+
+<!-- BEGIN CURA FINAL EVIDENCE STATUS -->
+The manuscript now includes the final actual budget-sweep taxonomy: all 50 labels are model assisted, including 8 automatic second-review resolutions. No new human verification is claimed. This is separate from FiQA's 1/50 recorded human reviews. The mean/p95 tradeoff and timing scope are disclosed. Bibliography verification, final rendering/format review, and clean-environment reproduction remain pending. See [the final evidence README](../FINAL_README.md).
+<!-- END CURA FINAL EVIDENCE STATUS -->
 
 ## Open in Overleaf
 
@@ -19,7 +25,7 @@ This directory contains a revised two-column LaTeX draft derived from the earlie
 
 ## Paper status
 
-**Draft, not final:** the final version still needs 49 remaining human reviews, bibliography verification, full clean-environment reproducibility testing, and a final pass for the professor's page/format requirements.
+**Saved-evidence manuscript updated:** the actual 50-failure analysis is complete as model-assisted annotation, including eight automatic second-review resolutions. The separate FiQA worksheet has 1/50 recorded human reviews (49 remaining); those are not pending decisions for the completed automatic analysis. Bibliography verification, full clean-environment reproduction, and final rendered-format review remain unverified.
 
 The current style is two-column **article** with SIGIR-like formatting, **not** an official ACM SIGIR `acmart` proceedings template. If an official template is required, transfer the content to that template before submission.
 

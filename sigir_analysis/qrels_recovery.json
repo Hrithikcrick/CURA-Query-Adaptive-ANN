@@ -1,0 +1,34 @@
+{
+  "status": "RECOVERED",
+  "action": "reused checksum-verified original-source file",
+  "source_url": "https://trec.nist.gov/data/deep/2019qrels-pass.txt",
+  "source_index": "https://trec.nist.gov/data/deep2019.html",
+  "download_url": "https://mirror.ir-datasets.com/2f4be390198da108f6845c822e5ada14",
+  "download_failures": [],
+  "transport_note": "Direct NIST HTTPS had an expired-certificate error during initial recovery; verified HTTPS mirror used without disabling TLS verification.",
+  "checksum_source": {
+    "resource": "ir_datasets/etc/downloads.json",
+    "entry": "trec-dl-2019/qrels",
+    "expected_md5": "2f4be390198da108f6845c822e5ada14",
+    "expected_bytes": 187092,
+    "package_version": "0.6.3",
+    "installed_registry_match": true
+  },
+  "original_md5": "2f4be390198da108f6845c822e5ada14",
+  "md5_match": true,
+  "local_path": "local_data/trec2019/2019qrels-pass.txt",
+  "sha256": "8a1f10d550732e4cd91d7fc49846a3784de4040972f583e69285a88f3c5fee92",
+  "bytes": 187092,
+  "judgment_rows": 9260,
+  "query_count": 43,
+  "grade_counts": {
+    "0": 5158,
+    "1": 1601,
+    "2": 1804,
+    "3": 697
+  },
+  "original_query_identity_match": true,
+  "saved_positive_count_match_for_all_43": true,
+  "positive_definition": "grade > 0 matches original exponential-gain nDCG protocol; grade 1 remains included",
+  "FULL_ranking_metric_match": "not verifiable until rankings are recovered"
+}

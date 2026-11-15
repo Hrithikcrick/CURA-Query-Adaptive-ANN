@@ -1,0 +1,27 @@
+{
+  "saved_data_primary_tests_completed": [
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "density_primary_tests_completed": [],
+  "blocked_primary_tests": [
+    "P5",
+    "P6"
+  ],
+  "statistical_analysis_complete": false,
+  "bootstrap": "20000 paired-query percentile resamples; original method choices frozen",
+  "signflip": "two-sided, 20000 Monte Carlo draws or exact enumeration for <=18 nonzero pairs; sign exchangeability assumed",
+  "density_seed_analysis": "NOT RUN: zero scored seeds; prepared seeds are not completed experiments",
+  "censoring": "Both legacy grid-capped and jointly feasible paired oracle estimators reported",
+  "multiplicity": "Exploratory and unadjusted",
+  "source_hashes": {
+    "sigir_analysis/statistical_tests_saved.csv": "04db13f5fe9acef73446ba7ebd2cd4692916143e80f6fdcf3bea8aa2ecdb99dc",
+    "sigir_analysis/oracle_budget_gap_per_query.csv": "427de4c593c563f74fc8ec87ac4086e8ed08cb651229e4c28dec1a469827b35e",
+    "sigir_analysis/oracle_budget_gap_analysis.csv": "1bc57ab2c17f7b82943d65bcfc2ed9d52e01b720fc053caa6bac6da1b3fc60c5",
+    "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_msmarco_test.csv": "7fa4b976b6f2bb1950a5e12429c9ddc3c75b441744cc5276f15973bd7211d187",
+    "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_msmarco_test.csv": "0794399a864224d166f8501e7ad0bbaa92817b9496da3903d5c2c0b84caa04ac",
+    "sigir_analysis/risk_matched_fixed_per_query.csv": "73a290797e787916cb0cac959dc5dcbd81bda0b8c7d860b671134f36b71ad97f"
+  }
+}

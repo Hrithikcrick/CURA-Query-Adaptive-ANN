@@ -1,0 +1,5 @@
+condition,status,queries,number_of_evaluated_seeds,qrel_seeds_prepared,ranking_seeds_evaluated,retained_positive_judgments,retained_positive_fraction,preserved_nonpositive_judgments,exact_ndcg_zero_query_fraction,mean_exact_ndcg_at_10,mean_min_IR_safe_ef,mean_min_ANN_safe_ef,mean_ANN_minus_IR_budget_gap,relative_IR_safe_budget_reduction,IR_allows_lower_rate,same_budget_rate,IR_requires_higher_rate,ANN_Recall_at_10,CURA_IR_violation_rate,CURA_mean_distance_computations
+FULL,BLOCKED_MISSING_RANKINGS_AND_RECOVERY_CACHES,43,0,1,0,4102,1.0,5158,,,,,,,,,,,,
+50_PERCENT_POSITIVES,BLOCKED_MISSING_RANKINGS_AND_RECOVERY_CACHES,43,0,50,0,2063,0.5029254022428084,5158,,,,,,,,,,,,
+25_PERCENT_POSITIVES,BLOCKED_MISSING_RANKINGS_AND_RECOVERY_CACHES,43,0,50,0,1040,0.25353486104339346,5158,,,,,,,,,,,,
+ONE_POSITIVE_PER_QUERY,BLOCKED_MISSING_RANKINGS_AND_RECOVERY_CACHES,43,0,50,0,43,0.010482691370063383,5158,,,,,,,,,,,,

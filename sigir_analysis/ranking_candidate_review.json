@@ -1,0 +1,773 @@
+[
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv",
+    "candidate_fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/cura_protocol.json",
+    "candidate_fields": [
+      "candidate_ef_values"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION.zip::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv",
+    "candidate_fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "beir_fiqa/manual_failure_review/fiqa_50_actual_failures_HUMAN_VERIFIED.csv",
+    "candidate_fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv",
+    "candidate_fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/cura_protocol.json",
+    "candidate_fields": [
+      "candidate_ef_values"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/cura_protocol.json",
+    "candidate_fields": [
+      "candidate_ef_values"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_msmarco_test.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_trec_ood.csv",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/score_threshold_baseline/protocol.json",
+    "candidate_fields": [
+      "candidate_ef_values",
+      "candidate_id",
+      "candidates_evaluated",
+      "feasible_candidates",
+      "threshold_candidate_generation"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/score_threshold_baseline/score_threshold_tuning.csv",
+    "candidate_fields": [
+      "candidate_id"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "msmarco_large/msmarco_1000000_q1000/score_threshold_baseline/validation.json",
+    "candidate_fields": [
+      "At least one score-gap candidate meets training and calibration Wilson pointwise target",
+      "Complete unique probe and query-budget caches cover all 1043 queries and unchanged candidate grid",
+      "Probe is ef10 and candidate grid matches original protocol",
+      "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "reports/COURSE_DOCUMENT_UPDATE.json",
+    "candidate_fields": [
+      "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/analysis_protocol.json",
+    "candidate_fields": [
+      "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_oracle_query_results.csv",
+      "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv",
+      "ranking_seeds_evaluated"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/git_candidate_review.json",
+    "candidate_fields": [
+      "candidate_id_examples"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/local_retrieval_audit.json",
+    "candidate_fields": [
+      "cache_candidates",
+      "candidate_id_fields",
+      "git_candidates"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/local_retrieval_audit_before_recovery.json",
+    "candidate_fields": [
+      "cache_candidates",
+      "candidate_id_fields",
+      "git_candidates"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/preserved_analysis_hashes.json",
+    "candidate_fields": [
+      "exact_ndcg_stratified_results.csv"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/qrels_recovery.json",
+    "candidate_fields": [
+      "FULL_ranking_metric_match"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/ranking_recovery_status.json",
+    "candidate_fields": [
+      "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv",
+      "ranking_seeds_evaluated"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/trec_judgment_density_frontier.csv",
+    "candidate_fields": [
+      "ranking_sha256"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/trec_judgment_density_summary.csv",
+    "candidate_fields": [
+      "ranking_seeds_evaluated"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/validation.json",
+    "candidate_fields": [
+      "ranking_metrics_unavailable_and_blank",
+      "ranking_seed_evaluations"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  }
+]

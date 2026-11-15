@@ -1,0 +1,50 @@
+{
+  "qrels_recovered": true,
+  "exact_rankings_recovered": false,
+  "hnsw_rankings_recovered": false,
+  "retrieval_only_rerun": false,
+  "embeddings_regenerated": false,
+  "index_rebuilt": false,
+  "controller_retrained": false,
+  "metric_reproduction_pass": null,
+  "status": "BLOCKED",
+  "original_query_count": 43,
+  "required_efSearch": [
+    10,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192,
+    256
+  ],
+  "exact_query_rankings_verified": 0,
+  "hnsw_query_budget_rankings_verified": 0,
+  "expected_exact_query_rankings": 43,
+  "expected_hnsw_query_budget_rankings": 430,
+  "candidate_verification": "No valid original-corpus ranking candidate",
+  "git_blobs_checked": 598,
+  "git_candidate_blobs_reviewed": 87,
+  "working_tree_archive_candidate_schemas_reviewed": 57,
+  "audit_errors": [],
+  "source_hashes": {
+    "04_msmarco_large_pilot.py": "8f600fee772b6326dbac226f7bc85e7fb7c4f7dcdae90a09952059259137b12e",
+    "05_research_grade_validation.py": "2ee6db81386d6f1c811a87a428ddbc0c0a8f12b2df645fcd319993b3e14a576c",
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/experiment_protocol.json": "4508fdeb2b3a6521bc89cf0f7f0059d6c47efebf7c47c82ff56b2d717d3ce7d1",
+    "msmarco_large/msmarco_1000000_q1000/results/large_pilot_summary.txt": "66c4efbaf8aa8ef080e330f299414e8521a234f990094a413a783339a15aa200",
+    "msmarco_large/msmarco_1000000_q1000/results/queries.csv": "acd8fbe2ac804548ca79ec096d825d9ef502b42e5556796fcf1c7662eaeab4dc",
+    "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv": "f7e2bb45223343700f711c1683404954381f5be5f0369ff86c89ff6941c3496b"
+  },
+  "notes": [
+    "Qrels have 9,260 original judgments. The 6,450 prepared records are 43 queries x 50 seeds x 3 thinning conditions, not original qrels or retrieval rankings.",
+    "All normalized ranking files remain absent; no empty/fabricated ranking files were created.",
+    "Query IDs and frozen per-query CURA ef selections exist, but scalar metrics do not determine ranked document IDs.",
+    "Original encoder, M, efConstruction, k, normalization and similarity are recoverable from source/protocol; the actual original retrieval state is not.",
+    "Metric reproduction was NOT RUN because rankings are missing; null is not a passing result.",
+    "No retrieval-only fallback is possible from the available FiQA-only vector cache.",
+    "Restore original exact/HNSW document rankings, or original corpus/query vectors, built index and ID map. No expensive reconstruction was attempted."
+  ]
+}

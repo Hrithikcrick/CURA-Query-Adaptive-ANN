@@ -1,0 +1,1927 @@
+[
+  {
+    "source": "git_blob",
+    "oid": "031d19586a5278da3e16ea6998b0c8447cd99ed6",
+    "kind": "qrels_or_run",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "031d19586a5278da3e16ea6998b0c8447cd99ed6",
+      "bytes": 187092,
+      "kind": "qrels_or_run",
+      "first_row_format": "qid Q0 document label/rank"
+    }
+  },
+  {
+    "source": "git_blob",
+    "oid": "038c286cd768ca1b6a188c475a3a88aa4d2b2a00",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "1166865cf3f3fd9405127af49c10ec79237236d6",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "11f0437d6004eb122a98922b69a9928689eb521d",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "12585b690bd85db859a94d603057f0834c6e77fb",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "19cb2cda484b6a9e03d56476261ca1ce27093c4e",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "1bef0d54d6e2e1893ee11307c4fefcd22860163e",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "1c79533296f3984fea512b9e213ebb4d7193035d",
+    "kind": "tabular",
+    "rows": 43,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 43,
+      "candidate_log_ef": 43,
+      "candidate_ef_over_probe": 43
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "1ce1c3b45614fcdb55c791a0df7e4c918ae9ef13",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "1f2bdc7bcdb986de313d6f9522b7456ec82d493b",
+    "kind": "tabular",
+    "rows": 200,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 200,
+      "candidate_log_ef": 200,
+      "candidate_ef_over_probe": 200
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "2199fed32870c3655b206f8155e911c32f94ec42",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "220c696a117f39c4b350a0af8b9122f80437d7af",
+    "kind": "tabular",
+    "rows": 43,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 43,
+      "candidate_log_ef": 43,
+      "candidate_ef_over_probe": 43
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "243ca0369560d9995025bb462aa0c8983d3ec16a",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "26cb37cca743babf0902c472bb8d249caf83f05d",
+    "kind": "tabular",
+    "rows": 200,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 200,
+      "candidate_log_ef": 200,
+      "candidate_ef_over_probe": 200
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "2796e64b9c82aeab4badd2fd9320fa7c6fcefd93",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "2ad291db84f7c30cdbe444f4eadee3a9006b13a6",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "2db5cdf048cfa14d1cf15f86a234231976d897a1",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "3197e38daf0cf1a589ddb8f35b09ccfac17a0cba",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "36878ba4c6367e055edeef89073deaa0fef10319",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "37387d617fe917d438eb96763cdc81576ea6b617",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "3d1d8bd1946cbb902d513d6e2e4eb9b41f08d266",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "3feb5a7dfc50b7d7e04c4ba17d8cd8715c6fba39",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "46d6d5bc734c19f11887c91978c8aad7ad58db09",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "4758d573b8e177388cc0a08fb96448f08fcb1139",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "4ac0940985ddcd0bbf8334d440e1183f1103e62f",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "4cb49823a7dae8dd5edcb6ac1a8a963940d856a5",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "4e7c26ab6ff393694a4f53ed84b4424f30a12d93",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "4ea4c342e5a79ca2311f1246e5455538053fa06e",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "4fff708e3df2f6c2b6c79777c2cad9839445f8b5",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "5180b544021a61b9100fd58aeb5763772d6c38f7",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {},
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "51d24a51d8c095e28bfd993b3d9048174274600a",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "5234f1af6a373ea077d54298dfedee9dc00c555e",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "5238bcac4081d49d49df7bc49dd8084293234d13",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "54080a924cd4474df71251a25cdd0de183f984fb",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "563f4e67d730a1ce29f4f85cd836c327f00e934d",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "583c5668ca5285b7194091712808100d84cceb95",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "66f8912d048efa86e3144d4ccf0fc130a70f919f",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "6740ea307d2766c1c42858a5ec877cedb561125c",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "6a72acd649a67d5f468ee5255ac416ec6a3038f3",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "7741c9525774c1c4c283a92f568cf77af48691a0",
+    "kind": "tabular",
+    "rows": 200,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 200,
+      "candidate_log_ef": 200,
+      "candidate_ef_over_probe": 200
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "7cd28b606114b784959b6a58409898ecb90dcbec",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "7d42705b9a6a41bcab078e667a05c8b306048aba",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "814c3a96d215c59fcf793c714a2b907063ec9eda",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "81a6f43b06890f2de6fe41e41047cc10b2bb67cf",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "81ea936a720e9535c2cc239f772fb423467b8fd3",
+    "kind": "tabular",
+    "rows": 43,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 43,
+      "candidate_log_ef": 43,
+      "candidate_ef_over_probe": 43
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "835e079a9b38b2a9b13279220ae47c29c180e878",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "8436ac659e8d094a5b03f16e6c680f8278049dcf",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "875a47584e6e4f90aa7afaf5341da91d8ed449e2",
+    "kind": "tabular",
+    "rows": 200,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 200,
+      "candidate_log_ef": 200,
+      "candidate_ef_over_probe": 200
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "8e2c299f5f1a04cb4d8ba039e028ec456305a52f",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "9084834cfa5b19dfcab896dd33d6c2972296eab2",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "9156db58a5f63dc96132a2430ba53eabca7c9f46",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "93b4f7441d13e8cf5416c45cf1b7695766711104",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "941c6c16961640f71bfab86f7f5a173ed0373068",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "948029bfea1d1085e3f59310297ea9bdcb15f4b3",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "94b6a7b86620e76c7baad5b02d9ee75f624cb4b9",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "97729e36bc8c2ac4ad784f0c8ad1db07fa68acfb",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "9ad54adb351e8a66ad3e82d2cd10ca7ac4ac523d",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "9b5b71a66e91987219f4c17a1172c0d1222b49dd",
+    "kind": "tabular",
+    "rows": 200,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 200,
+      "candidate_log_ef": 200,
+      "candidate_ef_over_probe": 200
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "9b6e7b9cc5ab73d127e64cd0aa46527e5bdf091f",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "9ba4f7ed2d4110804ae8233a6b846658f7c0cc5c",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "9ce55bc5c8d5c71abfe36d2ec82d4dfbe4145dde",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "a526fffa79384aea0b0e9ba9e9f3b050a745bf39",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "a654ed65890f833f7bd4e0daedf0a809bdabaf28",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "a851032bbc83f9f0152f85a76654971b006fb712",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "a8ce8c3a3679b4b1838944902023251c36ed8bae",
+    "kind": "tabular",
+    "rows": 200,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 200,
+      "candidate_log_ef": 200,
+      "candidate_ef_over_probe": 200
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "abf6f8e6aac972991718f9f9ad6e7cd5b61fe66e",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "ae35dd9e0b3b981729d71b2d5f3d1ae00d72f2c4",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "b040b6d215a8c86f773ae76fd17f4e5cde4a9173",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "b0d08062be6d030909537e928aa53fc8022c914b",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "b7cda432c99811bc24744152f5830f5fea4d0118",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "bb3034f7a67fca5acc24ce4e62c5bd4afef45dca",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "bea584c4cf3f4f4a6119b3413da1c03788eab3e8",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "c1e4897a21afef4c170ae7b37f46db7ed9278ea1",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "c80d5b8c218637e3114558f9f4de86b5ca464118",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "d304eb55fcf848c7c22796d7c15fae973e900228",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "d34f6ce002beb339dd2bb105d7d6e35bf1506dd7",
+    "kind": "tabular",
+    "rows": 43,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 43,
+      "candidate_log_ef": 43,
+      "candidate_ef_over_probe": 43
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "d6347cbdf58f9d993ee953570af6ea371ec266e6",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "db8a2be62109162a6634c6107bcf2330c40c81ea",
+    "kind": "tabular",
+    "rows": 43,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 43,
+      "candidate_log_ef": 43,
+      "candidate_ef_over_probe": 43
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "df2d49d3a3ea248fcb30ff58bc2fd5ab400f7029",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "e0a7a206fd4192c56bcd7f7c9b2e0399bd396bbe",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "e783bd0a3d9ddf80a50f31aa3b63a58aadc793fa",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "eca7aa6c1407eee89198c4c36bf8b0dc954eaf94",
+    "kind": "tabular",
+    "rows": 199,
+    "fields": [
+      "candidate_id"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_id": 199
+    },
+    "candidate_examples": {
+      "candidate_id": "0"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "f458603cfb540046acc4b1d6550199a1f97097fa",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "f5c599f8347c155442befd2ca7beb74c89a89ec5",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "f5f2321722b73ff6a6cedc12b68828c9ddb23230",
+    "kind": "tabular",
+    "rows": 43,
+    "fields": [
+      "candidate_ef",
+      "candidate_log_ef",
+      "candidate_ef_over_probe"
+    ],
+    "nonempty_candidate_cells": {
+      "candidate_ef": 43,
+      "candidate_log_ef": 43,
+      "candidate_ef_over_probe": 43
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "f99cf14b4996856a985d72460a4576c809fd8419",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "fd8bf4b1b12b1e10dcfe64ffd7deda5d99095d45",
+    "kind": "tabular",
+    "rows": 50,
+    "fields": [
+      "human_evidence_doc_ids_or_ranks"
+    ],
+    "nonempty_candidate_cells": {
+      "human_evidence_doc_ids_or_ranks": 1
+    },
+    "candidate_examples": {
+      "human_evidence_doc_ids_or_ranks": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 19"
+    },
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  }
+]

@@ -1,0 +1,1 @@
+condition,seed,policy_label,query_count,CURA_IR_violation_rate,mean_nDCG_at_10,mean_nDCG_loss,mean_work,risk_matched_fixed_ef,fixed_observed_violation_rate,CURA_minus_fixed_work,selection_sha256

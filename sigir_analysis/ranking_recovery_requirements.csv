@@ -1,0 +1,8 @@
+artifact,status,path
+Original TREC-DL-2019 passage qrels,RECOVERED,local_data/trec2019/2019qrels-pass.txt
+Exact original-document top10 rankings for all 43 queries,MISSING,"cache/exact_top100_indices.npy plus original docids.txt, or archived original-document rankings"
+HNSW original-document top10 rankings for all 43 queries at all 10 ef values,MISSING,No saved ranking file; Phase-05 only saved scalar metrics
+Original FAISS row-to-document-ID mapping,MISSING,msmarco_large/msmarco_1000000_q1000/cache/docids.txt
+Original query vectors,MISSING,msmarco_large/msmarco_1000000_q1000/cache/query_embeddings.npy
+Original corpus vectors,MISSING,msmarco_large/msmarco_1000000_q1000/cache/corpus_embeddings.f32
+Original built HNSW index,MISSING,msmarco_large/msmarco_1000000_q1000/cache/hnsw_M32_efC200.faiss

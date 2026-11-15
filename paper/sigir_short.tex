@@ -1,0 +1,83 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[a4paper,margin=0.7in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,booktabs,graphicx,hyperref}
+\title{When Do Utility-Aware ANN Search Budgets Really Save Work?\\
+\large The Role of Relevance-Judgment Completeness and Risk Calibration}
+\author{Hrithik Sharma\\Indian Institute of Technology Delhi}
+\date{Research draft --- 15 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We reexamine whether downstream-utility-aware ANN budget allocation provides an efficiency advantage after accounting for judgment sparsity and fixed-budget calibration.
+Saved million-scale HNSW runs show that exact-positive queries contribute 92.59\% of CURA's work reduction versus the original calibration-selected fixed baseline, ruling out a purely zero-reference explanation.
+However, a post-hoc fixed efSearch of 48 matches CURA's observed 2/200 utility violations and uses 28.29\% less distance work. On 43 TREC-DL-2019 queries a fixed setting also outperforms the adaptive policy at its observed risk, while ANN-safe and IR-safe oracle budgets scarcely differ.
+These results support an analysis of metric-dependent headroom and calibration rather than a claim that CURA generally beats fixed HNSW.
+Original TREC passage qrels are now recovered, and 50 deterministic judgment seeds per stochastic condition are prepared. The crucial same-ranking experiment remains blocked because ranked document IDs and original retrieval caches are absent. Zero ranking seeds were evaluated; no causal completeness result is claimed.
+\end{abstract}
+
+\section{Question and scope}
+When do downstream-utility-aware ANN search budgets provide genuine efficiency gains, and how are those gains affected by relevance-judgment completeness and risk calibration?
+We distinguish three issues: whether ANN and IR safety require different budgets; whether a learned adaptive implementation realizes that opportunity efficiently; and whether measured opportunity survives more complete judgments.
+The evaluated CURA implementation selects a budget after an efSearch=10 probe and runs a fresh search if needed. It is two-stage budget allocation, not integrated graph-traversal early exit.
+
+\section{Saved-run protocol}
+The controlled corpus contains 1,000,629 passages. The original 1,000 MS MARCO queries have query-disjoint training/calibration/test sets of 600/200/200. All 43 TREC queries are OOD. We reuse the original runs and frozen policies without retrieval or retraining.
+The tested efSearch values are 10,16,24,32,48,64,96,128,192,256.
+Let $N_q^*$ and $N_q(e)$ denote exact and approximate nDCG@10. Utility loss is
+\[
+L_q(e)=\max(0,N_q^*-N_q(e)),
+\]
+and a violation is $L_q(e)>0.025$. ANN safety is exact-neighbor Recall@10 at least 0.9. Unjudged documents receive relevance zero; nDCG uses exponential gain, logarithmic discount, and condition-specific ideal ranking from the full query qrels.
+At $N_q^*=0$, nonnegative nDCG implies zero loss automatically. This is a limitation of the reference-based criterion.
+
+Distance work includes the CURA probe plus the selected search, except that a selected ef10 uses only the probe. Saved timing estimates sum the corresponding search components and omit controller inference and feature processing. Their p95 is across per-query mean estimates, not end-to-end request latency.
+All uncertainty intervals below are paired-query percentile bootstrap intervals with 20,000 resamples. They condition on the saved policies and do not include policy-selection uncertainty.
+
+\section{Zero-reference explanation}
+The held-out set has 41 exact-zero queries (20.5\%) and 159 exact-positive queries (79.5\%). Relative to calibration-selected fixed ef96, work savings are 8.56\% (95\% CI $[-15.97,30.89]$) in the zero group and 23.09\% ($[13.91,31.58]$) in the positive group. Positive queries contribute 92.59\% of total work reduction.
+Thus the reduction is not concentrated in the trivial exact-zero regime. This does not rule out sparse-judgment effects on exact-positive queries.
+Within the positive stratum, CURA uses 2730.667 distances/query versus 3550.352, a paired reduction of 819.686 ($[494.440,1119.157]$). Violations are 2/159 versus 1/159, and mean nDCG is 0.784104 versus 0.786491. Three discordant violation pairs are insufficient to establish equal risk. The work sign-flip test has MC $p\approx0.00005$ under sign-exchangeability; all tests are exploratory.
+
+\section{Fixed-budget risk/work frontier}
+The original fixed baseline ef96 was the first candidate whose two-sided 95\% Wilson upper endpoint was at most 5\% on calibration. At ef64, 4/200 violations yield upper endpoint 5.0288\%, narrowly failing; ef96 has 1/200 and upper endpoint 2.7774\%. Pointwise bounds do not establish selection-adjusted coverage.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lrrr}
+\toprule
+Method & Violations & Mean work & nDCG\\
+\midrule
+Fixed ef24 & 3/200 & 1182.785 & .620581\\
+Fixed ef48 & 2/200 & 1956.345 & .623479\\
+Fixed ef64 & 1/200 & 2448.645 & .625260\\
+Fixed ef96 & 1/200 & 3431.770 & .625260\\
+CURA-Full & 2/200 & 2727.965 & .623363\\
+\bottomrule
+\end{tabular}
+\caption{Selected points from the complete ten-budget test frontier. All fixed settings are in the accompanying CSV. ef48 is a post-hoc diagnostic; ef96 is the original calibration-selected baseline.}
+\end{table}
+
+\textbf{Negative result.} Fixed ef48 is the cheapest setting with observed test risk no greater than CURA's 1\%. It uses 28.29\% less distance work ($[20.07,35.39]$), a paired difference of 771.620 distances/query ($[488.510,1078.553]$). Fixed ef64 also has lower observed risk and work than CURA.
+Therefore the reported 20.51\% CURA improvement against ef96 does not demonstrate that query adaptation is needed.
+The observed-risk comparator was identified on test outcomes. It is not a prospectively calibrated replacement or a risk-equivalence result; its conditional bootstrap interval excludes uncertainty in choosing a setting from the frontier.
+CURA's selected-search work alone is 2054.555, plus 673.410 extra charged probe work. A smaller mean ef is not a reliable measure of implemented efficiency.
+
+\section{Oracle opportunity and judgment regime}
+On all 819 exact-positive MS MARCO queries, mean first ANN-safe and IR-safe ef are 21.485 and 13.206, yielding gap 8.278 ($[6.222,10.527]$). IR permits lower ef for 25.89\%, with aggregate ef reduction 38.53\%.
+The saved oracle substitutes ef256 when no safe candidate is found. Four ANN and three IR thresholds are absent in this positive stratum. Restricting to 812 jointly feasible pairs gives gap 7.611 ($[5.933,9.387]$), so the finding persists without these fallbacks. First-safe refers only to the tested grid; ef reduction is not measured distance reduction.
+
+All 43 TREC queries are exact-positive. Mean ANN-safe and IR-safe ef are 12.279 and 12.419, gap $-0.140$ ($[-1.163,0.884]$). IR allows a smaller budget for 2/43; 38 budgets agree and 3 require more IR effort. ANN is safe at the minimum tested ef10 on 36/43 queries; IR on 35/43. Five nonzero gaps provide limited inferential support and the grid floor restricts possible gains.
+For saved TREC outcomes, fixed ef32 matches CURA's 1/43 violations and uses 1109.326 distances/query versus 2384.581, or 53.48\% less ($[40.13,63.06]$). This is also post hoc.
+TREC has 95.395 positive judgments/query on average versus 1.071 on MS MARCO. Different query distributions, corpus coverage and only 43 TREC queries confound a causal judgment-density interpretation.
+
+\section{Same-ranking thinning: pending}
+The original NIST passage qrels were recovered through a checksum-verified mirror: 9,260 judgments covering exactly the saved 43 raw query IDs, with every positive-judgment count matching the reference metadata. Exact document rankings and the original document map, HNSW document rankings for every ef, and original index/query/corpus-vector recovery caches remain absent. Saved aggregate scores cannot be reinterpreted as ranked IDs. The ranking experiment is blocked; no embeddings, index construction, retrieval or retraining was run.
+FULL retains original qrels. Fifty paired seeds per stochastic condition are now prepared from deterministic per-query permutations, retaining nested prefixes of $\max(1,\lceil pn\rceil)$ for $p=.5,.25$ and one positive respectively. Retained grades and all nonpositive judgments are preserved. The 6,450 retained-positive query/seed/condition records and canonical qrel hashes are saved, but none has been scored against rankings. The recovery experiment will freeze rankings, query IDs, measured work and CURA choices, treating removed judgments as unjudged relevance zero and recomputing IDCG from all retained query judgments.
+Each condition requires recomputed exact/approximate nDCG, losses, zero-reference fractions, oracle feasibility and gaps, all fixed risk curves, and frozen CURA risk/work. ANN recall remains unchanged. Seed-conditional intervals and a paired crossed query/seed bootstrap must preserve shared rankings and conditions. No thinning estimate or plot is presently available.
+
+\section{Conclusion and limitations}
+Oracle utility-aware headroom survives removal of exact-zero MS MARCO queries, but this CURA implementation does not improve the observed fixed-budget frontier. Conservative calibration and adaptive overhead materially affect interpretation. We retain this negative result.
+A same-ranking judgment-completeness experiment is required before attributing cross-dataset differences to qrel density. Sparse judged utility is not actual relevance preservation; pointwise Wilson intervals are not universal guarantees; saved search timings are not full-service performance. The current contribution is an analysis of when adaptivity must be justified, not a universal adaptive retrieval win.
+\paragraph{Reproducibility.} The repository's \texttt{professor\_feedback} directory contains complete metrics, paired tests, figures, input hashes and an explicit missing-input audit. The main research report records supported findings and blocked work. This draft has not been checked against the official ACM format or compiled for final submission.
+\end{document}

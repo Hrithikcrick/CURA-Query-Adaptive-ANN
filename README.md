@@ -3,11 +3,60 @@
 **Beyond Recall: Calibrated Utility-Risk Allocation for Query-Specific Approximate Nearest Neighbor Search**  
 **COL764: Information Retrieval and Web Search · IIT Delhi**
 
-CURA studies whether HNSW's `efSearch` can be chosen **per query** according to predicted *downstream ranking-quality risk*, rather than requiring a single global ANN-recall target. The repository contains Python implementations, saved evaluation tables, statistical tests, ablations, and diagnostic reviews.
+CURA now asks: **When do downstream-utility-aware ANN search budgets provide genuine efficiency gains, and how are those gains affected by relevance-judgment completeness and risk calibration?** The repository contains Python implementations, saved evaluation tables, statistical tests, ablations, and diagnostic reviews.
 
-> **Research status:** Main MS MARCO evaluation shows an efficiency improvement. A simpler controller fitted within BEIR FiQA has a negative efficiency result. Both are reported transparently. This is a research artifact, not a production-ready calibrated service.
+> **SIGIR analysis finding (15 November 2026): fixed ef=48 matches CURA's observed 1% MS MARCO test violation rate and uses 28.29% less work.** The original 20.51% CURA saving is relative to calibration-selected ef=96; it does not establish an adaptive advantage on the full observed frontier. The fixed comparison is post hoc. Exact-positive queries contribute 92.59% of that original saving. Original TREC qrels are recovered and 50 deterministic judgment seeds per stochastic condition are prepared. Same-ranking reevaluation remains blocked by missing exact/HNSW rankings and original recovery caches; zero ranking seeds were evaluated. No retrieval, embeddings or index construction were run.
+
+The active research direction is **When Do Utility-Aware ANN Search Budgets Really Save Work? The Role of Relevance-Judgment Completeness and Risk Calibration.** Read the [research report](reports/SIGIR_RESEARCH_ANALYSIS.md), [analysis artifacts](sigir_analysis/README.md), [revised direction](paper/SIGIR_REVISED_DIRECTION.md), and [new short-paper source](paper/sigir_short.tex). The course evidence below records historical calibrated-baseline comparisons and retains its original review status.
+
+<!-- BEGIN CURA FINAL EVIDENCE STATUS -->
+**Final saved-evidence update:** all 50 actual budget-sweep failure labels are model assisted, including 8 automatic second-review resolutions. No new human verification is claimed. FiQA human review is separate (1/50). See [FINAL_README.md](FINAL_README.md) and [the requirements checklist](FINAL_PROJECT_REQUIREMENTS.md).
+
+Mean search latency estimates decrease by 17.06%, while p95 increases from 1.128008 to 1.985027 ms (75.98% higher). Adaptive effort improves the recorded average and worsens the tail in this setting. Latency is reconstructed from saved per-query mean search timings, including probe and selected-search costs; the p95 is across those estimates. It excludes model-inference/feature-processing overhead and is not an end-to-end request-latency measurement.
+<!-- END CURA FINAL EVIDENCE STATUS -->
+
+<!-- BEGIN CURA COURSE COMPLETION UPDATE -->
+## Current COL764 evidence and remaining human work
+
+**Original course question:** can query-specific ANN work be allocated using downstream ranking-risk rather than exact-neighbor recovery alone? The active SIGIR question additionally tests judgment completeness and the full fixed-budget frontier, as described above.
+
+The historical MS MARCO comparison is 20.51% less realized work and 17.06% lower mean search latency than calibration-selected Fixed-IR (ef=96). **A post-hoc fixed ef=48 beats CURA at the same observed risk; CURA's p95 is also 75.98% worse than ef=96.** The separately fitted FiQA controller's negative result and original ablations remain part of the evidence.
+
+### Added score-gap budget comparison
+
+The cached `Score-Gap-Budget` baseline stops after the efSearch=10 probe when its approximate top1-top10 score spread is at least 0.266384125, otherwise reruns efSearch=96. Its threshold/fallback use training and calibration only. Test/OOD remain frozen; all probe and rerun work is charged. This is a **cached two-stage budget simulation**, not an implementation of actual traversal early exit. No exact-reference gap is a deployable feature. Calibration selection reuses the pointwise Wilson criterion and does not establish a selection-adjusted risk guarantee.
+
+| Cohort | Method | IR violations | Mean work | p95 work | Mean ms | p95 ms |
+|---|---|---:|---:|---:|---:|---:|
+| MSMARCO_TEST | Score-Gap-Budget | 0.50% | 3266.290 | 5318.200 | 0.807623 | 1.317973 |
+| MSMARCO_TEST | Fixed-IR | 0.50% | 3431.770 | 4485.100 | 0.832854 | 1.128008 |
+| MSMARCO_TEST | CURA-Full | 1.00% | 2727.965 | 8532.650 | 0.690738 | 1.985027 |
+| TREC_DL_2019_OOD | Score-Gap-Budget | 2.33% | 3133.442 | 4713.300 | 0.763193 | 1.102646 |
+| TREC_DL_2019_OOD | Fixed-IR | 0.00% | 2721.884 | 4138.100 | 0.682038 | 0.953098 |
+| TREC_DL_2019_OOD | CURA-Full | 2.33% | 2384.581 | 7034.100 | 0.581502 | 1.682058 |
+
+CURA-Full uses 16.48% less test work than this policy: paired difference 538.325, bootstrap 95% CI [210.230, 852.786], paired-randomization p=0.001100. The score-gap policy has lower observed test violation rate and lower p95 latency than CURA. Work savings therefore do not establish uniform superiority. [Full metrics, MRR, protocol and limitations](msmarco_large/msmarco_1000000_q1000/score_threshold_baseline/SCORE_THRESHOLD_BASELINE_REPORT.md) are saved separately; the primary ablation table is unchanged. Compatible policy Recall@100 is unavailable and remains blank.
+
+**FiQA manual review: 1/50 human-verified decisions; 49 remain.** Only explicit researcher decisions backed by the saved decision log count. The separate 50-case MS MARCO/TREC taxonomy remains entirely model-assisted; it is not substituted for the professor's manual requirement.
+
+ANN-Risk is a local ANN-target proxy, not official DARTH. Patience-Inspired is a local stability heuristic, not official Patience. LADR is not claimed. One HNSW family, one primary MiniLM encoder, a controlled million-scale corpus, calibration reuse, and the 43-query OOD sample remain limitations. AI assisted code/debugging, documentation, and preliminary qualitative suggestions; it did not independently supply human decisions.
+
+Course evidence: [requirements](FINAL_PROJECT_REQUIREMENTS.md), [reproducibility](REPRODUCIBILITY.md), [demo and viva](DEMO_AND_VIVA.md), [course audit](reports/FINAL_COURSE_AUDIT.md), [metric audit](reports/FINAL_METRIC_AUDIT.md), and [human checkpoint](beir_fiqa/manual_failure_review/fiqa_50_actual_failures_HUMAN_VERIFIED.csv).
+
+Lightweight commands:
+
+```powershell
+python 18_score_threshold_baseline.py
+python 18_final_course_audit.py
+python 25_update_course_documents.py --apply
+```
+
+The course remains incomplete while genuine human-review decisions are missing. These commands do not run encoding, index construction, or retrieval. See REPRODUCIBILITY.md for expensive regeneration commands and cached artifact boundaries.
+<!-- END CURA COURSE COMPLETION UPDATE -->
 
 ## Principal results
+
+These are the original calibration-selected-baseline results. The [complete fixed frontier](sigir_analysis/fixed_risk_work_frontier.csv) and [research report](reports/SIGIR_RESEARCH_ANALYSIS.md) govern the revised research claims.
 
 ### MS MARCO held-out test (200 queries, 1,000,629 passages)
 
@@ -38,6 +87,8 @@ The reported 1.0% risk rate is an observed outcome below a nominal 5% target, **
 Detailed provenance, limitations, and comparisons are in **[CURA results and limitations](reports/CURA_RESULTS_AND_LIMITATIONS.md)**.
 
 ## Overleaf paper source
+
+- [Active SIGIR-short research draft](paper/sigir_short.tex) and [revised direction](paper/SIGIR_REVISED_DIRECTION.md), including the negative fixed-frontier result and blocked judgment experiment.
 
 - [Two-column LaTeX manuscript](paper/main.tex) — revised with FiQA results and honest manual-review status.
 - [Overleaf import/compile instructions](paper/README.md) — upload as main.tex, use pdfLaTeX.
@@ -115,7 +166,8 @@ A status note is available in [reports/MODEL_ASSISTED_50_FAILURE_STATUS.md](repo
 - [50 FiQA fixed-HNSW ef=10 failure cases](beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv) were identified from genuine recorded nDCG losses; reconstructed scores match saved data.
 - [Assistant-prepared drafts](beir_fiqa/manual_failure_review/ASSISTANT_DRAFT_ALL_50.md) provide reference evidence, **not completed manual judgments**.
 - [Human-review instructions](beir_fiqa/manual_failure_review/HOW_TO_REVIEW.md) and [interactive tool](16_interactive_fiqa_review.py) support actual annotation.
-- The committed FiQA worksheet is still not evidence of 50 independent human reviews. Do not claim otherwise until the reviewed records themselves are committed and audited.
+- The audited FiQA checkpoint records **36/50 complete human reviews**. Case 37 (query 515) has category 2 recorded and awaits evidence-note confirmation; cases 38?50 await category decisions.
+- These human decisions remain separate from the 50 model-assisted MS MARCO/TREC budget-sweep annotations and their eight automatic second-pass resolutions.
 - These FiQA cases are **fixed low-budget HNSW failures**, not 50 violations by a deployed CURA policy.
 
 ## Interpretation and current limitations
@@ -133,7 +185,7 @@ A status note is available in [reports/MODEL_ASSISTED_50_FAILURE_STATUS.md](repo
 - [x] Saved MS MARCO, TREC-DL and FiQA experiments
 - [x] Query-level ablations and MS MARCO significance testing
 - [x] Results and limitations summary
-- [x] 50 **model-assisted** MS MARCO actual IR-unsafe case analyses with structural validation
+- [x] 50 **model-assisted** MS MARCO actual IR-unsafe case analyses with structural validation and final taxonomy, including eight automatic second-pass resolutions
 - [ ] 50 **independently human-verified** failure analyses and aggregate taxonomy
 - [ ] Independent clean-environment reproduction and experiment manifests
 - [ ] Strong published-method baseline verification where practical
