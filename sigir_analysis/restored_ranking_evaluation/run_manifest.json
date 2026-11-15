@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "seeds": 50,
+  "bootstrap_resamples": 20000,
+  "conditions": [
+    "FULL",
+    "50_PERCENT_POSITIVES",
+    "25_PERCENT_POSITIVES",
+    "ONE_POSITIVE_PER_QUERY"
+  ],
+  "main_report_promotion": "Validate this evidence bundle before incorporating its results into the main research report or manuscript.",
+  "source_hashes": {
+    "sigir_analysis/trec_exact_rankings.csv": "af12e06cd4c2216f6d6e1f9ce35f0747e10d0e693a49090fafd03b59176c7d74",
+    "sigir_analysis/trec_hnsw_rankings.csv": "88ecf52072c28faadff12f15da7e1140d6e96c47436fce1a0cc659cfab57f943",
+    "sigir_analysis/trec_ranking_provenance.json": "bb2a1652c6929fa685ce6e889ff6de821190e96a5114e16d01c661c587c9138e",
+    "msmarco_large/msmarco_1000000_q1000/cache/docids.txt": "544952aff441982efdc0970578c825f523865f8d0164e08051e0333a41dd0351",
+    "msmarco_large/msmarco_1000000_q1000/results/queries.csv": "acd8fbe2ac804548ca79ec096d825d9ef502b42e5556796fcf1c7662eaeab4dc",
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/exact_query_reference.csv": "d84f36f10935a8b832b2fae8c478730a2f8db652d05bcf076268552348b7b7d7",
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv": "8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe",
+    "sigir_analysis/qrels_recovery.json": "2db844c4bc4c6c93d8d1ca1915e6f6952a09c1c951c59c09d34c6ccbeb21d5ce",
+    "local_data/trec2019/2019qrels-pass.txt": "8a1f10d550732e4cd91d7fc49846a3784de4040972f583e69285a88f3c5fee92",
+    "sigir_analysis/analysis_protocol.json": "e1edde31c7c9f482f8b563c5d3e94421c3a4a2f87c88b9490e3b507ff02e999e",
+    "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv": "f7e2bb45223343700f711c1683404954381f5be5f0369ff86c89ff6941c3496b"
+  },
+  "ranking_hashes": {
+    "exact_file_sha256": "af12e06cd4c2216f6d6e1f9ce35f0747e10d0e693a49090fafd03b59176c7d74",
+    "hnsw_file_sha256": "88ecf52072c28faadff12f15da7e1140d6e96c47436fce1a0cc659cfab57f943",
+    "exact_top10_sha256": "fd3a343b770434abdee02559a1900ad12eb803d4c333927498119736368ec719",
+    "hnsw_top10_sha256": "e2009a1a07aeb4f7ae61a00ad37992e4067053c34a1ef76363bcb366469b6445",
+    "combined_top10_sha256": "a91cbf17ba4da92deaf7040da3be1e0b5821048f00ca4062e6391430d9703a4e"
+  }
+}

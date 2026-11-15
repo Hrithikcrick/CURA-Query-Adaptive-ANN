@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "density_comparisons_completed": 12,
+  "preserved_completed_test_rows": 42,
+  "preserved_completed_rows_sha256": "c426fc937145ef4d35a83e5cb0df374da8aa3b862182e293e55b8ca9b7dff7bf",
+  "P1_P4_recomputed": false,
+  "P5_P6_recomputed": false,
+  "P7_derived_from_exact_sign_reversal": true,
+  "P8_new_paired_seed_tests": 3,
+  "thinning_seeds": 50,
+  "bootstrap_resamples": 20000,
+  "statistics_sha256": "d577e6f7d37d2f22543b6ed656ccd3eae3a562dab8d2a6be1323e86555fa78d8",
+  "all_new_tests_completed": true,
+  "metadata_correction": "Cleared gap-only descriptive fields for the IR-budget and rate endpoints; inferential values unchanged."
+}

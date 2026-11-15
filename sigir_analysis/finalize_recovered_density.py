@@ -91,6 +91,7 @@ def complete_statistics():
         assert np.allclose(ir_effect, -gap_effect, atol=1e-12, rtol=0)
         derived = dict(p5)
         derived.update(primary_test_id='P7', metric='thinned minus FULL IR-safe budget', units='efSearch',
+                       seed_matched_FULL_gap_mean='', paired_gap_query_count_mean='', paired_gap_query_count_min='', paired_gap_query_count_max='',
                        mean_difference=repr(-float(p5['mean_difference'])),
                        ci95_low=repr(-float(p5['ci95_high'])), ci95_high=repr(-float(p5['ci95_low'])),
                        estimator='exact sign reversal of P5 on the same 43 jointly feasible queries',
@@ -105,6 +106,7 @@ def complete_statistics():
         p, test, nonzero, draws = _signflip(effect,20000,random_seed+1)
         extra = dict(p5)
         extra.update(primary_test_id='P8',metric='thinned minus FULL IR-allows-lower rate',units='fraction of queries',
+                     seed_matched_FULL_gap_mean='', paired_gap_query_count_mean='', paired_gap_query_count_min='', paired_gap_query_count_max='',
                      mean_difference=repr(float(effect.mean())),ci95_low=repr(low),ci95_high=repr(high),
                      p_value=repr(p),nonzero_pairs=str(nonzero),test=test,
                      estimator='mean paired seed-level rate difference on 43 fixed queries',

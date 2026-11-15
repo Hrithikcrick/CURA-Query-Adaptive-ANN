@@ -5,15 +5,17 @@
     "P3",
     "P4"
   ],
-  "density_primary_tests_completed": [],
-  "blocked_primary_tests": [
+  "density_primary_tests_completed": [
     "P5",
-    "P6"
+    "P6",
+    "P7",
+    "P8"
   ],
-  "statistical_analysis_complete": false,
+  "blocked_primary_tests": [],
+  "statistical_analysis_complete": true,
   "bootstrap": "20000 paired-query percentile resamples; original method choices frozen",
   "signflip": "two-sided, 20000 Monte Carlo draws or exact enumeration for <=18 nonzero pairs; sign exchangeability assumed",
-  "density_seed_analysis": "NOT RUN: zero scored seeds; prepared seeds are not completed experiments",
+  "density_seed_analysis": "12 comparisons completed on 50 paired thinning-seed effects per condition; fixed 43-query set",
   "censoring": "Both legacy grid-capped and jointly feasible paired oracle estimators reported",
   "multiplicity": "Exploratory and unadjusted",
   "source_hashes": {
@@ -23,5 +25,10 @@
     "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_msmarco_test.csv": "7fa4b976b6f2bb1950a5e12429c9ddc3c75b441744cc5276f15973bd7211d187",
     "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_msmarco_test.csv": "0794399a864224d166f8501e7ad0bbaa92817b9496da3903d5c2c0b84caa04ac",
     "sigir_analysis/risk_matched_fixed_per_query.csv": "73a290797e787916cb0cac959dc5dcbd81bda0b8c7d860b671134f36b71ad97f"
-  }
+  },
+  "density_bootstrap": "20000 seed-level percentile resamples; unadjusted confidence intervals",
+  "density_multiplicity": "Holm adjustment across the 12 density follow-up comparisons only; historical tests retain their original scope",
+  "P7_note": "IR-budget effect is exactly the negative gap effect with invariant ANN budgets and identical 43-query feasibility; resampling results reused",
+  "completed_saved_data_rows_preserved": 42,
+  "saved_data_primary_tests_recomputed": false
 }
