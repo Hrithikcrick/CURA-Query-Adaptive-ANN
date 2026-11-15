@@ -1,0 +1,27 @@
+{
+  "implementation_validation": "PASS",
+  "synthetic_tests_run": 40,
+  "synthetic_test_failures": 0,
+  "synthetic_test_errors": 0,
+  "synthetic_test_skips": 0,
+  "real_input_preflight_status": "BLOCKED",
+  "real_input_preflight_exit_code": 2,
+  "preflight_did_not_modify_research_outputs": true,
+  "actual_TREC_ranking_evaluations_completed": 0,
+  "actual_thinning_seed_evaluations_completed": 0,
+  "synthetic_fixture_results_are_research_observations": false,
+  "scientific_study_completion": "UNCHANGED; consult validation.json and SIGIR_COMPLETION_STATUS.txt",
+  "no_retrieval_or_embedding_generation_or_index_rebuild_or_training": true,
+  "source_hashes": {
+    "sigir_analysis/ranking_input_gate.py": "18b190fee1e0ba337d856f792ae72e74a92956db2e3b3933d4a33de929f6986b",
+    "sigir_analysis/density_metrics.py": "c98b3a07dfa31f6279fbaa673f983c3d2387ee6c1ef794758b10ee31ef0bf625",
+    "sigir_analysis/density_uncertainty.py": "18b7351d2567ef6302914716f8089f81e196d4d77ecfd26acf3b5ed3a33ded14",
+    "sigir_analysis/run_trec_judgment_density.py": "316debe558d92760a6eb87d00f594228546bd1ffaa2159ada8ecfa5cf6762f0b",
+    "sigir_analysis/test_ranking_input_gate.py": "8272050cbbe123167d091109e5b9a908fea9ee0869f38d2be69382e7fe48e9ad",
+    "sigir_analysis/test_density_metrics.py": "5e2c936a339093a26275653271651e8bb1364d665e9188b432d525cb433fdc38",
+    "sigir_analysis/test_density_uncertainty.py": "6e9a6a767a499f77457e0ac164038b529c98113a7b52a16d12c4495f87892e70",
+    "sigir_analysis/test_density_runner.py": "9e0b06bf86b8445b2766ac100864185aace3870348042a377f10c8a581926743",
+    "sigir_analysis/validate_evaluation_pipeline.py": "a64c9a82dffad224b345e2f72c142ebf4665d6441b57b32a793651f7ff520e80"
+  },
+  "unittest_log": "evaluation_pipeline_test_log.txt"
+}

@@ -14,9 +14,10 @@ Start with [the main research report](../reports/SIGIR_RESEARCH_ANALYSIS.md) and
 | Exhaustive local audit | [file inventory](local_artifact_inventory.csv), [content/schema audit](local_retrieval_audit.json), [archive members](archive_member_inventory.csv), [Git candidate review](git_candidate_review.json) |
 | Judgment density: blocked | [summary](trec_judgment_density_summary.csv), [prepared seed metadata](trec_judgment_density_per_seed.csv), [retained judgments](trec_thinned_positive_judgments.jsonl.gz), [empty frontier schema](trec_judgment_density_frontier.csv), [protocol/status](trec_judgment_density_status.md), [missing-input paths](ranking_recovery_requirements.csv) |
 | Historical TREC FULL | [fixed frontier](fixed_risk_work_frontier_trec_saved_full.csv), [plot](fixed_risk_work_frontier_trec_saved_full.png) |
-| Recovery and completion gates | [ranking validation](trec_ranking_recovery_validation.json), [retrieval state](trec_retrieval_state.json), [completion report](COMPLETION_STATUS.txt), [short-paper gate](short_paper_evidence_gate.json) |
+| Restored-ranking evaluator | [instructions](RESTORED_RANKING_EVALUATION.md), [runner](run_trec_judgment_density.py), [strict input gate](ranking_input_gate.py), [provenance template](trec_ranking_provenance.template.json), [synthetic checks](evaluation_pipeline_validation.json), [test log](evaluation_pipeline_test_log.txt) |
+| Recovery and completion gates | [ranking validation](trec_ranking_recovery_validation.json), [retrieval-state audit](trec_retrieval_state_audit.json), [detailed settings](trec_retrieval_state.json), [reproduction references](trec_retrieval_reproduction.csv), [reproduction status](trec_retrieval_reproduction_status.md), [completion report](SIGIR_COMPLETION_STATUS.txt), [short-paper record](short_paper_evidence_gate.json) |
 
-All density seed rows are explicitly evaluation_completed=False. Blank retrieval metrics mean unavailable; judgment counts and hashes are real preparation results. The four density plots are absent. Historical FULL metrics are not a new original-ranking validation or a completed density experiment. Full-study validation reports FAIL for unmet ranking/seed requirements; input and saved-data integrity checks pass separately. The source for the short paper remains unchanged until all required evidence is available.
+All density seed rows are explicitly evaluation_completed=False. Blank retrieval metrics mean unavailable; judgment counts and hashes are real preparation results. The four density plots are absent. Historical FULL metrics are not a new original-ranking validation or a completed density experiment. Full-study validation reports FAIL for unmet ranking/seed requirements; input and saved-data integrity checks pass separately. The supported-only short-paper draft retains its pending-density disclosure; its only maintenance change is the neutral reproducibility path. New density claims remain gated on validated ranking evidence.
 
 Reproduce with NumPy, pandas, SciPy and Matplotlib (versions in analysis_protocol.json):
 
@@ -24,9 +25,11 @@ Reproduce with NumPy, pandas, SciPy and Matplotlib (versions in analysis_protoco
 python sigir_analysis/recover_trec_qrels.py
 python sigir_analysis/audit_local_retrieval.py
 python sigir_analysis/verify_trec_ranking_recovery.py
+python sigir_analysis/record_trec_reproduction.py
 python sigir_analysis/analyze_saved_artifacts.py
 python sigir_analysis/build_research_report.py
 python sigir_analysis/validate_analysis.py
+python sigir_analysis/completion_status.py
 ```
 
 Recovery reuses verified local qrels. These commands never invoke retrieval, training, encoding or index construction. Source inputs and human reviews remain unchanged. The report builder updates the main research report, revised-direction Markdown and this index. The separately maintained standalone LaTeX source remains uncompiled.

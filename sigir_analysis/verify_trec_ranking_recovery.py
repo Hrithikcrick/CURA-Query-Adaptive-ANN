@@ -70,17 +70,17 @@ def main():
             blob=subprocess.run(['git','cat-file','blob',candidate['oid']],cwd=ROOT,capture_output=True,check=True).stdout.decode('utf-8-sig')
             entry.update(review_table(blob,candidate['candidate_id_fields']))
         else:
-            entry.update(accepted=False,reason='Binary/archive/run candidate requires explicit original-corpus ranking verification',details=candidate)
+            entry.update(accepted=False,reason='Binary/archive/run candidate requires explicit original-corpus ranking verification',details=candidate,plausible_complete_ranking_candidate=candidate.get('plausible_complete_ranking_candidate',False))
         review.append(entry)
     # Archive members were already parsed in full by the audit. Identify any
     # table schema that could hold the required query/document/rank records.
     working_candidates=[]
     for candidate in audit['content_inspections']:
         columns=candidate.get('columns',[])
-        if candidate.get('candidate_id_fields'):
+        if candidate.get('candidate_id_fields') or candidate.get('plausible_complete_ranking_candidate'):
             seen=candidate.get('TREC_query_ids_seen',[])
-            plausible=len(seen)==43 and any(DOC_FIELD.fullmatch(n) for n in columns) and any(RANK_FIELD.fullmatch(n) for n in columns)
-            working_candidates.append(dict(path=candidate['path'],candidate_fields=candidate['candidate_id_fields'],TREC_query_count=len(seen),has_document_id_column=any(DOC_FIELD.fullmatch(n) for n in columns),has_rank_column=any(RANK_FIELD.fullmatch(n) for n in columns),plausible_complete_ranking_candidate=plausible,accepted=False,reason='No original 43-query document/rank retrieval schema' if not plausible else 'Requires corpus-membership and metric reproduction checks'))
+            plausible=candidate.get('plausible_complete_ranking_candidate',False) or (len(seen)==43 and any(DOC_FIELD.fullmatch(n) for n in columns) and any(RANK_FIELD.fullmatch(n) for n in columns))
+            working_candidates.append(dict(path=candidate['path'],candidate_fields=candidate.get('candidate_id_fields',[]),TREC_query_count=len(seen),has_document_id_column=any(DOC_FIELD.fullmatch(n) for n in columns),has_rank_column=any(RANK_FIELD.fullmatch(n) for n in columns),plausible_complete_ranking_candidate=plausible,accepted=False,reason='No original 43-query document/rank retrieval schema' if not plausible else 'Requires corpus-membership and metric reproduction checks'))
     (OUT/'git_candidate_review.json').write_text(json.dumps(review,indent=2),encoding='utf-8')
     (OUT/'ranking_candidate_review.json').write_text(json.dumps(working_candidates,indent=2),encoding='utf-8')
     candidates=[x for x in review+working_candidates if x.get('plausible_complete_ranking_candidate')]
@@ -95,14 +95,41 @@ def main():
     metadata=dict(encoder='sentence-transformers/msmarco-MiniLM-L6-cos-v5',encoder_provenance='04_msmarco_large_pilot.py MODEL_NAME',dimension=384,normalization='normalize_embeddings=True for query and document encoding',similarity='inner product on normalized float32 vectors',exact_reference='IndexFlatIP; exact top100 arrays saved by Phase04; original exact index not serialized',hnsw_type='IndexHNSWFlat',HNSW_M=32,efConstruction=200,search_k_for_this_study=10,exact_cache_depth=100,efSearch_values=EFS,search_threads=1,timing_repeats=5,original_faiss_version='1.15.1',reported_original_corpus_documents=1000629,corpus_size_provenance='results/large_pilot_summary.txt',original_subset_membership_verifiable=False,query_key_mapping=tq[['query_key','raw_query_id']].to_dict('records'),cache_files={k:dict(path=p.relative_to(ROOT).as_posix(),present=found[k]) for k,p in paths.items()},retrieval_only_fallback_possible=False,reason='Original index, query vectors, corpus vectors, exact arrays and document mapping are absent; FiQA cache is for a different corpus')
     metadata['source_hashes']={p.relative_to(ROOT).as_posix():sha(p) for p in [ROOT/'04_msmarco_large_pilot.py',ROOT/'05_research_grade_validation.py',BASE/'research_grade_validation/experiment_protocol.json',BASE/'results/large_pilot_summary.txt',BASE/'results/queries.csv',BASE/'cura_controller/selected_cura_full_trec_ood.csv']}
     (OUT/'trec_retrieval_state.json').write_text(json.dumps(metadata,indent=2),encoding='utf-8')
+    # Configured parameters can be recovered from code; missing vectors and
+    # indexes prevent verification of the state that was actually searched.
+    state_audit=dict(
+        corpus_mapping_available=False,document_vectors_available=False,
+        query_vectors_available=False,exact_index_available=False,
+        hnsw_index_available=False,encoder_identity_available=True,
+        normalization_verified=False,metric_verified=False,
+        corpus_identity_verified=False,query_identity_verified=True,
+        retrieval_only_rerun_possible=False,
+        missing_components=[p.relative_to(ROOT).as_posix() for p in paths.values()],
+        original_corpus_order_available=False,original_query_order_available=True,
+        configured_encoder=metadata['encoder'],encoder_revision_available=False,
+        configured_normalization=metadata['normalization'],
+        configured_similarity=metadata['similarity'],configured_seed=42,
+        HNSW_M=32,efConstruction=200,search_k=10,efSearch_values=EFS,
+        exact_index_note='The original exact index was not serialized; original exact arrays or original corpus vectors are also absent.',
+        verification_scope='Query identities/order verified from saved query table and qrels. Normalization and metric are configured in source, but cannot be verified on missing original vectors/index. Encoder name is available; immutable model revision is not.',
+        no_unintended_corpus_change=True,retrieval_executed=False,
+        embeddings_regenerated=False,index_rebuilt=False,controller_retrained=False,
+        source_paths=list(metadata['source_hashes']),source_hashes=metadata['source_hashes'])
+    (OUT/'trec_retrieval_state_audit.json').write_text(json.dumps(state_audit,indent=2),encoding='utf-8')
     recovery=json.loads((OUT/'qrels_recovery.json').read_text())
     assert sha(ROOT/recovery['local_path'])==recovery['sha256']
     status=dict(qrels_recovered=True,exact_rankings_recovered=False,hnsw_rankings_recovered=False,retrieval_only_rerun=False,embeddings_regenerated=False,index_rebuilt=False,controller_retrained=False,metric_reproduction_pass=None,status='BLOCKED',original_query_count=43,required_efSearch=EFS,exact_query_rankings_verified=0,hnsw_query_budget_rankings_verified=0,expected_exact_query_rankings=43,expected_hnsw_query_budget_rankings=430,candidate_verification='No valid original-corpus ranking candidate',git_blobs_checked=audit['git_blob_count'],git_candidate_blobs_reviewed=len(review),working_tree_archive_candidate_schemas_reviewed=len(working_candidates),audit_errors=audit['errors'],source_hashes=metadata['source_hashes'],notes=['Qrels have 9,260 original judgments. The 6,450 prepared records are 43 queries x 50 seeds x 3 thinning conditions, not original qrels or retrieval rankings.','All normalized ranking files remain absent; no empty/fabricated ranking files were created.','Query IDs and frozen per-query CURA ef selections exist, but scalar metrics do not determine ranked document IDs.','Original encoder, M, efConstruction, k, normalization and similarity are recoverable from source/protocol; the actual original retrieval state is not.','Metric reproduction was NOT RUN because rankings are missing; null is not a passing result.','No retrieval-only fallback is possible from the available FiQA-only vector cache.','Restore original exact/HNSW document rankings, or original corpus/query vectors, built index and ID map. No expensive reconstruction was attempted.'])
+    status.update(queries_expected=43,queries_found=0,query_identities_available=43,
+        queries_found_definition='Queries with recovered and provenance-verified document rankings; saved query identities alone do not count.',
+        ef_values_expected=EFS,ef_values_found=[],doc_id_mapping_verified=False,
+        saved_metric_reproduction_verified=None,
+        source_paths=list(metadata['source_hashes'])+[recovery['local_path']],
+        source_hashes={**metadata['source_hashes'],recovery['local_path']:recovery['sha256']})
     (OUT/'trec_ranking_recovery_validation.json').write_text(json.dumps(status,indent=2),encoding='utf-8')
-    gate=dict(policy='Do not modify short-paper source until complete validated evidence exists',current_paper_sha256=sha(ROOT/'paper/sigir_short.tex'),evidence_complete=False,paper_modified_this_continuation=False)
     gate_path=OUT/'short_paper_evidence_gate.json'
-    if gate_path.exists():assert json.loads(gate_path.read_text())['current_paper_sha256']==gate['current_paper_sha256'],'Short paper changed before the evidence gate opened'
-    gate_path.write_text(json.dumps(gate,indent=2),encoding='utf-8')
+    gate=json.loads(gate_path.read_text())
+    assert gate['current_paper_sha256']==sha(ROOT/'paper/sigir_short.tex'),'Short paper changed without a recorded maintenance check'
+    assert not gate['evidence_complete'],'Missing-ranking fallback cannot mark the density evidence complete'
     print(json.dumps({k:v for k,v in status.items() if k not in ['source_hashes','notes']},indent=2))
     return status
 

@@ -9,8 +9,58 @@
       "oid": "031d19586a5278da3e16ea6998b0c8447cd99ed6",
       "bytes": 187092,
       "kind": "qrels_or_run",
-      "first_row_format": "qid Q0 document label/rank"
-    }
+      "inspection_path": "git:031d19586a5278da3e16ea6998b0c8447cd99ed6",
+      "detected_row_formats": {
+        "qrels_rows": 9260
+      },
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -33,6 +83,45 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "062bf91766707d2978555bb1f1bc34b1bdd18ff1",
+    "kind": "tabular",
+    "rows": 0,
+    "fields": [
+      "ranking_sha256"
+    ],
+    "nonempty_candidate_cells": {},
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No structured original-document-ID plus rank schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "110b5e25929a00c1bb11c6562bd695b37ccdbecf",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "110b5e25929a00c1bb11c6562bd695b37ccdbecf",
+      "bytes": 2645,
+      "kind": "json",
+      "inspection_path": "git:110b5e25929a00c1bb11c6562bd695b37ccdbecf",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -216,6 +305,27 @@
   },
   {
     "source": "git_blob",
+    "oid": "20992883b2f4fd6a8072d9b0525d8bc9be176723",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "20992883b2f4fd6a8072d9b0525d8bc9be176723",
+      "bytes": 65358,
+      "kind": "json",
+      "inspection_path": "git:20992883b2f4fd6a8072d9b0525d8bc9be176723",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "2199fed32870c3655b206f8155e911c32f94ec42",
     "kind": "tabular",
     "rows": 50,
@@ -305,6 +415,24 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "271dc3607d404759422c1143b4ae5e4372a02f7c",
+    "kind": "tabular",
+    "rows": 0,
+    "fields": [
+      "ranking_sha256"
+    ],
+    "nonempty_candidate_cells": {},
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No structured original-document-ID plus rank schema"
   },
   {
     "source": "git_blob",
@@ -656,6 +784,27 @@
   },
   {
     "source": "git_blob",
+    "oid": "518f2c12ee03ee83c4a16988c2a9657c7bf797f2",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "518f2c12ee03ee83c4a16988c2a9657c7bf797f2",
+      "bytes": 1522,
+      "kind": "json",
+      "inspection_path": "git:518f2c12ee03ee83c4a16988c2a9657c7bf797f2",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "51d24a51d8c095e28bfd993b3d9048174274600a",
     "kind": "tabular",
     "rows": 50,
@@ -766,6 +915,27 @@
   },
   {
     "source": "git_blob",
+    "oid": "57f4aaf4509cfcca43a8c910d64a61ef76bd8c15",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "57f4aaf4509cfcca43a8c910d64a61ef76bd8c15",
+      "bytes": 1745,
+      "kind": "json",
+      "inspection_path": "git:57f4aaf4509cfcca43a8c910d64a61ef76bd8c15",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "583c5668ca5285b7194091712808100d84cceb95",
     "kind": "tabular",
     "rows": 50,
@@ -785,6 +955,71 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "5d7acdc0f138929ab23615186409f7cc64bbe739",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "5d7acdc0f138929ab23615186409f7cc64bbe739",
+      "bytes": 604427,
+      "kind": "json",
+      "inspection_path": "git:5d7acdc0f138929ab23615186409f7cc64bbe739",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -810,6 +1045,27 @@
   },
   {
     "source": "git_blob",
+    "oid": "6716b72cadf6ec31ab556489f38354eb85fe8392",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "6716b72cadf6ec31ab556489f38354eb85fe8392",
+      "bytes": 30055,
+      "kind": "json",
+      "inspection_path": "git:6716b72cadf6ec31ab556489f38354eb85fe8392",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "6740ea307d2766c1c42858a5ec877cedb561125c",
     "kind": "tabular",
     "rows": 50,
@@ -832,6 +1088,27 @@
   },
   {
     "source": "git_blob",
+    "oid": "6914925e0ed1ea28277b219b24cec4ac770714b8",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "6914925e0ed1ea28277b219b24cec4ac770714b8",
+      "bytes": 1791,
+      "kind": "json",
+      "inspection_path": "git:6914925e0ed1ea28277b219b24cec4ac770714b8",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "6a72acd649a67d5f468ee5255ac416ec6a3038f3",
     "kind": "tabular",
     "rows": 50,
@@ -851,6 +1128,48 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "6bd45d15a47f89ce6f8fce5e4c6bd13f63832437",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "6bd45d15a47f89ce6f8fce5e4c6bd13f63832437",
+      "bytes": 1019,
+      "kind": "json",
+      "inspection_path": "git:6bd45d15a47f89ce6f8fce5e4c6bd13f63832437",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "770e08240d7dafbbab4d3720d3a82e7a400ec27b",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "770e08240d7dafbbab4d3720d3a82e7a400ec27b",
+      "bytes": 2892,
+      "kind": "json",
+      "inspection_path": "git:770e08240d7dafbbab4d3720d3a82e7a400ec27b",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -990,6 +1309,71 @@
   },
   {
     "source": "git_blob",
+    "oid": "822d97997332ede3be2449c8338cb73a5704bc9e",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "822d97997332ede3be2449c8338cb73a5704bc9e",
+      "bytes": 600715,
+      "kind": "json",
+      "inspection_path": "git:822d97997332ede3be2449c8338cb73a5704bc9e",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "835e079a9b38b2a9b13279220ae47c29c180e878",
     "kind": "tabular",
     "rows": 50,
@@ -1034,6 +1418,27 @@
   },
   {
     "source": "git_blob",
+    "oid": "865af7cec342dbc49d2b552b8ae84394913f1d90",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "865af7cec342dbc49d2b552b8ae84394913f1d90",
+      "bytes": 5201,
+      "kind": "json",
+      "inspection_path": "git:865af7cec342dbc49d2b552b8ae84394913f1d90",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "875a47584e6e4f90aa7afaf5341da91d8ed449e2",
     "kind": "tabular",
     "rows": 200,
@@ -1055,6 +1460,27 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "8c8f4063cd5c43c6815bc72be58a30de9d0e3fd2",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "8c8f4063cd5c43c6815bc72be58a30de9d0e3fd2",
+      "bytes": 2468,
+      "kind": "json",
+      "inspection_path": "git:8c8f4063cd5c43c6815bc72be58a30de9d0e3fd2",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -1121,6 +1547,27 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "91ce93508fe09985eedf06d56a622950042a662e",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "91ce93508fe09985eedf06d56a622950042a662e",
+      "bytes": 2546,
+      "kind": "json",
+      "inspection_path": "git:91ce93508fe09985eedf06d56a622950042a662e",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -1234,6 +1681,27 @@
   },
   {
     "source": "git_blob",
+    "oid": "9aa0f150485edcf2ebf3736353828dc572f5305f",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "9aa0f150485edcf2ebf3736353828dc572f5305f",
+      "bytes": 26692,
+      "kind": "json",
+      "inspection_path": "git:9aa0f150485edcf2ebf3736353828dc572f5305f",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "9ad54adb351e8a66ad3e82d2cd10ca7ac4ac523d",
     "kind": "tabular",
     "rows": 50,
@@ -1324,6 +1792,27 @@
   },
   {
     "source": "git_blob",
+    "oid": "9bc7f2a99bef3773a56bd0ccea7cd3366ec0b17c",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "9bc7f2a99bef3773a56bd0ccea7cd3366ec0b17c",
+      "bytes": 630,
+      "kind": "json",
+      "inspection_path": "git:9bc7f2a99bef3773a56bd0ccea7cd3366ec0b17c",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "9ce55bc5c8d5c71abfe36d2ec82d4dfbe4145dde",
     "kind": "tabular",
     "rows": 50,
@@ -1343,6 +1832,562 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "human_evidence_doc_ids_or_ranks"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv",
+      "TREC_query_ids_seen": [],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "json",
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/cura_protocol.json",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_msmarco_test.csv",
+      "TREC_query_ids_seen": [],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_trec_ood.csv",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_msmarco_test.csv",
+      "TREC_query_ids_seen": [],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_trec_ood.csv",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_msmarco_test.csv",
+      "TREC_query_ids_seen": [],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_msmarco_test.csv",
+      "TREC_query_ids_seen": [],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_trec_ood.csv",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_msmarco_test.csv",
+      "TREC_query_ids_seen": [],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_trec_ood.csv",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_msmarco_test.csv",
+      "TREC_query_ids_seen": [],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+    "kind": "archive_member_tabular",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a147ed4645c7c68817f293c68ef8e098cfbc0ad9",
+      "bytes": 2781712,
+      "kind": "archive_member_tabular",
+      "candidate_id_fields": [
+        "candidate_ef",
+        "candidate_log_ef",
+        "candidate_ef_over_probe"
+      ],
+      "inspection_path": "git:a147ed4645c7c68817f293c68ef8e098cfbc0ad9::CURA_FINAL_SUBMISSION/results/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_trec_ood.csv",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "plausible_complete_ranking_candidate": false
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -1436,6 +2481,71 @@
   },
   {
     "source": "git_blob",
+    "oid": "a981f5cd1a586e743f092b8c13aaab416c8ec011",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "a981f5cd1a586e743f092b8c13aaab416c8ec011",
+      "bytes": 107716,
+      "kind": "json",
+      "inspection_path": "git:a981f5cd1a586e743f092b8c13aaab416c8ec011",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "abf6f8e6aac972991718f9f9ad6e7cd5b61fe66e",
     "kind": "tabular",
     "rows": 50,
@@ -1477,6 +2587,71 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "af20f536981c84ae2d97e44288303add935b1980",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "af20f536981c84ae2d97e44288303add935b1980",
+      "bytes": 1851036,
+      "kind": "json",
+      "inspection_path": "git:af20f536981c84ae2d97e44288303add935b1980",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -1524,6 +2699,26 @@
   },
   {
     "source": "git_blob",
+    "oid": "b53d24813f81ee7207e6f8129b73e8e632d32903",
+    "kind": "tabular",
+    "rows": 4,
+    "fields": [
+      "ranking_seeds_evaluated"
+    ],
+    "nonempty_candidate_cells": {
+      "ranking_seeds_evaluated": 4
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No structured original-document-ID plus rank schema"
+  },
+  {
+    "source": "git_blob",
     "oid": "b7cda432c99811bc24744152f5830f5fea4d0118",
     "kind": "tabular",
     "rows": 50,
@@ -1543,6 +2738,27 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "b8013121fea88ae1cb8d818bc0035ef56f61e1ac",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "b8013121fea88ae1cb8d818bc0035ef56f61e1ac",
+      "bytes": 1403,
+      "kind": "json",
+      "inspection_path": "git:b8013121fea88ae1cb8d818bc0035ef56f61e1ac",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -1568,6 +2784,27 @@
   },
   {
     "source": "git_blob",
+    "oid": "bc56186a68a4228c470369f9f83bf02981a3bef9",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "bc56186a68a4228c470369f9f83bf02981a3bef9",
+      "bytes": 624,
+      "kind": "json",
+      "inspection_path": "git:bc56186a68a4228c470369f9f83bf02981a3bef9",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "bea584c4cf3f4f4a6119b3413da1c03788eab3e8",
     "kind": "tabular",
     "rows": 50,
@@ -1587,6 +2824,113 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "bfd05c8119526b4b477400af1c171d67db55f619",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "bfd05c8119526b4b477400af1c171d67db55f619",
+      "bytes": 4077,
+      "kind": "json",
+      "inspection_path": "git:bfd05c8119526b4b477400af1c171d67db55f619",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "c0bd4b6ba6e32059250a6f30587412ca21261ee5",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "c0bd4b6ba6e32059250a6f30587412ca21261ee5",
+      "bytes": 6400,
+      "kind": "json",
+      "inspection_path": "git:c0bd4b6ba6e32059250a6f30587412ca21261ee5",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "c1bd08404ce5d423f0537e4453a3e545a21d3c26",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "c1bd08404ce5d423f0537e4453a3e545a21d3c26",
+      "bytes": 26795,
+      "kind": "json",
+      "inspection_path": "git:c1bd08404ce5d423f0537e4453a3e545a21d3c26",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -1631,6 +2975,71 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "cd545f20d46b3eb0979b8780252daa5e1b5f04b0",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "cd545f20d46b3eb0979b8780252daa5e1b5f04b0",
+      "bytes": 604989,
+      "kind": "json",
+      "inspection_path": "git:cd545f20d46b3eb0979b8780252daa5e1b5f04b0",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -1702,6 +3111,48 @@
   },
   {
     "source": "git_blob",
+    "oid": "d76bca2d2f75d7a9610d177bbeb3287e1ad33782",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "d76bca2d2f75d7a9610d177bbeb3287e1ad33782",
+      "bytes": 5201,
+      "kind": "json",
+      "inspection_path": "git:d76bca2d2f75d7a9610d177bbeb3287e1ad33782",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "d988c65dd814f0330ba2df765a5e1b0a4047eee0",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "d988c65dd814f0330ba2df765a5e1b0a4047eee0",
+      "bytes": 3366,
+      "kind": "json",
+      "inspection_path": "git:d988c65dd814f0330ba2df765a5e1b0a4047eee0",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "db8a2be62109162a6634c6107bcf2330c40c81ea",
     "kind": "tabular",
     "rows": 43,
@@ -1770,6 +3221,27 @@
   },
   {
     "source": "git_blob",
+    "oid": "e190ba387b6f72a6fa7c0e8c1c3a070e1c981473",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "e190ba387b6f72a6fa7c0e8c1c3a070e1c981473",
+      "bytes": 3572,
+      "kind": "json",
+      "inspection_path": "git:e190ba387b6f72a6fa7c0e8c1c3a070e1c981473",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "e783bd0a3d9ddf80a50f31aa3b63a58aadc793fa",
     "kind": "tabular",
     "rows": 50,
@@ -1792,6 +3264,71 @@
   },
   {
     "source": "git_blob",
+    "oid": "eb36fd23f3f8efaaf944405aa0a9d6d457968c13",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "eb36fd23f3f8efaaf944405aa0a9d6d457968c13",
+      "bytes": 513089,
+      "kind": "json",
+      "inspection_path": "git:eb36fd23f3f8efaaf944405aa0a9d6d457968c13",
+      "TREC_query_ids_seen": [
+        "1037798",
+        "104861",
+        "1063750",
+        "1103812",
+        "1106007",
+        "1110199",
+        "1112341",
+        "1113437",
+        "1114646",
+        "1114819",
+        "1115776",
+        "1117099",
+        "1121402",
+        "1121709",
+        "1124210",
+        "1129237",
+        "1133167",
+        "130510",
+        "131843",
+        "146187",
+        "148538",
+        "156493",
+        "168216",
+        "182539",
+        "183378",
+        "19335",
+        "207786",
+        "264014",
+        "359349",
+        "405717",
+        "443396",
+        "451602",
+        "47923",
+        "489204",
+        "490595",
+        "527433",
+        "573724",
+        "833860",
+        "855410",
+        "87181",
+        "87452",
+        "915593",
+        "962179"
+      ],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
     "oid": "eca7aa6c1407eee89198c4c36bf8b0dc954eaf94",
     "kind": "tabular",
     "rows": 199,
@@ -1811,6 +3348,45 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Policy candidate/configuration fields; no document-ID/rank retrieval schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "ed921e2cdba5f96c3063feae08f2d7567fa14a0b",
+    "kind": "tabular",
+    "rows": 0,
+    "fields": [
+      "ranking_sha256"
+    ],
+    "nonempty_candidate_cells": {},
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": true,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No structured original-document-ID plus rank schema"
+  },
+  {
+    "source": "git_blob",
+    "oid": "ef9d73bb71bc70045015ecb58614fda28e436ad5",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "ef9d73bb71bc70045015ecb58614fda28e436ad5",
+      "bytes": 3441,
+      "kind": "json",
+      "inspection_path": "git:ef9d73bb71bc70045015ecb58614fda28e436ad5",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
   },
   {
     "source": "git_blob",
@@ -1923,5 +3499,46 @@
     "plausible_complete_ranking_candidate": false,
     "accepted": false,
     "reason": "Manual free-text evidence; lacks full 43-query exact/ef-labelled document-rank coverage"
+  },
+  {
+    "source": "git_blob",
+    "oid": "fefa196df280d0119b37d42173acaa52095e49e2",
+    "kind": "json",
+    "accepted": false,
+    "reason": "Binary/archive/run candidate requires explicit original-corpus ranking verification",
+    "details": {
+      "oid": "fefa196df280d0119b37d42173acaa52095e49e2",
+      "bytes": 2969,
+      "kind": "json",
+      "inspection_path": "git:fefa196df280d0119b37d42173acaa52095e49e2",
+      "TREC_query_ids_seen": [],
+      "ranking_evidence": {
+        "document_id_arrays": [],
+        "document_rank_record_paths": []
+      },
+      "plausible_complete_ranking_candidate": false,
+      "note": "Scalar metric keys alone are not accepted ranking evidence"
+    },
+    "plausible_complete_ranking_candidate": false
+  },
+  {
+    "source": "git_blob",
+    "oid": "fff21c0a540f75422dc83d4f41bb278fe1eadc0a",
+    "kind": "tabular",
+    "rows": 4,
+    "fields": [
+      "ranking_reevaluation_completed"
+    ],
+    "nonempty_candidate_cells": {
+      "ranking_reevaluation_completed": 4
+    },
+    "candidate_examples": {},
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "has_method_or_budget_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No structured original-document-ID plus rank schema"
   }
 ]

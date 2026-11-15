@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "original_corpus_document_count": 1000629,
+  "corpus_docids_path": "msmarco_large/msmarco_1000000_q1000/cache/docids.txt",
+  "corpus_docids_sha256": null,
+  "exact_rankings_sha256": null,
+  "hnsw_rankings_sha256": null,
+  "original_corpus_identity_confirmed": false,
+  "original_run_provenance": ""
+}

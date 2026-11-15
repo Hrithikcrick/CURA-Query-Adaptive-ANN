@@ -1,0 +1,72 @@
+CURA 50-FAILURE QUALITATIVE ANALYSIS - MODEL-ASSISTED
+CURA-50-model-assisted-v1
+
+Total analyzed cases = 50
+Unit: one selected actual IR-unsafe query-budget case per query.
+Failure definition: nDCG_loss > 0.025. These are HNSW budget-sweep cases, not necessarily failures of the final CURA policy.
+
+Category counts (exactly one primary category per case):
+NEAR_TIE_BOUNDARY: 17 (34.00%)
+HIGH_ANN_RECALL_BUT_IR_FAILURE: 16 (32.00%)
+RARE_ENTITY: 7 (14.00%)
+LOW_ANN_RECALL_AND_IR_FAILURE: 7 (14.00%)
+AMBIGUOUS_QUERY: 3 (6.00%)
+LONG_OR_COMPLEX_QUERY: 0 (0.00%)
+OOD_DISTRIBUTION_SHIFT: 0 (0.00%)
+OTHER: 0 (0.00%)
+
+N_high_ann_failure = 16
+percentage_high_ann_failure = 100 * 16 / 50 = 32.00%
+ANN Recall@10 >= 0.90: 16 / 50 (32.00%)
+ANN Recall@10 < 0.90: 34 / 50 (68.00%)
+boundary_gap_10_11 <= 0.001: 19 / 50 (38.00%)
+Selected TREC-DL/OOD-source cases (source=trec-dl-2019): 8 / 50 (16.00%)
+Primary OOD_DISTRIBUTION_SHIFT assignments: 0
+High-confidence annotations: 23
+Medium-confidence annotations: 19
+LOW-confidence annotations: 8
+Needs human review: 8
+
+Three most common categories:
+1. NEAR_TIE_BOUNDARY: 17 (34.00%)
+2. HIGH_ANN_RECALL_BUT_IR_FAILURE: 16 (32.00%)
+3. RARE_ENTITY: 7 (14.00%); tied with LOW_ANN_RECALL_AND_IR_FAILURE
+
+Scientific interpretation:
+Most selected failures (34/50) have ANN recall below 0.90. Incomplete ANN reconstruction therefore remains a common numerical correlate, including rows given more specific primary labels.
+Nevertheless, 16/50 have recall >= 0.90 (all are 0.90 in this snapshot). Among these, 13 have zero approximate nDCG@10 and 5 have nDCG loss exactly 1. This is an observed counterexample to treating high neighbor overlap as a sufficient guarantee of downstream IR safety. It does not establish performance at recall above 0.90.
+Small exact rank-10/11 boundaries occur in 19/50 cases. 17 receive the provisional NEAR_TIE_BOUNDARY primary label, while two high-recall cases retain the higher-priority disagreement label. A small boundary is consistent with cutoff sensitivity, but aggregate metrics cannot establish which relevant documents were missed or whether the boundary caused the utility loss.
+Semantic labels describe plausible query properties. No entity-frequency measurements or retrieved-document content were used; entity rarity and causal retrieval difficulty have not been established.
+
+Source comparison (selected-set descriptive means):
+msmarco-dev-small: n=42, mean ANN Recall@10=0.642857, mean nDCG loss=0.835557, mean positive_qrel_count=1.047619
+trec-dl-2019: n=8, mean ANN Recall@10=0.675000, mean nDCG loss=0.345694, mean positive_qrel_count=67.625000
+Selected TREC cases have lower mean loss and substantially denser positive qrels than selected MS MARCO cases. Selection and relevance-label density confound this comparison; it does not establish a distribution-shift effect. Source membership alone is not used as the primary failure explanation.
+
+Selection and interpretation limits:
+12_prepare_50_actual_failures.py first chooses the highest-ANN-recall unsafe budget per query (ties: larger loss, then smaller efSearch). It prioritizes high-recall failures, TREC cases, small boundaries, then severe failures. This deliberately enriched selection is not random.
+The 32% high-recall coexistence statistic and all category shares describe these 50 selected cases only. They are neither population failure-prevalence estimates nor final CURA-policy failure rates, and do not demonstrate a calibrated CURA advantage.
+
+Reproducibility and annotation protocol:
+Only existing CSVs are read. No encoding, indexing, search, or HNSW experiment is run. Python standard library only; semantic judgments and review flags are frozen in 18_annotate_50_actual_failures.py.
+Primary priority: high recall/IR disagreement; provisional numerical boundary feature; clear semantic reading; distribution shift when supported; generic low recovery; other.
+HIGH means the descriptive numerical label follows directly from the recorded metrics. MEDIUM means a plausible boundary feature or semantic interpretation, with causation unverified. LOW means a competing explanation or unresolved referent requires researcher judgment. Confidence is qualitative, not a calibrated probability.
+Six boundary cases are explicitly flagged LOW because very poor neighbor recovery competes strongly with the cutoff interpretation. Two ambiguous entity/work cases are LOW. These are frozen qualitative review judgments, not an additional experimental threshold. Other boundary labels are MEDIUM for the observed feature only.
+The legacy numeric_suggestion value OOD_FAILURE is preserved but is not a valid output primary category. Manual fields and review_complete are copied unchanged; new fields do not certify human review.
+Empty-category means are blank (undefined), not fabricated zeros. Summary means are derived using Decimal and displayed to 12 decimal places; original numeric strings remain exact.
+Input: msmarco_large/msmarco_1000000_q1000/actual_50_failure_analysis/actual_50_ir_failures_review.csv
+Input SHA256: 65eee136acc1341e9c9b11f6206145d5ce2ce218fccf6f0390024bab18df9e86
+Byte-identical backup: actual_50_ir_failures_review.backup.csv
+Existing sweep: msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv
+Existing queries: msmarco_large/msmarco_1000000_q1000/results/queries.csv
+Reproduce: python 18_annotate_50_actual_failures.py
+Show LOW cases individually: python 18_annotate_50_actual_failures.py --show-low-confidence
+
+Validation:
+PASS: exactly 50 rows; all unsafe; 50 unique query IDs/query-budget pairs; no duplicate rows introduced.
+PASS: exactly one allowed primary label per row; confidence/review flags valid; required reviews included.
+PASS: all original columns, numeric field strings, IDs, order, and manual annotations unchanged.
+PASS: original and backup SHA256 identical; all selected measurements/text match existing result files within pre-existing CSV serialization precision.
+PASS: taxonomy counts/shares reconcile; review file contains exactly YES rows; CSV round-trip preserves all fields.
+
+IMPORTANT: This analysis is model-assisted. Only annotations manually checked by the researcher may be described as manually reviewed.

@@ -657,11 +657,39 @@
     "reason": "No original 43-query document/rank retrieval schema"
   },
   {
-    "path": "sigir_analysis/git_candidate_review.json",
+    "path": "sigir_analysis/evaluation_pipeline_validation.json",
     "candidate_fields": [
-      "candidate_id_examples"
+      "actual_TREC_ranking_evaluations_completed",
+      "sigir_analysis/test_ranking_input_gate.py"
     ],
     "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/git_candidate_review.json",
+    "candidate_fields": [
+      "candidate_ef",
+      "candidate_ef_over_probe",
+      "candidate_examples",
+      "candidate_id",
+      "candidate_id_fields",
+      "candidate_log_ef",
+      "document_id_arrays",
+      "document_rank_record_paths",
+      "has_document_id_column",
+      "has_rank_column",
+      "human_evidence_doc_ids_or_ranks",
+      "nonempty_candidate_cells",
+      "plausible_complete_ranking_candidate",
+      "ranking_evidence",
+      "ranking_reevaluation_completed",
+      "ranking_seeds_evaluated"
+    ],
+    "TREC_query_count": 43,
     "has_document_id_column": false,
     "has_rank_column": false,
     "plausible_complete_ranking_candidate": false,
@@ -673,7 +701,12 @@
     "candidate_fields": [
       "cache_candidates",
       "candidate_id_fields",
-      "git_candidates"
+      "document_id_arrays",
+      "document_rank_record_paths",
+      "git_candidates",
+      "plausible_complete_ranking_candidate",
+      "ranking_evidence",
+      "unresolved_ranking_candidates"
     ],
     "TREC_query_count": 43,
     "has_document_id_column": false,
@@ -721,6 +754,21 @@
     "reason": "No original 43-query document/rank retrieval schema"
   },
   {
+    "path": "sigir_analysis/ranking_candidate_review.json",
+    "candidate_fields": [
+      "candidate_fields",
+      "has_document_id_column",
+      "has_rank_column",
+      "plausible_complete_ranking_candidate"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
     "path": "sigir_analysis/ranking_recovery_status.json",
     "candidate_fields": [
       "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv",
@@ -734,7 +782,31 @@
     "reason": "No original 43-query document/rank retrieval schema"
   },
   {
+    "path": "sigir_analysis/trec_fixed_risk_work_by_density.csv",
+    "candidate_fields": [
+      "ranking_sha256"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
     "path": "sigir_analysis/trec_judgment_density_frontier.csv",
+    "candidate_fields": [
+      "ranking_sha256"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/trec_judgment_density_per_query.csv",
     "candidate_fields": [
       "ranking_sha256"
     ],
@@ -758,10 +830,66 @@
     "reason": "No original 43-query document/rank retrieval schema"
   },
   {
+    "path": "sigir_analysis/trec_ranking_provenance.template.json",
+    "candidate_fields": [
+      "corpus_docids_path",
+      "corpus_docids_sha256",
+      "exact_rankings_sha256",
+      "hnsw_rankings_sha256"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/trec_ranking_recovery_validation.json",
+    "candidate_fields": [
+      "candidate_verification",
+      "doc_id_mapping_verified",
+      "exact_query_rankings_verified",
+      "exact_rankings_recovered",
+      "expected_exact_query_rankings",
+      "expected_hnsw_query_budget_rankings",
+      "git_candidate_blobs_reviewed",
+      "hnsw_query_budget_rankings_verified",
+      "hnsw_rankings_recovered",
+      "working_tree_archive_candidate_schemas_reviewed"
+    ],
+    "TREC_query_count": 0,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
+    "path": "sigir_analysis/trec_retrieval_state.json",
+    "candidate_fields": [
+      "docid_map",
+      "exact_ranked_indices"
+    ],
+    "TREC_query_count": 43,
+    "has_document_id_column": false,
+    "has_rank_column": false,
+    "plausible_complete_ranking_candidate": false,
+    "accepted": false,
+    "reason": "No original 43-query document/rank retrieval schema"
+  },
+  {
     "path": "sigir_analysis/validation.json",
     "candidate_fields": [
+      "HNSW_rankings_present",
+      "all_10_ef_values_in_verified_rankings",
+      "exact_ranking_present",
+      "no_duplicate_query_ef_rank_rows",
+      "no_duplicate_query_rank_doc_rows",
       "ranking_metrics_unavailable_and_blank",
-      "ranking_seed_evaluations"
+      "ranking_seed_evaluations",
+      "retrieval_state_and_ranking_coverage_schema",
+      "same_rankings_across_qrel_conditions"
     ],
     "TREC_query_count": 0,
     "has_document_id_column": false,

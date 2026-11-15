@@ -1,0 +1,981 @@
+{
+  "source_worksheet": "beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv",
+  "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7",
+  "important": "Actual fixed-HNSW ef=10 failures, not deployed CURA failures. Suggestions are model-assisted; only explicit researcher decisions count.",
+  "category_mapping_note": "Existing human category text is preserved; equivalent compact codes are recorded alongside it. No new decision is inferred.",
+  "events": [
+    {
+      "action": "legacy_human_review_preserved",
+      "query_id": "10845",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "The exact search retrieved the relevant MACD explanation at rank 1, but HNSW with efSearch=10 missed it from the top 10. This caused nDCG@10 to fall from 1.0 to 0.0. The small search budget may have limited retrieval of the relevant neighbor.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "LEGACY_SOURCE_CASE_1",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7",
+      "original_human_failure_category": "Judged-relevant document missed by approximate search",
+      "reviewer": "Hrithik Sharma",
+      "original_evidence": "Exact rank 1: document 191588, relevance=1. HNSW top rank: document 316132, relevance=0. Document 191588 was absent from the HNSW top 10."
+    },
+    {
+      "action": "assistant_suggestion_corrected",
+      "query_id": "1451",
+      "reason": "Source passage formatter uses qrels.get(doc_id,0); zero may mean unjudged, so no explicit negative judgment is inferred.",
+      "previous_suggested_note": "Exact search ranks judged-relevant document 538005 first, but it is absent from the displayed HNSW ef=10 top five, whose results are all judged nonrelevant. Recorded nDCG@10 falls from 1.0 to 0.0; ANN Recall@10 is 0.2. The evidence shows lost relevant retrieval but does not isolate its search-path cause.",
+      "suggested_note": "Exact search ranks judged-relevant document 538005 first, but it is absent from the displayed HNSW ef=10 top five, whose displayed relevance labels are all 0 (no positive qrel recorded). Recorded nDCG@10 falls from 1.0 to 0.0; ANN Recall@10 is 0.2. The evidence shows lost relevant retrieval but does not isolate its search-path cause."
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "1451",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "1451",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Exact search ranks judged-relevant document 538005 first, but it is absent from the displayed HNSW ef=10 top five, whose displayed relevance labels are all 0 (no positive qrel recorded). Recorded nDCG@10 falls from 1.0 to 0.0; ANN Recall@10 is 0.2. The evidence shows lost relevant retrieval but does not isolate its search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_1",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "4785",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "4785",
+      "suggested_note": "Exact search retrieves relevant document 37517 first, but it is absent from the approximate top five. nDCG@10 falls from 1.0 to 0.0. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "4785",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Exact search retrieves relevant document 37517 first, but it is absent from the approximate top five. nDCG@10 falls from 1.0 to 0.0. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_2",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "5592",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "5592",
+      "suggested_note": "Fixed HNSW ef=10 records ANN Recall@10=0.5 and nDCG@10=0.0, compared with exact nDCG@10=1.0. Relevant document 355241 is absent from the displayed approximate top five. These observations do not isolate the search-path cause.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "5592",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.5 and nDCG@10=0.0, compared with exact nDCG@10=1.0. Relevant document 355241 is absent from the displayed approximate top five. These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_3",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "721",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "721",
+      "suggested_note": "Relevant document 496225 ranks first under exact search but is absent from the approximate top five. nDCG@10 falls from 1.0 to 0.0 despite ANN Recall@10 of 0.6. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "721",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 496225 ranks first under exact search but is absent from the approximate top five. nDCG@10 falls from 1.0 to 0.0 despite ANN Recall@10 of 0.6. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_4",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "8795",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "8795",
+      "suggested_note": "Relevant document 57297 ranks first under exact search but is absent from the approximate top five. nDCG@10 falls from 1.0 to 0.0 with ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "8795",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 57297 ranks first under exact search but is absent from the approximate top five. nDCG@10 falls from 1.0 to 0.0 with ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_5",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "904",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "904",
+      "suggested_note": "Relevant document 415514 ranks first under exact search but is absent from the approximate top five. nDCG@10 falls from 1.0 to 0.0 with ANN Recall@10 of 0.3. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "904",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 415514 ranks first under exact search but is absent from the approximate top five. nDCG@10 falls from 1.0 to 0.0 with ANN Recall@10 of 0.3. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_6",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "9824",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "9824",
+      "suggested_note": "Relevant document 574777 ranks first under exact search but is absent from the approximate top five. nDCG@10 falls from 1.0 to 0.0 with ANN Recall@10 of 0.2. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "9824",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 574777 ranks first under exact search but is absent from the approximate top five. nDCG@10 falls from 1.0 to 0.0 with ANN Recall@10 of 0.2. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_7",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "11088",
+      "category_answer": "4",
+      "human_category": "RANKING_BOUNDARY_INSTABILITY",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "11088",
+      "suggested_note": "Relevant document 437100 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.2. No boundary gap is recorded, so a cutoff-instability mechanism is not established by the available evidence.",
+      "human_verified": "NO",
+      "researcher_raw_category_response": "y4"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "11088",
+      "human_category": "RANKING_BOUNDARY_INSTABILITY",
+      "human_note": "Relevant document 437100 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.2. No boundary gap is recorded, so a cutoff-instability mechanism is not established by the available evidence.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_8",
+      "category_answer": "4",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "1198",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "1198",
+      "suggested_note": "Relevant document 56718 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "1198",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 56718 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_9",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "4946",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "4946",
+      "suggested_note": "Relevant document 121690 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "4946",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 121690 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_10",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "5125",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "5125",
+      "suggested_note": "Relevant document 318728 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.2. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "5125",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 318728 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.2. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_11",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "7105",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "7105",
+      "suggested_note": "Relevant document 72652 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.5. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "7105",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 72652 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.5. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_12",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "10034",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "10034",
+      "suggested_note": "Relevant document 181942 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "10034",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 181942 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 is zero with ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_13",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "2316",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "2316",
+      "suggested_note": "Relevant document 348955 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 and ANN Recall@10 are both zero. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "2316",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 348955 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 and ANN Recall@10 are both zero. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_14",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "3085",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "3085",
+      "suggested_note": "Relevant document 248619 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero despite ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "3085",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 248619 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero despite ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_15",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "594",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "594",
+      "suggested_note": "Relevant document 377322 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.3. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "594",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 377322 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.3. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_16",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "8",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "8",
+      "suggested_note": "Relevant document 65404 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.5. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "8",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 65404 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.5. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_17",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "8271",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "8271",
+      "suggested_note": "Relevant document 376709 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.3. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "8271",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 376709 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.3. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_18",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "4681",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "4681",
+      "suggested_note": "Relevant document 587959 ranks third under exact search but is absent from the approximate top five. Approximate nDCG@10 and ANN Recall@10 are both zero. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "4681",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 587959 ranks third under exact search but is absent from the approximate top five. Approximate nDCG@10 and ANN Recall@10 are both zero. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_19",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "7590",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "7590",
+      "suggested_note": "Relevant document 105165 ranks first under exact search but is absent from the approximate top five. Relevant document 222505 remains retrieved, moving from rank 4 to rank 2. nDCG@10 falls from 0.8772 to 0.3869; the underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "7590",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 105165 ranks first under exact search but is absent from the approximate top five. Relevant document 222505 remains retrieved, moving from rank 4 to rank 2. nDCG@10 falls from 0.8772 to 0.3869; the underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_20",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "2400",
+      "category_answer": "Y",
+      "human_category": "HIGH_ANN_RECALL_BUT_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "2400",
+      "suggested_note": "ANN Recall@10 of 0.9 coexists with nDCG loss of 0.4585. Relevant document 1198 ranks first under exact search but is absent from the approximate top five. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "2400",
+      "human_category": "HIGH_ANN_RECALL_BUT_IR_FAILURE",
+      "human_note": "ANN Recall@10 of 0.9 coexists with nDCG loss of 0.4585. Relevant document 1198 ranks first under exact search but is absent from the approximate top five. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_21",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "1297",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "1297",
+      "suggested_note": "Relevant document 171761 ranks fourth under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.4. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "1297",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 171761 ranks fourth under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.4. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_22",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "6985",
+      "category_answer": "Y",
+      "human_category": "HIGH_ANN_RECALL_BUT_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "6985",
+      "suggested_note": "ANN Recall@10 of 0.9 coexists with nDCG@10 falling from 0.4307 to zero. Relevant document 456436 ranks fourth under exact search but is absent from the approximate top five. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "6985",
+      "human_category": "HIGH_ANN_RECALL_BUT_IR_FAILURE",
+      "human_note": "ANN Recall@10 of 0.9 coexists with nDCG@10 falling from 0.4307 to zero. Relevant document 456436 ranks fourth under exact search but is absent from the approximate top five. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_23",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "4007",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "4007",
+      "suggested_note": "Relevant document 388704 ranks third under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.4. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "4007",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 388704 ranks third under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.4. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_24",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "4999",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "4999",
+      "suggested_note": "Relevant document 9938 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero despite ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "4999",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 9938 ranks first under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero despite ANN Recall@10 of 0.8. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_25",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "3830",
+      "category_answer": "Y",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "3830",
+      "suggested_note": "ANN Recall@10 is 0.8, while nDCG@10 falls from 0.3562 to zero. The displayed top-five excerpts do not locate the lost relevant result or establish the underlying search-path cause.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "3830",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_note": "ANN Recall@10 is 0.8, while nDCG@10 falls from 0.3562 to zero. The displayed top-five excerpts do not locate the lost relevant result or establish the underlying search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_26",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "5981",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "5981",
+      "suggested_note": "Relevant document 286182 ranks first under exact search but is absent from the approximate top five. Relevant document 210439 remains retrieved, moving from rank 4 to rank 3. nDCG@10 falls from 0.4852 to 0.1696; the underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "5981",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 286182 ranks first under exact search but is absent from the approximate top five. Relevant document 210439 remains retrieved, moving from rank 4 to rank 3. nDCG@10 falls from 0.4852 to 0.1696; the underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_27",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "4700",
+      "category_answer": "Y",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "4700",
+      "suggested_note": "ANN Recall@10 is 0.5, while nDCG@10 falls from 0.3155 to zero. The displayed top-five excerpts do not locate the lost relevant result or establish the underlying search-path cause.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "4700",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_note": "ANN Recall@10 is 0.5, while nDCG@10 falls from 0.3155 to zero. The displayed top-five excerpts do not locate the lost relevant result or establish the underlying search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_28",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "9644",
+      "category_answer": "Y",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "9644",
+      "suggested_note": "ANN Recall@10 and approximate nDCG@10 are both zero, while exact nDCG@10 is 0.3155. The displayed top-five lists share no documents. These excerpts do not locate the judged-relevant result or establish the underlying search-path cause.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "9644",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_note": "ANN Recall@10 and approximate nDCG@10 are both zero, while exact nDCG@10 is 0.3155. The displayed top-five lists share no documents. These excerpts do not locate the judged-relevant result or establish the underlying search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_29",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "6668",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "6668",
+      "suggested_note": "Relevant document 457294 ranks third under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.5. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "6668",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 457294 ranks third under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.5. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_30",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "1284",
+      "category_answer": "Y",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "1284",
+      "suggested_note": "ANN Recall@10 is 0.8, while nDCG@10 falls from 0.3010 to zero. The displayed top-five lists are identical, so these excerpts do not locate the lost relevant result or establish the underlying search-path cause.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "1284",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_note": "ANN Recall@10 is 0.8, while nDCG@10 falls from 0.3010 to zero. The displayed top-five lists are identical, so these excerpts do not locate the lost relevant result or establish the underlying search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_31",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "4920",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "4920",
+      "suggested_note": "Relevant document 228341 ranks first under exact search but is absent from the approximate top five. Relevant document 306815 remains retrieved, moving from rank 2 to rank 1. nDCG@10 falls from 0.7654 to 0.4693; the underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "4920",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 228341 ranks first under exact search but is absent from the approximate top five. Relevant document 306815 remains retrieved, moving from rank 2 to rank 1. nDCG@10 falls from 0.7654 to 0.4693; the underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_32",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "604",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "604",
+      "suggested_note": "Relevant document 261622 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.7. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "604",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 261622 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.7. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_33",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "7823",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "7823",
+      "suggested_note": "Relevant document 451196 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.7. The underlying search-path cause is unverified.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "7823",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Relevant document 451196 ranks second under exact search but is absent from the approximate top five. Approximate nDCG@10 falls to zero, with ANN Recall@10 of 0.7. The underlying search-path cause is unverified.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_34",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "10137",
+      "category_answer": "Y",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "10137",
+      "suggested_note": "ANN Recall@10 is 0.4, while nDCG@10 falls from 0.2891 to zero. The displayed top-five excerpts do not locate the lost relevant result or establish the underlying search-path cause.",
+      "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "10137",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_note": "ANN Recall@10 is 0.4, while nDCG@10 falls from 0.2891 to zero. The displayed top-five excerpts do not locate the lost relevant result or establish the underlying search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_35",
+      "category_answer": "Y",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "515",
+      "category_answer": "2",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "assistant_evidence_note_displayed",
+      "query_id": "515",
+      "suggested_note": "ANN Recall@10 is 0.8, while nDCG@10 falls from 0.2891 to zero. The displayed top-five lists are identical, so these excerpts do not locate the lost relevant result or establish the underlying search-path cause.",
+      "human_verified": "NO"
+    }
+  ]
+}

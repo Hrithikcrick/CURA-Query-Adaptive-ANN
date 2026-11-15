@@ -1,0 +1,105 @@
+{
+  "methodology": "We analyzed 50 actual IR-unsafe query-budget cases using a structured model-assisted taxonomy. Cases initially flagged as uncertain were resolved through a second evidence-based model-assisted review using predefined numerical and semantic decision rules.",
+  "verification_source": "MODEL_ASSISTED_AUTO_RESOLUTION",
+  "model_input_sha256": "89eb1ed1dd25948287ff4d69146bcb2f02602d4deb2c79628360571e7ae61a9f",
+  "original_input_sha256": "65eee136acc1341e9c9b11f6206145d5ce2ce218fccf6f0390024bab18df9e86",
+  "flagged_query_keys": [
+    "trec19::855410",
+    "dev::952452",
+    "dev::783843",
+    "dev::1038755",
+    "dev::1092978",
+    "dev::1092297",
+    "dev::1058822",
+    "dev::777297"
+  ],
+  "human_review_performed": false,
+  "authorization": "Researcher requested automatic second-pass resolution; this is not human verification of cases.",
+  "decision_rules": [
+    "High ANN recall and unsafe IR first; observed small boundary next under explicit feature rule.",
+    "Clear rarity, ambiguity or complexity can follow; names or TREC membership alone are insufficient.",
+    "Use numerical low-recall fallback when semantic explanations lack clear support."
+  ],
+  "events": [
+    {
+      "action": "model_assisted_auto_resolution",
+      "query_key": "trec19::855410",
+      "final_failure_category": "NEAR_TIE_BOUNDARY",
+      "resolution_notes": "Second model-assisted review: exact rank-10/11 gap=0.0007342398166656 <= 0.001 meets the predefined near-boundary feature rule. ANN Recall@10=0.3 and nDCG loss=0.9935774939007994 also show incomplete ANN recovery and IR failure. The boundary label is provisional; aggregate metrics do not establish that cutoff instability caused the relevance loss.",
+      "resolution_confidence": "MEDIUM",
+      "resolution_secondary_observation": "LOW_ANN_RECALL_AND_IR_FAILURE is a directly observed secondary pattern. Entity ambiguity/rarity and distribution-shift causation remain unverified.",
+      "initial_llm_failure_category": "NEAR_TIE_BOUNDARY",
+      "human_review_performed": false
+    },
+    {
+      "action": "model_assisted_auto_resolution",
+      "query_key": "dev::952452",
+      "final_failure_category": "NEAR_TIE_BOUNDARY",
+      "resolution_notes": "Second model-assisted review: exact rank-10/11 gap=0.0003535747528076 <= 0.001 meets the predefined near-boundary feature rule. ANN Recall@10=0.2 and nDCG loss=1.0 also show incomplete ANN recovery and IR failure. The boundary label is provisional; aggregate metrics do not establish that cutoff instability caused the relevance loss.",
+      "resolution_confidence": "MEDIUM",
+      "resolution_secondary_observation": "LOW_ANN_RECALL_AND_IR_FAILURE is a directly observed secondary pattern. Entity ambiguity/rarity and distribution-shift causation remain unverified.",
+      "initial_llm_failure_category": "NEAR_TIE_BOUNDARY",
+      "human_review_performed": false
+    },
+    {
+      "action": "model_assisted_auto_resolution",
+      "query_key": "dev::783843",
+      "final_failure_category": "NEAR_TIE_BOUNDARY",
+      "resolution_notes": "Second model-assisted review: exact rank-10/11 gap=0.0004014670848846 <= 0.001 meets the predefined near-boundary feature rule. ANN Recall@10=0.3 and nDCG loss=0.9197207891481876 also show incomplete ANN recovery and IR failure. The boundary label is provisional; aggregate metrics do not establish that cutoff instability caused the relevance loss.",
+      "resolution_confidence": "MEDIUM",
+      "resolution_secondary_observation": "LOW_ANN_RECALL_AND_IR_FAILURE is a directly observed secondary pattern. Entity ambiguity/rarity and distribution-shift causation remain unverified.",
+      "initial_llm_failure_category": "NEAR_TIE_BOUNDARY",
+      "human_review_performed": false
+    },
+    {
+      "action": "model_assisted_auto_resolution",
+      "query_key": "dev::1038755",
+      "final_failure_category": "NEAR_TIE_BOUNDARY",
+      "resolution_notes": "Second model-assisted review: exact rank-10/11 gap=0.0005866885185241 <= 0.001 meets the predefined near-boundary feature rule. ANN Recall@10=0.0 and nDCG loss=1.0 also show incomplete ANN recovery and IR failure. The boundary label is provisional; aggregate metrics do not establish that cutoff instability caused the relevance loss.",
+      "resolution_confidence": "MEDIUM",
+      "resolution_secondary_observation": "LOW_ANN_RECALL_AND_IR_FAILURE is a directly observed secondary pattern. Entity ambiguity/rarity and distribution-shift causation remain unverified.",
+      "initial_llm_failure_category": "NEAR_TIE_BOUNDARY",
+      "human_review_performed": false
+    },
+    {
+      "action": "model_assisted_auto_resolution",
+      "query_key": "dev::1092978",
+      "final_failure_category": "NEAR_TIE_BOUNDARY",
+      "resolution_notes": "Second model-assisted review: exact rank-10/11 gap=0.0006694495677947 <= 0.001 meets the predefined near-boundary feature rule. ANN Recall@10=0.1 and nDCG loss=1.0 also show incomplete ANN recovery and IR failure. The boundary label is provisional; aggregate metrics do not establish that cutoff instability caused the relevance loss.",
+      "resolution_confidence": "MEDIUM",
+      "resolution_secondary_observation": "LOW_ANN_RECALL_AND_IR_FAILURE is a directly observed secondary pattern. Entity ambiguity/rarity and distribution-shift causation remain unverified.",
+      "initial_llm_failure_category": "NEAR_TIE_BOUNDARY",
+      "human_review_performed": false
+    },
+    {
+      "action": "model_assisted_auto_resolution",
+      "query_key": "dev::1092297",
+      "final_failure_category": "NEAR_TIE_BOUNDARY",
+      "resolution_notes": "Second model-assisted review: exact rank-10/11 gap=0.0008595585823059 <= 0.001 meets the predefined near-boundary feature rule. ANN Recall@10=0.0 and nDCG loss=0.5 also show incomplete ANN recovery and IR failure. The boundary label is provisional; aggregate metrics do not establish that cutoff instability caused the relevance loss.",
+      "resolution_confidence": "MEDIUM",
+      "resolution_secondary_observation": "LOW_ANN_RECALL_AND_IR_FAILURE is a directly observed secondary pattern. Entity ambiguity/rarity and distribution-shift causation remain unverified.",
+      "initial_llm_failure_category": "NEAR_TIE_BOUNDARY",
+      "human_review_performed": false
+    },
+    {
+      "action": "model_assisted_auto_resolution",
+      "query_key": "dev::1058822",
+      "final_failure_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "resolution_notes": "Second model-assisted review: ANN Recall@10=0.6 < 0.90 and nDCG loss=1.0 > 0.025 directly support coincident ANN recovery and IR failure. Boundary gap=0.0052991807460784 exceeds 0.001. The query text does not establish a stronger semantic explanation.",
+      "resolution_confidence": "HIGH",
+      "resolution_secondary_observation": "The name 'ninjago' alone does not establish rarity or multiple distinct intended works. Initial ambiguity remains unverified secondary context.",
+      "initial_llm_failure_category": "AMBIGUOUS_QUERY",
+      "human_review_performed": false
+    },
+    {
+      "action": "model_assisted_auto_resolution",
+      "query_key": "dev::777297",
+      "final_failure_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "resolution_notes": "Second model-assisted review: ANN Recall@10=0.5 < 0.90 and nDCG loss=1.0 > 0.025 directly support coincident ANN recovery and IR failure. Boundary gap=0.0078737735748291 exceeds 0.001. The query text does not establish a stronger semantic explanation.",
+      "resolution_confidence": "HIGH",
+      "resolution_secondary_observation": "The trailing token in 'noritake m' is unexplained, but multiple specific meanings and entity rarity are not established. Initial ambiguity remains unverified secondary context.",
+      "initial_llm_failure_category": "AMBIGUOUS_QUERY",
+      "human_review_performed": false
+    }
+  ]
+}

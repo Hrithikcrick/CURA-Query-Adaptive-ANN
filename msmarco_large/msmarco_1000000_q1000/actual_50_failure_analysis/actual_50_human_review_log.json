@@ -1,0 +1,17 @@
+{
+  "methodology": "Model-assisted categorization; explicit researcher decisions transcribed from chat.",
+  "model_input_sha256": "89eb1ed1dd25948287ff4d69146bcb2f02602d4deb2c79628360571e7ae61a9f",
+  "flagged_query_keys": [
+    "trec19::855410",
+    "dev::952452",
+    "dev::783843",
+    "dev::1038755",
+    "dev::1092978",
+    "dev::1092297",
+    "dev::1058822",
+    "dev::777297"
+  ],
+  "human_verified_from_llm_definition": "YES means an originally model-assisted flagged case was explicitly reviewed by the researcher, including category overrides.",
+  "earlier_manual_fields": "Preserved as received; no additional rows promoted without independent verification of their provenance.",
+  "events": []
+}

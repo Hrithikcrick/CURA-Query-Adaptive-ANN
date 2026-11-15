@@ -1,0 +1,46 @@
+{
+  "validation": {
+    "Original 50-case snapshot SHA256 unchanged": true,
+    "Exactly 50 original and model-annotated rows": true,
+    "All original numeric, ID and manual strings preserved": true,
+    "Exactly eight originally uncertain cases match second-pass review set": true,
+    "Resolution log matches deterministic second-pass judgments": true,
+    "Exactly 50 final failure rows": true,
+    "Exactly 50 unique query_key values": true,
+    "Query IDs and order unchanged": true,
+    "All original experimental and manual field strings unchanged": true,
+    "All initial LLM fields including confidence, notes and secondary observations unchanged": true,
+    "All final categories populated and valid": true,
+    "No missing final notes": true,
+    "Zero rows falsely marked human verified": true,
+    "Exactly 50 MODEL_ASSISTED rows": true,
+    "Exactly 8 automatic second-pass resolutions": true,
+    "Exactly 42 initial-model annotations retained": true,
+    "All cases remain actual IR-unsafe budget cases": true,
+    "Final taxonomy totals 50": true,
+    "Original and initial-model input bytes unchanged": true
+  },
+  "statistics": {
+    "N_high_ann_failure": 16,
+    "N_low_ann_failure": 34,
+    "N_near_tie": 19,
+    "N_ood": 8,
+    "mean_ANN_Recall10": "0.648000000000",
+    "mean_nDCG_loss": "0.757179268940",
+    "median_nDCG_loss": "1.000000000000",
+    "percentage_high_ann_failure": 32
+  },
+  "top_categories_including_third_place_ties": [
+    "NEAR_TIE_BOUNDARY (17/50)",
+    "HIGH_ANN_RECALL_BUT_IR_FAILURE (16/50)",
+    "LOW_ANN_RECALL_AND_IR_FAILURE (9/50)"
+  ],
+  "original_sha256": "65eee136acc1341e9c9b11f6206145d5ce2ce218fccf6f0390024bab18df9e86",
+  "model_sha256": "89eb1ed1dd25948287ff4d69146bcb2f02602d4deb2c79628360571e7ae61a9f",
+  "auto_resolution_log_sha256": "a7b75a9e7272e05845f7828189857110995e7207417bbead1c952d7a79c65a76",
+  "final_sha256": "4e761395b518d9135e80c03c7015aa759b34ca23d4711acb70af05e9cb025a29",
+  "uncertain_auto_resolved_count": 8,
+  "human_verified_count": 0,
+  "model_assisted_count": 50,
+  "methodology": "We analyzed 50 actual IR-unsafe query-budget cases using a structured model-assisted taxonomy. Cases initially flagged as uncertain were resolved through a second evidence-based model-assisted review using predefined numerical and semantic decision rules."
+}

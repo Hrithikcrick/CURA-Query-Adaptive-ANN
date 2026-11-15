@@ -4,13 +4,13 @@
 
 **Supported finding.** CURA beats the original calibration-selected ef96 baseline on recorded MS MARCO work, but post-hoc fixed ef=48 matches CURA's observed test violation count and uses **28.29% less work**. This implementation has not demonstrated an advantage on the observed fixed risk/work frontier. The post-hoc comparison is a diagnostic, not a prospectively selected policy or population-risk guarantee.
 
-**New progress:** original TREC-DL-2019 passage qrels are recovered and validated for all 43 saved query IDs. Fifty deterministic qrel seeds for each stochastic condition are prepared. **Same-ranking density evaluation remains BLOCKED:** original exact/HNSW ranked IDs and the original vectors/index/document map are absent. Zero ranking seeds were evaluated. No ranking-dependent density estimate or plot was invented.
+**Recovery state:** original TREC-DL-2019 passage qrels are recovered and validated for all 43 saved query IDs. Fifty deterministic qrel seeds for each stochastic condition are prepared. **Same-ranking density evaluation remains BLOCKED:** original exact/HNSW ranked IDs and the original vectors/index/document map are absent. Zero ranking seeds were evaluated. No ranking-dependent density estimate or plot was invented.
 
 ## Exhaustive local recovery audit
 
-The audit enumerated **3351 files** recursively in the entire workspace, including hidden and ignored files. [local_artifact_inventory.csv](../sigir_analysis/local_artifact_inventory.csv) lists every file and classifies known runtime dependencies and Git internals separately. It inspected **542 file/member contents or schemas**, archive content, NumPy headers and all **598 local Git blobs**, including unreachable objects. No inspection errors were recorded. The [before-recovery snapshot](../sigir_analysis/local_retrieval_audit_before_recovery.json) and [current audit](../sigir_analysis/local_retrieval_audit.json) preserve the evidence.
+The audit enumerated **3468 files** recursively in the entire workspace, including hidden and ignored files. [local_artifact_inventory.csv](../sigir_analysis/local_artifact_inventory.csv) lists every file at the scan snapshot and classifies known runtime dependencies and Git internals separately. It inspected **789 file/member contents or schemas**, archive content, NumPy headers and all **656 local Git blobs**, including all **278 unreachable blobs**. Git parsing produced 853 content/member inspections and included refs, reflogs, nested archives and backup/code clues. No inspection errors or unresolved ranking candidates were recorded. The [before-recovery snapshot](../sigir_analysis/local_retrieval_audit_before_recovery.json) and [current audit](../sigir_analysis/local_retrieval_audit.json) preserve the evidence.
 
-CSV/TSV contents, JSON/JSONL structures, text qrel/run formats, binary cache filenames and ZIP/gzip/tar members were checked. No original retrieval pickle, parquet, .trec/.run, NumPy ranking array or FAISS/HNSW index was found. Pickles would be inspected without execution. Git tabular candidates contain policy parameters/configuration IDs, completion flags or manual FiQA fields, as recorded in the [candidate review](../sigir_analysis/git_candidate_review.json). Query-ID lists and scalar metrics cannot reconstruct document rankings.
+CSV/TSV contents, JSON/JSONL structures, notebook outputs, script and backup path clues, text qrel/run formats, binary cache filenames and ZIP/gzip/tar members were checked. Git JSON structures and code/backup clues were inspected alongside tabular candidates. No original retrieval pickle, parquet, .trec/.run, NumPy ranking array or FAISS/HNSW index was found. Pickles would be inspected without execution. Git candidates contain policy parameters/configuration IDs, completion flags, research metadata or manual FiQA fields, as recorded in the [candidate review](../sigir_analysis/git_candidate_review.json). Query-ID lists and scalar metrics cannot reconstruct document rankings.
 
 The only original vector cache is `data/beir/fiqa_embeddings.npz`: 57,638 x 384 document vectors and 648 x 384 query vectors, with FiQA IDs. It belongs to a different corpus and cannot substitute for the million-scale MS MARCO cache. Phase-04/05 source sweeps retain `first_indices` in memory and export scalar metrics; corresponding saved ranking IDs were not recovered.
 
@@ -26,7 +26,15 @@ The only original vector cache is `data/beir/fiqa_embeddings.npz`: 57,638 x 384 
 
 See [ranking_recovery_requirements.csv](../sigir_analysis/ranking_recovery_requirements.csv) for exact paths. If rankings are restored, no retrieval is needed. If only the original query vectors, index and document map are restored, rerun HNSW retrieval only for these 43 queries at ef 10,16,24,32,48,64,96,128,192,256. Recover exact rankings from original exact arrays or exhaustive search over the original cached corpus vectors, preserving original normalization, similarity, k, mapping and index settings. Do not regenerate vectors, train the controller or rebuild an index.
 
-The mandatory [ranking recovery validation](../sigir_analysis/trec_ranking_recovery_validation.json) records missing exact/HNSW rankings, no retrieval rerun, no embedding/index/model rebuild and metric reproduction **NOT RUN** (`null`, not a passing value). Candidate cells and coverage were checked in 87 Git blobs and the working-tree/archive schemas. Original parameters are recoverable: `sentence-transformers/msmarco-MiniLM-L6-cos-v5`, normalized float32 vectors, inner-product similarity, HNSW M=32, efConstruction=200, top10 search, one search thread, original FAISS 1.15.1. The [retrieval-state record](../sigir_analysis/trec_retrieval_state.json) distinguishes those known settings from missing original vectors/index/map. No normalized ranking CSV was created without valid data.
+The mandatory [ranking recovery validation](../sigir_analysis/trec_ranking_recovery_validation.json) records missing exact/HNSW rankings, no retrieval rerun, no embedding/index/model rebuild and metric reproduction **NOT RUN** (`null`, not a passing value). Candidate cells and coverage were checked in 135 Git candidate records and the working-tree/archive schemas. The requested `queries_found=0` and `ef_values_found=[]` count verified document rankings; 43 saved query identities and ten scalar-metric ef settings remain available. Original parameters are recoverable: `sentence-transformers/msmarco-MiniLM-L6-cos-v5`, normalized float32 vectors, inner-product similarity, HNSW M=32, efConstruction=200, top10 search, one search thread, original FAISS 1.15.1. The [detailed retrieval-state record](../sigir_analysis/trec_retrieval_state.json) and [requested state audit](../sigir_analysis/trec_retrieval_state_audit.json) distinguish known configured settings from missing original vectors/index/map. Actual vector normalization, index metric and corpus identity/order cannot be verified without those artifacts. No normalized ranking CSV was created without valid data.
+
+The [retrieval reproduction table](../sigir_analysis/trec_retrieval_reproduction.csv) records 61 archived comparison targets: exact mean nDCG and six metrics at each fixed HNSW ef. Recreated values and differences are blank, every comparison is incomplete, and no reproduction pass is claimed. The [reproduction status](../sigir_analysis/trec_retrieval_reproduction_status.md) explains the missing-state gate, prospective metric checks and why saved work/timing are not new rerun measurements. No alternative corpus, embedding generation, index rebuild or controller training was used.
+
+## Implemented evaluation path for restored rankings
+
+The [restored-ranking evaluator](../sigir_analysis/run_trec_judgment_density.py) now provides a separate gated path from valid original ranked IDs to all four density conditions, seed summaries/CIs, fixed frontiers, frozen CURA diagnostics and requested plots. Its [input gate](../sigir_analysis/ranking_input_gate.py) verifies original query/document identity evidence, source hashes and every FULL per-query nDCG/loss/ANN Recall before any thinning result is written. It stops on missing inputs or inconsistent reproduction. Frozen CURA source hashes and probe/search accounting are checked. [Recovery instructions](../sigir_analysis/RESTORED_RANKING_EVALUATION.md) specify schemas, provenance limitations and commands.
+
+[Implementation validation](../sigir_analysis/evaluation_pipeline_validation.json) uses isolated synthetic fixtures, including all 50 seeds in a temporary synthetic workspace. These checks do not count as real TREC observations. Actual-input preflight remains BLOCKED and writes no experiment results. The current study status, unavailable density plots and scientific conclusions are unchanged; a tested implementation cannot replace missing original rankings.
 
 ## Original qrels recovery and identity checks
 
@@ -62,7 +70,7 @@ Match the original protocol: unjudged=0; gain `2**grade-1`; discount `log2(rank+
 
 Report 95% CIs over seed-average effects conditional on these 43 queries, with paired query/seed FULL-minus-thinned changes. A crossed query-and-seed bootstrap can assess query-sampling sensitivity; never treat 43 x 50 cells or repeated FULL values as independent queries. Thinning may increase or decrease nDCG and violations because both DCG and IDCG change. Positive-only thinning models missing positive judgments, not every incompleteness mechanism.
 
-**Unavailable outputs:** `judgment_density_vs_budget_gap.png`, `judgment_density_vs_zero_ndcg.png`, `judgment_density_vs_ir_safe_budget.png` and `judgment_density_vs_risk_work.png` are intentionally absent. No ranking reevaluation observations exist from which to plot them. The canonical [fixed-by-density table](../sigir_analysis/trec_fixed_risk_work_by_density.csv), [per-query table](../sigir_analysis/trec_judgment_density_per_query.csv) and [unchanged-policy CURA table](../sigir_analysis/trec_cura_by_density.csv) have headers and zero observations. The CURA evaluation label will be `unchanged CURA policy under alternate qrel evaluation`. No density effect, seed CI or paired significance result is claimed.
+**Unavailable outputs:** `judgment_density_vs_budget_gap.png`, `judgment_density_vs_zero_ndcg.png`, `judgment_density_vs_ir_safe_budget.png` and `judgment_density_vs_risk_work.png` are intentionally absent. No ranking reevaluation observations exist from which to plot them. The canonical [fixed-by-density table](../sigir_analysis/trec_fixed_risk_work_by_density.csv), [per-query table](../sigir_analysis/trec_judgment_density_per_query.csv) and [unchanged-policy CURA table](../sigir_analysis/trec_cura_by_density.csv) have headers and zero observations. The CURA evaluation label will be `unchanged CURA policy under alternate relevance-judgment evaluation`. No density effect, seed CI or paired significance result is claimed.
 
 ## Preserved exact-nDCG stratified analysis
 
@@ -124,14 +132,16 @@ All research artifacts are under `sigir_analysis/`; this is the main report. The
 python sigir_analysis/recover_trec_qrels.py
 python sigir_analysis/audit_local_retrieval.py
 python sigir_analysis/verify_trec_ranking_recovery.py
+python sigir_analysis/record_trec_reproduction.py
 python sigir_analysis/analyze_saved_artifacts.py
 python sigir_analysis/build_research_report.py
 python sigir_analysis/validate_analysis.py
+python sigir_analysis/completion_status.py
 ```
 
 Recovery reuses the locally verified qrels; network is needed only if absent. The other commands do not run retrieval, generate embeddings, construct an index or train a controller. [analysis_protocol.json](../sigir_analysis/analysis_protocol.json) records source hashes and versions. [preserved_analysis_hashes.json](../sigir_analysis/preserved_analysis_hashes.json) verifies unchanged numerical artifacts after renaming; [validation.json](../sigir_analysis/validation.json) separates passing input/saved-data checks from **FAIL for the requested full-study requirements**. Missing rankings prevent same-ranking/ANN-invariance checks, FULL metric reproduction, duplicate-ranking checks and 50 completed seed evaluations. The validator returns exit code 1 for these unmet requirements; it does not mislabel available-input checks as completion of the experiment. Query-ID and normalized exact-text leakage checks pass across the original 600/200/200/43 split.
 
-The short-paper source is unchanged in this continuation, as recorded by [the evidence gate](../sigir_analysis/short_paper_evidence_gate.json). Its update remains deferred until all required evidence is validated. No commit or push was performed.
+The short paper remains a supported-evidence draft with the density experiment explicitly pending. After saved-data validation, its sole source edit corrected the reproducibility directory to `sigir_analysis`; reverse-substitution reproduces the prior complete source hash. [The maintenance/evidence record](../sigir_analysis/short_paper_evidence_gate.json) documents this correction and prohibits new density claims before the experiment validates. No manuscript result was added or changed. The [requested completion report](../sigir_analysis/SIGIR_COMPLETION_STATUS.txt) records the remaining evidence gap. No commit or push was performed.
 
 SIGIR RESEARCH COMPLETION STATUS
 
@@ -159,13 +169,13 @@ NO
 Exact-nDCG stratified analysis:
 COMPLETE
 
-Full fixed risk/work frontier:
+Fixed risk/work frontier:
 COMPLETE
 
-Same-ranking judgment-density experiment:
+Same-ranking judgment-density study:
 BLOCKED
 
-50-seed thinning:
+50-seed judgment thinning:
 INCOMPLETE
 
 Statistical analysis:
@@ -174,20 +184,23 @@ INCOMPLETE
 Validation:
 FAIL
 
-Main finding:
-CURA uses 20.51% less work than calibration-selected ef96 on 200 held-out queries. Post-hoc fixed ef48 matches CURA's observed 1% violation rate with 28.29% less work; ef64 also has lower observed risk and work than CURA. Exact-positive queries account for 92.59% of the original saving, while judgment-density effects remain unresolved. Available-input checks pass, but full-study validation fails because ranking-based checks and 50 scored seeds remain unavailable.
-
-Does a risk-matched fixed budget beat current CURA?
+Risk-matched fixed beats current CURA:
 YES
 
-Does judgment sparsity materially change the ANN-vs-IR budget gap?
+Judgment sparsity materially changes ANN-vs-IR budget gap:
 UNRESOLVED
 
-Current strongest novelty:
-The strongest supported contribution is a paired analysis showing that ANN-neighbor fidelity and judged-IR safety can require different budgets even when exact nDCG is positive. The full fixed frontier exposes how calibration and probe overhead affect whether that headroom yields an adaptive efficiency advantage.
+Strongest positive result:
+On 200 held-out MS MARCO queries, CURA uses 20.51% less recorded distance work than the original calibration-selected fixed ef96 baseline. Exact-positive-nDCG queries contribute 92.59% of that saving, so the reduction is not primarily an exact-zero artifact.
+
+Strongest negative result:
+Post-hoc fixed ef48 matches CURA's observed 2/200 violation rate with 28.29% less work. Fixed ef64 also has lower observed risk and work than CURA. The current implementation does not dominate the complete observed fixed frontier; retrospective risk matching is a diagnostic, not a prospectively calibrated replacement or proof of equal population risk.
+
+Current novelty:
+ANN-neighbor fidelity and judged downstream IR safety can require different budgets even when exact nDCG is positive. Exact-zero stratification separates a trivial reference-loss case from this remaining metric-dependent opportunity. The complete fixed frontier shows that conservative calibration and adaptive probe overhead can account for a saving against a selected baseline without establishing adaptive superiority. CURA is a case study of these limits; the causal effect of relevance-judgment completeness remains unresolved until the same rankings are evaluated under full and thinned qrels.
 
 Remaining blocker:
 Original exact top-k document IDs and HNSW document IDs for all 43 queries at all ten ef values are missing. The original subset document map, query/corpus vectors and built HNSW index needed for retrieval-only recovery are also missing; zero ranking seeds have been evaluated.
 
 SIGIR-short readiness:
-BLOCKED
+NEEDS MORE EVIDENCE

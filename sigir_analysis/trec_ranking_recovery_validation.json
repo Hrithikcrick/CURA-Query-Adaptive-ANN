@@ -26,9 +26,9 @@
   "expected_exact_query_rankings": 43,
   "expected_hnsw_query_budget_rankings": 430,
   "candidate_verification": "No valid original-corpus ranking candidate",
-  "git_blobs_checked": 598,
-  "git_candidate_blobs_reviewed": 87,
-  "working_tree_archive_candidate_schemas_reviewed": 57,
+  "git_blobs_checked": 656,
+  "git_candidate_blobs_reviewed": 135,
+  "working_tree_archive_candidate_schemas_reviewed": 64,
   "audit_errors": [],
   "source_hashes": {
     "04_msmarco_large_pilot.py": "8f600fee772b6326dbac226f7bc85e7fb7c4f7dcdae90a09952059259137b12e",
@@ -36,7 +36,8 @@
     "msmarco_large/msmarco_1000000_q1000/research_grade_validation/experiment_protocol.json": "4508fdeb2b3a6521bc89cf0f7f0059d6c47efebf7c47c82ff56b2d717d3ce7d1",
     "msmarco_large/msmarco_1000000_q1000/results/large_pilot_summary.txt": "66c4efbaf8aa8ef080e330f299414e8521a234f990094a413a783339a15aa200",
     "msmarco_large/msmarco_1000000_q1000/results/queries.csv": "acd8fbe2ac804548ca79ec096d825d9ef502b42e5556796fcf1c7662eaeab4dc",
-    "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv": "f7e2bb45223343700f711c1683404954381f5be5f0369ff86c89ff6941c3496b"
+    "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv": "f7e2bb45223343700f711c1683404954381f5be5f0369ff86c89ff6941c3496b",
+    "local_data/trec2019/2019qrels-pass.txt": "8a1f10d550732e4cd91d7fc49846a3784de4040972f583e69285a88f3c5fee92"
   },
   "notes": [
     "Qrels have 9,260 original judgments. The 6,450 prepared records are 43 queries x 50 seeds x 3 thinning conditions, not original qrels or retrieval rankings.",
@@ -46,5 +47,33 @@
     "Metric reproduction was NOT RUN because rankings are missing; null is not a passing result.",
     "No retrieval-only fallback is possible from the available FiQA-only vector cache.",
     "Restore original exact/HNSW document rankings, or original corpus/query vectors, built index and ID map. No expensive reconstruction was attempted."
+  ],
+  "queries_expected": 43,
+  "queries_found": 0,
+  "query_identities_available": 43,
+  "queries_found_definition": "Queries with recovered and provenance-verified document rankings; saved query identities alone do not count.",
+  "ef_values_expected": [
+    10,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192,
+    256
+  ],
+  "ef_values_found": [],
+  "doc_id_mapping_verified": false,
+  "saved_metric_reproduction_verified": null,
+  "source_paths": [
+    "04_msmarco_large_pilot.py",
+    "05_research_grade_validation.py",
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/experiment_protocol.json",
+    "msmarco_large/msmarco_1000000_q1000/results/large_pilot_summary.txt",
+    "msmarco_large/msmarco_1000000_q1000/results/queries.csv",
+    "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv",
+    "local_data/trec2019/2019qrels-pass.txt"
   ]
 }
