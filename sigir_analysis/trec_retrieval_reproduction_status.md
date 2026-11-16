@@ -8,4 +8,4 @@ The strict input gate independently reproduced all 43 exact nDCG@10 results and 
 
 No retrieval, encoder execution, index construction or controller training was performed. Original recorded work and timing remain fixed. There is no independently logged historical map checksum; co-archived sources, the supplied ordered-map hash and FULL scalar consistency provide the documented identity evidence. The encoder revision remains historically unpinned, but no encoder was invoked for this recovery.
 
-The density experiment is now eligible to run on these fixed rankings. A successful reproduction alone is not a completed density result.
+After this gate passed, the same-ranking density experiment scored all 50 prepared seeds per stochastic condition. Its separate [completed validation](restored_ranking_evaluation/validation.json) and [summary](trec_judgment_density_summary.csv) record those observations; reproduction and density completion are distinct gates.

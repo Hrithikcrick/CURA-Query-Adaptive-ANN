@@ -1,0 +1,136 @@
+{
+  "status": "RECOVERED",
+  "date": "2026-11-17",
+  "corpus_subset_manifest_found": true,
+  "corpus_subset_deterministically_reconstructable": "NOT NEEDED: original ordered map recovered; source seed42 alone is not an independent subset checksum",
+  "document_id_mapping_verified": true,
+  "corpus_order_verified": true,
+  "document_embeddings_found": true,
+  "query_embeddings_found": true,
+  "exact_index_found": false,
+  "exact_ranked_arrays_found": true,
+  "hnsw_index_found": true,
+  "encoder_verified": true,
+  "encoder_revision_verified": false,
+  "normalization_verified": true,
+  "similarity_metric_verified": true,
+  "hnsw_parameters_verified": true,
+  "retrieval_only_rerun_possible": true,
+  "retrieval_only_rerun_executed": false,
+  "full_reconstruction_possible": false,
+  "full_reconstruction_note": "Original vectors/index permit retrieval-only reuse, which was unnecessary. Fresh encoder regeneration cannot be certified as identical because the historical immutable revision was not pinned.",
+  "original_corpus_documents": 1000629,
+  "encoder": "sentence-transformers/msmarco-MiniLM-L6-cos-v5",
+  "normalization": "unit-length float32 original vectors",
+  "similarity": "inner product",
+  "M": 32,
+  "efConstruction": 200,
+  "threads": 1,
+  "configured_selection_seed": 42,
+  "ef_values": [
+    10,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192,
+    256
+  ],
+  "missing_components": [
+    "Serialized exact index was not saved; original exact arrays suffice",
+    "Independent historical map checksum unavailable",
+    "Historical immutable encoder revision unpinned"
+  ],
+  "scientific_blocker": null,
+  "identity_limitation": "No independent historical corpus-map checksum is available. The supplied checksum/count and restorer attestation establish consistency, not independent proof of historical corpus identity.",
+  "evidence_paths": [
+    "trec_ranking_provenance.json",
+    "recovered_ranking_validation.json",
+    "trec_retrieval_state.json",
+    "trec_retrieval_state_audit.json"
+  ],
+  "hashes": {
+    "trec_ranking_provenance.json": "bb2a1652c6929fa685ce6e889ff6de821190e96a5114e16d01c661c587c9138e",
+    "recovered_ranking_validation.json": "3b02030814cd62546a4e77442b4f0f54a2804919c2516d36bbdb6f38730e7127",
+    "trec_retrieval_state.json": "36f1ea53b84fbc47f7dd346665c8d543444d08411c9ea81d8d8e96c69b8de2d0",
+    "trec_retrieval_state_audit.json": "d04556121aa6a3696fffe7eec0240d5d7c31e884d278e78f862aa67af9803f7f"
+  },
+  "archive_hash": "0d5d0e1e712bd555bd9171d6f4a84884eb9a62b2d230706caae5b180265ec21a",
+  "archive_members": {
+    "04_msmarco_large_pilot.py": {
+      "bytes": 65498,
+      "sha256": "8f600fee772b6326dbac226f7bc85e7fb7c4f7dcdae90a09952059259137b12e",
+      "zip_crc32": "08373dc7"
+    },
+    "05_research_grade_validation.py": {
+      "bytes": 64141,
+      "sha256": "2ee6db81386d6f1c811a87a428ddbc0c0a8f12b2df645fcd319993b3e14a576c",
+      "zip_crc32": "08bc3c19"
+    },
+    "08_patience_style_baseline.py": {
+      "bytes": 27608,
+      "sha256": "a2d85f273a92c81c393e8d1a1b543c0c58fa4a22ddae2e7839c783441496e4a4",
+      "zip_crc32": "9f2be293"
+    },
+    "msmarco_large/msmarco_1000000_q1000/results/queries.csv": {
+      "bytes": 76009,
+      "sha256": "acd8fbe2ac804548ca79ec096d825d9ef502b42e5556796fcf1c7662eaeab4dc",
+      "zip_crc32": "fb269a40"
+    },
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv": {
+      "bytes": 1720199,
+      "sha256": "8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe",
+      "zip_crc32": "0d2df523"
+    },
+    "msmarco_large/msmarco_1000000_q1000/research_grade_validation/experiment_protocol.json": {
+      "bytes": 916,
+      "sha256": "4508fdeb2b3a6521bc89cf0f7f0059d6c47efebf7c47c82ff56b2d717d3ce7d1",
+      "zip_crc32": "1806f99e"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cura_controller/cura_protocol.json": {
+      "bytes": 1059,
+      "sha256": "8914e88ce363bc72e32327340d6b1b37be57ef752e5c50a753a2364a9f432905",
+      "zip_crc32": "9b36ad27"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/corpus_meta.json": {
+      "bytes": 150,
+      "sha256": "facc8b32beb12de79af57286174901510083a950413708cc9afb823dc2e3ad84",
+      "zip_crc32": "32dce9fb"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/docids.txt": {
+      "bytes": 8879633,
+      "sha256": "544952aff441982efdc0970578c825f523865f8d0164e08051e0333a41dd0351",
+      "zip_crc32": "22eb4c7d"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/exact_top100_indices.npy": {
+      "bytes": 834528,
+      "sha256": "db5c22374dc1b0fa225c840258f4543e3853d6baa50e62c92ef9a277903d9fca",
+      "zip_crc32": "645b960b"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/exact_top100_scores.npy": {
+      "bytes": 417328,
+      "sha256": "ff115803a4542451da918c18e3a4982c6a76db524799bf8491dffa5516182ff9",
+      "zip_crc32": "676c9003"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/query_embeddings.npy": {
+      "bytes": 1602176,
+      "sha256": "aa81a1c2a2e3e8fd15cc78a4766727fd4cbd78f569060b7fe2bce27d5a30995b",
+      "zip_crc32": "4905dbf9"
+    },
+    "msmarco_large/msmarco_1000000_q1000/patience_style_baseline/stability_top10_searches.npz": {
+      "bytes": 343967,
+      "sha256": "dc29e98c9ecf897756814ba4f7c9eac30cebef8baec5b531191c1fd2d5a9083e",
+      "zip_crc32": "411e4704"
+    },
+    "msmarco_large/msmarco_1000000_q1000/cache/corpus_embeddings.f32": {
+      "bytes": 1536966144,
+      "sha256": "fd294df146bddd574da3588479fbe57668e1d26d3245448a751e381fb3f77de7",
+      "zip_crc32": "a2357358",
+      "squared_norm_min": 0.9999995231628418,
+      "squared_norm_max": 1.0000004768371582
+    }
+  }
+}

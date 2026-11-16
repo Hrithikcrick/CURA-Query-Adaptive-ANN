@@ -5,7 +5,7 @@
 \title{When Do Utility-Aware ANN Search Budgets Really Save Work?\\
 \large The Role of Relevance-Judgment Completeness and Risk Calibration}
 \author{Hrithik Sharma\\Indian Institute of Technology Delhi}
-\date{Research draft --- 15 November 2026}
+\date{Research draft --- 16 November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -13,7 +13,7 @@ We reexamine whether downstream-utility-aware ANN budget allocation provides an 
 Saved million-scale HNSW runs show that exact-positive queries contribute 92.59\% of CURA's work reduction versus the original calibration-selected fixed baseline, ruling out a purely zero-reference explanation.
 However, a post-hoc fixed efSearch of 48 matches CURA's observed 2/200 utility violations and uses 28.29\% less distance work. On 43 TREC-DL-2019 queries a fixed setting also outperforms the adaptive policy at its observed risk, while ANN-safe and IR-safe oracle budgets scarcely differ.
 These results support an analysis of metric-dependent headroom and calibration rather than a claim that CURA generally beats fixed HNSW.
-Original TREC passage qrels are now recovered, and 50 deterministic judgment seeds per stochastic condition are prepared. The crucial same-ranking experiment remains blocked because ranked document IDs and original retrieval caches are absent. Zero ranking seeds were evaluated; no causal completeness result is claimed.
+Recovering original TREC ranked IDs enabled a same-ranking experiment with 50 prepared thinning seeds. Reducing available positive judgments increases measured ANN-minus-IR safe-budget headroom from $-0.140$ under FULL to $1.956$ with one positive per query. Exact-reference nDCG becomes zero in 82.88\% of one-positive query--seed cases, making the reference-loss criterion vacuous there. This is sensitivity to missing judgments, not improved retrieval or actual relevance preservation.
 \end{abstract}
 
 \section{Question and scope}
@@ -32,7 +32,7 @@ and a violation is $L_q(e)>0.025$. ANN safety is exact-neighbor Recall@10 at lea
 At $N_q^*=0$, nonnegative nDCG implies zero loss automatically. This is a limitation of the reference-based criterion.
 
 Distance work includes the CURA probe plus the selected search, except that a selected ef10 uses only the probe. Saved timing estimates sum the corresponding search components and omit controller inference and feature processing. Their p95 is across per-query mean estimates, not end-to-end request latency.
-All uncertainty intervals below are paired-query percentile bootstrap intervals with 20,000 resamples. They condition on the saved policies and do not include policy-selection uncertainty.
+Historical saved-run intervals use paired-query percentile bootstrap intervals with 20,000 resamples. They condition on the saved policies and omit policy-selection uncertainty. New density intervals instead resample 50 paired seed-level effects conditional on the same 43 queries and rankings; these are not query-population intervals.
 
 \section{Zero-reference explanation}
 The held-out set has 41 exact-zero queries (20.5\%) and 159 exact-positive queries (79.5\%). Relative to calibration-selected fixed ef96, work savings are 8.56\% (95\% CI $[-15.97,30.89]$) in the zero group and 23.09\% ($[13.91,31.58]$) in the positive group. Positive queries contribute 92.59\% of total work reduction.
@@ -67,17 +67,36 @@ CURA's selected-search work alone is 2054.555, plus 673.410 extra charged probe 
 On all 819 exact-positive MS MARCO queries, mean first ANN-safe and IR-safe ef are 21.485 and 13.206, yielding gap 8.278 ($[6.222,10.527]$). IR permits lower ef for 25.89\%, with aggregate ef reduction 38.53\%.
 The saved oracle substitutes ef256 when no safe candidate is found. Four ANN and three IR thresholds are absent in this positive stratum. Restricting to 812 jointly feasible pairs gives gap 7.611 ($[5.933,9.387]$), so the finding persists without these fallbacks. First-safe refers only to the tested grid; ef reduction is not measured distance reduction.
 
-All 43 TREC queries are exact-positive. Mean ANN-safe and IR-safe ef are 12.279 and 12.419, gap $-0.140$ ($[-1.163,0.884]$). IR allows a smaller budget for 2/43; 38 budgets agree and 3 require more IR effort. ANN is safe at the minimum tested ef10 on 36/43 queries; IR on 35/43. Five nonzero gaps provide limited inferential support and the grid floor restricts possible gains.
+All 43 TREC queries are exact-positive under FULL qrels. Mean ANN-safe and IR-safe ef are 12.279 and 12.419, gap $-0.140$ ($[-1.163,0.884]$). IR allows a smaller budget for 2/43; 38 budgets agree and 3 require more IR effort. ANN is safe at the minimum tested ef10 on 36/43 queries; IR on 35/43. Five nonzero gaps provide limited inferential support and the grid floor restricts possible gains.
 For saved TREC outcomes, fixed ef32 matches CURA's 1/43 violations and uses 1109.326 distances/query versus 2384.581, or 53.48\% less ($[40.13,63.06]$). This is also post hoc.
 TREC has 95.395 positive judgments/query on average versus 1.071 on MS MARCO. Different query distributions, corpus coverage and only 43 TREC queries confound a causal judgment-density interpretation.
 
-\section{Same-ranking thinning: pending}
-The original NIST passage qrels were recovered through a checksum-verified mirror: 9,260 judgments covering exactly the saved 43 raw query IDs, with every positive-judgment count matching the reference metadata. Exact document rankings and the original document map, HNSW document rankings for every ef, and original index/query/corpus-vector recovery caches remain absent. Saved aggregate scores cannot be reinterpreted as ranked IDs. The ranking experiment is blocked; no embeddings, index construction, retrieval or retraining was run.
-FULL retains original qrels. Fifty paired seeds per stochastic condition are now prepared from deterministic per-query permutations, retaining nested prefixes of $\max(1,\lceil pn\rceil)$ for $p=.5,.25$ and one positive respectively. Retained grades and all nonpositive judgments are preserved. The 6,450 retained-positive query/seed/condition records and canonical qrel hashes are saved, but none has been scored against rankings. The recovery experiment will freeze rankings, query IDs, measured work and CURA choices, treating removed judgments as unjudged relevance zero and recomputing IDCG from all retained query judgments.
-Each condition requires recomputed exact/approximate nDCG, losses, zero-reference fractions, oracle feasibility and gaps, all fixed risk curves, and frozen CURA risk/work. ANN recall remains unchanged. Seed-conditional intervals and a paired crossed query/seed bootstrap must preserve shared rankings and conditions. No thinning estimate or plot is presently available.
+\section{Same-ranking judgment thinning}
+The original NIST passage qrels contain 9,260 judgments for the saved 43 query IDs. An external archive supplied original exact top100 indices/scores, HNSW top10 indices at every tested ef, and the original ordered 1,000,629-document map. Seven source/config/query/run files match byte-for-byte. The mandatory FULL gate reproduces all 43 exact and 430 HNSW query--budget metrics: nDCG/loss tolerance $10^{-6}$, ANN recall tolerance $10^{-9}$, and identical violation indicators. No retrieval, embedding generation, index construction or controller training was performed. ANN score evidence was reconstructed from original cached vectors without reordering IDs. No independently recorded historical map checksum or immutable encoder revision exists; archive lineage and FULL agreement support consistency rather than independent identity proof.
+
+FULL retains all available pooled qrels; it is not complete relevance truth. All 50 prepared paired seeds retain nested per-query prefixes of $\max(1,\lceil pn\rceil)$ for $p=.5,.25$ and one positive respectively. Grades and nonpositive judgments remain unchanged. Removed positives become unjudged zero, and IDCG is recomputed from each condition's retained qrels. Scoring produces 64,930 query--budget rows with fixed rankings, ANN recall, search work and CURA choices. All 43 queries remain jointly feasible in every condition and seed.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Qrels & Gap & IR ef & Zero\% & Lower\%\\
+\midrule
+FULL & $-.140$ & 12.419 & 0.00 & 4.65\\
+50\% & .308 & 11.971 & 1.67 & 6.33\\
+25\% & .848 & 11.431 & 9.49 & 8.42\\
+One positive & 1.956 & 10.323 & 82.88 & 13.40\\
+\bottomrule
+\end{tabular}
+\caption{Condition means over the fixed 43 queries and, for thinned conditions, 50 seeds. Gap is ANN-safe minus IR-safe ef; ANN-safe mean remains 12.279. Zero is the exact-zero fraction; Lower is the rate at which IR permits a lower budget. ef differences are not measured work savings.}
+\end{table}
+
+\textbf{Outcome A: apparent headroom increases.} Paired gap changes relative to FULL are .447 ($[.300,.593]$), .988 ($[.820,1.153]$), and 2.096 ($[2.001,2.180]$) ef units. Mean effects increase with thinning; this does not assert monotonicity for every query or seed. The 82.88\% exact-zero fraction in the one-positive condition is central: zero exact nDCG automatically satisfies the reference-loss criterion, providing no evidence of relevance preservation by itself.
+
+Twelve density follow-ups cover gap, exact-zero fraction, IR-safe budget and IR-allows-lower rate. Unadjusted percentile CIs and two-sided Monte Carlo sign-flip diagnostics use 20,000 seed resamples/draws; Holm adjustment covers these 12 comparisons only. Sign-flip inference assumes effects symmetric about zero under the null, an assumption not established by thinning alone. IR-budget effects are exact negatives of gap effects because ANN budgets and the feasible cohort are fixed; their inference is reused and is not independent corroboration. The 64,930 rows are not independent inferential units.
 
 \section{Conclusion and limitations}
 Oracle utility-aware headroom survives removal of exact-zero MS MARCO queries, but this CURA implementation does not improve the observed fixed-budget frontier. Conservative calibration and adaptive overhead materially affect interpretation. We retain this negative result.
-A same-ranking judgment-completeness experiment is required before attributing cross-dataset differences to qrel density. Sparse judged utility is not actual relevance preservation; pointwise Wilson intervals are not universal guarantees; saved search timings are not full-service performance. The current contribution is an analysis of when adaptivity must be justified, not a universal adaptive retrieval win.
-\paragraph{Reproducibility.} The repository's \texttt{sigir\_analysis} directory contains complete metrics, paired tests, figures, input hashes and an explicit missing-input audit. The main research report records supported findings and blocked work. This draft has not been checked against the official ACM format or compiled for final submission.
+Controlled thinning demonstrates sensitivity to missing judgments on these fixed queries, without identifying the cause of cross-dataset differences. Sparse judged utility is not actual relevance preservation; pointwise Wilson intervals are not universal guarantees; saved search timings are not full-service performance. The experiment uses a controlled approximately 1M MS MARCO subset, one primary encoder and HNSW only, with 43 TREC OOD queries. ANN-Risk is not official DARTH, and Patience-Inspired is not official Patience. The current contribution is an analysis of when adaptivity must be justified, not a universal adaptive retrieval win.
+\paragraph{Reproducibility.} The repository's \texttt{sigir\_analysis} directory contains recovered ranked IDs, provenance, FULL reproduction, all 50-seed results, statistical tables, four density figures and validation scripts. Historical completed analyses were preserved. The separate FiQA human-review record remains 36/50, with 14 pending model-assisted suggestions; these are not 50 human reviews. This draft has not been checked against the official ACM format or compiled for final submission.
 \end{document}

@@ -2,205 +2,146 @@
 
 **Research question:** When do downstream-utility-aware ANN search budgets provide genuine efficiency gains, and how are those gains affected by relevance-judgment completeness and risk calibration?
 
-**Supported finding.** CURA beats the original calibration-selected ef96 baseline on recorded MS MARCO work, but post-hoc fixed ef=48 matches CURA's observed test violation count and uses **28.29% less work**. This implementation has not demonstrated an advantage on the observed fixed risk/work frontier. The post-hoc comparison is a diagnostic, not a prospectively selected policy or population-risk guarantee.
+**Main finding.** Judgment thinning increases measured ANN-versus-IR budget headroom on the same 43 TREC-DL-2019 queries and recovered rankings: the mean ANN-minus-IR safe-ef gap changes from **-0.140 under FULL to 1.956 with one retained positive per query**. This is **Outcome A**, conditional on this query set and the specified thinning mechanism. The one-positive condition also produces **82.88% exact-zero nDCG references**, for which reference loss is automatically zero. This is evidence of annotation sensitivity, not improved retrieval or proof of actual relevance preservation.
 
-**Recovery state:** original TREC-DL-2019 passage qrels are recovered and validated for all 43 saved query IDs. Fifty deterministic qrel seeds for each stochastic condition are prepared. **Same-ranking density evaluation remains BLOCKED:** original exact/HNSW ranked IDs and the original vectors/index/document map are absent. Zero ranking seeds were evaluated. No ranking-dependent density estimate or plot was invented.
+**The negative adaptive result remains.** CURA uses 20.51% less recorded MS MARCO distance work than the original calibration-selected fixed ef96 baseline. However, post-hoc fixed ef48 matches CURA's observed 2/200 test violations with **28.29% less work**. This implementation has not demonstrated an advantage over the observed fixed risk/work frontier. Retrospective matching is a diagnostic, not a prospectively calibrated policy or population-risk guarantee.
 
-## Exhaustive local recovery audit
+Original rankings were **recovered**, not regenerated. FULL-qrel reproduction, the 50-seed same-ranking density evaluation, and its statistical comparisons are complete. Previously completed scientific analyses were preserved rather than rerun. Separate FiQA human annotation remains **36/50 complete**, with 14 pending cases; model suggestions do not count as human decisions.
 
-The audit enumerated **3468 files** recursively in the entire workspace, including hidden and ignored files. [local_artifact_inventory.csv](../sigir_analysis/local_artifact_inventory.csv) lists every file at the scan snapshot and classifies known runtime dependencies and Git internals separately. It inspected **789 file/member contents or schemas**, archive content, NumPy headers and all **656 local Git blobs**, including all **278 unreachable blobs**. Git parsing produced 853 content/member inspections and included refs, reflogs, nested archives and backup/code clues. No inspection errors or unresolved ranking candidates were recorded. The [before-recovery snapshot](../sigir_analysis/local_retrieval_audit_before_recovery.json) and [current audit](../sigir_analysis/local_retrieval_audit.json) preserve the evidence.
+## Evidence and recovery
 
-CSV/TSV contents, JSON/JSONL structures, notebook outputs, script and backup path clues, text qrel/run formats, binary cache filenames and ZIP/gzip/tar members were checked. Git JSON structures and code/backup clues were inspected alongside tabular candidates. No original retrieval pickle, parquet, .trec/.run, NumPy ranking array or FAISS/HNSW index was found. Pickles would be inspected without execution. Git candidates contain policy parameters/configuration IDs, completion flags, research metadata or manual FiQA fields, as recorded in the [candidate review](../sigir_analysis/git_candidate_review.json). Query-ID lists and scalar metrics cannot reconstruct document rankings.
+The earlier [workspace/Git audit](../sigir_analysis/local_retrieval_audit.json) is a historical search snapshot. It did not locate the original ranking caches in that scope. A subsequent external-archive search found Downloads/IR_PROJECT.zip, with the original run under IR_PROJECT/PILOT/. The [recovery delta](../sigir_analysis/recovery_delta_20261116.json), [ranking provenance](../sigir_analysis/trec_ranking_provenance.json) and [recovery script](../sigir_analysis/recover_trec_cached_rankings.py) record the additional evidence. Former missing-input conclusions are superseded by this verified recovery.
 
-The only original vector cache is `data/beir/fiqa_embeddings.npz`: 57,638 x 384 document vectors and 648 x 384 query vectors, with FiQA IDs. It belongs to a different corpus and cannot substitute for the million-scale MS MARCO cache. Phase-04/05 source sweeps retain `first_indices` in memory and export scalar metrics; corresponding saved ranking IDs were not recovered.
+Seven archived source, configuration, query and sweep files match the saved run byte-for-byte. The original 1,000,629-row document map translates original exact top100 row indices and cached HNSW top10 indices. The original baseline source specifies cache axes as sorted archived ef settings and unchanged query-file row order. TREC queries were selected by their recorded IDs. No document order was inferred from scalar metrics.
 
-| Required artifact | Recovery result |
+| Artifact | Current evidence |
 | --- | --- |
-| Original TREC-DL-2019 passage qrels | **RECOVERED**, 9,260 judgments, 43 queries |
-| Original 43 query identities | **AVAILABLE**, exact set match with qrels |
-| Exact top10 original document IDs for 43 queries | **MISSING** |
-| HNSW top10 original document IDs for 43 queries x 10 ef settings | **MISSING** |
-| Original FAISS row-to-document mapping | **MISSING** |
-| Original query vectors and corpus vectors | **MISSING** |
-| Original built million-scale HNSW index | **MISSING** |
+| Original TREC-DL-2019 qrels | 9,260 judgments; exactly 43 saved raw query IDs |
+| Exact document rankings | Recovered original top100 for 43 queries; scoring uses top10 |
+| HNSW document rankings | Recovered original top10 for 43 queries at all ten ef settings |
+| Row-to-document mapping | Recovered original ordered map; 1,000,629 unique document IDs |
+| Original query/corpus vectors | Located in the archive; used only to reconstruct score evidence |
+| Original HNSW index | Located in the archive; not loaded, rebuilt or searched |
 
-See [ranking_recovery_requirements.csv](../sigir_analysis/ranking_recovery_requirements.csv) for exact paths. If rankings are restored, no retrieval is needed. If only the original query vectors, index and document map are restored, rerun HNSW retrieval only for these 43 queries at ef 10,16,24,32,48,64,96,128,192,256. Recover exact rankings from original exact arrays or exhaustive search over the original cached corpus vectors, preserving original normalization, similarity, k, mapping and index settings. Do not regenerate vectors, train the controller or rebuild an index.
+The normalized [exact rankings](../sigir_analysis/trec_exact_rankings.csv) and [HNSW rankings](../sigir_analysis/trec_hnsw_rankings.csv) each contain 4,300 rows. Exact scores are original cached scores. HNSW ranked IDs are original cached search outputs; their scores were not cached and were reconstructed by inner products of original cached vectors **without changing ranks**. No retrieval, new encoding, index construction or controller training was performed.
 
-The mandatory [ranking recovery validation](../sigir_analysis/trec_ranking_recovery_validation.json) records missing exact/HNSW rankings, no retrieval rerun, no embedding/index/model rebuild and metric reproduction **NOT RUN** (`null`, not a passing value). Candidate cells and coverage were checked in 135 Git candidate records and the working-tree/archive schemas. The requested `queries_found=0` and `ef_values_found=[]` count verified document rankings; 43 saved query identities and ten scalar-metric ef settings remain available. Original parameters are recoverable: `sentence-transformers/msmarco-MiniLM-L6-cos-v5`, normalized float32 vectors, inner-product similarity, HNSW M=32, efConstruction=200, top10 search, one search thread, original FAISS 1.15.1. The [detailed retrieval-state record](../sigir_analysis/trec_retrieval_state.json) and [requested state audit](../sigir_analysis/trec_retrieval_state_audit.json) distinguish known configured settings from missing original vectors/index/map. Actual vector normalization, index metric and corpus identity/order cannot be verified without those artifacts. No normalized ranking CSV was created without valid data.
+**Provenance limitation.** No independent historical checksum of the corpus map was recorded. Archive lineage, seven byte-identical run files, the recovered map's checksum/count, judged-document membership and FULL metric reproduction establish consistency; they are not independent proof of historical corpus identity. The historical encoder revision was not pinned. These limitations remain explicit in the provenance and gate records.
 
-The [retrieval reproduction table](../sigir_analysis/trec_retrieval_reproduction.csv) records 61 archived comparison targets: exact mean nDCG and six metrics at each fixed HNSW ef. Recreated values and differences are blank, every comparison is incomplete, and no reproduction pass is claimed. The [reproduction status](../sigir_analysis/trec_retrieval_reproduction_status.md) explains the missing-state gate, prospective metric checks and why saved work/timing are not new rerun measurements. No alternative corpus, embedding generation, index rebuild or controller training was used.
+## FULL-qrel reproduction gate
 
-## Implemented evaluation path for restored rankings
+The unchanged [input gate](../sigir_analysis/ranking_input_gate.py) passed before thinning was scored. The [recorded validation](../sigir_analysis/recovered_ranking_validation.json) and [473-row reproduction table](../sigir_analysis/trec_retrieval_reproduction.csv) contain:
 
-The [restored-ranking evaluator](../sigir_analysis/run_trec_judgment_density.py) now provides a separate gated path from valid original ranked IDs to all four density conditions, seed summaries/CIs, fixed frontiers, frozen CURA diagnostics and requested plots. Its [input gate](../sigir_analysis/ranking_input_gate.py) verifies original query/document identity evidence, source hashes and every FULL per-query nDCG/loss/ANN Recall before any thinning result is written. It stops on missing inputs or inconsistent reproduction. Frozen CURA source hashes and probe/search accounting are checked. [Recovery instructions](../sigir_analysis/RESTORED_RANKING_EVALUATION.md) specify schemas, provenance limitations and commands.
+- 43 exact-query comparisons and 430 HNSW query-budget comparisons;
+- matching exact/approximate nDCG and loss within absolute tolerance 1e-6;
+- matching ANN Recall@10 within absolute tolerance 1e-9;
+- identical per-query/per-budget violation indicators for loss > 0.025;
+- verified query-ID bijection, document membership, unique documents and contiguous ranks.
 
-[Implementation validation](../sigir_analysis/evaluation_pipeline_validation.json) uses isolated synthetic fixtures, including all 50 seeds in a temporary synthetic workspace. These checks do not count as real TREC observations. Actual-input preflight remains BLOCKED and writes no experiment results. The current study status, unavailable density plots and scientific conclusions are unchanged; a tested implementation cannot replace missing original rankings.
+The tested efSearch grid is 10,16,24,32,48,64,96,128,192,256. ANN safety is exact-neighbor Recall@10 >= 0.90. IR safety is max(0, exact nDCG@10 - approximate nDCG@10) <= 0.025. Original work and timing observations remain archived measurements; they were not newly measured during recovery.
 
-## Original qrels recovery and identity checks
+The original qrels have SHA256 8a1f10d550732e4cd91d7fc49846a3784de4040972f583e69285a88f3c5fee92, 4,102 grade>0 judgments and 5,158 grade-zero judgments. Their identity and per-query positive counts are recorded in [qrels recovery](../sigir_analysis/qrels_recovery.json) and the [query audit](../sigir_analysis/trec_qrels_query_audit.csv). FULL means all available original pooled judgments, not complete relevance ground truth.
 
-The original [NIST passage qrels](https://trec.nist.gov/data/deep/2019qrels-pass.txt), linked by the [TREC track source](https://microsoft.github.io/msmarco/TREC-Deep-Learning-2020.html), were recovered from the [ir-datasets checksum mirror](https://mirror.ir-datasets.com/2f4be390198da108f6845c822e5ada14) after direct NIST certificate verification failed. TLS verification was retained. The file is at `local_data/trec2019/2019qrels-pass.txt`.
+## Completed same-ranking judgment-density experiment
 
-- Bytes: **187,092**; judgments: **9,260**; distinct raw query IDs: **43**.
-- MD5: `2f4be390198da108f6845c822e5ada14`; SHA256: `8a1f10d550732e4cd91d7fc49846a3784de4040972f583e69285a88f3c5fee92`.
-- The expected URL, MD5 and byte size independently match the installed ir-datasets 0.6.3 download registry's `trec-dl-2019/qrels` entry.
-- All raw IDs exactly match the saved `trec19::...` mapping.
-- Every query's grade>0 judgment count matches saved `positive_qrel_count`.
-- Grade counts: 0 = 5,158; 1 = 1,601; 2 = 1,804; 3 = 697.
+FULL was evaluated once. Each stochastic condition was evaluated for all **50 paired seeds, 0..49**, reusing the previously prepared qrel sets. Each query receives one deterministic permutation of its sorted positive document IDs per seed. Nested prefixes retain max(1,ceil(0.5*n)), max(1,ceil(0.25*n)), or one positive. Retained grades and all original nonpositive judgments are preserved; removed positives become unjudged. Grade 1 remains positive under the original graded-gain protocol.
 
-See [qrels_recovery.json](../sigir_analysis/qrels_recovery.json) and the [per-query audit](../sigir_analysis/trec_qrels_query_audit.csv). These checks validate identity and judgment-count agreement; they do **not** verify FULL nDCG without ranked IDs. FULL means all available original pooled judgments, not complete relevance ground truth.
+nDCG uses exponential graded gain, logarithmic discount and IDCG over all retained query judgments, with unjudged relevance zero. Both exact and approximate nDCG are recomputed under each qrel condition. An exact-zero reference automatically yields zero one-sided loss, independently of approximate quality.
 
-## Same-ranking TREC judgment-density study
+The experiment freezes query identities, exact and HNSW rankings, ANN Recall, search work, timing, thresholds and CURA choices. [Promotion validation](../sigir_analysis/density_promotion_validation.json) confirms all 151 scored qrel hashes match preparation and that the relevant invariants hold. **All 43 queries are jointly feasible under both safety criteria in every condition and seed**; no fallback or changing feasible cohort explains the density differences here.
 
-The [summary](../sigir_analysis/trec_judgment_density_summary.csv) has four explicitly blocked rows. The [per-seed table](../sigir_analysis/trec_judgment_density_per_seed.csv) has one FULL row plus 150 stochastic rows, all `evaluation_completed=False`. Retained-judgment counts and qrel hashes are real preparation results. All ranking-dependent fields remain blank. The [frontier schema](../sigir_analysis/trec_judgment_density_frontier.csv) has zero observations.
+| Condition | Evaluated seeds | Retained positives | Mean ANN-IR ef gap | Mean IR-safe ef | Exact-zero fraction | IR allows lower ef |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| FULL | 1 | 4,102 | -0.140 | 12.419 | 0.00% | 4.65% |
+| 50% positives | 50 | 2,063 | 0.308 | 11.971 | 1.67% | 6.33% |
+| 25% positives | 50 | 1,040 | 0.848 | 11.431 | 9.49% | 8.42% |
+| One positive/query | 50 | 43 | 1.956 | 10.323 | 82.88% | 13.40% |
 
-| Condition | Qrel sets prepared | Ranking evaluations | Retained grade>0 judgments | Realized positive fraction |
-| --- | ---: | ---: | ---: | ---: |
-| FULL | 1 | 0 | 4102 | 1.000000 |
-| 50_PERCENT_POSITIVES | 50 | 0 | 2063 | 0.502925 |
-| 25_PERCENT_POSITIVES | 50 | 0 | 1040 | 0.253535 |
-| ONE_POSITIVE_PER_QUERY | 50 | 0 | 43 | 0.010483 |
+ANN-safe mean ef remains **12.279** throughout. Values for stochastic conditions average over the 50 seeds. This sequence of condition means supports Outcome A; it does not assert that every query or seed changes monotonically. ef differences are not measured work or latency savings.
 
-For seeds 0..49, each query gets one permutation of lexicographically sorted grade>0 original document IDs. PCG64 uses the first eight bytes of SHA256 of `f'{seed}\0{raw_qid}'`, interpreted big-endian. Retain nested prefixes of `max(1,ceil(0.5*n))`, `max(1,ceil(0.25*n))`, or one positive. Preserve retained grades and all nonpositive judgments; removed positives become unjudged. Grade 1 remains positive because the original graded nDCG code gives it positive gain, rather than substituting a binary-relevance convention.
+The [four-row summary](../sigir_analysis/trec_judgment_density_summary.csv), [151 seed summaries](../sigir_analysis/trec_judgment_density_per_seed.csv), [64,930 query-budget records](../sigir_analysis/trec_judgment_density_per_query.csv), [1,510 fixed risk/work points](../sigir_analysis/trec_fixed_risk_work_by_density.csv) and [151 frozen-CURA evaluations](../sigir_analysis/trec_cura_by_density.csv) are populated. CURA is evaluated as an **unchanged policy under alternate relevance-judgment evaluation**, not refit to each density condition.
 
-The [compressed retained judgments](../sigir_analysis/trec_thinned_positive_judgments.jsonl.gz) contain 6,450 real query/seed/condition records. Nonpositive judgments reference the unchanged original qrels. The [protocol/status](../sigir_analysis/trec_judgment_density_status.md) records rounding, deterministic generation and invariants.
+The four requested figures are available:
 
-Once rankings are available, freeze query identities, exact and all ten HNSW rankings, measured work, thresholds and CURA choices. Validate FULL per-query nDCG and ANN Recall against archived metrics before thinning. For every condition compute exact/approximate nDCG, losses, exact-zero fraction, smallest IR-safe tested ef and feasibility, ANN-safe ef, ANN-minus-IR gap, lower-budget rate, all ten fixed risk/work points and frozen CURA risk/work. Flag no-safe-in-grid outcomes explicitly.
+- [Judgment density versus ANN-IR budget gap](../sigir_analysis/judgment_density_vs_budget_gap.png)
+- [Judgment density versus exact-zero nDCG](../sigir_analysis/judgment_density_vs_zero_ndcg.png)
+- [Judgment density versus IR-safe budget](../sigir_analysis/judgment_density_vs_ir_safe_budget.png)
+- [Judgment density versus fixed/frozen-policy risk and work](../sigir_analysis/judgment_density_vs_risk_work.png)
 
-Match the original protocol: unjudged=0; gain `2**grade-1`; discount `log2(rank+2)`; IDCG from all retained query judgments, not only retrieved documents; IDCG<=0 gives nDCG0. Loss=`max(0,exact-approximate nDCG)`, violation iff loss>0.025. ANN Recall and ANN-safe ef must be identical per query/budget across conditions; work and policy choices are fixed. This invariance has not been newly verified from rankings because they are missing.
+## Density inference and interpretation
 
-Report 95% CIs over seed-average effects conditional on these 43 queries, with paired query/seed FULL-minus-thinned changes. A crossed query-and-seed bootstrap can assess query-sampling sensitivity; never treat 43 x 50 cells or repeated FULL values as independent queries. Thinning may increase or decrease nDCG and violations because both DCG and IDCG change. Positive-only thinning models missing positive judgments, not every incompleteness mechanism.
+The statistical unit for new density comparisons is the **paired thinning seed**, conditional on these same 43 queries and rankings. The 64,930 query-budget rows are not independent observations. Percentile intervals use 20,000 seed resamples. Exploratory paired sign-flip tests use 20,000 draws and assume sign exchangeability. No query-population, policy-fitting or deployment-risk uncertainty is covered by these seed intervals, and no crossed query/seed bootstrap is claimed.
 
-**Unavailable outputs:** `judgment_density_vs_budget_gap.png`, `judgment_density_vs_zero_ndcg.png`, `judgment_density_vs_ir_safe_budget.png` and `judgment_density_vs_risk_work.png` are intentionally absent. No ranking reevaluation observations exist from which to plot them. The canonical [fixed-by-density table](../sigir_analysis/trec_fixed_risk_work_by_density.csv), [per-query table](../sigir_analysis/trec_judgment_density_per_query.csv) and [unchanged-policy CURA table](../sigir_analysis/trec_cura_by_density.csv) have headers and zero observations. The CURA evaluation label will be `unchanged CURA policy under alternate relevance-judgment evaluation`. No density effect, seed CI or paired significance result is claimed.
+| Thinned minus FULL | ANN-IR gap effect (ef) | 95% CI |
+| --- | ---: | --- |
+| 50% positives | 0.447 | [0.300, 0.593] |
+| 25% positives | 0.988 | [0.820, 1.153] |
+| One positive/query | 2.096 | [2.001, 2.180] |
+
+Exact-zero fraction increases by 1.67, 9.49 and 82.88 percentage points. The IR-allows-lower rate increases by 1.67, 3.77 and 8.74 percentage points. IR-safe ef effects are exactly the negatives of gap effects because ANN budgets and the feasible cohort are invariant. These IR-budget comparisons (P7) are algebraically redundant with P5, not independent corroboration.
+
+[Density statistics](../sigir_analysis/density_statistical_tests_completed.csv) contain 12 completed comparisons: gap (P5), exact-zero fraction (P6), IR-safe budget (P7), and IR-allows-lower rate (P8), each for three thinning conditions. Every raw Monte Carlo p-value is approximately 0.000050; each Holm-adjusted value is approximately 0.000600. Holm correction covers these 12 dependent density follow-ups only; reported percentile CIs remain unadjusted. Historical tests retain their original scope. The [statistical summary](../sigir_analysis/statistical_analysis_summary.md) and [validation record](../sigir_analysis/density_statistics_validation.json) document the distinction and preservation of the prior 42 completed rows.
+
+**Scientific outcome: A.** Under controlled positive-only thinning, less complete judged evidence increases apparent utility-aware budget headroom. The extreme one-positive condition mostly changes the reference metric into its automatic-zero-loss regime. Even exact-positive conditions can change because both DCG and IDCG change. This intervention identifies sensitivity of the measured criterion within this experiment; it does not recover true unjudged relevance, explain every incompleteness mechanism, establish universal behavior or demonstrate a better retrieval policy.
 
 ## Preserved exact-nDCG stratified analysis
 
-The 200 held-out queries contain **41 exact-zero (20.5%)** and **159 exact-positive (79.5%)**. Versus calibration-selected ef96, positive-stratum CURA work saving is **23.09%** (paired bootstrap 95% CI [13.91, 31.58]%). Positive queries contribute 92.59% of total work reduction, a point estimate. Zero-stratum saving is 8.56% (CI [-15.97, 30.89]%).
+The original controlled corpus has 1,000,629 passages and a query-disjoint 600/200/200 training/calibration/test split. The 200 held-out queries contain **41 exact-zero (20.5%)** and **159 exact-positive (79.5%)** references. Against calibration-selected ef96, positive-stratum CURA work saving is **23.09%** (paired-query bootstrap 95% CI [13.91, 31.58]%). Positive queries contribute **92.59%** of total work reduction, a point estimate. Zero-stratum saving is 8.56% (CI [-15.97, 30.89]%).
 
-Savings are **not concentrated in exact-zero queries**. This rejects the narrow zero-reference explanation, not sparse-judgment effects within positive queries. Exact-zero safety follows from one-sided nonnegative reference loss; it is not evidence of actual relevance preservation. In the positive group Fixed-IR has 1/159 violations and CURA 2/159; sparse discordances cannot establish equal risk. Complete quality, work, timing and CIs are in [exact_ndcg_stratified_results.csv](../sigir_analysis/exact_ndcg_stratified_results.csv), [summary](../sigir_analysis/exact_ndcg_stratified_summary.md) and [plot](../sigir_analysis/exact_ndcg_stratified_work.png).
+Thus savings against the original baseline are not concentrated in exact-zero queries. This rejects the narrow zero-reference explanation, not sparse-judgment effects within positive queries. In the positive group, CURA uses 2730.667 distances/query versus 3550.352, a paired reduction of 819.686 (CI [494.440, 1119.157]). Fixed-IR has 1/159 violations and CURA 2/159; mean nDCG is 0.786491 versus 0.784104. Three discordant violation pairs cannot establish equal risk.
+
+These results were not rerun. Complete metrics and preserved numerical evidence remain in [stratified results](../sigir_analysis/exact_ndcg_stratified_results.csv), the [stratified summary](../sigir_analysis/exact_ndcg_stratified_summary.md), [plot](../sigir_analysis/exact_ndcg_stratified_work.png) and [preservation hashes](../sigir_analysis/preserved_analysis_hashes.json).
 
 ## Preserved complete fixed risk/work frontier
 
 | Method | Role | Violations | Mean distances/query | Mean nDCG@10 |
 | --- | --- | ---: | ---: | ---: |
-| Fixed ef=96 | Protocol-selected calibration baseline | 1/200 | 3431.770 | 0.625260 |
+| Fixed ef96 | Original calibration-selected baseline | 1/200 | 3431.770 | 0.625260 |
 | CURA-Full | Frozen adaptive case study | 2/200 | 2727.965 | 0.623363 |
-| Fixed ef=48 | Post-hoc matched observed-risk diagnostic | 2/200 | 1956.345 | 0.623479 |
-| Fixed ef=64 | Post-hoc fixed frontier point | 1/200 | 2448.645 | 0.625260 |
+| Fixed ef48 | Post-hoc observed-risk comparator | 2/200 | 1956.345 | 0.623479 |
+| Fixed ef64 | Post-hoc frontier point | 1/200 | 2448.645 | 0.625260 |
 
+Fixed ef48 costs **28.29% less work** than CURA (paired-query percentile CI [20.07, 35.39]%), a paired difference of 771.620 distances/query (CI [488.510, 1078.553]). The policies share one failed query, with one fixed-only and one CURA-only failure. Equal counts do not establish equivalent risk or matching failures. Fixed ef64 has lower observed risk and work than CURA.
 
-Fixed ef=48 and CURA each have 2/200 held-out violations. Fixed costs **1956.345** distances/query versus CURA **2727.965**, **28.29% less** (paired percentile bootstrap CI [20.07, 35.39]%). They share 1 failed query, with 1 fixed-only and 1 CURA-only failure. Equal counts do not establish matching failures or equivalent quality.
+The original calibration rule selected the first candidate with a two-sided 95% Wilson upper endpoint <= 5%. ef64 had 4/200 violations and upper endpoint 5.0288%, narrowly failing; ef96 had 1/200 and upper endpoint 2.7774%. ef48 did not pass the original rule. Pointwise bounds do not establish selection-adjusted coverage. The post-hoc ef48 interval conditions on its selection and excludes frontier-selection uncertainty.
 
-Original ef96 was selected independently by calibration: ef64 had 4/200 violations and a two-sided 95% Wilson upper endpoint of 0.0502879, narrowly above 0.05; ef96 had 1/200 and upper 0.0277744. ef48 did not pass that original calibration rule. The post-hoc comparator diagnoses headroom and calibration sensitivity; it does not replace the original baseline or establish a new risk guarantee. Its bootstrap CI conditions on its selection and excludes frontier-selection uncertainty.
+CURA uses a probe followed by a fresh selected search when needed; it is two-stage allocation, not integrated traversal exit. Its selected-search mean work is 2054.555 plus 673.410 extra charged probe work. Mean ef does not measure this overhead. Saved timing estimates combine search components, exclude feature/controller overhead and are not end-to-end service latency. The reported p95 is across per-query mean search estimates; the original reported p95 worsening of 75.98% remains a limitation.
 
-All ten fixed points, nDCG, ANN Recall, Wilson intervals, measured work and saved timing summaries remain in [fixed_risk_work_frontier.csv](../sigir_analysis/fixed_risk_work_frontier.csv), [plot](../sigir_analysis/fixed_risk_work_frontier.png) and the separate [calibration frontier](../sigir_analysis/calibration_fixed_frontier.csv). CURA work charges probe plus fresh selected search when needed. Saved latency combines measured search components, omits controller/feature overhead, and is not end-to-end latency.
+All ten fixed points remain in the [frontier](../sigir_analysis/fixed_risk_work_frontier.csv), [plot](../sigir_analysis/fixed_risk_work_frontier.png) and separate [calibration frontier](../sigir_analysis/calibration_fixed_frontier.csv). For TREC under FULL, post-hoc fixed ef32 matches CURA's 1/43 violations using 1109.326 rather than 2384.581 distances/query: **53.48% less work** (CI [40.13, 63.06]%). The [archived TREC frontier](../sigir_analysis/fixed_risk_work_frontier_trec_saved_full.csv) remains preserved and same-ranking FULL reproduction confirms its quality inputs.
 
-For historical TREC FULL outcomes, fixed ef=32 matches CURA's 1/43 violations with **53.48% less work**. This is also post hoc, with only 43 queries, and provides no SLA guarantee. The [TREC archived FULL frontier](../sigir_analysis/fixed_risk_work_frontier_trec_saved_full.csv) is not a new ranking reevaluation.
+## Preserved oracle opportunity and historical statistics
 
-## Oracle opportunity, statistics and revised interpretation
+Across 819 exact-positive MS MARCO queries, mean first ANN-safe and IR-safe ef are 21.485 and 13.206, with gap 8.278 (95% CI [6.222, 10.527]). The saved estimator substitutes ef256 when a safe candidate is absent; four ANN and three IR thresholds are absent. Restricting to **812 jointly feasible pairs** gives mean gap **7.611** (CI [5.933, 9.387]) and IR-allows-lower rate 25.62%. First-safe means first safe point on the tested grid; a maximum-grid fallback does not certify safety and ef reduction does not establish work reduction. Both estimators remain in [oracle analysis](../sigir_analysis/oracle_budget_gap_analysis.csv).
 
-For 812 jointly feasible exact-positive MS MARCO queries, mean ANN-safe ef is 19.936, IR-safe ef 12.325, gap **7.611** (95% CI [5.933, 9.387]); IR permits lower ef on 25.62%. This is divergence between judged-IR and ANN criteria on the tested grid, not evidence that most queries benefit or that a controller efficiently exploits it. Saved-grid fallback and jointly feasible sensitivity results are both in [oracle_budget_gap_analysis.csv](../sigir_analysis/oracle_budget_gap_analysis.csv). Maximum-grid fallback does not demonstrate safety; ef reduction is not distance reduction.
+Under FULL, all 43 TREC queries are exact-positive. Mean ANN-safe and IR-safe ef are 12.279 and 12.419, gap -0.140 (historical paired-query CI [-1.163, 0.884]). Only 2/43 allow lower IR ef; 38 agree and three require higher IR ef. ANN is safe at ef10 for 36/43 and IR for 35/43. The tested-grid floor and five nonzero gaps limit observed headroom and inference. TREC has 95.395 positive judgments/query on average versus 1.071 for MS MARCO. Cross-dataset differences alone remain confounded by query distribution and corpus coverage; the new controlled thinning study addresses metric sensitivity within TREC rather than eliminating those confounders.
 
-All 43 TREC queries are exact-positive. The ANN-minus-IR mean ef gap is -0.140, CI [-1.163, 0.884]. Only 2/43 allow lower IR ef; 38 agree and 3 require higher IR ef. ANN is safe at ef10 on 36/43, IR on 35/43: measured headroom is restricted on the tested grid. Five nonzero gaps provide little inferential power. Cross-dataset judgment and budget patterns do not identify density causality; the blocked same-ranking experiment remains necessary.
+| Historical test | Cohort/estimator | Mean difference | 95% CI | Units |
+| --- | --- | ---: | --- | --- |
+| P1 | MS MARCO all; saved grid-capped | 9.158000 | [7.182000, 11.194000] | ef |
+| P1 | MS MARCO all; jointly feasible | 8.139253 | [6.577195, 9.792129] | ef |
+| P2 | Exact-positive; saved grid-capped | 8.278388 | [6.222222, 10.527473] | ef |
+| P2 | Exact-positive; jointly feasible | 7.610837 | [5.933498, 9.386700] | ef |
+| P3 | Test fixed ef96 minus CURA | 703.805000 | [408.594375, 985.821250] | distances/query |
+| P4 | Test CURA minus post-hoc fixed ef48 | 771.620000 | [488.510000, 1078.553500] | distances/query |
 
-[statistical_tests.csv](../sigir_analysis/statistical_tests.csv) preserves 20,000-resample paired-query bootstrap results, exploratory paired mean sign-flip tests, direction sign tests and exact McNemar comparisons. Sign-flip inference assumes sign exchangeability; p-values are unadjusted. Query bootstrap excludes policy-fitting, comparator-selection and timing-run uncertainty. Degenerate exact-zero intervals do not establish equivalence. No density-study statistical result is present.
+These historical comparisons, including P1-P4, were not recomputed. Their 20,000-resample paired-query intervals condition on saved policies and selected comparators. Exploratory mean sign-flip, direction sign and exact McNemar tests retain their original unadjusted interpretation. Small violation discordances provide little evidence of risk equivalence. Historical intervals do not cover fitting, policy selection or timing-run uncertainty. See [primary results](../sigir_analysis/primary_statistical_results.csv), the now-complete [54-row statistical table](../sigir_analysis/statistical_tests.csv), and the byte-preserved [pre-extension table](../sigir_analysis/statistical_tests_saved.csv).
 
-### Requested primary statistical comparisons
+## Human review and scope limits
 
-| Test | Cohort | Estimator | Paired mean difference | 95% CI | Units |
-| --- | --- | --- | ---: | --- | --- |
-| P1 | MSMARCO_ALL all | saved_grid_censored_fallback | 9.158000 | [7.182000, 11.194000] | efSearch |
-| P1 | MSMARCO_ALL all | both_criteria_feasible | 8.139253 | [6.577195, 9.792129] | efSearch |
-| P2 | MSMARCO_ALL exact_positive | saved_grid_censored_fallback | 8.278388 | [6.222222, 10.527473] | efSearch |
-| P2 | MSMARCO_ALL exact_positive | both_criteria_feasible | 7.610837 | [5.933498, 9.386700] | efSearch |
-| P3 | MSMARCO_TEST | paired mean difference | 703.805000 | [408.594375, 985.821250] | distance computations/query |
-| P4 | MSMARCO_TEST | paired mean difference | 771.620000 | [488.510000, 1078.553500] | distance computations/query |
+The [50-case review status](50_CASE_FAILURE_REVIEW_STATUS.md) records **36 completed genuine FiQA human reviews and 14 pending cases**. Case 37/query 515 has a recorded human category and awaits evidence-note confirmation; cases 38-50 await category decisions. The [pending assistance sheet](../beir_fiqa/manual_failure_review/fiqa_pending_cases_MODEL_ASSISTED.csv) supplies 14 explicitly model-assisted suggestions. No pending suggestion was promoted to human_verified=YES, and no completed human decision was overwritten.
 
+The separate 50-case MS MARCO/TREC analysis is model-assisted, including eight second-pass automatic resolutions, with zero human-verified cases. It must not be conflated with the FiQA checkpoint. Completing the scientific density study does not complete the human-review course requirement.
 
-P1 covers all MS MARCO oracle pairs; P2 covers exact-positive pairs. Each retains both grid-capped and jointly feasible estimators. P3 is original fixed ef96 minus CURA work on the same 200 test queries; P4 is CURA minus post-hoc fixed ef48. Positive values have the direction stated by each comparison. The updated P3 interval uses the recorded 20,000-resample bootstrap seed; historical 5,000-resample intervals remain historical.
+The main experiment uses a controlled approximately one-million-passage MS MARCO subset, one primary MiniLM encoder and HNSW only. Full 8.8M MS MARCO, a second ANN family, and official DARTH/Patience reproductions were not run. ANN-Risk is not official DARTH; Patience-Inspired is not official Patience. The separate reduced-feature FiQA experiment is not an independent confirmation of adaptive advantage: its recorded work is 75.27% higher than its fixed comparator. TREC inference rests on 43 queries. Search estimates omit controller overhead, and sparse judged utility is not actual relevance preservation.
 
-The [primary results](../sigir_analysis/primary_statistical_results.csv) include effect sizes, CIs, units, seeds and exploratory p-values. Exact paired violation tests show only three discordances versus ef96 and two versus ef48, providing little evidence about risk equivalence. P5/P6 (FULL versus each thinned condition: gap and zero-reference fraction) are explicit blocked rows with blank effects/CIs/p-values. [Statistical scope](../sigir_analysis/statistical_analysis_summary.md) and [status](../sigir_analysis/statistical_analysis_status.json) distinguish completed saved-data tests from the incomplete full statistical analysis. The original statistical CSV is preserved as [statistical_tests_saved.csv](../sigir_analysis/statistical_tests_saved.csv).
+## Reproducibility and next manuscript step
 
-**Scientific outcome: UNRESOLVED.** Outcome A (gap grows), B (gap unchanged) and C (mixed/nonmonotone) all require scored same-ranking observations. None can be selected from prepared qrels or cross-dataset scalar comparisons.
+The [analysis index](../sigir_analysis/README.md), [restored-ranking instructions](../sigir_analysis/RESTORED_RANKING_EVALUATION.md), [density status](../sigir_analysis/trec_judgment_density_status.md), [run manifest](../sigir_analysis/restored_ranking_evaluation/run_manifest.json) and [completed experiment validation](../sigir_analysis/restored_ranking_evaluation/validation.json) describe inputs and outputs. Recovery, density promotion and statistics have separate passing evidence records linked above. The [canonical validation](../sigir_analysis/validation.json) and [completion report](../sigir_analysis/SIGIR_COMPLETION_STATUS.txt) record the integrated final checks.
 
-The defensible story is: **ANN and judged-IR safe budgets differ even for exact-positive queries; baseline calibration and adaptive overhead matter enough that cheap fixed search may be preferable to current CURA.** Genuine adaptive gains require an independently validated full-cost improvement over a fixed risk/work frontier. Judgment completeness remains an unresolved modifier. CURA does not universally beat fixed HNSW.
+For the present completed workspace, rerun only the lightweight audits:
 
-## Reproduction and validation
+    python sigir_analysis/validate_analysis.py
+    python sigir_analysis/completion_status.py
 
-All research artifacts are under `sigir_analysis/`; this is the main report. The [revised paper direction](../paper/SIGIR_REVISED_DIRECTION.md) distinguishes supported and pending claims. The [short-paper source](../paper/sigir_short.tex) remains uncompiled and unchecked against the official ACM format. Course evidence and human-review records were retained.
+Do not rerun completed saved analyses, corpus encoding, retrieval or index construction. A fresh external reproduction can follow the documented recovery and gated density commands using the original archive; those are separate from auditing these completed outputs.
 
-```powershell
-python sigir_analysis/recover_trec_qrels.py
-python sigir_analysis/audit_local_retrieval.py
-python sigir_analysis/verify_trec_ranking_recovery.py
-python sigir_analysis/record_trec_reproduction.py
-python sigir_analysis/analyze_saved_artifacts.py
-python sigir_analysis/build_research_report.py
-python sigir_analysis/validate_analysis.py
-python sigir_analysis/completion_status.py
-```
-
-Recovery reuses the locally verified qrels; network is needed only if absent. The other commands do not run retrieval, generate embeddings, construct an index or train a controller. [analysis_protocol.json](../sigir_analysis/analysis_protocol.json) records source hashes and versions. [preserved_analysis_hashes.json](../sigir_analysis/preserved_analysis_hashes.json) verifies unchanged numerical artifacts after renaming; [validation.json](../sigir_analysis/validation.json) separates passing input/saved-data checks from **FAIL for the requested full-study requirements**. Missing rankings prevent same-ranking/ANN-invariance checks, FULL metric reproduction, duplicate-ranking checks and 50 completed seed evaluations. The validator returns exit code 1 for these unmet requirements; it does not mislabel available-input checks as completion of the experiment. Query-ID and normalized exact-text leakage checks pass across the original 600/200/200/43 split.
-
-The short paper remains a supported-evidence draft with the density experiment explicitly pending. After saved-data validation, its sole source edit corrected the reproducibility directory to `sigir_analysis`; reverse-substitution reproduces the prior complete source hash. [The maintenance/evidence record](../sigir_analysis/short_paper_evidence_gate.json) documents this correction and prohibits new density claims before the experiment validates. No manuscript result was added or changed. The [requested completion report](../sigir_analysis/SIGIR_COMPLETION_STATUS.txt) records the remaining evidence gap. No commit or push was performed.
-
-SIGIR RESEARCH COMPLETION STATUS
-
-TREC qrels:
-RECOVERED
-
-Exact rankings:
-MISSING
-
-HNSW rankings:
-MISSING
-
-Retrieval-only rerun:
-NO
-
-Embeddings regenerated:
-NO
-
-Index rebuilt:
-NO
-
-Controller retrained:
-NO
-
-Exact-nDCG stratified analysis:
-COMPLETE
-
-Fixed risk/work frontier:
-COMPLETE
-
-Same-ranking judgment-density study:
-BLOCKED
-
-50-seed judgment thinning:
-INCOMPLETE
-
-Statistical analysis:
-INCOMPLETE
-
-Validation:
-FAIL
-
-Risk-matched fixed beats current CURA:
-YES
-
-Judgment sparsity materially changes ANN-vs-IR budget gap:
-UNRESOLVED
-
-Strongest positive result:
-On 200 held-out MS MARCO queries, CURA uses 20.51% less recorded distance work than the original calibration-selected fixed ef96 baseline. Exact-positive-nDCG queries contribute 92.59% of that saving, so the reduction is not primarily an exact-zero artifact.
-
-Strongest negative result:
-Post-hoc fixed ef48 matches CURA's observed 2/200 violation rate with 28.29% less work. Fixed ef64 also has lower observed risk and work than CURA. The current implementation does not dominate the complete observed fixed frontier; retrospective risk matching is a diagnostic, not a prospectively calibrated replacement or proof of equal population risk.
-
-Current novelty:
-ANN-neighbor fidelity and judged downstream IR safety can require different budgets even when exact nDCG is positive. Exact-zero stratification separates a trivial reference-loss case from this remaining metric-dependent opportunity. The complete fixed frontier shows that conservative calibration and adaptive probe overhead can account for a saving against a selected baseline without establishing adaptive superiority. CURA is a case study of these limits; the causal effect of relevance-judgment completeness remains unresolved until the same rankings are evaluated under full and thinned qrels.
-
-Remaining blocker:
-Original exact top-k document IDs and HNSW document IDs for all 43 queries at all ten ef values are missing. The original subset document map, query/corpus vectors and built HNSW index needed for retrieval-only recovery are also missing; zero ranking seeds have been evaluated.
-
-SIGIR-short readiness:
-NEEDS MORE EVIDENCE
+The defensible paper story is now: **judged ANN/IR oracle headroom depends on annotation completeness, while fixed-frontier calibration and adaptive overhead determine whether an implementation realizes a genuine efficiency gain.** The current CURA case study does not demonstrate that gain. [Revised direction](../paper/SIGIR_REVISED_DIRECTION.md) and [short-paper source](../paper/sigir_short.tex) carry this supported interpretation. Scientific evidence supports drafting; final TeX compilation, official-format checking and genuine human-review completion remain distinct work.

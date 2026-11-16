@@ -1,0 +1,32 @@
+--- README.md (conflicted)
++++ README.md (proposed)
+@@ -166,13 +166,9 @@
+ - [50 FiQA fixed-HNSW ef=10 failure cases](beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv) were identified from genuine recorded nDCG losses; reconstructed scores match saved data.
+ - [Assistant-prepared drafts](beir_fiqa/manual_failure_review/ASSISTANT_DRAFT_ALL_50.md) provide reference evidence, **not completed manual judgments**.
+ - [Human-review instructions](beir_fiqa/manual_failure_review/HOW_TO_REVIEW.md) and [interactive tool](16_interactive_fiqa_review.py) support actual annotation.
+-<<<<<<< HEAD
+-- The committed FiQA worksheet is still not evidence of 50 independent human reviews. Do not claim otherwise until the reviewed records themselves are committed and audited.
++- The audited FiQA checkpoint records **36/50 complete human reviews**. Case 37 (query 515) has category 2 recorded and awaits evidence-note confirmation; cases 38?50 await category decisions.
++- These human decisions remain separate from the 50 model-assisted MS MARCO/TREC budget-sweep annotations and their eight automatic second-pass resolutions.
+ - These FiQA cases are **fixed low-budget HNSW failures**, not 50 violations by a deployed CURA policy.
+-=======
+-- The FiQA worksheet records **1/50 complete human reviews**. This is separate from the actual MS MARCO/TREC budget-sweep taxonomy (50 model-assisted labels, including eight automatic second-review resolutions); neither is a completed 50-case human review.
+-- The cases are **fixed low-budget HNSW failures**, not 50 violations by a deployed CURA policy.
+->>>>>>> ac1f5ab (Add SIGIR risk-work and judgment-density analysis)
+ 
+ ## Interpretation and current limitations
+ 
+@@ -189,12 +185,8 @@
+ - [x] Saved MS MARCO, TREC-DL and FiQA experiments
+ - [x] Query-level ablations and MS MARCO significance testing
+ - [x] Results and limitations summary
+-<<<<<<< HEAD
+-- [x] 50 **model-assisted** MS MARCO actual IR-unsafe case analyses with structural validation
++- [x] 50 **model-assisted** MS MARCO actual IR-unsafe case analyses with structural validation and final taxonomy, including eight automatic second-pass resolutions
+ - [ ] 50 **independently human-verified** failure analyses and aggregate taxonomy
+-=======
+-- [x] 50 actual **model-assisted** failure analyses and final taxonomy, including eight automatic second-review resolutions; no new human verification claimed
+->>>>>>> ac1f5ab (Add SIGIR risk-work and judgment-density analysis)
+ - [ ] Independent clean-environment reproduction and experiment manifests
+ - [ ] Strong published-method baseline verification where practical
+ - [ ] Final SIGIR-style paper, transparent AI-use statement, presentation/demo

@@ -1,35 +1,42 @@
-# SIGIR research analysis
+# Completed SIGIR evidence
 
-Start with [the main research report](../reports/SIGIR_RESEARCH_ANALYSIS.md) and [paper direction](../paper/SIGIR_REVISED_DIRECTION.md).
+Current evidence: original rankings **RECOVERED**, FULL reproduction **PASS**, 50-seed same-ranking study **COMPLETE**, statistics **COMPLETE**, density **Outcome A**. [Completion status](SIGIR_COMPLETION_STATUS.txt) and [validation](validation.json) are the current records. Earlier missing-input audits are historical snapshots superseded by external archive recovery.
 
-**Supported negative result:** post-hoc fixed ef48 uses 28.29% less work than CURA at the same observed MS MARCO violation count. **Density study blocked:** qrels are recovered and 50 paired judgment seeds are prepared, but rankings and original recovery caches remain missing. Zero ranking seeds were evaluated.
+CURA saves 20.51% recorded MS MARCO work versus calibration-selected ef96; exact-positive queries contribute 92.59% of that saving. However, post-hoc ef48 matches its observed 2/200 violations using 28.29% less work. The implementation does not dominate the observed fixed frontier. [Research report](../reports/SIGIR_RESEARCH_ANALYSIS.md) preserves both findings.
 
-| Analysis | Artifacts |
+Thinning increases **measured** ANN-minus-IR safe-budget headroom: -0.140 (FULL), 0.308 (50%), 0.848 (25%), 1.956 (one positive). One-positive exact nDCG is zero in 82.88% of query-seed cases. This is judged-utility sensitivity, not improved retrieval or true relevance preservation.
+
+## Evidence index
+
+| Evidence | Location |
 | --- | --- |
-| Exact-nDCG strata | [results](exact_ndcg_stratified_results.csv), [query records](exact_ndcg_stratified_per_query.csv), [summary](exact_ndcg_stratified_summary.md), [plot](exact_ndcg_stratified_work.png) |
-| Fixed frontier | [test](fixed_risk_work_frontier.csv), [plot](fixed_risk_work_frontier.png), [calibration](calibration_fixed_frontier.csv), [interpretation](fixed_frontier_summary.md) |
-| Oracle budget gap | [results](oracle_budget_gap_analysis.csv), [query records](oracle_budget_gap_per_query.csv), [summary](oracle_budget_gap_summary.md), [plot](oracle_budget_gap_analysis.png) |
-| Statistics and provenance | [paired tests](statistical_tests.csv), [primary comparisons](primary_statistical_results.csv), [scope](statistical_analysis_summary.md), [validation](validation.json), [source protocol](analysis_protocol.json), [preserved numerical hashes](preserved_analysis_hashes.json) |
-| Original qrels | [recovery](qrels_recovery.json), [query audit](trec_qrels_query_audit.csv), [original file](../local_data/trec2019/2019qrels-pass.txt) |
-| Exhaustive local audit | [file inventory](local_artifact_inventory.csv), [content/schema audit](local_retrieval_audit.json), [archive members](archive_member_inventory.csv), [Git candidate review](git_candidate_review.json) |
-| Judgment density: blocked | [summary](trec_judgment_density_summary.csv), [prepared seed metadata](trec_judgment_density_per_seed.csv), [retained judgments](trec_thinned_positive_judgments.jsonl.gz), [empty frontier schema](trec_judgment_density_frontier.csv), [protocol/status](trec_judgment_density_status.md), [missing-input paths](ranking_recovery_requirements.csv) |
-| Historical TREC FULL | [fixed frontier](fixed_risk_work_frontier_trec_saved_full.csv), [plot](fixed_risk_work_frontier_trec_saved_full.png) |
-| Restored-ranking evaluator | [instructions](RESTORED_RANKING_EVALUATION.md), [runner](run_trec_judgment_density.py), [strict input gate](ranking_input_gate.py), [provenance template](trec_ranking_provenance.template.json), [synthetic checks](evaluation_pipeline_validation.json), [test log](evaluation_pipeline_test_log.txt) |
-| Recovery and completion gates | [ranking validation](trec_ranking_recovery_validation.json), [retrieval-state audit](trec_retrieval_state_audit.json), [detailed settings](trec_retrieval_state.json), [reproduction references](trec_retrieval_reproduction.csv), [reproduction status](trec_retrieval_reproduction_status.md), [completion report](SIGIR_COMPLETION_STATUS.txt), [short-paper record](short_paper_evidence_gate.json) |
+| Preserved original analyses | [input protocol](analysis_protocol.json), [six CSV hashes](preserved_analysis_hashes.json), [strata](exact_ndcg_stratified_results.csv), [fixed frontier](fixed_risk_work_frontier.csv), [oracle analysis](oracle_budget_gap_analysis.csv) |
+| Original exact / HNSW ranked IDs | [exact](trec_exact_rankings.csv), [HNSW](trec_hnsw_rankings.csv), [provenance](trec_ranking_provenance.json), [final candidate audit](ranking_recovery_final_audit.json), [final retrieval-state audit](trec_retrieval_state_final_audit.json) |
+| FULL: 43 exact + 430 HNSW comparisons | [comparisons](trec_retrieval_reproduction.csv), [gate](recovered_ranking_validation.json), [status](trec_retrieval_reproduction_status.md) |
+| 43 queries × 10 budgets × 151 condition-seed rows | [per-query](trec_judgment_density_per_query.csv), [per-seed](trec_judgment_density_per_seed.csv), [summary](trec_judgment_density_summary.csv) |
+| Fixed work/risk and frozen CURA policy | [fixed](trec_fixed_risk_work_by_density.csv), [frontier alias](trec_judgment_density_frontier.csv), [CURA](trec_cura_by_density.csv) |
+| Raw evaluation bundle | [manifest](restored_ranking_evaluation/run_manifest.json), [validation](restored_ranking_evaluation/validation.json), [promotion hashes](density_promotion_validation.json) |
+| Four density endpoints × three comparisons | [all statistics](statistical_tests.csv), [density only](density_statistical_tests_completed.csv), [preservation](density_statistics_validation.json), [interpretation](statistical_analysis_summary.md) |
+| Scientific interpretation | [conclusion](scientific_conclusion.json), [report](../reports/SIGIR_RESEARCH_ANALYSIS.md), [short-paper source](../paper/sigir_short.tex) |
+| Human-review provenance | [36/50 genuine reviews, 14 pending model suggestions](../reports/50_CASE_FAILURE_REVIEW_STATUS.md) |
 
-All density seed rows are explicitly evaluation_completed=False. Blank retrieval metrics mean unavailable; judgment counts and hashes are real preparation results. The four density plots are absent. Historical FULL metrics are not a new original-ranking validation or a completed density experiment. Full-study validation reports FAIL for unmet ranking/seed requirements; input and saved-data integrity checks pass separately. The supported-only short-paper draft retains its pending-density disclosure; its only maintenance change is the neutral reproducibility path. New density claims remain gated on validated ranking evidence.
+Four figures: [gap](judgment_density_vs_budget_gap.png), [zero reference](judgment_density_vs_zero_ndcg.png), [IR budget](judgment_density_vs_ir_safe_budget.png), [risk/work](judgment_density_vs_risk_work.png).
 
-Reproduce with NumPy, pandas, SciPy and Matplotlib (versions in analysis_protocol.json):
+## Validate the completed state
+
+From the repository root:
 
 ```powershell
-python sigir_analysis/recover_trec_qrels.py
-python sigir_analysis/audit_local_retrieval.py
-python sigir_analysis/verify_trec_ranking_recovery.py
-python sigir_analysis/record_trec_reproduction.py
-python sigir_analysis/analyze_saved_artifacts.py
-python sigir_analysis/build_research_report.py
 python sigir_analysis/validate_analysis.py
 python sigir_analysis/completion_status.py
 ```
 
-Recovery reuses verified local qrels. These commands never invoke retrieval, training, encoding or index construction. Source inputs and human reviews remain unchanged. The report builder updates the main research report, revised-direction Markdown and this index. The separately maintained standalone LaTeX source remains uncompiled.
+These commands check saved-input/result hashes, FULL comparisons, 151 qrel hashes, metric/work invariants, statistical preservation, review provenance, figures and syntax. They perform no retrieval or scientific resampling. The ordered map is excluded from Git; when locally present its hash is checked. Published ranked IDs and recorded gate evidence remain in Git. Raw qrels must be locally available at the path in qrels_recovery.json; the checksum-verified recovery script restores them if missing.
+
+Explicit [.gitattributes](../.gitattributes) preserve the original raw line endings of checksum-backed files. A [portable staged-checkout check](checkout_validation.json) verified all 45 files with automatic platform conversion disabled. [Byte policies](checkout_byte_integrity.json) record the exact choices; the scientific files and human decisions were unchanged.
+
+Do not rerun completed original analyses, thinning preparation, density scoring or statistics. Historical missing-input generators are guarded against overwriting completed evidence. Historical uncertainty uses paired queries; density inference uses 50 paired seed effects conditional on 43 fixed queries. CIs are unadjusted; Holm p-values cover 12 density follow-ups. P7 is an algebraic reversal of P5.
+
+[Fresh reproduction instructions](RESTORED_RANKING_EVALUATION.md) document the external archive and isolated reproduction. Large vectors, indexes, map files, datasets and backup/submission ZIPs are excluded; provenance records hashes. No independently logged historical map checksum or immutable encoder revision exists. Archive lineage and FULL agreement establish consistency, not independent historical identity proof.
+
+The draft remains uncompiled and unchecked against official ACM formatting. ANN-Risk is not official DARTH; Patience-Inspired is not official Patience. Full 8.8M MS MARCO, another encoder/ANN family and population-risk certification remain publication extensions.

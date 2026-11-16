@@ -9,6 +9,8 @@ QUESTION='When do downstream-utility-aware ANN search budgets provide genuine ef
 
 
 def main():
+    if json.loads((OUT/'ranking_recovery_status.json').read_text()).get('experiment_completed'):
+        raise SystemExit('Completed evidence is already incorporated in reports/SIGIR_RESEARCH_ANALYSIS.md. Legacy missing-input report generation is disabled; run validate_analysis.py and completion_status.py.')
     data=json.loads((OUT/'analysis_results.json').read_text())
     state=json.loads((OUT/'ranking_recovery_status.json').read_text())
     recovery=json.loads((OUT/'qrels_recovery.json').read_text())

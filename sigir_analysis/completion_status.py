@@ -8,6 +8,9 @@ OUT=ROOT/'sigir_analysis'
 
 
 def build():
+    if json.loads((OUT/'ranking_recovery_status.json').read_text()).get('experiment_completed'):
+        from completed_status import build_completed
+        return build_completed(ROOT)
     recovery=json.loads((OUT/'trec_ranking_recovery_validation.json').read_text())
     density=json.loads((OUT/'ranking_recovery_status.json').read_text())
     results=json.loads((OUT/'analysis_results.json').read_text())

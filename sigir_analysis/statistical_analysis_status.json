@@ -17,7 +17,7 @@
   "signflip": "two-sided, 20000 Monte Carlo draws or exact enumeration for <=18 nonzero pairs; sign exchangeability assumed",
   "density_seed_analysis": "12 comparisons completed on 50 paired thinning-seed effects per condition; fixed 43-query set",
   "censoring": "Both legacy grid-capped and jointly feasible paired oracle estimators reported",
-  "multiplicity": "Exploratory and unadjusted",
+  "multiplicity": "Historical comparisons retain original exploratory scope; new 12 density comparisons have Holm-adjusted p-values and unadjusted CIs.",
   "source_hashes": {
     "sigir_analysis/statistical_tests_saved.csv": "04db13f5fe9acef73446ba7ebd2cd4692916143e80f6fdcf3bea8aa2ecdb99dc",
     "sigir_analysis/oracle_budget_gap_per_query.csv": "427de4c593c563f74fc8ec87ac4086e8ed08cb651229e4c28dec1a469827b35e",

@@ -16,6 +16,8 @@ EFS=[10,16,24,32,48,64,96,128,192,256]
 
 
 def main():
+    if (OUT/'recovered_ranking_validation.json').exists():
+        raise SystemExit('FULL reproduction already completed from original rankings; historical blank-reference generation is disabled. Use validate_analysis.py.')
     recovery=json.loads((OUT/'trec_ranking_recovery_validation.json').read_text())
     state=json.loads((OUT/'trec_retrieval_state_audit.json').read_text())
     assert not recovery['exact_rankings_recovered'] and not recovery['hnsw_rankings_recovered']

@@ -5,12 +5,12 @@
 
 CURA now asks: **When do downstream-utility-aware ANN search budgets provide genuine efficiency gains, and how are those gains affected by relevance-judgment completeness and risk calibration?** The repository contains Python implementations, saved evaluation tables, statistical tests, ablations, and diagnostic reviews.
 
-> **SIGIR analysis finding (15 November 2026): fixed ef=48 matches CURA's observed 1% MS MARCO test violation rate and uses 28.29% less work.** The original 20.51% CURA saving is relative to calibration-selected ef=96; it does not establish an adaptive advantage on the full observed frontier. The fixed comparison is post hoc. Exact-positive queries contribute 92.59% of that original saving. Original TREC qrels are recovered and 50 deterministic judgment seeds per stochastic condition are prepared. Same-ranking reevaluation remains blocked by missing exact/HNSW rankings and original recovery caches; zero ranking seeds were evaluated. No retrieval, embeddings or index construction were run.
+> **SIGIR analysis finding (16 November 2026): fixed ef=48 matches CURA's observed 1% MS MARCO test violation rate and uses 28.29% less work.** The original 20.51% CURA saving is relative to calibration-selected ef=96; it does not establish an adaptive advantage on the full observed frontier. The fixed comparison is post hoc. Exact-positive queries contribute 92.59% of that original saving. Original TREC exact/HNSW ranked IDs were recovered from an external archive and passed all 473 FULL-qrel comparisons. The same-ranking study scored all 50 prepared thinning seeds: measured ANN-minus-IR budget headroom increases from -0.140 (FULL) to 1.956 (one positive), **Outcome A: apparent evaluation headroom**. The one-positive exact-zero fraction is 82.88%; this is not actual relevance preservation. No retrieval, embedding generation, index construction or controller retraining was run.
 
 The active research direction is **When Do Utility-Aware ANN Search Budgets Really Save Work? The Role of Relevance-Judgment Completeness and Risk Calibration.** Read the [research report](reports/SIGIR_RESEARCH_ANALYSIS.md), [analysis artifacts](sigir_analysis/README.md), [revised direction](paper/SIGIR_REVISED_DIRECTION.md), and [new short-paper source](paper/sigir_short.tex). The course evidence below records historical calibrated-baseline comparisons and retains its original review status.
 
 <!-- BEGIN CURA FINAL EVIDENCE STATUS -->
-**Final saved-evidence update:** all 50 actual budget-sweep failure labels are model assisted, including 8 automatic second-review resolutions. No new human verification is claimed. FiQA human review is separate (1/50). See [FINAL_README.md](FINAL_README.md) and [the requirements checklist](FINAL_PROJECT_REQUIREMENTS.md).
+**Saved-review evidence:** all 50 actual MS MARCO/TREC budget-sweep failure labels are model assisted, including 8 automatic second-review resolutions. FiQA human review is separate: **36/50 completed, 14 pending**. Case 37 awaits evidence-note confirmation. See the [audited review status](reports/50_CASE_FAILURE_REVIEW_STATUS.md); model suggestions do not count as completed human reviews.
 
 Mean search latency estimates decrease by 17.06%, while p95 increases from 1.128008 to 1.985027 ms (75.98% higher). Adaptive effort improves the recorded average and worsens the tail in this setting. Latency is reconstructed from saved per-query mean search timings, including probe and selected-search costs; the p95 is across those estimates. It excludes model-inference/feature-processing overhead and is not an end-to-end request-latency measurement.
 <!-- END CURA FINAL EVIDENCE STATUS -->
@@ -37,7 +37,7 @@ The cached `Score-Gap-Budget` baseline stops after the efSearch=10 probe when it
 
 CURA-Full uses 16.48% less test work than this policy: paired difference 538.325, bootstrap 95% CI [210.230, 852.786], paired-randomization p=0.001100. The score-gap policy has lower observed test violation rate and lower p95 latency than CURA. Work savings therefore do not establish uniform superiority. [Full metrics, MRR, protocol and limitations](msmarco_large/msmarco_1000000_q1000/score_threshold_baseline/SCORE_THRESHOLD_BASELINE_REPORT.md) are saved separately; the primary ablation table is unchanged. Compatible policy Recall@100 is unavailable and remains blank.
 
-**FiQA manual review: 1/50 human-verified decisions; 49 remain.** Only explicit researcher decisions backed by the saved decision log count. The separate 50-case MS MARCO/TREC taxonomy remains entirely model-assisted; it is not substituted for the professor's manual requirement.
+**FiQA manual review: 36/50 human-verified decisions; 14 remain.** Only explicit researcher decisions backed by the saved decision log count. The separate 50-case MS MARCO/TREC taxonomy remains entirely model-assisted; it is not substituted for the manual requirement.
 
 ANN-Risk is a local ANN-target proxy, not official DARTH. Patience-Inspired is a local stability heuristic, not official Patience. LADR is not claimed. One HNSW family, one primary MiniLM encoder, a controlled million-scale corpus, calibration reuse, and the 43-query OOD sample remain limitations. AI assisted code/debugging, documentation, and preliminary qualitative suggestions; it did not independently supply human decisions.
 
@@ -88,7 +88,7 @@ Detailed provenance, limitations, and comparisons are in **[CURA results and lim
 
 ## Overleaf paper source
 
-- [Active SIGIR-short research draft](paper/sigir_short.tex) and [revised direction](paper/SIGIR_REVISED_DIRECTION.md), including the negative fixed-frontier result and blocked judgment experiment.
+- [Active SIGIR-short research draft](paper/sigir_short.tex) and [revised direction](paper/SIGIR_REVISED_DIRECTION.md), including the negative fixed-frontier result and completed same-ranking judgment experiment.
 
 - [Two-column LaTeX manuscript](paper/main.tex) — revised with FiQA results and honest manual-review status.
 - [Overleaf import/compile instructions](paper/README.md) — upload as main.tex, use pdfLaTeX.

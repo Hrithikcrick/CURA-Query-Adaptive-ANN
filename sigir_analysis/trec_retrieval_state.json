@@ -27,7 +27,7 @@
   "original_faiss_version": "1.15.1",
   "reported_original_corpus_documents": 1000629,
   "corpus_size_provenance": "results/large_pilot_summary.txt",
-  "original_subset_membership_verifiable": false,
+  "original_subset_membership_verifiable": true,
   "query_key_mapping": [
     {
       "query_key": "trec19::1037798",
@@ -205,35 +205,49 @@
   "cache_files": {
     "query_embeddings": {
       "path": "msmarco_large/msmarco_1000000_q1000/cache/query_embeddings.npy",
-      "present": false
+      "present": false,
+      "available_in_external_archive": true,
+      "archive_member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/query_embeddings.npy"
     },
     "corpus_embeddings": {
       "path": "msmarco_large/msmarco_1000000_q1000/cache/corpus_embeddings.f32",
-      "present": false
+      "present": false,
+      "available_in_external_archive": true,
+      "archive_member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/corpus_embeddings.f32"
     },
     "HNSW_index": {
       "path": "msmarco_large/msmarco_1000000_q1000/cache/hnsw_M32_efC200.faiss",
-      "present": false
+      "present": false,
+      "available_in_external_archive": true,
+      "archive_member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/hnsw_M32_efC200.faiss"
     },
     "docid_map": {
       "path": "msmarco_large/msmarco_1000000_q1000/cache/docids.txt",
-      "present": false
+      "present": true,
+      "available_in_external_archive": true,
+      "archive_member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/docids.txt"
     },
     "exact_ranked_indices": {
       "path": "msmarco_large/msmarco_1000000_q1000/cache/exact_top100_indices.npy",
-      "present": false
+      "present": false,
+      "available_in_external_archive": true,
+      "archive_member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/exact_top100_indices.npy"
     },
     "exact_scores": {
       "path": "msmarco_large/msmarco_1000000_q1000/cache/exact_top100_scores.npy",
-      "present": false
+      "present": false,
+      "available_in_external_archive": true,
+      "archive_member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/exact_top100_scores.npy"
     },
     "corpus_meta": {
       "path": "msmarco_large/msmarco_1000000_q1000/cache/corpus_meta.json",
-      "present": false
+      "present": false,
+      "available_in_external_archive": true,
+      "archive_member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/corpus_meta.json"
     }
   },
-  "retrieval_only_fallback_possible": false,
-  "reason": "Original index, query vectors, corpus vectors, exact arrays and document mapping are absent; FiQA cache is for a different corpus",
+  "retrieval_only_fallback_possible": true,
+  "reason": "Original ranked indices, ordered map and original vector/index caches recovered in external archive; direct ID recovery made retrieval unnecessary.",
   "source_hashes": {
     "04_msmarco_large_pilot.py": "8f600fee772b6326dbac226f7bc85e7fb7c4f7dcdae90a09952059259137b12e",
     "05_research_grade_validation.py": "2ee6db81386d6f1c811a87a428ddbc0c0a8f12b2df645fcd319993b3e14a576c",
@@ -241,5 +255,8 @@
     "msmarco_large/msmarco_1000000_q1000/results/large_pilot_summary.txt": "66c4efbaf8aa8ef080e330f299414e8521a234f990094a413a783339a15aa200",
     "msmarco_large/msmarco_1000000_q1000/results/queries.csv": "acd8fbe2ac804548ca79ec096d825d9ef502b42e5556796fcf1c7662eaeab4dc",
     "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv": "f7e2bb45223343700f711c1683404954381f5be5f0369ff86c89ff6941c3496b"
-  }
+  },
+  "original_independent_corpus_checksum_available": false,
+  "identity_limitation": "No independent historical corpus-map checksum is available. The supplied checksum/count and restorer attestation establish consistency, not independent proof of historical corpus identity.",
+  "encoder_revision_available": false
 }

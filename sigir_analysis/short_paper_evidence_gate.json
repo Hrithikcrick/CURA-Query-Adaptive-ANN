@@ -1,12 +1,14 @@
 {
-  "policy": "Maintain the supported-only draft after saved-data validation; prohibit density-result claims until the same-ranking study validates.",
-  "current_paper_sha256": "1f892b98157488dca4d0a386ad7fd87b373ebda3883c0f2f6e24e328945eab2e",
-  "evidence_complete": false,
+  "policy": "Density claims permitted only after original-ranking FULL reproduction and completed 50-seed same-ranking study.",
+  "current_paper_sha256": "f3b96ae97e54344319816ae99ff9f21b487f91a9740f6b24a805d2a9b925b84b",
+  "evidence_complete": true,
   "paper_modified_this_continuation": true,
   "previous_paper_sha256": "047af7229dd2f076d663de51b5ede0b95cd369619d86f1c8d61bae77ba5d9819",
   "saved_data_evidence_validated": true,
-  "scientific_claims_changed": false,
-  "maintenance_change": "Corrected the reproducibility directory reference to sigir_analysis; every other source byte is preserved.",
-  "density_claims_permitted": false,
-  "manuscript_scope": "Supported saved-data findings and explicit pending-density disclosure only; latest user fallback permits this scope."
+  "scientific_claims_changed": true,
+  "maintenance_change": "Updated only evidence-dependent density, provenance, uncertainty and completion wording.",
+  "density_claims_permitted": true,
+  "manuscript_scope": "Preserved prior saved-run findings and negative fixed-frontier evidence; added conditional thinning Outcome A.",
+  "pre_density_paper_sha256": "1f892b98157488dca4d0a386ad7fd87b373ebda3883c0f2f6e24e328945eab2e",
+  "manuscript_compilation": "NOT RUN; no LaTeX compiler available"
 }

@@ -1,0 +1,12 @@
+{
+  "README.md": {
+    "conflicted_sha256": "2b8c7c7af07decac595f5df88f0efda9f11be42fe115491aa015ff544f049938",
+    "proposed_sha256": "f8825bfb942098feefa8a87990a8c09facb5fb71ffd4ea58671341d2845ddb80",
+    "conflicts_resolved_in_proposal": 2
+  },
+  "paper/main.tex": {
+    "conflicted_sha256": "eba05028c7e84b45d4bb698798aaa398b453e4872dd08feb4f65ca3ac1b2afda",
+    "proposed_sha256": "0f1e62b02c46c6a6e9d54b2c87c40d794c5a096e9a5f87b9216e68a2d3f310c8",
+    "conflicts_resolved_in_proposal": 1
+  }
+}

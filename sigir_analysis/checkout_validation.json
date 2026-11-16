@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "files_checked": 45,
+  "mismatches": [],
+  "method": "Export staged index with core.autocrlf=false; explicit .gitattributes reproduce original SHA256-backed local files byte for byte.",
+  "scientific_bytes_modified": false,
+  "human_decisions_modified": false
+}

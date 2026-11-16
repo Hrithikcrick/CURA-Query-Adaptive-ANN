@@ -23,5 +23,7 @@
     "sigir_analysis/test_density_runner.py": "9e0b06bf86b8445b2766ac100864185aace3870348042a377f10c8a581926743",
     "sigir_analysis/validate_evaluation_pipeline.py": "a64c9a82dffad224b345e2f72c142ebf4665d6441b57b32a793651f7ff520e80"
   },
-  "unittest_log": "evaluation_pipeline_test_log.txt"
+  "unittest_log": "evaluation_pipeline_test_log.txt",
+  "record_scope": "Historical synthetic implementation preflight before external archive recovery; not current real-study status.",
+  "current_real_evidence": "restored_ranking_evaluation/validation.json"
 }

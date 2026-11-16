@@ -1,9 +1,12 @@
 {
-  "density_outcome": "UNRESOLVED",
-  "outcome_A_supported": null,
-  "outcome_B_supported": null,
-  "outcome_C_supported": null,
-  "reason": "No same-ranking density observations; none of A/B/C can be selected",
+  "density_outcome": "A",
+  "outcome_A_supported": true,
+  "outcome_B_supported": false,
+  "outcome_C_supported": false,
+  "reason": "Observed condition means show increasing measured ANN-minus-IR safe-budget gap under positive-judgment thinning with fixed rankings and work.",
+  "scope": "50 thinning seeds conditional on 43 fixed queries; FULL means full available pooled qrels, not complete relevance truth.",
+  "interpretation": "Apparent evaluation headroom, not retrieval improvement or actual relevance preservation. One-positive exact-zero fraction is 82.88%.",
+  "universal_per_query_monotonicity_claimed": false,
   "risk_matched_fixed_beats_current_cura": true,
   "post_hoc_diagnostic": true,
   "adaptive_advantage_over_observed_fixed_frontier_demonstrated": false

@@ -1,6 +1,6 @@
 # Statistical analysis scope
 
-Saved-data comparisons P1?P4 and the other previously completed rows remain unchanged. The 42 completed rows were preserved field-for-field. The six blocked P5/P6 rows were replaced by real density results; no historical bootstrap or algorithm comparison was rerun.
+Saved-data comparisons P1-P4 and the other previously completed rows remain unchanged. The 42 completed rows were preserved field-for-field. The six blocked P5/P6 rows were replaced by real density results; no historical bootstrap or algorithm comparison was rerun.
 
 Twelve FULL-versus-thinned comparisons are now complete: ANN-minus-IR gap (P5), exact-zero fraction (P6), IR-safe budget (P7), and IR-allows-lower rate (P8), each for 50%, 25%, and one-positive conditions. Each effect uses 50 paired seed observations conditional on the same 43 queries and recovered rankings. All queries remain jointly feasible. The 64,930 query-budget records are not treated as independent inferential observations.
 

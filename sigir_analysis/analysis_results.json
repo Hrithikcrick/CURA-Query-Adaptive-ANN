@@ -537,6 +537,9 @@
       "reduction_ci95_high_pct": 7.03125
     }
   ],
-  "judgment_density_status": "BLOCKED",
-  "qrels_recovered": true
+  "judgment_density_status": "COMPLETE",
+  "qrels_recovered": true,
+  "density_outcome": "A",
+  "density_evidence": "trec_judgment_density_summary.csv",
+  "historical_estimates_recomputed": false
 }

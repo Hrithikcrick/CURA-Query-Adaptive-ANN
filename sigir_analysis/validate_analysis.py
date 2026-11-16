@@ -15,6 +15,13 @@ OUT=ROOT/'sigir_analysis'
 
 
 def main():
+    evidence=OUT/'restored_ranking_evaluation/validation.json'
+    if evidence.exists() and json.loads(evidence.read_text()).get('experiment_completed'):
+        from validate_completed_analysis import validate_completed
+        result=validate_completed(ROOT)
+        (OUT/'validation.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+        print(json.dumps(result,indent=2))
+        return result
     protocol=json.loads((OUT/'analysis_protocol.json').read_text())
     for path,digest in protocol['input_hashes'].items():
         assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==digest,path

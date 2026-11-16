@@ -1,107 +1,59 @@
 {
-  "checks": "input and saved-data integrity checks passed; requested full-study requirements unmet",
-  "validation_pass": false,
-  "overall_validation": "FAIL",
+  "validation_pass": true,
+  "overall_validation": "PASS",
   "input_validation_passed": true,
   "saved_data_validation_passed": true,
-  "density_experiment_completed": false,
-  "required_experiment_checks": {
-    "43_original_queries_retained": "PASS",
-    "full_original_qrels_present": "PASS",
-    "all_10_ef_values_in_archived_scalar_runs": "PASS",
-    "all_10_ef_values_in_verified_rankings": "BLOCKED_MISSING_RANKINGS",
-    "exact_ranking_present": "FAIL_MISSING",
-    "HNSW_rankings_present": "FAIL_MISSING",
-    "same_rankings_across_qrel_conditions": "NOT_VERIFIED_MISSING_RANKINGS",
-    "ANN_recall_invariant_across_conditions": "NOT_VERIFIED_MISSING_RANKINGS",
-    "search_work_invariant_across_conditions": "NOT_VERIFIED_NO_DENSITY_EVALUATION",
-    "50_thinning_seeds_scored_per_condition": "FAIL_ZERO_COMPLETED_EVALUATIONS",
-    "query_ID_and_exact_text_leakage": "PASS",
-    "duplicate_query_budget_rows_in_archived_metrics": "PASS",
-    "no_duplicate_query_rank_doc_rows": "NOT_VERIFIED_MISSING_RANKINGS",
-    "no_duplicate_query_ef_rank_rows": "NOT_VERIFIED_MISSING_RANKINGS",
-    "FULL_recomputed_metric_reproduction": "NOT_RUN_MISSING_RANKINGS",
-    "source_hashes_saved_and_unchanged": "PASS",
-    "no_embedding_generation_or_index_rebuild": "PASS",
-    "no_controller_retraining": "PASS",
-    "no_unintended_corpus_change": "PASS_NO_NEW_RETRIEVAL_OR_CORPUS_MUTATION",
-    "original_corpus_identity_and_order": "NOT_VERIFIED_MISSING_MAPPING_AND_VECTORS",
-    "retrieval_state_and_ranking_coverage_schema": "PASS",
-    "reproduction_references_match_saved_runs": "PASS_NO_RECREATED_METRICS",
-    "short_paper_scientific_claims_unchanged": "PASS",
-    "short_paper_neutral_path_maintenance_only": "PASS",
-    "restored_ranking_evaluator_implementation": "PASS_SYNTHETIC_FIXTURES_ONLY"
-  },
+  "density_experiment_completed": true,
+  "statistical_analysis_complete": true,
+  "scientific_judgment_density_outcome": "A",
   "input_hashes_unchanged": 14,
   "preserved_numerical_CSV_hashes": 6,
-  "qrels_recovery": "passed: original checksum, exact query identities and all positive counts",
   "original_qrel_rows": 9260,
   "prepared_qrel_records": 6450,
-  "stochastic_qrel_seeds_prepared_per_condition": 50,
   "prepared_seed_rows": 151,
-  "ranking_seed_evaluations": 0,
-  "condition_checks": "passed: nested sets, original grades, retained counts, preserved nonpositive judgments and canonical hashes",
-  "ranking_metrics_unavailable_and_blank": true,
-  "ANN_recall_invariance": "not verified: rankings absent",
-  "local_report_links": "passed",
-  "python_compile_check": "passed",
-  "audit_errors": 0,
+  "ranking_seed_evaluations": 50,
+  "query_seed_condition_budget_rows": 64930,
+  "FULL_reproduction_comparisons": 473,
+  "ANN_recall_invariance": "PASS",
+  "FULL_oracle_budgets_match_archived": "PASS",
+  "query_ID_and_exact_text_leakage": "PASS",
+  "original_corpus_identity_and_order": "PASS_WITH_DOCUMENTED_ARCHIVE_LINEAGE_LIMITATION",
+  "no_unintended_corpus_change": true,
+  "source_hashes_recorded": true,
+  "final_recovery_audits": "PASS",
+  "portable_checkout_checksum_files": 45,
+  "search_work_and_saved_timing_invariance": "PASS",
+  "jointly_feasible_queries_every_condition": 43,
+  "completed_saved_statistical_rows_preserved": 42,
+  "completed_density_followups": 12,
+  "human_verified": 36,
+  "human_reviews_remaining": 14,
+  "pending_model_assisted": 14,
+  "local_report_links": "PASS",
+  "python_syntax_check": "PASS",
   "figures": {
-    "calibration_fixed_frontier.png": [
-      1879,
-      753
+    "judgment_density_vs_budget_gap.png": [
+      1260,
+      810
     ],
-    "exact_ndcg_stratified_work.png": [
-      1339,
-      929
+    "judgment_density_vs_zero_ndcg.png": [
+      1260,
+      810
     ],
-    "fixed_risk_work_frontier.png": [
-      2069,
-      846
+    "judgment_density_vs_ir_safe_budget.png": [
+      1260,
+      810
     ],
-    "fixed_risk_work_frontier_trec_saved_full.png": [
-      2069,
-      846
-    ],
-    "oracle_budget_gap_analysis.png": [
-      2246,
-      939
+    "judgment_density_vs_risk_work.png": [
+      1440,
+      900
     ]
   },
-  "unproduced_density_plots": [
-    "judgment_density_vs_budget_gap.png",
-    "judgment_density_vs_zero_ndcg.png",
-    "judgment_density_vs_ir_safe_budget.png",
-    "judgment_density_vs_risk_work.png"
-  ],
-  "short_paper_unchanged": false,
-  "statistical_analysis_complete": false,
-  "completed_primary_tests": [
-    "P1",
-    "P2",
-    "P3",
-    "P4"
-  ],
-  "blocked_primary_tests": [
-    "P5",
-    "P6"
-  ],
-  "scientific_judgment_density_outcome": "UNRESOLVED; cannot select A/B/C",
-  "manuscript_compilation": "Not run; supported-only source retained, density results still blocked.",
+  "manuscript_compilation": "NOT RUN; static environment and figure checks only",
+  "previous_completed_analyses_redone": false,
   "retrieval_executed": false,
   "embedding_generation": false,
   "index_construction": false,
   "controller_retraining": false,
-  "short_paper_scientific_claims_unchanged": true,
-  "short_paper_maintenance": "One reproducibility directory reference corrected after saved-data validation; reverse-substitution reproduces the complete prior source hash.",
-  "retrieval_state_schema": "PASS",
-  "retrieval_reproduction_completed": false,
-  "archived_reproduction_reference_rows": 61,
-  "recreated_reproduction_rows": 0,
-  "no_unintended_corpus_change": true,
-  "original_corpus_identity_verified": false,
-  "restored_ranking_evaluator_implementation": "PASS_SYNTHETIC_FIXTURES_ONLY",
-  "synthetic_evaluator_tests": 40,
-  "real_evaluator_preflight": "BLOCKED_MISSING_ORIGINAL_INPUTS",
-  "synthetic_fixture_results_are_research_observations": false
+  "archive_identity_limitation": "No independent historical corpus-map checksum is available. The supplied checksum/count and restorer attestation establish consistency, not independent proof of historical corpus identity."
 }

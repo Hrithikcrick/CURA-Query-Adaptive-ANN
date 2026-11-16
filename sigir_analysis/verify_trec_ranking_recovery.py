@@ -58,6 +58,8 @@ def review_table(text,fields):
 
 
 def main():
+    if (OUT/'recovered_ranking_validation.json').exists():
+        raise SystemExit('Original ranking recovery already recorded. Do not overwrite it with the historical missing-input audit; use validate_analysis.py.')
     global TREC_IDS
     queries=pd.read_csv(BASE/'results/queries.csv',dtype=str)
     tq=queries[queries.source=='trec-dl-2019']

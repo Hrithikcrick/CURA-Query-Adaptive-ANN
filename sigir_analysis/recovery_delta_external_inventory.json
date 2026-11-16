@@ -1,0 +1,2495 @@
+{
+  "date": "2026-11-16",
+  "scope_file_counts": {
+    "~\\.ir_datasets": 17,
+    "~\\.cache\\huggingface\\hub": 99,
+    "~\\Downloads\\CURA_Project": 2,
+    "~\\AppData\\Local\\Temp": 33451
+  },
+  "candidate_files": [
+    {
+      "path": "~\\.ir_datasets\\beir\\trec-covid\\irds_version.txt",
+      "bytes": 2,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".txt"
+    },
+    {
+      "path": "~\\.ir_datasets\\beir\\trec-covid\\queries.json",
+      "bytes": 16552,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.ir_datasets\\beir\\trec-covid\\source.zip",
+      "bytes": 73876720,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".zip"
+    },
+    {
+      "path": "~\\.ir_datasets\\beir\\trec-covid\\test.qrels",
+      "bytes": 980831,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".qrels"
+    },
+    {
+      "path": "~\\.ir_datasets\\beir\\trec-covid\\docs.pklz4\\bin",
+      "bytes": 162732805,
+      "scope": "~\\.ir_datasets",
+      "suffix": ""
+    },
+    {
+      "path": "~\\.ir_datasets\\beir\\trec-covid\\docs.pklz4\\bin.meta",
+      "bytes": 31,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".meta"
+    },
+    {
+      "path": "~\\.ir_datasets\\beir\\trec-covid\\docs.pklz4\\bin.pos",
+      "bytes": 1370656,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".pos"
+    },
+    {
+      "path": "~\\.ir_datasets\\beir\\trec-covid\\docs.pklz4\\idx.doc_id.key",
+      "bytes": 1370656,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".key"
+    },
+    {
+      "path": "~\\.ir_datasets\\beir\\trec-covid\\docs.pklz4\\idx.doc_id.meta",
+      "bytes": 8,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".meta"
+    },
+    {
+      "path": "~\\.ir_datasets\\beir\\trec-covid\\docs.pklz4\\idx.doc_id.pos",
+      "bytes": 1370656,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".pos"
+    },
+    {
+      "path": "~\\.ir_datasets\\msmarco-passage\\collection.tsv",
+      "bytes": 3047540622,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".tsv"
+    },
+    {
+      "path": "~\\.ir_datasets\\msmarco-passage\\collectionandqueries.tar.gz",
+      "bytes": 1057717952,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".gz"
+    },
+    {
+      "path": "~\\.ir_datasets\\msmarco-passage\\irds_version.txt",
+      "bytes": 2,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".txt"
+    },
+    {
+      "path": "~\\.ir_datasets\\msmarco-passage\\dev\\small\\qrels",
+      "bytes": 143300,
+      "scope": "~\\.ir_datasets",
+      "suffix": ""
+    },
+    {
+      "path": "~\\.ir_datasets\\msmarco-passage\\dev\\small\\queries.tsv",
+      "bytes": 290193,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".tsv"
+    },
+    {
+      "path": "~\\.ir_datasets\\msmarco-passage\\trec-dl-2019\\qrels",
+      "bytes": 187092,
+      "scope": "~\\.ir_datasets",
+      "suffix": ""
+    },
+    {
+      "path": "~\\.ir_datasets\\msmarco-passage\\trec-dl-2019\\queries.tsv.tmp0",
+      "bytes": 0,
+      "scope": "~\\.ir_datasets",
+      "suffix": ".tmp0"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\.no_exist\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\adapter_config.json",
+      "bytes": 0,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\.no_exist\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\added_tokens.json",
+      "bytes": 0,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\.no_exist\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\chat_template.jinja",
+      "bytes": 0,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".jinja"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\.no_exist\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\preprocessor_config.json",
+      "bytes": 0,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\.no_exist\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\processor_config.json",
+      "bytes": 0,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\.no_exist\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\video_preprocessor_config.json",
+      "bytes": 0,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\.no_exist\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\2_Normalize\\config.json",
+      "bytes": 0,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\refs\\main",
+      "bytes": 40,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ""
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\snapshots\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\config.json",
+      "bytes": 627,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\snapshots\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\config_sentence_transformers.json",
+      "bytes": 122,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\snapshots\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\model.safetensors",
+      "bytes": 90868370,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".safetensors"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\snapshots\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\modules.json",
+      "bytes": 349,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\snapshots\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\README.md",
+      "bytes": 5165,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".md"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\snapshots\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\sentence_bert_config.json",
+      "bytes": 53,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\snapshots\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\special_tokens_map.json",
+      "bytes": 112,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\snapshots\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\tokenizer.json",
+      "bytes": 466081,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\snapshots\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\tokenizer_config.json",
+      "bytes": 430,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\snapshots\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\vocab.txt",
+      "bytes": 231508,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".txt"
+    },
+    {
+      "path": "~\\.cache\\huggingface\\hub\\models--sentence-transformers--msmarco-MiniLM-L6-cos-v5\\snapshots\\14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3\\1_Pooling\\config.json",
+      "bytes": 190,
+      "scope": "~\\.cache\\huggingface\\hub",
+      "suffix": ".json"
+    },
+    {
+      "path": "~\\Downloads\\CURA_Project\\IR-MID\\CURA_CODE_RESULTS_ONLY.zip",
+      "bytes": 6690636,
+      "scope": "~\\Downloads\\CURA_Project",
+      "suffix": ".zip"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\744279db-a561-42e6-92fe-e4dea0f76013_IR-MID.zip.013\\IR-MID\\CURA_CODE_RESULTS_ONLY.zip",
+      "bytes": 6690636,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".zip"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\A2_FINAL_AUDIT\\harness\\trec_io.py",
+      "bytes": 3436,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".py"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_5pj9utjl\\work\\early_stop_sample.parquet",
+      "bytes": 11330,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_5pj9utjl\\work\\test_scores.parquet",
+      "bytes": 15648,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_5pj9utjl\\work\\training_sample.parquet",
+      "bytes": 14817,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_5pj9utjl\\work\\val_scores.parquet",
+      "bytes": 3401,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_741apsl7\\work\\early_stop_sample.parquet",
+      "bytes": 11407,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_741apsl7\\work\\test_scores.parquet",
+      "bytes": 15644,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_741apsl7\\work\\training_sample.parquet",
+      "bytes": 15007,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_741apsl7\\work\\val_scores.parquet",
+      "bytes": 3397,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_en2rb0vo\\work\\early_stop_sample.parquet",
+      "bytes": 11343,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_en2rb0vo\\work\\test_scores.parquet",
+      "bytes": 15569,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_en2rb0vo\\work\\training_sample.parquet",
+      "bytes": 15088,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_smoke_en2rb0vo\\work\\val_scores.parquet",
+      "bytes": 3406,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_training_samplecheck_llh2unbz\\empty.parquet",
+      "bytes": 419,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_training_samplecheck_llh2unbz\\p_scores.parquet",
+      "bytes": 5805,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_training_samplecheck_llh2unbz\\sample.parquet",
+      "bytes": 14887,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_training_samplecheck_llh2unbz\\sample2.parquet",
+      "bytes": 14887,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_training_smoke_lcsg51op\\early_stop_sample.parquet",
+      "bytes": 7783,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_training_smoke_lcsg51op\\scores.parquet",
+      "bytes": 145533,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    },
+    {
+      "path": "~\\AppData\\Local\\Temp\\er_training_smoke_lcsg51op\\training_sample.parquet",
+      "bytes": 43637,
+      "scope": "~\\AppData\\Local\\Temp",
+      "suffix": ".parquet"
+    }
+  ],
+  "download_archive_path_hits": [
+    {
+      "path": "~\\Downloads\\2025JTM2082 (2).zip",
+      "members": [
+        {
+          "member": "2025JTM2082/data/toy/reference_bm25_run_dev.trec",
+          "bytes": 3341
+        },
+        {
+          "member": "2025JTM2082/harness/trec_io.py",
+          "bytes": 3436
+        },
+        {
+          "member": "2025JTM2082/runs/dev_run.trec",
+          "bytes": 1968
+        },
+        {
+          "member": "2025JTM2082/submission/retrieve.py",
+          "bytes": 763
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\2025JTM2082..zip",
+      "members": [
+        {
+          "member": "2025JTM2082/data/toy/reference_bm25_run_dev.trec",
+          "bytes": 3341
+        },
+        {
+          "member": "2025JTM2082/harness/trec_io.py",
+          "bytes": 3436
+        },
+        {
+          "member": "2025JTM2082/runs/dev_run.trec",
+          "bytes": 1968
+        },
+        {
+          "member": "2025JTM2082/submission/retrieve.py",
+          "bytes": 763
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\2025JTM2082.zip",
+      "members": [
+        {
+          "member": "2025JTM2082/data/toy/reference_bm25_run_dev.trec",
+          "bytes": 3341
+        },
+        {
+          "member": "2025JTM2082/harness/trec_io.py",
+          "bytes": 3436
+        },
+        {
+          "member": "2025JTM2082/runs/dev_run.trec",
+          "bytes": 1968
+        },
+        {
+          "member": "2025JTM2082/submission/retrieve.py",
+          "bytes": 763
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\CURA_CODE_RESULTS_ONLY.zip",
+      "members": [
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/",
+          "bytes": 0
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/",
+          "bytes": 0
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/ann_risk_threshold_sweep.csv",
+          "bytes": 4705
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/calibration_metrics.csv",
+          "bytes": 370
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/calibration_msmarco_test.png",
+          "bytes": 160454
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/calibration_trec_dl_2019_ood.png",
+          "bytes": 139678
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/cura_full_threshold_sweep.csv",
+          "bytes": 4675
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/cura_protocol.json",
+          "bytes": 1059
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/cura_query_threshold_sweep.csv",
+          "bytes": 4689
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/cura_vs_fixed_significance.csv",
+          "bytes": 176
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/ef10_probe_features.csv",
+          "bytes": 297487
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/efficiency_vs_risk_msmarco_test.png",
+          "bytes": 117497
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/efficiency_vs_risk_trec_dl_2019_ood.png",
+          "bytes": 121486
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/final_method_comparison.csv",
+          "bytes": 3750
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/fixed_budget_calibration.csv",
+          "bytes": 421
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/heldout_mean_ef_comparison.png",
+          "bytes": 97715
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/heldout_work_savings.png",
+          "bytes": 107176
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/manual_review_50.csv",
+          "bytes": 13683
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/paper_ready_method_table.csv",
+          "bytes": 2012
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/query_split.json",
+          "bytes": 21452
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/research_decision.txt",
+          "bytes": 207
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_msmarco_test.csv",
+          "bytes": 149229
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_trec_ood.csv",
+          "bytes": 32903
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_msmarco_test.csv",
+          "bytes": 149003
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_trec_ood.csv",
+          "bytes": 32731
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_msmarco_test.csv",
+          "bytes": 149595
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv",
+          "bytes": 32916
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_msmarco_test.csv",
+          "bytes": 145500
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_trec_ood.csv",
+          "bytes": 32295
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_msmarco_test.csv",
+          "bytes": 147478
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_trec_ood.csv",
+          "bytes": 32482
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_msmarco_test.csv",
+          "bytes": 148671
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_trec_ood.csv",
+          "bytes": 32880
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_effect_comparison.csv",
+          "bytes": 539
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_hardness_statistics.csv",
+          "bytes": 916
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_interpretation.csv",
+          "bytes": 172
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_tolerance_sensitivity.png",
+          "bytes": 94779
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_validation_protocol.json",
+          "bytes": 574
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_validation_summary.txt",
+          "bytes": 723
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/hardness_gap_by_domain.png",
+          "bytes": 154795
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/paper_ready_domain_table.csv",
+          "bytes": 354
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top100_domain_query_oracles.csv",
+          "bytes": 219368
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top100_domain_statistics.csv",
+          "bytes": 1527
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top10_domain_query_oracles.csv",
+          "bytes": 273421
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top10_domain_statistics.csv",
+          "bytes": 1941
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top10_oracle_budget_by_domain.png",
+          "bytes": 79485
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top10_relative_reduction_by_domain.png",
+          "bytes": 81064
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/final_ablation_package/ablation_interpretation.txt",
+          "bytes": 627
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv",
+          "bytes": 3173
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_efficiency_vs_risk.png",
+          "bytes": 134031
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_research_decision.txt",
+          "bytes": 321
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_search_work_comparison.png",
+          "bytes": 132240
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/final_ablation_package/pairwise_cura_tests.csv",
+          "bytes": 1136
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/final_ablation_package/paper_ready_ablation_table.csv",
+          "bytes": 872
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/manual_error_analysis/actual_failure_taxonomy.csv",
+          "bytes": 175
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/manual_error_analysis/manual_risk_band_summary.csv",
+          "bytes": 302
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/manual_error_analysis/manual_taxonomy_summary.csv",
+          "bytes": 882
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/manual_error_analysis/paper_ready_error_analysis.txt",
+          "bytes": 787
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/manual_error_analysis/paper_ready_error_taxonomy.csv",
+          "bytes": 786
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/manual_error_analysis/taxonomy_by_domain.csv",
+          "bytes": 850
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/patience_style_baseline/baseline_decision.txt",
+          "bytes": 189
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/patience_style_baseline/comparison_with_cura.csv",
+          "bytes": 1738
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/patience_style_baseline/cura_vs_patience_style_significance.csv",
+          "bytes": 205
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/patience_style_baseline/patience_style_msmarco_test.csv",
+          "bytes": 17942
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/patience_style_baseline/patience_style_summary.csv",
+          "bytes": 684
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/patience_style_baseline/patience_style_trec_ood.csv",
+          "bytes": 4526
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/patience_style_baseline/patience_style_tuning.csv",
+          "bytes": 1053
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/exact_query_reference.csv",
+          "bytes": 117606
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/experiment_protocol.json",
+          "bytes": 916
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/hardness_query_results.csv",
+          "bytes": 168562
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/hardness_summary.csv",
+          "bytes": 668
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/hardness_vs_budget_gap.png",
+          "bytes": 86749
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/paper_ready_key_results.csv",
+          "bytes": 475
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/research_decision.txt",
+          "bytes": 139
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_ann_vs_ir_violation.png",
+          "bytes": 137617
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_fixed_violation_curve.csv",
+          "bytes": 459
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_oracle_query_results.csv",
+          "bytes": 506794
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_query_budget_results.csv",
+          "bytes": 1188462
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_search_summary.csv",
+          "bytes": 1730
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_tolerance_statistics.csv",
+          "bytes": 2386
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_ann_recall_vs_budget.png",
+          "bytes": 121101
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_ann_vs_ir_violation.png",
+          "bytes": 135632
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_fixed_violation_curve.csv",
+          "bytes": 647
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_latency_confidence.png",
+          "bytes": 118861
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_oracle_query_results.csv",
+          "bytes": 662663
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv",
+          "bytes": 1720199
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_search_summary.csv",
+          "bytes": 2434
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_tolerance_sensitivity.png",
+          "bytes": 112742
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_tolerance_statistics.csv",
+          "bytes": 3173
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/ann_vs_ir_violation.png",
+          "bytes": 114666
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/efsearch_summary.csv",
+          "bytes": 5084
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/exact_query_metrics.csv",
+          "bytes": 52826
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/large_pilot_summary.txt",
+          "bytes": 463
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/latency_vs_budget.png",
+          "bytes": 138426
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/oracle_budget_comparison.png",
+          "bytes": 60967
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/oracle_budget_gap.csv",
+          "bytes": 53661
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/oracle_summary.csv",
+          "bytes": 389
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/quality_vs_budget.png",
+          "bytes": 116687
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/queries.csv",
+          "bytes": 76009
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/query_budget_results.csv",
+          "bytes": 1000989
+        },
+        {
+          "member": "msmarco_large/msmarco_1000000_q1000/results/search_work_vs_budget.png",
+          "bytes": 119210
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_effect_comparison.csv",
+          "bytes": 613
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_hardness_statistics.csv",
+          "bytes": 1027
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_interpretation.csv",
+          "bytes": 193
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_tolerance_sensitivity.png",
+          "bytes": 95424
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_validation_protocol.json",
+          "bytes": 572
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_validation_summary.txt",
+          "bytes": 748
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/hardness_gap_by_domain.png",
+          "bytes": 147205
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/paper_ready_domain_table.csv",
+          "bytes": 406
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/top100_domain_query_oracles.csv",
+          "bytes": 71978
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/top100_domain_statistics.csv",
+          "bytes": 1531
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/top10_domain_query_oracles.csv",
+          "bytes": 89865
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/top10_domain_statistics.csv",
+          "bytes": 2350
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/top10_oracle_budget_by_domain.png",
+          "bytes": 81269
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/domain_specific_validation/top10_relative_reduction_by_domain.png",
+          "bytes": 82820
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/exact_query_reference.csv",
+          "bytes": 38742
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/experiment_protocol.json",
+          "bytes": 913
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/hardness_query_results.csv",
+          "bytes": 55537
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/hardness_summary.csv",
+          "bytes": 632
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/hardness_vs_budget_gap.png",
+          "bytes": 89199
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/paper_ready_key_results.csv",
+          "bytes": 477
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/research_decision.txt",
+          "bytes": 139
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top100_ann_vs_ir_violation.png",
+          "bytes": 126255
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top100_fixed_violation_curve.csv",
+          "bytes": 340
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top100_oracle_query_results.csv",
+          "bytes": 165814
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top100_query_budget_results.csv",
+          "bytes": 392948
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top100_search_summary.csv",
+          "bytes": 1718
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top100_tolerance_statistics.csv",
+          "bytes": 2292
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top10_ann_recall_vs_budget.png",
+          "bytes": 124345
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top10_ann_vs_ir_violation.png",
+          "bytes": 138716
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top10_fixed_violation_curve.csv",
+          "bytes": 615
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top10_latency_confidence.png",
+          "bytes": 111317
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top10_oracle_query_results.csv",
+          "bytes": 217151
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top10_query_budget_results.csv",
+          "bytes": 561783
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top10_search_summary.csv",
+          "bytes": 2426
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top10_tolerance_sensitivity.png",
+          "bytes": 120105
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/research_grade_validation/top10_tolerance_statistics.csv",
+          "bytes": 3506
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/ann_vs_ir_violation.png",
+          "bytes": 113993
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/efsearch_summary.csv",
+          "bytes": 5042
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/exact_query_metrics.csv",
+          "bytes": 17298
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/large_pilot_summary.txt",
+          "bytes": 460
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/latency_vs_budget.png",
+          "bytes": 141669
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/oracle_budget_comparison.png",
+          "bytes": 60930
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/oracle_budget_gap.csv",
+          "bytes": 17680
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/oracle_summary.csv",
+          "bytes": 364
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/quality_vs_budget.png",
+          "bytes": 113926
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/queries.csv",
+          "bytes": 24940
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/query_budget_results.csv",
+          "bytes": 327972
+        },
+        {
+          "member": "msmarco_large/msmarco_200000_q300/results/search_work_vs_budget.png",
+          "bytes": 119620
+        },
+        {
+          "member": "01_baseline_hnsw.py",
+          "bytes": 23206
+        },
+        {
+          "member": "04_msmarco_large_pilot.py",
+          "bytes": 65498
+        },
+        {
+          "member": "07_cura_controller.py",
+          "bytes": 78091
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\glacier_bundle.zip",
+      "members": [
+        {
+          "member": "glacier_bundle/ms-pred/notebooks/scarf_2023_neurips/scarf_fig_retrieval.ipynb",
+          "bytes": 252938
+        },
+        {
+          "member": "glacier_bundle/ms-pred/notebooks/iceberg_2024_analy_chem/iceberg_fig_retrieval.ipynb",
+          "bytes": 345140
+        },
+        {
+          "member": "glacier_bundle/ms-pred/src/ms_pred/retrieval/",
+          "bytes": 0
+        },
+        {
+          "member": "glacier_bundle/ms-pred/src/ms_pred/retrieval/retrieval_benchmark_msg.py",
+          "bytes": 19213
+        },
+        {
+          "member": "glacier_bundle/ms-pred/src/ms_pred/retrieval/rank_binned.py",
+          "bytes": 4630
+        },
+        {
+          "member": "glacier_bundle/ms-pred/src/ms_pred/retrieval/retrieval_benchmark_torchmetrics.py",
+          "bytes": 18855
+        },
+        {
+          "member": "glacier_bundle/ms-pred/src/ms_pred/retrieval/retrieval_benchmark.py",
+          "bytes": 32411
+        },
+        {
+          "member": "glacier_bundle/ms-pred/src/ms_pred/retrieval/bootstrap_metrics.py",
+          "bytes": 4123
+        },
+        {
+          "member": "glacier_bundle/ms-pred/src/ms_pred/retrieval/add_top1_mces.py",
+          "bytes": 2863
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/glacier/03_run_retrieval.py",
+          "bytes": 4490
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/massformer_model/03_run_retrieval.py",
+          "bytes": 2498
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/gnn_model/03_run_retrieval.py",
+          "bytes": 2587
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/graff_ms/03_run_retrieval.py",
+          "bytes": 2319
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/marason/run_retrieval_nist.py",
+          "bytes": 4289
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/marason/run_retrieval_msg.py",
+          "bytes": 3588
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/marason/06_run_retrieval.sh",
+          "bytes": 96
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/iceberg/nist23/06_run_retrieval.py",
+          "bytes": 3212
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/iceberg/nist23/07_retrieval_conf.py",
+          "bytes": 9884
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/iceberg/msg_all/10_run_retrieval_msg_all_iceberg.py",
+          "bytes": 5347
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/iceberg/nist20/06_run_retrieval.py",
+          "bytes": 3212
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/iceberg/nist20/07_retrieval_conf.py",
+          "bytes": 14783
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/iceberg/msg_simulation/04_run_retrieval_msg_simulation.py",
+          "bytes": 5327
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/scarf_model/06_run_retrieval.py",
+          "bytes": 3225
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/molnetms/03_run_retrieval.py",
+          "bytes": 1907
+        },
+        {
+          "member": "glacier_bundle/ms-pred/run_scripts/ffn_model/03_run_retrieval.py",
+          "bytes": 3125
+        },
+        {
+          "member": "glacier_bundle/ms-pred/data_scripts/pubchem/04_make_retrieval_lists.py",
+          "bytes": 8619
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik-6-1.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik-6-2.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        },
+        {
+          "member": "harness/__pycache__/trec_io.cpython-313.pyc",
+          "bytes": 5242
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik-6-2_backup.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        },
+        {
+          "member": "harness/__pycache__/trec_io.cpython-313.pyc",
+          "bytes": 5242
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_(new).zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_(new2).zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_(new_approach).zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_3.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_4.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_ADAPTIVE_GAIN_V7.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        },
+        {
+          "member": "harness/__pycache__/trec_io.cpython-313.pyc",
+          "bytes": 5238
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_BEST.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_BEST_11.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_BEST_HIDDEN_SAFE.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_BEST_V2.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_BEST_VALIDATED_V13.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_COMPLIANT_BESTSHOT.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_COMPLIANT_V2.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_COMPLIANT_V3.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_COMPLIANT_V4.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_COMPLIANT_V5.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_CSAFE_V3.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_FINAL-2.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_FINAL.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_FINAL_SAFE_TOPBET.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_HIDDEN_EVIDENCE_V14.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_HIDDEN_HYBRID_V15.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_HIDDEN_SAFE_RECOVERY_V3.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_HYBRID_GAIN_V10.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_PROFESSOR_SAFE_V2.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_STABLE_GAIN_V6.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_TESTED_V7.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_TOP3_V6.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_TOP_COMPLIANT_V3.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_TOP_SAFE_V4.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_TUNED_SAFE_V5 (1).zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        },
+        {
+          "member": "harness/__pycache__/trec_io.cpython-313.pyc",
+          "bytes": 5237
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_TUNED_SAFE_V5.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        },
+        {
+          "member": "harness/__pycache__/trec_io.cpython-313.pyc",
+          "bytes": 5237
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V10_ADAPTIVE_RM3_EXPERIMENTAL.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V11_BALANCED_RM3_TESTED.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V12_FULL_DEV_VALIDATED.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V13_RETENTION_BALANCED.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V14_QUERY_ANCHORED_RM3_TESTED.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V15_REAL_DEV_ROBUST_TESTED.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V16_RETENTION_FIRST_TESTED.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V17_LENGTH_AWARE_RETENTION_TESTED.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V18_TITLE_AWARE_FULL_DEV_TESTED (1).zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V18_TITLE_AWARE_FULL_DEV_TESTED.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V20_SMOOTH_TRANSITION_TESTED.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V5_HEADPROX.zip",
+      "members": [
+        {
+          "member": "Hrithik_A2_V5_HEADPROX/harness/trec_io.py",
+          "bytes": 3436
+        },
+        {
+          "member": "Hrithik_A2_V5_HEADPROX/harness/__pycache__/trec_io.cpython-313.pyc",
+          "bytes": 5251
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V7_RUNTIME_SAFE.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V8_FEEDBACK_SAFE.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\Hrithik_A2_V9_RARITY_RM3_EXPERIMENTAL.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\IR-MID (1).zip",
+      "members": [
+        {
+          "member": "IR-MID/CURA_CODE_RESULTS_ONLY.zip",
+          "bytes": 6690636
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\IR-MID.zip",
+      "members": [
+        {
+          "member": "IR-MID/CURA_CODE_RESULTS_ONLY.zip",
+          "bytes": 6690636
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\IR_ASSIGNMENT_2(best).zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\IR_PROJECT.zip",
+      "members": [
+        {
+          "member": "IR_PROJECT/CURA_FINAL_SUBMISSION.zip",
+          "bytes": 6743576
+        },
+        {
+          "member": "IR_PROJECT/PILOT/01_baseline_hnsw.py",
+          "bytes": 23206
+        },
+        {
+          "member": "IR_PROJECT/PILOT/04_msmarco_large_pilot.py",
+          "bytes": 65498
+        },
+        {
+          "member": "IR_PROJECT/PILOT/07_cura_controller.py",
+          "bytes": 78091
+        },
+        {
+          "member": "IR_PROJECT/PILOT/local_data/trec2019/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/local_data/trec2019/2019qrels-pass.txt",
+          "bytes": 187092
+        },
+        {
+          "member": "IR_PROJECT/PILOT/local_data/trec2019/msmarco-test2019-queries.tsv.gz",
+          "bytes": 4276
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/corpus_embeddings.done",
+          "bytes": 10
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/corpus_embeddings.f32",
+          "bytes": 1536966144
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/corpus_meta.json",
+          "bytes": 150
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/docids.txt",
+          "bytes": 8879633
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/exact_top100_indices.npy",
+          "bytes": 834528
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/exact_top100_scores.npy",
+          "bytes": 417328
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/hnsw_M32_efC200.faiss",
+          "bytes": 1809267934
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/query_embeddings.npy",
+          "bytes": 1602176
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cache/selected_corpus.tsv",
+          "bytes": 345841985
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/ann_risk_threshold_sweep.csv",
+          "bytes": 4705
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/calibration_metrics.csv",
+          "bytes": 370
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/calibration_msmarco_test.png",
+          "bytes": 160454
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/calibration_trec_dl_2019_ood.png",
+          "bytes": 139678
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/cura_full_threshold_sweep.csv",
+          "bytes": 4675
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/cura_protocol.json",
+          "bytes": 1059
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/cura_query_threshold_sweep.csv",
+          "bytes": 4689
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/cura_vs_fixed_significance.csv",
+          "bytes": 176
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/ef10_probe_features.csv",
+          "bytes": 297487
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/efficiency_vs_risk_msmarco_test.png",
+          "bytes": 117497
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/efficiency_vs_risk_trec_dl_2019_ood.png",
+          "bytes": 121486
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/final_method_comparison.csv",
+          "bytes": 3750
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/fixed_budget_calibration.csv",
+          "bytes": 421
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/heldout_mean_ef_comparison.png",
+          "bytes": 97715
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/heldout_work_savings.png",
+          "bytes": 107176
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/manual_review_50.csv",
+          "bytes": 13683
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/paper_ready_method_table.csv",
+          "bytes": 2012
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/query_split.json",
+          "bytes": 21452
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/research_decision.txt",
+          "bytes": 207
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_msmarco_test.csv",
+          "bytes": 149229
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_oracle_trec_ood.csv",
+          "bytes": 32903
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_msmarco_test.csv",
+          "bytes": 149003
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ann_risk_trec_ood.csv",
+          "bytes": 32731
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_msmarco_test.csv",
+          "bytes": 149595
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_full_trec_ood.csv",
+          "bytes": 32916
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_msmarco_test.csv",
+          "bytes": 145500
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_cura_query_trec_ood.csv",
+          "bytes": 32295
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_msmarco_test.csv",
+          "bytes": 147478
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_fixed_ir_trec_ood.csv",
+          "bytes": 32482
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_msmarco_test.csv",
+          "bytes": 148671
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/cura_controller/selected_ir_oracle_trec_ood.csv",
+          "bytes": 32880
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_effect_comparison.csv",
+          "bytes": 539
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_hardness_statistics.csv",
+          "bytes": 916
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_interpretation.csv",
+          "bytes": 172
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_tolerance_sensitivity.png",
+          "bytes": 94779
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_validation_protocol.json",
+          "bytes": 574
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/domain_validation_summary.txt",
+          "bytes": 723
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/hardness_gap_by_domain.png",
+          "bytes": 154795
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/paper_ready_domain_table.csv",
+          "bytes": 354
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top100_domain_query_oracles.csv",
+          "bytes": 219368
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top100_domain_statistics.csv",
+          "bytes": 1527
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top10_domain_query_oracles.csv",
+          "bytes": 273421
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top10_domain_statistics.csv",
+          "bytes": 1941
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top10_oracle_budget_by_domain.png",
+          "bytes": 79485
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/domain_specific_validation/top10_relative_reduction_by_domain.png",
+          "bytes": 81064
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/final_ablation_package/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/final_ablation_package/ablation_interpretation.txt",
+          "bytes": 627
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv",
+          "bytes": 3173
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_efficiency_vs_risk.png",
+          "bytes": 134031
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_research_decision.txt",
+          "bytes": 321
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_search_work_comparison.png",
+          "bytes": 132240
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/final_ablation_package/pairwise_cura_tests.csv",
+          "bytes": 1136
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/final_ablation_package/paper_ready_ablation_table.csv",
+          "bytes": 872
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/manual_error_analysis/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/manual_error_analysis/actual_failure_taxonomy.csv",
+          "bytes": 175
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/manual_error_analysis/manual_risk_band_summary.csv",
+          "bytes": 302
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/manual_error_analysis/manual_taxonomy_summary.csv",
+          "bytes": 882
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/manual_error_analysis/paper_ready_error_analysis.txt",
+          "bytes": 787
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/manual_error_analysis/paper_ready_error_taxonomy.csv",
+          "bytes": 786
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/manual_error_analysis/taxonomy_by_domain.csv",
+          "bytes": 850
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/patience_style_baseline/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/patience_style_baseline/baseline_decision.txt",
+          "bytes": 189
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/patience_style_baseline/comparison_with_cura.csv",
+          "bytes": 1738
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/patience_style_baseline/cura_vs_patience_style_significance.csv",
+          "bytes": 205
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/patience_style_baseline/patience_style_msmarco_test.csv",
+          "bytes": 17942
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/patience_style_baseline/patience_style_summary.csv",
+          "bytes": 684
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/patience_style_baseline/patience_style_trec_ood.csv",
+          "bytes": 4526
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/patience_style_baseline/patience_style_tuning.csv",
+          "bytes": 1053
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/patience_style_baseline/stability_top10_searches.npz",
+          "bytes": 343967
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/exact_query_reference.csv",
+          "bytes": 117606
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/experiment_protocol.json",
+          "bytes": 916
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/hardness_query_results.csv",
+          "bytes": 168562
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/hardness_summary.csv",
+          "bytes": 668
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/hardness_vs_budget_gap.png",
+          "bytes": 86749
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/paper_ready_key_results.csv",
+          "bytes": 475
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/research_decision.txt",
+          "bytes": 139
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_ann_vs_ir_violation.png",
+          "bytes": 137617
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_fixed_violation_curve.csv",
+          "bytes": 459
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_oracle_query_results.csv",
+          "bytes": 506794
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_query_budget_results.csv",
+          "bytes": 1188462
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_search_summary.csv",
+          "bytes": 1730
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_tolerance_statistics.csv",
+          "bytes": 2386
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_ann_recall_vs_budget.png",
+          "bytes": 121101
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_ann_vs_ir_violation.png",
+          "bytes": 135632
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_fixed_violation_curve.csv",
+          "bytes": 647
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_latency_confidence.png",
+          "bytes": 118861
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_oracle_query_results.csv",
+          "bytes": 662663
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv",
+          "bytes": 1720199
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_search_summary.csv",
+          "bytes": 2434
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_tolerance_sensitivity.png",
+          "bytes": 112742
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_tolerance_statistics.csv",
+          "bytes": 3173
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/ann_vs_ir_violation.png",
+          "bytes": 114666
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/efsearch_summary.csv",
+          "bytes": 5084
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/exact_query_metrics.csv",
+          "bytes": 52826
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/large_pilot_summary.txt",
+          "bytes": 463
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/latency_vs_budget.png",
+          "bytes": 138426
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/oracle_budget_comparison.png",
+          "bytes": 60967
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/oracle_budget_gap.csv",
+          "bytes": 53661
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/oracle_summary.csv",
+          "bytes": 389
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/quality_vs_budget.png",
+          "bytes": 116687
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/queries.csv",
+          "bytes": 76009
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/query_budget_results.csv",
+          "bytes": 1000989
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_1000000_q1000/results/search_work_vs_budget.png",
+          "bytes": 119210
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/cache/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/cache/corpus_embeddings.done",
+          "bytes": 10
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/cache/corpus_embeddings.f32",
+          "bytes": 308894208
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/cache/corpus_meta.json",
+          "bytes": 148
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/cache/docids.txt",
+          "bytes": 1784441
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/cache/exact_top100_indices.npy",
+          "bytes": 274528
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/cache/exact_top100_scores.npy",
+          "bytes": 137328
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/cache/hnsw_M32_efC200.faiss",
+          "bytes": 363622550
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/cache/query_embeddings.npy",
+          "bytes": 526976
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/cache/selected_corpus.tsv",
+          "bytes": 69534856
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_effect_comparison.csv",
+          "bytes": 613
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_hardness_statistics.csv",
+          "bytes": 1027
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_interpretation.csv",
+          "bytes": 193
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_tolerance_sensitivity.png",
+          "bytes": 95424
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_validation_protocol.json",
+          "bytes": 572
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/domain_validation_summary.txt",
+          "bytes": 748
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/hardness_gap_by_domain.png",
+          "bytes": 147205
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/paper_ready_domain_table.csv",
+          "bytes": 406
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/top100_domain_query_oracles.csv",
+          "bytes": 71978
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/top100_domain_statistics.csv",
+          "bytes": 1531
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/top10_domain_query_oracles.csv",
+          "bytes": 89865
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/top10_domain_statistics.csv",
+          "bytes": 2350
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/top10_oracle_budget_by_domain.png",
+          "bytes": 81269
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/domain_specific_validation/top10_relative_reduction_by_domain.png",
+          "bytes": 82820
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/exact_query_reference.csv",
+          "bytes": 38742
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/experiment_protocol.json",
+          "bytes": 913
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/hardness_query_results.csv",
+          "bytes": 55537
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/hardness_summary.csv",
+          "bytes": 632
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/hardness_vs_budget_gap.png",
+          "bytes": 89199
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/paper_ready_key_results.csv",
+          "bytes": 477
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/research_decision.txt",
+          "bytes": 139
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top100_ann_vs_ir_violation.png",
+          "bytes": 126255
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top100_fixed_violation_curve.csv",
+          "bytes": 340
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top100_oracle_query_results.csv",
+          "bytes": 165814
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top100_query_budget_results.csv",
+          "bytes": 392948
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top100_search_summary.csv",
+          "bytes": 1718
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top100_tolerance_statistics.csv",
+          "bytes": 2292
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top10_ann_recall_vs_budget.png",
+          "bytes": 124345
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top10_ann_vs_ir_violation.png",
+          "bytes": 138716
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top10_fixed_violation_curve.csv",
+          "bytes": 615
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top10_latency_confidence.png",
+          "bytes": 111317
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top10_oracle_query_results.csv",
+          "bytes": 217151
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top10_query_budget_results.csv",
+          "bytes": 561783
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top10_search_summary.csv",
+          "bytes": 2426
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top10_tolerance_sensitivity.png",
+          "bytes": 120105
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/research_grade_validation/top10_tolerance_statistics.csv",
+          "bytes": 3506
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/",
+          "bytes": 0
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/ann_vs_ir_violation.png",
+          "bytes": 113993
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/efsearch_summary.csv",
+          "bytes": 5042
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/exact_query_metrics.csv",
+          "bytes": 17298
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/large_pilot_summary.txt",
+          "bytes": 460
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/latency_vs_budget.png",
+          "bytes": 141669
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/oracle_budget_comparison.png",
+          "bytes": 60930
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/oracle_budget_gap.csv",
+          "bytes": 17680
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/oracle_summary.csv",
+          "bytes": 364
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/quality_vs_budget.png",
+          "bytes": 113926
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/queries.csv",
+          "bytes": 24940
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/query_budget_results.csv",
+          "bytes": 327972
+        },
+        {
+          "member": "IR_PROJECT/PILOT/msmarco_large/msmarco_200000_q300/results/search_work_vs_budget.png",
+          "bytes": 119620
+        }
+      ]
+    },
+    {
+      "path": "~\\Downloads\\ZIP_CODE.zip",
+      "members": [
+        {
+          "member": "harness/trec_io.py",
+          "bytes": 3436
+        }
+      ]
+    }
+  ],
+  "errors": [
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\is-RBOAZL8Q1R-uninstall.tmp'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\iu-14D2N.tmp'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\msdtadmin'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-build-env-g9zl2ig6'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-build-tracker-dpzgltvd'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-build-tracker-ylblxlss'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-ephem-wheel-cache-0wc5a3zd'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-ephem-wheel-cache-cvno6abs'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-install-4uph6mri'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-install-6bh014dd'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-0sw3w1q5'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-114grrkg'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-2ohh1bqm'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-508h_muo'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-5biwf_ei'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-5__jok1m'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-641_9wy_'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-7gh31it3'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-ao0mk554'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-c3kuwbm1'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-duelbwoj'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-eavcwijx'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-g_tm_q4h'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-hncs__58'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-jy2b3qfm'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-l936v70w'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-m_8ec6_g'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-nhxgfla0'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-o8j624rn'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-ooh_8kcd'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-ph5s7iy8'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-qejs3ain'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-metadata-x3on9vpn'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-modern-metadata-5efa1fac'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-pip-egg-info-t2mw5w_4'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-pip-egg-info-wcbxfchu'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-uninstall-uq_tbu6n'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-08uk5xxm'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-1xkf6kym'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-2lp4oyyb'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-4qijwmxa'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-7rzxof7e'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-8xggaqof'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-9pvb4o81'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-az05k3ti'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-azhn2y5c'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-c6n1s1n5'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-c7wxvfpm'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-cb4soh7b'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-dgsl32vi'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-g2euqtk6'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-hgbmvn14'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-khizlhsb'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-lomz6lpw'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-ml_x9z45'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-n8xexe14'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-oi3l83mr'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-oif20_ag'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-qlx9ltdy'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-rqaxuhvv'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-wdo1cp5g'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-x8upcevq'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-y6pk6leu'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-zuqxiuxg'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-unpack-_tbebv8h'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pip-wheel-eabif74s'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\pytest-of-user'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\tmp00v5qgt8'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\tmp075abw9w'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\tmp7aqqnyvd_kernels'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\tmpd_zm8o5w'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\tmpelr73uya_kernels'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\tmpeu7_94ew'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\tmpkn0m0oig'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\tmpls20ly3j'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\tmpn9xa7obv'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\tmppc6i58mw'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\WinGet'",
+    "[WinError 5] Access is denied: '~\\\\AppData\\\\Local\\\\Temp\\\\WinSAT'"
+  ],
+  "note": "Metadata-only delta outside the previously audited workspace. Excludes software environments and the pre-rebase safety archive. No deserialization or retrieval."
+}

@@ -1,0 +1,26 @@
+--- paper/main.tex (conflicted)
++++ paper/main.tex (proposed)
+@@ -749,14 +749,11 @@
+ 
+ The earlier MS MARCO 50-case diagnostic table contains only three actual downstream violations, so it does \emph{not} establish a human-reviewed taxonomy of 50 genuine CURA policy failures.
+ 
+-<<<<<<< HEAD
+-Separately, we analyze 50 \emph{actual IR-unsafe query--budget cases} from the MS MARCO HNSW budget sweep using a structured model-assisted taxonomy. Automatic structural validation passes for all 50 rows, and eight initially uncertain cases are resolved in a second model-assisted pass using predefined numerical and semantic decision rules. This analysis is \emph{not} independent human annotation; we therefore do not describe it as 50 manually reviewed failures. The cases are failures of particular query--budget pairs in the sweep, not 50 failures of the final deployed CURA operating policy.
+-=======
+ % BEGIN CURA FINAL ACTUAL FAILURE TAXONOMY
+ \subsection{Actual Budget-Sweep Failures: Model-Assisted Review}
+ We analyzed 50 actual IR-unsafe query-budget cases using a structured model-assisted taxonomy. Cases initially flagged as uncertain were resolved through a second evidence-based model-assisted review using predefined numerical and semantic decision rules.
+ 
+-All 50 cases were selected from the existing HNSW sweep, each with nDCG@10 loss greater than 0.025. The eight initially uncertain cases have second-review auto-resolution provenance; the other 42 retain their initial model labels. All 50 annotations remain model assisted and human verification is not claimed. Earlier manual fields remain preserved without additional provenance promotion.
++These are failures of query--budget pairs in the sweep, not 50 failures of the final deployed CURA operating policy. All 50 cases were selected from the existing HNSW sweep, each with nDCG@10 loss greater than 0.025. The eight initially uncertain cases have second-review auto-resolution provenance; the other 42 retain their initial model labels. All 50 annotations remain model assisted and human verification is not claimed. Earlier manual fields remain preserved without additional provenance promotion.
+ 
+ The selected sample includes 28 training, 8 calibration, 6 held-out test, and 8 TREC queries. It contains 16/50 (32\%) cases with ANN Recall@10 $\geq0.90$, 34 with lower recall, and 19/50 with exact rank-10/11 score gap $\leq0.001$.
+ 
+@@ -786,7 +783,6 @@
+ 
+ \subsection{Separate FiQA Review Evidence}
+ % END CURA FINAL ACTUAL FAILURE TAXONOMY
+->>>>>>> ac1f5ab (Add SIGIR risk-work and judgment-density analysis)
+ 
+ In FiQA, 65 distinct queries exhibit an IR-unsafe outcome under fixed HNSW at \ef$=10$. We prepare a separate 50-query review worksheet, each case including relevant passages, exact-search passages, approximate top-ranked passages and the measured nDCG loss. All 50 reconstructed results match previously saved scores. Of these selected cases, 44 have HNSW nDCG@10 equal to zero and six have degraded but nonzero nDCG@10.
+ 
