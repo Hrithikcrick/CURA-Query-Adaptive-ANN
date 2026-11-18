@@ -20,6 +20,10 @@ def main():
     paths.add('sigir_analysis/statistical_tests.csv')
     review=json.loads((ROOT/'reports/50_CASE_FAILURE_REVIEW_STATUS.json').read_text())
     paths.update(review[k] for k in ['source_worksheet','checkpoint','human_decision_log'])
+    for name in ['paper/sigir_short.tex','reports/HUMAN_50_FAILURE_TAXONOMY.csv',
+                 'reports/HUMAN_50_FAILURE_ANALYSIS.md','reports/HUMAN_50_REVIEW_VALIDATION.json',
+                 'reports/50_CASE_FAILURE_REVIEW_STATUS.json',review['assistance_csv']]:
+        if (ROOT/name).exists():paths.add(name)
     for audit in ['ranking_recovery_final_audit.json','trec_retrieval_state_final_audit.json']:
         record=read(audit)
         paths.update('sigir_analysis/'+n for n in record.get('evidence_hashes',record.get('hashes',{})))

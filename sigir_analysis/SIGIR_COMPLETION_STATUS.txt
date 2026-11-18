@@ -64,10 +64,10 @@ Uncertainty scope:
 50 paired thinning seeds conditional on 43 queries; 12 follow-up Holm-adjusted p-values, unadjusted CIs. P7 is an algebraic reversal of P5. No query-population guarantee.
 
 Human failure reviews:
-36/50; 14 require human confirmation
+50/50; 0 require human confirmation
 
 Pending model-assisted suggestions:
-14
+0
 
 Remaining scientific blocker:
 NONE
@@ -76,4 +76,4 @@ SIGIR-short readiness:
 READY FOR DRAFT
 
 Remaining non-scientific work:
-Human confirmation of case37 note and cases38-50; LaTeX compilation and official submission-format verification.
+LaTeX compilation and official submission-format verification.

@@ -7,16 +7,16 @@ CURA now asks: **When do downstream-utility-aware ANN search budgets provide gen
 
 > **SIGIR analysis finding (16 November 2026): fixed ef=48 matches CURA's observed 1% MS MARCO test violation rate and uses 28.29% less work.** The original 20.51% CURA saving is relative to calibration-selected ef=96; it does not establish an adaptive advantage on the full observed frontier. The fixed comparison is post hoc. Exact-positive queries contribute 92.59% of that original saving. Original TREC exact/HNSW ranked IDs were recovered from an external archive and passed all 473 FULL-qrel comparisons. The same-ranking study scored all 50 prepared thinning seeds: measured ANN-minus-IR budget headroom increases from -0.140 (FULL) to 1.956 (one positive), **Outcome A: apparent evaluation headroom**. The one-positive exact-zero fraction is 82.88%; this is not actual relevance preservation. No retrieval, embedding generation, index construction or controller retraining was run.
 
-The active research direction is **When Do Utility-Aware ANN Search Budgets Really Save Work? The Role of Relevance-Judgment Completeness and Risk Calibration.** Read the [research report](reports/SIGIR_RESEARCH_ANALYSIS.md), [analysis artifacts](sigir_analysis/README.md), [revised direction](paper/SIGIR_REVISED_DIRECTION.md), and [new short-paper source](paper/sigir_short.tex). The course evidence below records historical calibrated-baseline comparisons and retains its original review status.
+The active research direction is **When Do Utility-Aware ANN Search Budgets Really Save Work? The Role of Relevance-Judgment Completeness and Risk Calibration.** Read the [research report](reports/SIGIR_RESEARCH_ANALYSIS.md), [analysis artifacts](sigir_analysis/README.md), [revised direction](paper/SIGIR_REVISED_DIRECTION.md), and [new short-paper source](paper/sigir_short.tex). The course evidence below records historical calibrated-baseline comparisons; the current human-review status is audited separately.
 
 <!-- BEGIN CURA FINAL EVIDENCE STATUS -->
-**Saved-review evidence:** all 50 actual MS MARCO/TREC budget-sweep failure labels are model assisted, including 8 automatic second-review resolutions. FiQA human review is separate: **36/50 completed, 14 pending**. Case 37 awaits evidence-note confirmation. See the [audited review status](reports/50_CASE_FAILURE_REVIEW_STATUS.md); model suggestions do not count as completed human reviews.
+**Saved-review evidence:** all 50 actual MS MARCO/TREC budget-sweep failure labels are model assisted, including 8 automatic second-review resolutions. FiQA human review is separate: **50/50 completed, none pending**, with explicit decisions backed by the checkpoint and decision log. See the [audited review status](reports/50_CASE_FAILURE_REVIEW_STATUS.md), [human taxonomy](reports/HUMAN_50_FAILURE_TAXONOMY.csv) and [qualitative analysis](reports/HUMAN_50_FAILURE_ANALYSIS.md). Model suggestions alone do not count as completed human reviews.
 
 Mean search latency estimates decrease by 17.06%, while p95 increases from 1.128008 to 1.985027 ms (75.98% higher). Adaptive effort improves the recorded average and worsens the tail in this setting. Latency is reconstructed from saved per-query mean search timings, including probe and selected-search costs; the p95 is across those estimates. It excludes model-inference/feature-processing overhead and is not an end-to-end request-latency measurement.
 <!-- END CURA FINAL EVIDENCE STATUS -->
 
 <!-- BEGIN CURA COURSE COMPLETION UPDATE -->
-## Current COL764 evidence and remaining human work
+## Current COL764 evidence and human-review completion
 
 **Original course question:** can query-specific ANN work be allocated using downstream ranking-risk rather than exact-neighbor recovery alone? The active SIGIR question additionally tests judgment completeness and the full fixed-budget frontier, as described above.
 
@@ -37,7 +37,7 @@ The cached `Score-Gap-Budget` baseline stops after the efSearch=10 probe when it
 
 CURA-Full uses 16.48% less test work than this policy: paired difference 538.325, bootstrap 95% CI [210.230, 852.786], paired-randomization p=0.001100. The score-gap policy has lower observed test violation rate and lower p95 latency than CURA. Work savings therefore do not establish uniform superiority. [Full metrics, MRR, protocol and limitations](msmarco_large/msmarco_1000000_q1000/score_threshold_baseline/SCORE_THRESHOLD_BASELINE_REPORT.md) are saved separately; the primary ablation table is unchanged. Compatible policy Recall@100 is unavailable and remains blank.
 
-**FiQA manual review: 36/50 human-verified decisions; 14 remain.** Only explicit researcher decisions backed by the saved decision log count. The separate 50-case MS MARCO/TREC taxonomy remains entirely model-assisted; it is not substituted for the manual requirement.
+**FiQA manual review: 50/50 human-verified decisions; none remain.** Only explicit researcher decisions backed by the saved decision log count. The [final human taxonomy](reports/HUMAN_50_FAILURE_TAXONOMY.csv) and [evidence report](reports/HUMAN_50_FAILURE_ANALYSIS.md) cover fixed HNSW ef=10 failures. The separate 50-case MS MARCO/TREC taxonomy remains entirely model-assisted; it is not substituted for the manual requirement.
 
 ANN-Risk is a local ANN-target proxy, not official DARTH. Patience-Inspired is a local stability heuristic, not official Patience. LADR is not claimed. One HNSW family, one primary MiniLM encoder, a controlled million-scale corpus, calibration reuse, and the 43-query OOD sample remain limitations. AI assisted code/debugging, documentation, and preliminary qualitative suggestions; it did not independently supply human decisions.
 
@@ -51,7 +51,7 @@ python 18_final_course_audit.py
 python 25_update_course_documents.py --apply
 ```
 
-The course remains incomplete while genuine human-review decisions are missing. These commands do not run encoding, index construction, or retrieval. See REPRODUCIBILITY.md for expensive regeneration commands and cached artifact boundaries.
+The genuine 50-case human-review requirement is complete. These commands do not run encoding, index construction, or retrieval. See REPRODUCIBILITY.md for expensive regeneration commands and cached artifact boundaries.
 <!-- END CURA COURSE COMPLETION UPDATE -->
 
 ## Principal results
@@ -95,7 +95,7 @@ Detailed provenance, limitations, and comparisons are in **[CURA results and lim
 
 ## Final-paper preparation
 
-- [Evidence-grounded SIGIR-style paper draft](reports/CURA_SIGIR_STYLE_FINAL_DRAFT.md) — includes both MS MARCO positive findings and FiQA negative results; manual taxonomy and fresh-run verification pending.
+- [Earlier evidence-grounded SIGIR-style paper draft](reports/CURA_SIGIR_STYLE_FINAL_DRAFT.md) — a historical snapshot with MS MARCO positive findings and FiQA negative results. Current human-review completion is recorded in the [final qualitative analysis](reports/HUMAN_50_FAILURE_ANALYSIS.md); fresh-run verification remains separate.
 - [Final saved-artifact audit script](17_final_submission_audit.py) — read-only checks of headline result tables, hashes, and local human-review progress. Execute with `python 17_final_submission_audit.py` and inspect `reports/final_submission_audit.json`.
 - [Detailed results and limitations](reports/CURA_RESULTS_AND_LIMITATIONS.md) — source-backed research claim boundaries.
 - [Final metric audit](reports/FINAL_METRIC_AUDIT.md) — checked headline MS MARCO/TREC numbers, including the p95 latency trade-off.
@@ -166,7 +166,7 @@ A status note is available in [reports/MODEL_ASSISTED_50_FAILURE_STATUS.md](repo
 - [50 FiQA fixed-HNSW ef=10 failure cases](beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv) were identified from genuine recorded nDCG losses; reconstructed scores match saved data.
 - [Assistant-prepared drafts](beir_fiqa/manual_failure_review/ASSISTANT_DRAFT_ALL_50.md) provide reference evidence, **not completed manual judgments**.
 - [Human-review instructions](beir_fiqa/manual_failure_review/HOW_TO_REVIEW.md) and [interactive tool](16_interactive_fiqa_review.py) support actual annotation.
-- The audited FiQA checkpoint records **36/50 complete human reviews**. Case 37 (query 515) has category 2 recorded and awaits evidence-note confirmation; cases 38?50 await category decisions.
+- The audited FiQA checkpoint records **50/50 complete human reviews**, with matching category and evidence-note decisions. The [human taxonomy](reports/HUMAN_50_FAILURE_TAXONOMY.csv) and [qualitative report](reports/HUMAN_50_FAILURE_ANALYSIS.md) are finalized.
 - These human decisions remain separate from the 50 model-assisted MS MARCO/TREC budget-sweep annotations and their eight automatic second-pass resolutions.
 - These FiQA cases are **fixed low-budget HNSW failures**, not 50 violations by a deployed CURA policy.
 

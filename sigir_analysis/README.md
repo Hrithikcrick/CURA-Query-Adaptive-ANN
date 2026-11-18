@@ -18,7 +18,7 @@ Thinning increases **measured** ANN-minus-IR safe-budget headroom: -0.140 (FULL)
 | Raw evaluation bundle | [manifest](restored_ranking_evaluation/run_manifest.json), [validation](restored_ranking_evaluation/validation.json), [promotion hashes](density_promotion_validation.json) |
 | Four density endpoints × three comparisons | [all statistics](statistical_tests.csv), [density only](density_statistical_tests_completed.csv), [preservation](density_statistics_validation.json), [interpretation](statistical_analysis_summary.md) |
 | Scientific interpretation | [conclusion](scientific_conclusion.json), [report](../reports/SIGIR_RESEARCH_ANALYSIS.md), [short-paper source](../paper/sigir_short.tex) |
-| Human-review provenance | [36/50 genuine reviews, 14 pending model suggestions](../reports/50_CASE_FAILURE_REVIEW_STATUS.md) |
+| Human-review provenance | [50/50 genuine FiQA reviews, none pending](../reports/50_CASE_FAILURE_REVIEW_STATUS.md), [human taxonomy](../reports/HUMAN_50_FAILURE_TAXONOMY.csv), [qualitative analysis](../reports/HUMAN_50_FAILURE_ANALYSIS.md) |
 
 Four figures: [gap](judgment_density_vs_budget_gap.png), [zero reference](judgment_density_vs_zero_ndcg.png), [IR budget](judgment_density_vs_ir_safe_budget.png), [risk/work](judgment_density_vs_risk_work.png).
 
@@ -33,7 +33,7 @@ python sigir_analysis/completion_status.py
 
 These commands check saved-input/result hashes, FULL comparisons, 151 qrel hashes, metric/work invariants, statistical preservation, review provenance, figures and syntax. They perform no retrieval or scientific resampling. The ordered map is excluded from Git; when locally present its hash is checked. Published ranked IDs and recorded gate evidence remain in Git. Raw qrels must be locally available at the path in qrels_recovery.json; the checksum-verified recovery script restores them if missing.
 
-Explicit [.gitattributes](../.gitattributes) preserve the original raw line endings of checksum-backed files. A [portable staged-checkout check](checkout_validation.json) verified all 45 files with automatic platform conversion disabled. [Byte policies](checkout_byte_integrity.json) record the exact choices; the scientific files and human decisions were unchanged.
+Explicit [.gitattributes](../.gitattributes) preserve the raw line endings of checksum-backed research and review files. The [portable staged-checkout check](checkout_validation.json) verifies the files with automatic platform conversion disabled. [Byte policies](checkout_byte_integrity.json) record the exact choices; the checkout check changes no scientific data or human decisions.
 
 Do not rerun completed original analyses, thinning preparation, density scoring or statistics. Historical missing-input generators are guarded against overwriting completed evidence. Historical uncertainty uses paired queries; density inference uses 50 paired seed effects conditional on 43 fixed queries. CIs are unadjusted; Holm p-values cover 12 density follow-ups. P7 is an algebraic reversal of P5.
 

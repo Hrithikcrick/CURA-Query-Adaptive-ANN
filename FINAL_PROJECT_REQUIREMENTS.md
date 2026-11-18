@@ -1,0 +1,49 @@
+# COL764 CURA course requirements
+
+PASS means inspectable evidence for this item; PARTIAL means incomplete scope/evidence; NOT DONE means absent. Official published implementations and expanded corpus/index/encoder studies are publication extensions. The literal 50-personal-review requirement is now complete: all 50 FiQA category/note decisions have matching human-decision provenance. Other items retain their separately recorded scope.
+
+| Requirement | Evidence/File | Status | Notes |
+|---|---|---|---|
+| Precise falsifiable hypothesis | paper/main.tex: Hypothesis (H1) | PASS | Fewer HNSW computations than fixed search at matched downstream-risk target; FiQA negative result is retained. |
+| Backoff hypothesis | paper/main.tex: Hypothesis | PASS | Budget disagreement remains interpretable even if adaptive savings do not transfer. |
+| MS MARCO primary experiment | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv | PASS | Controlled 1,000,629 passages, not full 8.8M. |
+| At least two datasets or meaningfully different domains | beir_fiqa/fiqa_cura_controller/heldout_comparison.csv | PASS | MS MARCO plus FiQA financial domain. FiQA is separately fitted on repurposed official test queries; not zero-shot transfer. |
+| Fixed HNSW baseline | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv | PASS | Genuine fixed-budget HNSW, calibration-selected efSearch=96. |
+| Strong baseline comparison | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv; score_threshold_baseline/score_threshold_summary.csv | PASS | Fixed HNSW, exact reference, local adaptive/stability proxies and leakage-safe score-gap budget simulation. Published official reproductions remain extensions. |
+| Exact retrieval reference | msmarco_large/msmarco_1000000_q1000/research_grade_validation/exact_query_reference.csv | PASS | Saved exhaustive IndexFlatIP dense reference on controlled subset; fresh index rebuilding not required. |
+| At least two substantive ablations | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv; msmarco_large/msmarco_1000000_q1000/final_ablation_package/pairwise_cura_tests.csv | PASS | Objective ablation (ANN-risk versus downstream-risk) and partial-search-state ablation (query-only versus full). |
+| Query-level significance/confidence analysis | msmarco_large/msmarco_1000000_q1000/final_ablation_package/pairwise_cura_tests.csv | PASS | Saved paired bootstrap work CIs and paired randomization; does not establish ranking superiority. |
+| Calibrated policy and calibration error | msmarco_large/msmarco_1000000_q1000/cura_controller/calibration_metrics.csv | PASS | Isotonic calibration, Brier/ECE/AUC; probability fitting and operating-point selection can reuse calibration queries. |
+| Distribution-shift/OOD evaluation | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv | PASS | TREC query shift on MS MARCO passages; only 43 queries, not independent-domain transfer. |
+| ANN Recall@10 | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv; reports/FINAL_METRIC_AUDIT.md | PASS | Saved final ablations verified against per-query source rows. |
+| nDCG@10 | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv; reports/FINAL_METRIC_AUDIT.md | PASS | Saved final ablations verified against per-query source rows. |
+| Mean latency | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv; reports/FINAL_METRIC_AUDIT.md | PASS | Saved final ablations verified against per-query source rows. Per-query search estimates exclude classifier inference; CURA p95 is worse than Fixed-IR. |
+| p95 latency | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv; reports/FINAL_METRIC_AUDIT.md | PASS | Saved final ablations verified against per-query source rows. Per-query search estimates exclude classifier inference; CURA p95 is worse than Fixed-IR. |
+| Distance computations | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv; reports/FINAL_METRIC_AUDIT.md | PASS | Saved final ablations verified against per-query source rows. |
+| Constraint violations | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv; reports/FINAL_METRIC_AUDIT.md | PASS | Saved final ablations verified against per-query source rows. |
+| Recall@100 | msmarco_large/msmarco_1000000_q1000/research_grade_validation/top100_search_summary.csv | PASS | Separate top-100 task; not imputed into top-10 controller results. |
+| MRR@10 | FINAL_METRIC_AUDIT.csv: SELECTED_METHOD_MRR | PASS | Lightweight aggregate of saved query-level MRR, preserved in report CSV. |
+| Manual error taxonomy from at least 50 failures | beir_fiqa/manual_failure_review/fiqa_50_actual_failures_HUMAN_VERIFIED.csv; beir_fiqa/manual_failure_review/fiqa_50_human_review_decisions.json | PASS | 50/50 evidence-backed human category/note decisions; zero pending. The continuation preserved 36 earlier decisions and recorded 14 explicit researcher confirmations. Model-prepared evidence was not auto-approved. These fixed ef=10 failures are not CURA-policy failures. |
+| Human 50-failure aggregate taxonomy | reports/HUMAN_50_FAILURE_TAXONOMY.csv; reports/HUMAN_50_FAILURE_ANALYSIS.md; reports/HUMAN_50_REVIEW_VALIDATION.json | PASS | Generated only after all 50 decisions were recorded; counts sum to 50 and percentages to 100%. Source metrics and evidence are unchanged. |
+| SIGIR/ECIR-style final report | paper/main.tex | PASS | Two-column article style, not official acmart. Presence is checked; no compiled PDF or bibliography certification inferred. |
+| Limitations | paper/main.tex: Limitations and Claim Boundaries | PASS | Controlled corpus/HNSW/one encoder, calibration reuse, small TREC set, FiQA negative result and timing scope. |
+| Transparent generative-AI statement | paper/main.tex: Generative-AI Assistance Statement | PASS | Code/debugging/documentation and preliminary model annotations distinguished from personal human decisions. |
+| Reproducible code/configuration/seeds/model versions | REPRODUCIBILITY.md; requirements.txt; saved protocol JSONs | PARTIAL | Saved artifacts/lightweight replay and environment/configuration are documented. Independent full data/encoding/index regeneration remains unverified. |
+| Git repository | .git | PASS | Repository presence only; configured remote/commit/push are separately recorded by course-finalization log. |
+| Final experiment logs and statistical test details | reports/FINAL_COURSE_COMPLETION_LOG.md; msmarco_large/msmarco_1000000_q1000/final_ablation_package/pairwise_cura_tests.csv | PASS | Saved protocol declares seeds/resampling counts; completion log records checks without an expensive rerun. |
+| Query-specific ANN effort | 07_cura_controller.py; saved selected query budgets | PASS | Adaptive HNSW efSearch per query. |
+| Cheap query/pre-search or partial-search features | 07_cura_controller.py; ef10_probe_features.csv | PASS | Inference-time score/work/query signals; no qrels or exact neighbors as live features. |
+| Query-feature ablation | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv | PASS | Query-only risk variant versus full. |
+| Partial-search-feature ablation | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv | PASS | Partial-state feature ablation plus objective ablation recorded above. |
+| Target-recall analysis | cura_protocol.json; ANN-Risk and ANN-Oracle final-ablation rows | PASS | ANN recall target 0.90 compared with downstream loss tolerance. |
+| In-domain versus shifted-query analysis | msmarco_large/msmarco_1000000_q1000/final_ablation_package/final_ablation_table.csv; calibration_metrics.csv | PASS | Same model evaluated on held-out MS MARCO and TREC query shift. |
+| Score-threshold/score-gap baseline | msmarco_large/msmarco_1000000_q1000/score_threshold_baseline | PASS | Saved-feature score-gap budget simulation; train/calibration threshold frozen before 200-test/43-OOD evaluation, all probe/search costs included. This is not within-traversal early termination. |
+| Official DARTH reproduction | README.md; existing baseline scripts/results | PARTIAL | PUBLICATION EXTENSION: ANN-Risk is a local ANN-target proxy, not official DARTH. No silent environment or FAISS replacement. |
+| Official Patience reproduction | README.md; existing baseline scripts/results | PARTIAL | PUBLICATION EXTENSION: Patience-Inspired is a local stability heuristic, not official Patience. No silent environment or FAISS replacement. |
+| LADR baseline | README.md; existing baseline scripts/results | PARTIAL | PUBLICATION EXTENSION: No saved faithful LADR run or lexical index/candidate pipeline is established. No silent environment or FAISS replacement. |
+| Full 8.8M MS MARCO | paper/main.tex: Limitations | NOT DONE | PUBLICATION EXTENSION: Controlled 1,000,629 passages only. |
+| Second ANN index family | paper/main.tex: Limitations | NOT DONE | PUBLICATION EXTENSION: Learned controller evaluated only with HNSW. |
+| Second primary encoder | paper/main.tex: Limitations | NOT DONE | PUBLICATION EXTENSION: One fixed MiniLM encoder only. |
+| Primary metric provenance audit | reports/FINAL_METRIC_AUDIT.md; reports/FINAL_METRIC_AUDIT.csv | PASS | Root metric CSV preserved byte-identically; source hashes checked. |
+| Requirements file | FINAL_PROJECT_REQUIREMENTS.md | PASS | Generated below with Requirement \| Evidence/File \| Status \| Notes. |
+| Artifact SHA256 manifest | reports/ARTIFACT_SHA256.csv | PARTIAL | Hashes final lightweight result artifacts; course-audit outputs and manifest itself are excluded to prevent circular hashes. |

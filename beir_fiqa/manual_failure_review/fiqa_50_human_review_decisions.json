@@ -976,6 +976,292 @@
       "query_id": "515",
       "suggested_note": "ANN Recall@10 is 0.8, while nDCG@10 falls from 0.2891 to zero. The displayed top-five lists are identical, so these excerpts do not locate the lost relevant result or establish the underlying search-path cause.",
       "human_verified": "NO"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "515",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_note": "ANN Recall@10 is 0.8, while nDCG@10 falls from 0.2891 to zero. The displayed top-five lists are identical, so these excerpts do not locate the lost relevant result or establish the underlying search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_36",
+      "category_answer": "2",
+      "note_answer": "ACCEPT_SUGGESTED_NOTE",
+      "review_workflow": "CATEGORY_AND_NOTE_RESPONSES",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "2330",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "2330",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.8 and nDCG@10=0.0, compared with exact nDCG@10=0.23719771276929622 (loss 0.23719771276929622). Judged-relevant document(s) 478514 appear in the exact top five but not the displayed approximate top five. These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_37",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "6219",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "6219",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.3 and nDCG@10=0.0, compared with exact nDCG@10=0.23719771276929622 (loss 0.23719771276929622). Judged-relevant document(s) 146924 appear in the exact top five but not the displayed approximate top five. These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_38",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "4011",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "4011",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.7 and nDCG@10=0.0, compared with exact nDCG@10=0.23463936301137822 (loss 0.23463936301137822). Judged-relevant document(s) 136367 appear in the exact top five but not the displayed approximate top five. These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_39",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "8002",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "8002",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.5 and nDCG@10=0.23463936301137822, compared with exact nDCG@10=0.4525081529734507 (loss 0.21786878996207248). Judged-relevant document(s) 118786 appear in the exact top five but not the displayed approximate top five. These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_40",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "1736",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "1736",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.8 and nDCG@10=0.0, compared with exact nDCG@10=0.21398626473452756 (loss 0.21398626473452756). Judged-relevant document(s) 562896 appear in the exact top five but not the displayed approximate top five. These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_41",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "5241",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "5241",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.7 and nDCG@10=0.0, compared with exact nDCG@10=0.21398626473452756 (loss 0.21398626473452756). Judged-relevant document(s) 344740 appear in the exact top five but not the displayed approximate top five. These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_42",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "3149",
+      "category_answer": "Y",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "3149",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.8 and nDCG@10=0.0, compared with exact nDCG@10=0.20438239758848611 (loss 0.20438239758848611). These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_43",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "2551",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "2551",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.5 and nDCG@10=0.0, compared with exact nDCG@10=0.20210734650054757 (loss 0.20210734650054757). Judged-relevant document(s) 413832 appear in the exact top five but not the displayed approximate top five. These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_44",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "5271",
+      "category_answer": "Y",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "5271",
+      "human_category": "RELEVANT_DOCUMENT_DROPPED",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.7 and nDCG@10=0.0, compared with exact nDCG@10=0.20210734650054757 (loss 0.20210734650054757). Judged-relevant document(s) 221439 appear in the exact top five but not the displayed approximate top five. These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_45",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "9646",
+      "category_answer": "Y",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "9646",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.4 and nDCG@10=0.0, compared with exact nDCG@10=0.19342640361727081 (loss 0.19342640361727081). These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_46",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "5064",
+      "category_answer": "Y",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "5064",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.8 and nDCG@10=0.21840743681816419, compared with exact nDCG@10=0.39780880120575696 (loss 0.17940136438759277). These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_47",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "6554",
+      "category_answer": "Y",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "6554",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.5 and nDCG@10=0.0, compared with exact nDCG@10=0.17723928678404774 (loss 0.17723928678404774). These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_48",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
+    },
+    {
+      "action": "human_category_decision",
+      "query_id": "9060",
+      "category_answer": "Y",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_verified": "NO",
+      "source": "researcher_chat"
+    },
+    {
+      "action": "human_review_completed",
+      "query_id": "9060",
+      "human_category": "LOW_ANN_RECALL_AND_IR_FAILURE",
+      "human_note": "Fixed HNSW ef=10 records ANN Recall@10=0.7 and nDCG@10=0.0, compared with exact nDCG@10=0.17723928678404774 (loss 0.17723928678404774). These observations do not isolate the search-path cause.",
+      "human_verified": "YES",
+      "review_timestamp_or_sequence": "CHAT_REVIEW_49",
+      "category_answer": "Y",
+      "note_answer": "RETAIN_EVIDENCE_NOTE_SINGLE_ACCEPTANCE",
+      "review_workflow": "SINGLE_ACCEPTANCE",
+      "source": "researcher_chat",
+      "source_worksheet_sha256": "2936cf021358632d3117ad1c1907d21e2c975468120b635559677251492113e7"
     }
   ]
 }

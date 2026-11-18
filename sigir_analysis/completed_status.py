@@ -25,7 +25,7 @@ def build_completed(root):
         'Human failure reviews':f"{review['human_verified']}/50; {review['remaining']} require human confirmation",
         'Pending model-assisted suggestions':str(review['model_assisted']),
         'Remaining scientific blocker':'NONE','SIGIR-short readiness':'READY FOR DRAFT',
-        'Remaining non-scientific work':'Human confirmation of case37 note and cases38-50; LaTeX compilation and official submission-format verification.'}
+        'Remaining non-scientific work':('Human confirmation of the remaining cases; ' if review['remaining'] else '')+'LaTeX compilation and official submission-format verification.'}
     text='SIGIR RESEARCH COMPLETION STATUS\n\n'+'\n\n'.join(f'{k}:\n{v}' for k,v in fields.items())+'\n'
     status=dict(fields)
     status.update(original_qrel_rows=9260,prepared_query_seed_condition_records=6450,

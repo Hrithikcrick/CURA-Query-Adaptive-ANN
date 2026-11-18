@@ -162,7 +162,7 @@ def finalize(rows, log):
         writer.writerow((category, counts[category], f'{counts[category]*2:.2f}'))
     atomic_text(ROOT/'reports/HUMAN_50_FAILURE_TAXONOMY.csv', output.getvalue())
     lines = ['# Human-verified FiQA failure analysis', '', '50 actual fixed-HNSW low-budget IR failures were manually analyzed.',
-             'These are fixed efSearch=10 outcomes, not 50 deployed CURA-policy failures. Explicit category/note decisions and preserved prior reviews are recorded in the decision log.', '', '| Category | Count | Share |', '|---|---:|---:|']
+             'These are fixed efSearch=10 outcomes, not 50 deployed CURA-policy failures. Evidence and initial suggestions were model prepared; the researcher explicitly confirmed or changed the displayed category and evidence note. Preserved earlier human decisions and subsequent researcher-chat confirmations are recorded in the decision log.', '', '| Category | Count | Share |', '|---|---:|---:|']
     lines += [f'| {c} | {counts[c]} | {counts[c]*2:.2f}% |' for c in sorted(CATEGORIES, key=lambda c: (-counts[c], CATEGORIES.index(c)))]
     lines += ['', '## Representative evidence', '']
     for category in sorted(counts, key=lambda c: (-counts[c], CATEGORIES.index(c))):

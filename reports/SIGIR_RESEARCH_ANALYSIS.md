@@ -6,7 +6,7 @@
 
 **The negative adaptive result remains.** CURA uses 20.51% less recorded MS MARCO distance work than the original calibration-selected fixed ef96 baseline. However, post-hoc fixed ef48 matches CURA's observed 2/200 test violations with **28.29% less work**. This implementation has not demonstrated an advantage over the observed fixed risk/work frontier. Retrospective matching is a diagnostic, not a prospectively calibrated policy or population-risk guarantee.
 
-Original rankings were **recovered**, not regenerated. FULL-qrel reproduction, the 50-seed same-ranking density evaluation, and its statistical comparisons are complete. Previously completed scientific analyses were preserved rather than rerun. Separate FiQA human annotation remains **36/50 complete**, with 14 pending cases; model suggestions do not count as human decisions.
+Original rankings were **recovered**, not regenerated. FULL-qrel reproduction, the 50-seed same-ranking density evaluation, and its statistical comparisons are complete. Previously completed scientific analyses were preserved rather than rerun. Separate FiQA human annotation is **50/50 complete**, with every recorded decision supported by the human-review log; model suggestions alone do not count as human decisions.
 
 ## Evidence and recovery
 
@@ -127,9 +127,9 @@ These historical comparisons, including P1-P4, were not recomputed. Their 20,000
 
 ## Human review and scope limits
 
-The [50-case review status](50_CASE_FAILURE_REVIEW_STATUS.md) records **36 completed genuine FiQA human reviews and 14 pending cases**. Case 37/query 515 has a recorded human category and awaits evidence-note confirmation; cases 38-50 await category decisions. The [pending assistance sheet](../beir_fiqa/manual_failure_review/fiqa_pending_cases_MODEL_ASSISTED.csv) supplies 14 explicitly model-assisted suggestions. No pending suggestion was promoted to human_verified=YES, and no completed human decision was overwritten.
+The [50-case review status](50_CASE_FAILURE_REVIEW_STATUS.md) records **50 completed genuine FiQA human reviews and no pending cases**. Every verified case has matching category and evidence-note decisions in the checkpoint and human decision log. The [final human taxonomy](HUMAN_50_FAILURE_TAXONOMY.csv) and [qualitative analysis](HUMAN_50_FAILURE_ANALYSIS.md) describe these fixed HNSW ef=10 failures. Model assistance supplied preliminary suggestions; only explicit researcher decisions counted toward completion, and previously completed decisions were preserved.
 
-The separate 50-case MS MARCO/TREC analysis is model-assisted, including eight second-pass automatic resolutions, with zero human-verified cases. It must not be conflated with the FiQA checkpoint. Completing the scientific density study does not complete the human-review course requirement.
+The separate 50-case MS MARCO/TREC analysis is model-assisted, including eight second-pass automatic resolutions, with zero human-verified cases. It must not be conflated with the FiQA checkpoint. The FiQA human-review requirement was completed through recorded researcher confirmations, independently of completing the scientific density study.
 
 The main experiment uses a controlled approximately one-million-passage MS MARCO subset, one primary MiniLM encoder and HNSW only. Full 8.8M MS MARCO, a second ANN family, and official DARTH/Patience reproductions were not run. ANN-Risk is not official DARTH; Patience-Inspired is not official Patience. The separate reduced-feature FiQA experiment is not an independent confirmation of adaptive advantage: its recorded work is 75.27% higher than its fixed comparator. TREC inference rests on 43 queries. Search estimates omit controller overhead, and sparse judged utility is not actual relevance preservation.
 
@@ -144,4 +144,4 @@ For the present completed workspace, rerun only the lightweight audits:
 
 Do not rerun completed saved analyses, corpus encoding, retrieval or index construction. A fresh external reproduction can follow the documented recovery and gated density commands using the original archive; those are separate from auditing these completed outputs.
 
-The defensible paper story is now: **judged ANN/IR oracle headroom depends on annotation completeness, while fixed-frontier calibration and adaptive overhead determine whether an implementation realizes a genuine efficiency gain.** The current CURA case study does not demonstrate that gain. [Revised direction](../paper/SIGIR_REVISED_DIRECTION.md) and [short-paper source](../paper/sigir_short.tex) carry this supported interpretation. Scientific evidence supports drafting; final TeX compilation, official-format checking and genuine human-review completion remain distinct work.
+The defensible paper story is now: **judged ANN/IR oracle headroom depends on annotation completeness, while fixed-frontier calibration and adaptive overhead determine whether an implementation realizes a genuine efficiency gain.** The current CURA case study does not demonstrate that gain. [Revised direction](../paper/SIGIR_REVISED_DIRECTION.md) and [short-paper source](../paper/sigir_short.tex) carry this supported interpretation. Scientific evidence supports drafting; final TeX compilation and official-format checking remain distinct work. Genuine FiQA human review is complete.

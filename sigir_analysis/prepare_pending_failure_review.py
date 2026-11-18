@@ -20,6 +20,13 @@ CHECKPOINT = FOLDER + 'fiqa_50_actual_failures_HUMAN_VERIFIED.csv'
 DECISIONS = FOLDER + 'fiqa_50_human_review_decisions.json'
 SOURCE = FOLDER + 'fiqa_50_actual_ef10_failures_TO_REVIEW.csv'
 MODEL_CASES = FOLDER + 'fiqa_pending_cases_MODEL_ASSISTED.csv'
+MODEL_FIELDS = ('case_id','query_id','query_text','source','failed_method','efSearch',
+                'saved_ANN_Recall10','saved_exact_nDCG10','saved_HNSW_nDCG10','saved_nDCG_loss',
+                'existing_human_category','human_review_status_snapshot','human_verified_snapshot',
+                'model_suggested_category','model_suggested_evidence_note','suggestion_source',
+                'suggestion_action','needs_human_confirmation','exact_top5_document_ids',
+                'approximate_top5_document_ids','boundary_gap','source_worksheet_sha256',
+                'checkpoint_sha256','decision_log_sha256')
 
 
 def digest(raw):
@@ -30,7 +37,7 @@ def rows_from(raw):
     return list(csv.DictReader(io.StringIO(raw.decode('utf-8-sig'))))
 
 
-def prepare(snapshot=None):
+def prepare(snapshot=None, initial_completed=None):
     def read(name):
         if snapshot:
             with zipfile.ZipFile(snapshot) as archive:
@@ -99,18 +106,24 @@ def prepare(snapshot=None):
             approximate_top5_document_ids=' '.join(d for _, d, _ in approx),
             boundary_gap='NOT_RECORDED', source_worksheet_sha256=digest(raw_source),
             checkpoint_sha256=digest(raw_checkpoint), decision_log_sha256=digest(raw_log)))
-    if assistance:
-        with (ROOT / MODEL_CASES).open('w', encoding='utf-8', newline='') as handle:
-            writer = csv.DictWriter(handle, fieldnames=list(assistance[0]), lineterminator='\n')
-            writer.writeheader()
-            writer.writerows(assistance)
-        assert rows_from((ROOT / MODEL_CASES).read_bytes()) == assistance
+    # Zero pending cases must not leave an obsolete populated companion.
+    with (ROOT / MODEL_CASES).open('w', encoding='utf-8', newline='') as handle:
+        writer = csv.DictWriter(handle, fieldnames=MODEL_FIELDS, lineterminator='\n')
+        writer.writeheader()
+        writer.writerows(assistance)
+    assert rows_from((ROOT / MODEL_CASES).read_bytes()) == assistance
 
     ms_path = 'msmarco_large/msmarco_1000000_q1000/actual_50_failure_analysis/actual_50_ir_failures_final.csv'
     ms_rows = rows_from(read(ms_path))
     assert len(ms_rows) == 50 and not any(r.get('human_verified', '').upper() == 'YES' for r in ms_rows)
+    out = ROOT / 'reports/50_CASE_FAILURE_REVIEW_STATUS.json'
+    if initial_completed is None:
+        prior = json.loads(out.read_text(encoding='utf-8')) if out.exists() else {}
+        initial_completed = prior.get('already_completed_before_this_run',len(completed))
+    assert 0 <= initial_completed <= len(completed)
     summary = dict(
-        total_cases=50, already_completed_before_this_run=len(completed), newly_completed=0,
+        total_cases=50, already_completed_before_this_run=initial_completed,
+        newly_completed=len(completed)-initial_completed,
         completed=len(completed), remaining=len(pending), human_verified=len(completed),
         model_assisted=len(assistance), model_assisted_count_scope='pending FiQA suggestions; not completed human reviews',
         newly_prepared_suggestions=sum(r['suggestion_action'] == 'NEW_PENDING_CASE_SUGGESTION' for r in assistance),
@@ -128,20 +141,21 @@ def prepare(snapshot=None):
         source_worksheet_sha256=digest(raw_source), checkpoint_sha256=digest(raw_checkpoint),
         decision_log_sha256=digest(raw_log), assistance_csv=MODEL_CASES,
         checkpoint_read_from='pre-rebase safety archive' if snapshot else 'live workspace',
-        checkpoint_preserved_commit='0193a05', human_decisions_modified=False,
+        checkpoint_preserved_commit='82ed57f', human_decisions_modified=False,
+        human_decisions_modified_field_scope='This status script does not modify the checkpoint or decision log; newly completed reviews were explicitly confirmed in the researcher chat.',
         validation='PASS', interpretation=f'{len(completed)} completed human decisions and {len(pending)} pending model suggestions do not equal 50 human reviews.' if pending else 'All 50 human decisions have matching evidence.')
-    out = ROOT / 'reports/50_CASE_FAILURE_REVIEW_STATUS.json'
     out.write_text(json.dumps(summary, indent=2) + '\n', encoding='utf-8')
     lines = ['# Fifty-case failure review status', '',
              f"Required human reviews: **{len(completed)}/50 complete**, **{len(pending)} pending**.", '',
-             f"First unfinished case: **{summary['first_unfinished_case']}**, query **{summary['first_unfinished_query_id']}**, stage **{summary['first_unfinished_stage']}**.",
+             (f"First unfinished case: **{summary['first_unfinished_case']}**, query **{summary['first_unfinished_query_id']}**, stage **{summary['first_unfinished_stage']}**." if pending else 'No unfinished cases remain. All 50 categories and evidence notes have matching human-decision provenance.'),
              'Case 37 already has the researcher\'s category 2. Its displayed evidence note still needs confirmation. No note acceptance was inferred.' if pending and pending[0]['case_id']=='37' else 'No new human response was inferred.', '',
              '| Field | Value |', '|---|---:|', *[f'| {k} | {summary[k]} |' for k in
               ['total_cases', 'already_completed_before_this_run', 'newly_completed', 'remaining', 'human_verified', 'model_assisted', 'newly_prepared_suggestions', 'carried_forward_suggestions']], '',
              f"**Status: {summary['status']}.** Model-assisted counts refer to pending suggestions, not additional completed reviews.", '',
              f"Completed case numbers: {', '.join(summary['completed_case_numbers'])}.",
              f"Completed query IDs: {', '.join(summary['completed_query_ids'])}.", '',
-             'The companion CSV prepares only cases 37–50: one suggestion carried forward exactly and 13 new suggestions from saved metrics and displayed document/rank evidence. It contains no new human approval. The original worksheet, checkpoint and proof log were not written.', '',
+             (f"The companion CSV contains {len(assistance)} pending model-assisted suggestions: {summary['carried_forward_suggestions']} carried forward and {summary['newly_prepared_suggestions']} newly prepared. These are not additional human approvals." if pending else 'The companion CSV now contains only its header, because no cases await human confirmation. Model-prepared suggestions were not counted as human decisions without explicit researcher acceptance.'),
+             'This status command did not write the original worksheet, checkpoint or decision log.', '',
              'The older assistant draft remains available for all 50 cases; its content was not reanalyzed. The separate MS MARCO/TREC taxonomy remains 50 model-assisted labels and zero human verifications.', '',
              ('The checkpoint was read from the byte-verified pre-rebase archive. Commit 0193a05 preserves the same review records. Rerun against the live checkpoint after integration to verify these hashes.' if snapshot else 'The checkpoint was read and validated directly from the live workspace after integration. Its original human decisions and notes remain unchanged.'), '',
              f"Source worksheet SHA256: `{summary['source_worksheet_sha256']}`.",
@@ -157,6 +171,7 @@ def prepare(snapshot=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--snapshot-archive', type=Path)
+    parser.add_argument('--initial-completed', type=int, help='Actual human-verified count at the start of this review continuation')
     args = parser.parse_args()
-    result = prepare(args.snapshot_archive)
+    result = prepare(args.snapshot_archive,args.initial_completed)
     print(json.dumps({k: result[k] for k in ['completed', 'remaining', 'human_verified', 'model_assisted', 'first_unfinished_case', 'first_unfinished_stage', 'status', 'validation']}, indent=2))

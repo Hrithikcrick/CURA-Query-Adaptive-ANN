@@ -34,7 +34,8 @@ def validate_completed(root):
         for target,digest in audit.get('evidence_hashes',audit.get('hashes',{})).items():
             assert sha(out/target)==digest,(name,target)
     checkout=read('checkout_validation.json')
-    assert checkout['status']=='PASS' and checkout['files_checked']==45 and not checkout['mismatches']
+    checkout_files=len(read('checkout_byte_integrity.json')['policies'])
+    assert checkout['status']=='PASS' and checkout['files_checked']==checkout_files and not checkout['mismatches']
     for name,digest in protocol['input_hashes'].items():
         assert sha(root/name)==digest,name
     for name,digest in preserved.items():
@@ -186,13 +187,29 @@ def validate_completed(root):
         human=list(csv.DictReader(stream))
     log=json.loads((root/review['human_decision_log']).read_text())
     done=[r for r in human if r['human_verified']=='YES']
-    assert len(done)==review['human_verified']==36 and review['remaining']==14
+    assert len(human)==50 and len({r['query_id'] for r in human})==50
+    assert len(done)==review['human_verified']==review['completed']
+    assert review['remaining']==50-len(done)
     for row in done:
         events=[e for e in log['events'] if e.get('query_id')==row['query_id'] and e['action'] in {'legacy_human_review_preserved','human_review_completed'}]
         assert events and events[-1]['human_category']==row['human_category'] and events[-1]['human_note']==row['human_note']
     pending=pd.read_csv(root/review['assistance_csv'])
-    assert len(pending)==14 and (pending.suggestion_source=='MODEL_ASSISTED').all()
+    assert len(pending)==review['remaining']==review['model_assisted']
+    assert (pending.suggestion_source=='MODEL_ASSISTED').all()
     assert (pending.human_verified_snapshot=='NO').all()
+    if review['status']=='COMPLETE':
+        assert len(done)==50 and review['remaining']==0
+        assert all(r['review_status']=='COMPLETE' and r['human_category'] and r['human_note'].strip() for r in done)
+        taxonomy=pd.read_csv(root/'reports/HUMAN_50_FAILURE_TAXONOMY.csv')
+        counts=pd.Series([r['human_category'] for r in done]).value_counts()
+        assert taxonomy.failure_count.sum()==50 and abs(taxonomy.share_percent.sum()-100)<1e-9
+        for r in taxonomy.itertuples():assert r.failure_count==counts.get(r.category,0)
+        human_audit=json.loads((root/'reports/HUMAN_50_REVIEW_VALIDATION.json').read_text())
+        assert human_audit['status']=='PASS' and human_audit['human_verified_total']==50
+        assert human_audit['checkpoint_sha256']==sha(root/review['checkpoint'])
+        assert human_audit['decision_log_sha256']==sha(root/review['human_decision_log'])
+        assert human_audit['taxonomy_sha256']==sha(root/'reports/HUMAN_50_FAILURE_TAXONOMY.csv')
+        assert human_audit['analysis_sha256']==sha(root/'reports/HUMAN_50_FAILURE_ANALYSIS.md')
     images={}
     for name in ['budget_gap','zero_ndcg','ir_safe_budget','risk_work']:
         path=out/f'judgment_density_vs_{name}.png'
@@ -228,10 +245,10 @@ def validate_completed(root):
                 FULL_oracle_budgets_match_archived='PASS',query_ID_and_exact_text_leakage='PASS',
                 original_corpus_identity_and_order='PASS_WITH_DOCUMENTED_ARCHIVE_LINEAGE_LIMITATION',
                 no_unintended_corpus_change=True,source_hashes_recorded=True,
-                final_recovery_audits='PASS',portable_checkout_checksum_files=45,
+                final_recovery_audits='PASS',portable_checkout_checksum_files=checkout_files,
                 search_work_and_saved_timing_invariance='PASS',jointly_feasible_queries_every_condition=43,
                 completed_saved_statistical_rows_preserved=42,completed_density_followups=12,
-                human_verified=36,human_reviews_remaining=14,pending_model_assisted=14,
+                human_verified=len(done),human_reviews_remaining=review['remaining'],pending_model_assisted=len(pending),
                 local_report_links='PASS',python_syntax_check='PASS',figures=images,
                 manuscript_compilation='NOT RUN; static environment and figure checks only',
                 previous_completed_analyses_redone=False,retrieval_executed=False,

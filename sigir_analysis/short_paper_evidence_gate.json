@@ -1,6 +1,6 @@
 {
   "policy": "Density claims permitted only after original-ranking FULL reproduction and completed 50-seed same-ranking study.",
-  "current_paper_sha256": "f3b96ae97e54344319816ae99ff9f21b487f91a9740f6b24a805d2a9b925b84b",
+  "current_paper_sha256": "1a9f242b86c3e0c78585e8e95d5378cace14a29ee07d4a3a06cb4dd724ac04fa",
   "evidence_complete": true,
   "paper_modified_this_continuation": true,
   "previous_paper_sha256": "047af7229dd2f076d663de51b5ede0b95cd369619d86f1c8d61bae77ba5d9819",
@@ -10,5 +10,10 @@
   "density_claims_permitted": true,
   "manuscript_scope": "Preserved prior saved-run findings and negative fixed-frontier evidence; added conditional thinning Outcome A.",
   "pre_density_paper_sha256": "1f892b98157488dca4d0a386ad7fd87b373ebda3883c0f2f6e24e328945eab2e",
-  "manuscript_compilation": "NOT RUN; no LaTeX compiler available"
+  "manuscript_compilation": "NOT RUN; no LaTeX compiler available",
+  "human_review_completion_update": {
+    "previous_paper_sha256": "f3b96ae97e54344319816ae99ff9f21b487f91a9740f6b24a805d2a9b925b84b",
+    "scope": "Only FiQA human-review completion wording changed; 50/50 explicit decisions now validated.",
+    "scientific_numerical_claims_changed": false
+  }
 }

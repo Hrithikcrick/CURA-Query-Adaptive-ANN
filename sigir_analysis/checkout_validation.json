@@ -1,8 +1,9 @@
 {
   "status": "PASS",
-  "files_checked": 45,
+  "files_checked": 51,
   "mismatches": [],
-  "method": "Export staged index with core.autocrlf=false; explicit .gitattributes reproduce original SHA256-backed local files byte for byte.",
+  "method": "Export staged index with core.autocrlf=false; explicit .gitattributes reproduce checksum-backed research and completed-review files byte for byte.",
   "scientific_bytes_modified": false,
-  "human_decisions_modified": false
+  "human_decisions_modified": false,
+  "modification_field_scope": "This checkout check modifies neither scientific bytes nor human decisions; the review workflow separately records14 new explicit researcher confirmations."
 }
