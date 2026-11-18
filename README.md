@@ -1,194 +1,263 @@
 # CURA — Calibrated Utility-Risk Allocation for Query-Specific ANN Search
 
-**Beyond Recall: Calibrated Utility-Risk Allocation for Query-Specific Approximate Nearest Neighbor Search**  
-**COL764: Information Retrieval and Web Search · IIT Delhi**
+Query-specific approximate nearest-neighbor search guided by downstream retrieval utility rather than exact-neighbor recall alone.
 
-CURA now asks: **When do downstream-utility-aware ANN search budgets provide genuine efficiency gains, and how are those gains affected by relevance-judgment completeness and risk calibration?** The repository contains Python implementations, saved evaluation tables, statistical tests, ablations, and diagnostic reviews.
+## 1. Motivation
 
-> **SIGIR analysis finding (16 November 2026): fixed ef=48 matches CURA's observed 1% MS MARCO test violation rate and uses 28.29% less work.** The original 20.51% CURA saving is relative to calibration-selected ef=96; it does not establish an adaptive advantage on the full observed frontier. The fixed comparison is post hoc. Exact-positive queries contribute 92.59% of that original saving. Original TREC exact/HNSW ranked IDs were recovered from an external archive and passed all 473 FULL-qrel comparisons. The same-ranking study scored all 50 prepared thinning seeds: measured ANN-minus-IR budget headroom increases from -0.140 (FULL) to 1.956 (one positive), **Outcome A: apparent evaluation headroom**. The one-positive exact-zero fraction is 82.88%; this is not actual relevance preservation. No retrieval, embedding generation, index construction or controller retraining was run.
+Approximate nearest-neighbor (ANN) search typically optimizes fidelity to exact neighbors, measured by metrics such as Recall@10. Retrieval systems ultimately care about the quality of the ranked results, measured here by nDCG@10. Missing an exact neighbor need not reduce downstream ranking quality: the missing item may be irrelevant, or another relevant result may preserve utility.
 
-The active research direction is **When Do Utility-Aware ANN Search Budgets Really Save Work? The Role of Relevance-Judgment Completeness and Risk Calibration.** Read the [research report](reports/SIGIR_RESEARCH_ANALYSIS.md), [analysis artifacts](sigir_analysis/README.md), [revised direction](paper/SIGIR_REVISED_DIRECTION.md), and [new short-paper source](paper/sigir_short.tex). The course evidence below records historical calibrated-baseline comparisons; the current human-review status is audited separately.
+CURA studies whether search effort can be allocated query by query according to downstream information-retrieval (IR) risk. It distinguishes two criteria:
 
-<!-- BEGIN CURA FINAL EVIDENCE STATUS -->
-**Saved-review evidence:** all 50 actual MS MARCO/TREC budget-sweep failure labels are model assisted, including 8 automatic second-review resolutions. FiQA human review is separate: **50/50 completed, none pending**, with explicit decisions backed by the checkpoint and decision log. See the [audited review status](reports/50_CASE_FAILURE_REVIEW_STATUS.md), [human taxonomy](reports/HUMAN_50_FAILURE_TAXONOMY.csv) and [qualitative analysis](reports/HUMAN_50_FAILURE_ANALYSIS.md). Model suggestions alone do not count as completed human reviews.
+- **ANN-safe:** the approximate top ten recover at least 90% of the exact top-ten neighbors.
+- **IR-safe:** approximate nDCG@10 falls no more than 0.025 below the exact-search reference under the available relevance judgments.
 
-Mean search latency estimates decrease by 17.06%, while p95 increases from 1.128008 to 1.985027 ms (75.98% higher). Adaptive effort improves the recorded average and worsens the tail in this setting. Latency is reconstructed from saved per-query mean search timings, including probe and selected-search costs; the p95 is across those estimates. It excludes model-inference/feature-processing overhead and is not an end-to-end request-latency measurement.
-<!-- END CURA FINAL EVIDENCE STATUS -->
+These criteria measure different properties. Neither establishes relevance beyond the available judgments.
 
-<!-- BEGIN CURA COURSE COMPLETION UPDATE -->
-## Current COL764 evidence and human-review completion
+## 2. CURA Method
 
-**Original course question:** can query-specific ANN work be allocated using downstream ranking-risk rather than exact-neighbor recovery alone? The active SIGIR question additionally tests judgment completeness and the full fixed-budget frontier, as described above.
+CURA is a **two-stage query-specific HNSW budget allocator**. A cheap search provides query and search-state features; a calibrated model then selects the smallest candidate budget whose predicted violation risk satisfies the selected threshold.
 
-The historical MS MARCO comparison is 20.51% less realized work and 17.06% lower mean search latency than calibration-selected Fixed-IR (ef=96). **A post-hoc fixed ef=48 beats CURA at the same observed risk; CURA's p95 is also 75.98% worse than ef=96.** The separately fitted FiQA controller's negative result and original ablations remain part of the evidence.
-
-### Added score-gap budget comparison
-
-The cached `Score-Gap-Budget` baseline stops after the efSearch=10 probe when its approximate top1-top10 score spread is at least 0.266384125, otherwise reruns efSearch=96. Its threshold/fallback use training and calibration only. Test/OOD remain frozen; all probe and rerun work is charged. This is a **cached two-stage budget simulation**, not an implementation of actual traversal early exit. No exact-reference gap is a deployable feature. Calibration selection reuses the pointwise Wilson criterion and does not establish a selection-adjusted risk guarantee.
-
-| Cohort | Method | IR violations | Mean work | p95 work | Mean ms | p95 ms |
-|---|---|---:|---:|---:|---:|---:|
-| MSMARCO_TEST | Score-Gap-Budget | 0.50% | 3266.290 | 5318.200 | 0.807623 | 1.317973 |
-| MSMARCO_TEST | Fixed-IR | 0.50% | 3431.770 | 4485.100 | 0.832854 | 1.128008 |
-| MSMARCO_TEST | CURA-Full | 1.00% | 2727.965 | 8532.650 | 0.690738 | 1.985027 |
-| TREC_DL_2019_OOD | Score-Gap-Budget | 2.33% | 3133.442 | 4713.300 | 0.763193 | 1.102646 |
-| TREC_DL_2019_OOD | Fixed-IR | 0.00% | 2721.884 | 4138.100 | 0.682038 | 0.953098 |
-| TREC_DL_2019_OOD | CURA-Full | 2.33% | 2384.581 | 7034.100 | 0.581502 | 1.682058 |
-
-CURA-Full uses 16.48% less test work than this policy: paired difference 538.325, bootstrap 95% CI [210.230, 852.786], paired-randomization p=0.001100. The score-gap policy has lower observed test violation rate and lower p95 latency than CURA. Work savings therefore do not establish uniform superiority. [Full metrics, MRR, protocol and limitations](msmarco_large/msmarco_1000000_q1000/score_threshold_baseline/SCORE_THRESHOLD_BASELINE_REPORT.md) are saved separately; the primary ablation table is unchanged. Compatible policy Recall@100 is unavailable and remains blank.
-
-**FiQA manual review: 50/50 human-verified decisions; none remain.** Only explicit researcher decisions backed by the saved decision log count. The [final human taxonomy](reports/HUMAN_50_FAILURE_TAXONOMY.csv) and [evidence report](reports/HUMAN_50_FAILURE_ANALYSIS.md) cover fixed HNSW ef=10 failures. The separate 50-case MS MARCO/TREC taxonomy remains entirely model-assisted; it is not substituted for the manual requirement.
-
-ANN-Risk is a local ANN-target proxy, not official DARTH. Patience-Inspired is a local stability heuristic, not official Patience. LADR is not claimed. One HNSW family, one primary MiniLM encoder, a controlled million-scale corpus, calibration reuse, and the 43-query OOD sample remain limitations. AI assisted code/debugging, documentation, and preliminary qualitative suggestions; it did not independently supply human decisions.
-
-Course evidence: [requirements](FINAL_PROJECT_REQUIREMENTS.md), [reproducibility](REPRODUCIBILITY.md), [demo and viva](DEMO_AND_VIVA.md), [course audit](reports/FINAL_COURSE_AUDIT.md), [metric audit](reports/FINAL_METRIC_AUDIT.md), and [human checkpoint](beir_fiqa/manual_failure_review/fiqa_50_actual_failures_HUMAN_VERIFIED.csv).
-
-Lightweight commands:
-
-```powershell
-python 18_score_threshold_baseline.py
-python 18_final_course_audit.py
-python 25_update_course_documents.py --apply
+```mermaid
+flowchart TD
+    A["Query"] --> B["Cheap HNSW probe: efSearch=10"]
+    B --> C["Query + search-state features"]
+    C --> D["Calibrated utility-risk model"]
+    D --> E["Select smallest predicted-safe candidate efSearch"]
+    E --> F["Final HNSW search: reuse probe at efSearch=10"]
+    F --> G["Ranked result; offline evaluation with nDCG@10"]
 ```
 
-The genuine 50-case human-review requirement is complete. These commands do not run encoding, index construction, or retrieval. See REPRODUCIBILITY.md for expensive regeneration commands and cached artifact boundaries.
-<!-- END CURA COURSE COMPLETION UPDATE -->
+The risk model is a `HistGradientBoostingClassifier` with isotonic calibration. Features combine query information, probe scores and score gaps, search counters, and the candidate budget. The candidate `efSearch` grid is:
 
-## Principal results
+```text
+10, 16, 24, 32, 48, 64, 96, 128, 192, 256
+```
 
-These are the original calibration-selected-baseline results. The [complete fixed frontier](sigir_analysis/fixed_risk_work_frontier.csv) and [research report](reports/SIGIR_RESEARCH_ANALYSIS.md) govern the revised research claims.
+Let `N_q*` be exact-search nDCG@10 and `N_q(e)` approximate nDCG@10 at budget `e`. Utility loss is:
 
-### MS MARCO held-out test (200 queries, 1,000,629 passages)
+```text
+L_q(e) = max(0, N_q* - N_q(e))
+```
 
-| Metric | Fixed HNSW (Fixed-IR) | CURA-Full |
-|---|---:|---:|
-| Mean realized search computations / query ↓ | 3,431.77 | **2,727.97** |
-| Mean latency (ms) ↓ | 0.8329 | **0.6907** |
-| p95 latency (ms) ↓ | **1.1280** | 1.9850 |
-| Mean nDCG@10 ↑ | **0.6253** | 0.6234 |
-| Observed IR violation rate ↓ | **0.5%** | 1.0% |
+An IR violation occurs when `L_q(e) > 0.025`; the separate ANN-safe criterion is `Recall@10 ≥ 0.90`. Relevance judgments provide offline training labels and evaluation, rather than online selection features.
 
-**20.51% less realized search work** and **17.06% lower mean latency**. Realized work includes CURA's extra probe overhead. The paired search-work difference is **703.805** computations/query (bootstrap 95% CI **[401.43, 984.11]**, paired randomization `p≈5.0e-5`). **Tail-latency caveat:** CURA-Full has worse recorded p95 latency than Fixed-IR (**1.9850 ms vs 1.1280 ms**), so the current implementation improves average cost/latency but not the p95 tail.
+The policy threshold is selected on calibration queries using a nominal 5% violation target and a Wilson upper-bound criterion. Predicted safety is not a guarantee for an individual query or a new distribution. If no candidate passes the predicted-risk threshold, the policy uses the largest candidate. At `efSearch=10`, it reuses the probe; larger budgets require a fresh search, and recorded work includes both the probe and the selected search.
 
-The reported 1.0% risk rate is an observed outcome below a nominal 5% target, **not a universal guarantee**.
+## 3. Experimental Setup
 
-### BEIR FiQA-2018 (separate financial domain)
+### MS MARCO
 
-| Metric | Tuned fixed HNSW | Simplified CURA-FiQA |
-|---|---:|---:|
-| Held-out queries | 131 | 131 |
-| Mean realized work / query ↓ | **1,097.08** | 1,922.87 |
-| Mean latency (ms) ↓ | **0.2149** | 0.3856 |
-| Mean nDCG@10 ↑ | **0.2201** | 0.2179 |
-| Observed IR violation rate ↓ | 3.05% | 3.05% |
+The main experiment uses a controlled subset of **1,000,629 passages** and **1,000 development queries**, split into 600 training, 200 calibration, and 200 held-out test queries. The primary encoder is `msmarco-MiniLM-L6-cos-v5`. HNSW uses `M=32` and `efConstruction=200`; exhaustive inner-product retrieval supplies the exact reference.
 
-**Negative result:** simplified CURA-FiQA used **75.27% more** search work than the calibrated fixed-budget policy. It was **trained on FiQA queries** with fewer features than CURA-Full; this does **not** test zero-shot MS MARCO→FiQA model transfer. The held-out 95% Wilson upper bound for the violation rate is ~7.59%, above the nominal 5% threshold.
+The main metrics are nDCG@10, exact-neighbor Recall@10, HNSW distance computations, and search-component latency. Distance computations measure recorded search work rather than treating `efSearch` itself as a work counter.
 
-Detailed provenance, limitations, and comparisons are in **[CURA results and limitations](reports/CURA_RESULTS_AND_LIMITATIONS.md)**.
+### TREC DL 2019
 
-## Overleaf paper source
+The out-of-distribution evaluation contains **43 passage queries** over the same corpus. The relevance-judgment sensitivity experiment reuses the same exact and HNSW rankings across judgment conditions.
 
-- [Active SIGIR-short research draft](paper/sigir_short.tex) and [revised direction](paper/SIGIR_REVISED_DIRECTION.md), including the negative fixed-frontier result and completed same-ranking judgment experiment.
+### FiQA
 
-- [Two-column LaTeX manuscript](paper/main.tex) — revised with FiQA results and honest manual-review status.
-- [Overleaf import/compile instructions](paper/README.md) — upload as main.tex, use pdfLaTeX.
+FiQA provides a separate financial-domain evaluation for robustness and failure analysis. Its simplified controller is fitted separately on FiQA queries; this evaluates adaptation to another domain, rather than zero-shot transfer of the MS MARCO model.
 
-## Final-paper preparation
+## 4. Main Results
 
-- [Earlier evidence-grounded SIGIR-style paper draft](reports/CURA_SIGIR_STYLE_FINAL_DRAFT.md) — a historical snapshot with MS MARCO positive findings and FiQA negative results. Current human-review completion is recorded in the [final qualitative analysis](reports/HUMAN_50_FAILURE_ANALYSIS.md); fresh-run verification remains separate.
-- [Final saved-artifact audit script](17_final_submission_audit.py) — read-only checks of headline result tables, hashes, and local human-review progress. Execute with `python 17_final_submission_audit.py` and inspect `reports/final_submission_audit.json`.
-- [Detailed results and limitations](reports/CURA_RESULTS_AND_LIMITATIONS.md) — source-backed research claim boundaries.
-- [Final metric audit](reports/FINAL_METRIC_AUDIT.md) — checked headline MS MARCO/TREC numbers, including the p95 latency trade-off.
+### 4.1 ANN-safe and IR-safe budgets differ
 
-## Repository map
+Across the **819 exact-positive queries** among all 1,000 MS MARCO development queries, the saved first-safe budget summary is:
 
-| File / folder | Purpose |
-|---|---|
-| [`01_baseline_hnsw.py`](01_baseline_hnsw.py) | SciFact pilot: exact vs HNSW retrieval |
-| [`02_ir_utility_labels.py`](02_ir_utility_labels.py) | Downstream IR-quality labels |
-| [`04_msmarco_large_pilot.py`](04_msmarco_large_pilot.py) | Large MS MARCO HNSW sweep |
-| [`05_research_grade_validation.py`](05_research_grade_validation.py) | Query-level validation and statistics |
-| [`06_domain_specific_validation.py`](06_domain_specific_validation.py) | Domain-specific analysis |
-| [`07_cura_controller.py`](07_cura_controller.py) | CURA risk model, calibration and budget policy |
-| [`08_patience_style_baseline.py`](08_patience_style_baseline.py) | Patience-inspired proxy baseline |
-| [`09_final_ablation_package.py`](09_final_ablation_package.py) | Final method and ablation tables |
-| [`10_manual_taxonomy_summary.py`](10_manual_taxonomy_summary.py) | Taxonomy reporting code |
-| [`11_manual_review_interactive.py`](11_manual_review_interactive.py) | Earlier MS MARCO manual-review tool |
+| Metric | Mean first-safe efSearch |
+| --- | ---: |
+| ANN-safe | 21.485 |
+| IR-safe | 13.206 |
+| Gap | 8.278 |
+
+This summary substitutes the grid maximum, 256, when a criterion is never reached: four queries lack an ANN-safe candidate and three lack an IR-safe candidate. Restricting to the **812 jointly feasible queries** gives a **mean ANN-safe minus IR-safe gap of 7.611 efSearch units**, with a paired-query bootstrap 95% CI of **[5.933, 9.387]**.
+
+These oracle comparisons show that preserving measured downstream utility can require a smaller search budget than preserving exact-neighbor recall. Budget differences describe an opportunity for allocating effort; they are not measured work savings.
+
+<p align="center">
+  <img src="sigir_analysis/oracle_budget_gap_analysis.png" alt="Oracle ANN-safe and IR-safe budget comparison" width="740">
+</p>
+
+[Budget estimates and confidence intervals](sigir_analysis/oracle_budget_gap_analysis.csv).
+
+### 4.2 CURA versus calibration-selected fixed baseline
+
+On the 200-query MS MARCO held-out test set:
+
+| Method | Observed IR violations | Mean work/query | Mean nDCG@10 |
+| --- | ---: | ---: | ---: |
+| Fixed efSearch=96 | 1/200 | 3431.77 | 0.6253 |
+| CURA-Full | 2/200 | 2727.97 | 0.6234 |
+
+CURA uses **20.51% less recorded HNSW work versus fixed efSearch=96**, the comparator selected prospectively on calibration data. The paired work difference is 703.805 distance computations per query, with a paired-query bootstrap 95% CI of [408.59, 985.82]. The observed violation counts do not establish equal risk.
+
+Mean search-component latency falls from approximately 0.833 ms to 0.691 ms, while p95 worsens from approximately 1.128 ms to 1.985 ms. The current implementation improves average work and search latency but worsens p95 tail latency. These timings use saved per-query mean search times, including probe and rerun costs; they exclude controller inference and feature processing and are not end-to-end request timings.
+
+[Paired work statistics](sigir_analysis/primary_statistical_results.csv) and [method metrics](sigir_analysis/fixed_risk_work_frontier.csv).
+
+### 4.3 Exact-positive query analysis
+
+The held-out test set contains **159 exact-positive queries** and **41 exact-zero queries**, defined by exact-search nDCG@10 under the available judgments. Within the exact-positive stratum, CURA saves **23.09%** of the fixed baseline's work. These queries contribute **92.59% of the total original work reduction** versus `efSearch=96`.
+
+The original work reduction is therefore not mainly caused by trivial exact-zero queries.
+
+<p align="center">
+  <img src="sigir_analysis/exact_ndcg_stratified_work.png" alt="Search work stratified by exact-search nDCG" width="740">
+</p>
+
+[Stratified results](sigir_analysis/exact_ndcg_stratified_results.csv).
+
+### 4.4 Full fixed risk-work frontier
+
+Selected points from the fixed-budget sweep show a different comparison:
+
+| Method | Observed IR violations | Mean work/query |
+| --- | ---: | ---: |
+| Fixed efSearch=24 | 3/200 | 1182.79 |
+| Fixed efSearch=48 | 2/200 | 1956.35 |
+| Fixed efSearch=64 | 1/200 | 2448.65 |
+| Fixed efSearch=96 | 1/200 | 3431.77 |
+| CURA-Full | 2/200 | 2727.97 |
+
+Post-hoc fixed `efSearch=48` matches CURA's observed **2/200** violation count and uses **28.29% less work than CURA**, with a paired-query bootstrap 95% CI of **[20.07%, 35.39%]**.
+
+This is a **post-hoc diagnostic**, conditional on the saved policies and comparator. Matching an observed count does not prove prospective risk equivalence. It shows why adaptive ANN methods should be compared against the entire fixed risk-work frontier: this CURA controller does not dominate that frontier.
+
+<p align="center">
+  <img src="sigir_analysis/fixed_risk_work_frontier.png" alt="Fixed HNSW risk-work frontier and CURA" width="740">
+</p>
+
+[Full fixed-budget sweep](sigir_analysis/fixed_risk_work_frontier.csv) and [paired comparison](sigir_analysis/primary_statistical_results.csv).
+
+## 5. Relevance-Judgment Sensitivity Experiment
+
+This experiment isolates the effect of judgment availability. Exact rankings, HNSW rankings, ANN Recall@10, recorded work, and CURA's budget choices remain fixed. Only positive TREC relevance judgments are thinned; retained positives keep their original grades, and nonpositive judgments are preserved.
+
+The conditions are FULL, 50% positives, 25% positives, and one positive per query. Each stochastic condition uses **50 paired thinning seeds**. FULL means all available pooled judgments, not exhaustive relevance truth.
+
+### Budget-gap result
+
+| Judgment condition | Mean ANN-safe − IR-safe gap |
+| --- | ---: |
+| FULL | -0.140 |
+| 50% positives | 0.308 |
+| 25% positives | 0.848 |
+| One positive/query | 1.956 |
+
+The changes versus FULL are **+0.447**, **+0.988**, and **+2.096** efSearch units, respectively. Each gap comparison has Holm-adjusted `p ≈ 6.0 × 10^-4` across the 12 density follow-up comparisons.
+
+Inference uses thinning seeds as the resampling unit and is conditional on these 43 queries, their fixed rankings, and the thinning mechanism. The paired sign-flip tests assume sign exchangeability; they do not establish generalization to a broader query population. Reported bootstrap confidence intervals are unadjusted.
+
+<p align="center">
+  <img src="sigir_analysis/judgment_density_vs_budget_gap.png" alt="Judgment density and measured ANN-minus-IR budget gap" width="740">
+</p>
+
+[Judgment-density estimates](sigir_analysis/trec_judgment_density_summary.csv) and [seed-level statistical comparisons](sigir_analysis/density_statistical_tests_completed.csv).
+
+### Exact-zero result
+
+| Judgment condition | Exact-zero fraction |
+| --- | ---: |
+| FULL | 0.00% |
+| 50% positives | 1.67% |
+| 25% positives | 9.49% |
+| One positive/query | 82.88% |
+
+When exact nDCG@10 becomes zero, the one-sided loss is automatically zero for non-negative approximate nDCG@10. Sparse judgments can therefore make utility-aware ANN search appear safer even though the underlying rankings have not improved. This is a change in measured headroom, rather than evidence that true relevance was preserved.
+
+<p align="center">
+  <img src="sigir_analysis/judgment_density_vs_zero_ndcg.png" alt="Judgment density and exact-zero nDCG fraction" width="740">
+</p>
+
+> **Sparse relevance judgments can inflate the measured utility-aware ANN headroom even when retrieval itself has not changed.**
+
+## 6. FiQA Failure Analysis
+
+Human review of model-prepared evidence for **50 fixed-HNSW `efSearch=10` IR failures** gives the following taxonomy. These are selected low-budget failures, rather than 50 failures of a deployed CURA policy.
+
+| Failure category | Count | Share |
+| --- | ---: | ---: |
+| Relevant document dropped | 36 | 72% |
+| Low ANN recall and IR failure | 11 | 22% |
+| High ANN recall but IR failure | 2 | 4% |
+| Ranking-boundary instability | 1 | 2% |
+
+The dominant category is a relevant document dropped from the displayed approximate results. The displayed top-five evidence does not establish absence at every rank. Two cases also show that high ANN recall does not always guarantee downstream ranking stability. The single ranking-boundary label records the researcher's category choice; no boundary gap was recorded for that case, so a cutoff-instability mechanism is not established.
+
+The separately fitted simplified CURA-FiQA controller provides a negative robustness result: it uses **75.27% more work** than its calibrated fixed comparator at the same observed violation rate of 3.05% (4/131 queries). This within-domain fit does not establish zero-shot transfer from MS MARCO.
+
+[Human taxonomy](reports/HUMAN_50_FAILURE_TAXONOMY.csv), [qualitative evidence](reports/HUMAN_50_FAILURE_ANALYSIS.md), and [FiQA controller comparison](beir_fiqa/fiqa_cura_controller/heldout_comparison.csv).
+
+## 7. Key Findings
+
+1. **ANN recall and downstream IR utility are different optimization targets.**
+2. **CURA reduces work versus the prospectively calibration-selected fixed efSearch=96 baseline.**
+3. **The current two-stage CURA controller does not dominate the full fixed HNSW frontier.**
+4. **Exact-positive queries account for 92.59% of the original saving, so the effect is not mainly a zero-nDCG artifact.**
+5. **Judgment completeness materially changes the measured utility-aware optimization headroom.**
+
+## 8. Repository Structure
+
+| File / directory | Purpose |
+| --- | --- |
+| [`01_baseline_hnsw.py`](01_baseline_hnsw.py) | Exact versus HNSW pilot |
+| [`02_ir_utility_labels.py`](02_ir_utility_labels.py) | Downstream utility labels |
+| [`04_msmarco_large_pilot.py`](04_msmarco_large_pilot.py) | MS MARCO HNSW budget sweep |
+| [`05_research_grade_validation.py`](05_research_grade_validation.py) | Query-level metrics and statistics |
+| [`06_domain_specific_validation.py`](06_domain_specific_validation.py) | Domain-specific evaluation |
+| [`07_cura_controller.py`](07_cura_controller.py) | Risk model, calibration, and allocation |
+| [`08_patience_style_baseline.py`](08_patience_style_baseline.py) | Patience-inspired local proxy |
+| [`09_final_ablation_package.py`](09_final_ablation_package.py) | Method comparisons and ablations |
 | [`12_beir_fiqa_pilot.py`](12_beir_fiqa_pilot.py) | FiQA exact/HNSW budget sweep |
-| [`13_fiqa_cura_controller.py`](13_fiqa_cura_controller.py) | FiQA within-domain risk controller |
-| [`14_fiqa_failure_audit.py`](14_fiqa_failure_audit.py) | Analyze FiQA work overhead and failure overlap |
-| [`15_fiqa_50_failure_review.py`](15_fiqa_50_failure_review.py) | Generate evidence for 50 low-budget failures |
-| [`16_interactive_fiqa_review.py`](16_interactive_fiqa_review.py) | Human-in-the-loop case reviews; no automatic labels |
-| [`audit_cura_results.py`](audit_cura_results.py) | Verify saved MS MARCO numerical consistency |
-| [`msmarco_large/`](msmarco_large/) | Committed MS MARCO results, figures and reports |
-| [`beir_fiqa/`](beir_fiqa/) | FiQA per-query data, calibration and diagnostics |
-| [`reports/`](reports/) | Research findings and limitations |
+| [`13_fiqa_cura_controller.py`](13_fiqa_cura_controller.py) | Separately fitted FiQA controller |
+| [`14_fiqa_failure_audit.py`](14_fiqa_failure_audit.py) | FiQA overhead and failure diagnostics |
+| [`24_human_course_review.py`](24_human_course_review.py) | Interactive human failure review |
+| [`msmarco_large/`](msmarco_large/) | MS MARCO metrics and policy outputs |
+| [`beir_fiqa/`](beir_fiqa/) | FiQA results and qualitative evidence |
+| [`sigir_analysis/`](sigir_analysis/) | Budget, frontier, and judgment-sensitivity analysis |
+| [`reports/`](reports/) | Research reports and supporting evidence |
+| [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) | Data prerequisites and experiment instructions |
 
-## Setup and verification
+## 9. Reproducibility
 
-Tested run environment has not been independently reproduced from a clean checkout; steps below are starting points, not a certified one-command reproduction.
-
-```powershell
+```bash
 git clone https://github.com/Hrithikcrick/CURA-Query-Adaptive-ANN.git
 cd CURA-Query-Adaptive-ANN
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-
-# Checks saved MS MARCO result tables, NOT a fresh experiment rerun.
-python audit_cura_results.py
 ```
 
-**FiQA sequence** (downloads BEIR FiQA, generates embeddings and builds a new FAISS index; requires network access, memory, and compute):
+Windows:
 
 ```powershell
-python 12_beir_fiqa_pilot.py
-python 13_fiqa_cura_controller.py
-python 14_fiqa_failure_audit.py
-# Only run once to generate the worksheet, or it will overwrite existing annotations:
-python 15_fiqa_50_failure_review.py
-python 16_interactive_fiqa_review.py --progress
-python 16_interactive_fiqa_review.py --limit 5
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 ```
 
-**Do not rerun** `15_fiqa_50_failure_review.py` after adding human annotations; it overwrites the review worksheet. The first MS MARCO experiments require reconstructing downloaded raw data, embeddings and FAISS indexes that are intentionally not committed. Follow each script's configuration and verify its saved input prerequisites.
+Linux/macOS:
 
-## Failure-analysis status
+```bash
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
 
-### MS MARCO actual IR-unsafe query-budget cases
+Large raw datasets, embeddings, FAISS indexes, and model caches are intentionally not committed. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for data prerequisites, saved-result checks, and experiment regeneration instructions.
 
-A separate 50-case analysis now targets **actual IR-unsafe query-budget pairs** from the MS MARCO HNSW budget sweep (nDCG@10 loss > 0.025). The structured annotation pass completed automatic validation over all 50 rows. **Eight initially uncertain cases were resolved in a second model-assisted pass using predefined numerical/semantic decision rules.** This analysis is therefore **model-assisted, not independent human annotation**; no claim of 50 manually reviewed failures is made. The cases are query-budget failures from the sweep, not 50 failures of the deployed CURA operating policy.
+## 10. Scope and Limitations
 
-A status note is available in [reports/MODEL_ASSISTED_50_FAILURE_STATUS.md](reports/MODEL_ASSISTED_50_FAILURE_STATUS.md). Exact generated taxonomy CSVs should be committed from the local finalization workspace before using category-count claims in a submission.
+- One primary encoder and one ANN family, HNSW.
+- A controlled approximately 1M-passage MS MARCO subset rather than the full 8.8M corpus.
+- A 43-query TREC out-of-distribution evaluation.
+- FULL qrels are pooled judgments, not exhaustive relevance truth.
+- The two-stage design pays probe plus rerun overhead when a larger budget is selected.
+- Latency excludes controller inference and feature processing.
+- Calibration data are reused for probability fitting and policy selection; observed violation rates are not universal or selection-adjusted risk guarantees.
+- Post-hoc fixed comparators are diagnostic, not prospective guarantees.
+- FiQA uses a separately fitted simplified controller; cross-domain model transfer is not established.
+- ANN-Risk and Patience-inspired implementations are local proxies, not official DARTH or official Patience reproductions.
 
-### FiQA human-review worksheet
+## Author
 
-- [50 FiQA fixed-HNSW ef=10 failure cases](beir_fiqa/manual_failure_review/fiqa_50_actual_ef10_failures_TO_REVIEW.csv) were identified from genuine recorded nDCG losses; reconstructed scores match saved data.
-- [Assistant-prepared drafts](beir_fiqa/manual_failure_review/ASSISTANT_DRAFT_ALL_50.md) provide reference evidence, **not completed manual judgments**.
-- [Human-review instructions](beir_fiqa/manual_failure_review/HOW_TO_REVIEW.md) and [interactive tool](16_interactive_fiqa_review.py) support actual annotation.
-- The audited FiQA checkpoint records **50/50 complete human reviews**, with matching category and evidence-note decisions. The [human taxonomy](reports/HUMAN_50_FAILURE_TAXONOMY.csv) and [qualitative report](reports/HUMAN_50_FAILURE_ANALYSIS.md) are finalized.
-- These human decisions remain separate from the 50 model-assisted MS MARCO/TREC budget-sweep annotations and their eight automatic second-pass resolutions.
-- These FiQA cases are **fixed low-budget HNSW failures**, not 50 violations by a deployed CURA policy.
-
-## Interpretation and current limitations
-
-- **ANN-Risk** is a local proxy, **not an official DARTH reproduction**.
-- **Patience-Inspired** is not an official implementation of published Patience.
-- FiQA controller features, corpus and calibration regime differ from MS MARCO CURA-Full. Cross-domain *transfer* has not yet been established.
-- Some calibrations use the same calibration split for probability fitting and policy choice. Fresh split validation is required for stronger operational risk guarantees.
-- Full model-training, index-building, raw datasets, cached candidates and certain environment artifacts are **not** packaged in this GitHub repository. Source code and many result tables are available, but a clean independent regeneration remains to be verified.
-- Raw data, huge embeddings, `*.npy`/`*.npz` arrays and `*.faiss` indexes are intentionally excluded.
-
-## Final COL764 deliverables — ongoing
-
-- [x] Research hypothesis and CURA implementation
-- [x] Saved MS MARCO, TREC-DL and FiQA experiments
-- [x] Query-level ablations and MS MARCO significance testing
-- [x] Results and limitations summary
-- [x] 50 **model-assisted** MS MARCO actual IR-unsafe case analyses with structural validation and final taxonomy, including eight automatic second-pass resolutions
-- [ ] 50 **independently human-verified** failure analyses and aggregate taxonomy
-- [ ] Independent clean-environment reproduction and experiment manifests
-- [ ] Strong published-method baseline verification where practical
-- [ ] Final SIGIR-style paper, transparent AI-use statement, presentation/demo
-
-**AI-use transparency:** Assistant tools have helped draft explanatory documentation, code and preliminary failure-review notes. Automated notes must not be represented as independently completed human annotations. The final paper should explicitly describe where and how such assistance was used.
+**Hrithik Sharma**<br>
+Indian Institute of Technology Delhi<br>
+Enrolment No. **2025JTM2082**
