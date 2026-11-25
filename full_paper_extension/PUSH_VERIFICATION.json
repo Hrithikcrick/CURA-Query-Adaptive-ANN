@@ -1,0 +1,228 @@
+{
+  "status": "PASS",
+  "verification_date": "2026-11-26",
+  "historical_base_commit": "c41c089554a2596667c2626f7fa35118a586f10c",
+  "publication_branch": "research/verified-false-safety-fiqa-20261126",
+  "branch_reason": "Main working tree contains unrelated unresolved modifications; isolated worktree avoids including or overwriting them.",
+  "provenance": "Existing local extension reused; named distribution ZIPs and original push-kit summary not found. New focused verification artifacts are explicitly dated.",
+  "tests": [
+    {
+      "command": "python -B -m unittest discover -s full_paper_extension -p test_false_safety.py -v",
+      "tests": 11,
+      "status": "PASS"
+    },
+    {
+      "command": "python -B -m unittest discover -s full_paper_extension/tests -v",
+      "tests": 15,
+      "status": "PASS"
+    }
+  ],
+  "saved_results_summary": "full_paper_extension/VERIFIED_SAVED_DATA_RESULTS.json",
+  "figure_check": {
+    "status": "PASS",
+    "figures": 3,
+    "formats": [
+      "PNG",
+      "SVG"
+    ],
+    "labels_and_values_match_summary": true,
+    "visual_inspection": "All three final PNGs inspected; no clipping, overlap or incorrect denominator observed."
+  },
+  "extra_isolated_original_analysis": {
+    "status": "PASS",
+    "date": "2026-11-26",
+    "commands": [
+      [
+        "C:\\Users\\HRITHIK SHARMA\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "full_paper_extension/analyze_false_safety.py",
+        "--collections",
+        "2019",
+        "2020",
+        "--seeds",
+        "50",
+        "--bootstrap-resamples",
+        "20000"
+      ],
+      [
+        "C:\\Users\\HRITHIK SHARMA\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "full_paper_extension/build_cross_collection.py"
+      ]
+    ],
+    "scope": "existing analysis rerun from saved rankings/qrels; no retrieval, encoding or training",
+    "outputs_compared": [
+      {
+        "path": "full_paper_extension/false_safety_per_seed.csv",
+        "rows": 19932,
+        "columns": 34,
+        "saved_sha256": "f42061f731e2d09bd24d587a942a3d99f7737803b24d028b971cd1bc04362a66",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/budget_optimism_analysis.csv",
+        "rows": 43941,
+        "columns": 18,
+        "saved_sha256": "4bb2d141c6db09883bb1f3bb040df5f1b013d4d673e833c6fdfce8a768ecc3a5",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/metric_robustness_per_seed.csv",
+        "rows": 906,
+        "columns": 43,
+        "saved_sha256": "9cab875d33c131a6e1ba90f411035c4868428d93e6de254055ba611fb8d8ee66",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/policy_false_safety_per_seed.csv",
+        "rows": 3926,
+        "columns": 39,
+        "saved_sha256": "492cb329bd90164e2c998bd2e9d8005a8e8158816cfec33a90db8c23080c9d8d",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/collection_density_per_seed.csv",
+        "rows": 302,
+        "columns": 16,
+        "saved_sha256": "4cf7f32b23a605c2eedb514ca1d522b9408663bee39829f774dfba84d8d65f3d",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/false_safety_pair_evidence.csv.gz",
+        "rows": 439410,
+        "columns": 16,
+        "saved_sha256": "9944bde9876e7c9f99efafdfd3bb52921eeebcd6ff52efa19b997ff45246e687",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/false_safety_analysis.csv",
+        "rows": 528,
+        "columns": 65,
+        "saved_sha256": "98f9e950b5fcf1e5ed024768ed89206998870260b78ca94af9b10b602eb4050a",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/metric_robustness_under_thinning.csv",
+        "rows": 24,
+        "columns": 177,
+        "saved_sha256": "62b055853a0ca8e7967f2b08f29ee7e4a5f8358863fd5b9d00d7db819467baf6",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/policy_false_safety_analysis.csv",
+        "rows": 104,
+        "columns": 90,
+        "saved_sha256": "c56a68d54f2e297fe11f5781931050d379d42c5b5e1623fe099443658b3a4a5a",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/collection_density_summary.csv",
+        "rows": 8,
+        "columns": 52,
+        "saved_sha256": "e48f4cbb541a1b06dae6a83747d5fd5daa238140ef46671a870cd50852dacc59",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/crossed_query_seed_bootstrap.csv",
+        "rows": 36,
+        "columns": 10,
+        "saved_sha256": "594035377ce1aafe199fb40641933974e2a7f81429a8f613a7b3e90b14487184",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/stats_summary.csv",
+        "rows": 42,
+        "columns": 16,
+        "saved_sha256": "c36756c84df547ceecd89be4f08fc47244aa1a22b01c6983c1515189526f48f6",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/budget_optimism_summary.csv",
+        "rows": 24,
+        "columns": 15,
+        "saved_sha256": "cd716a8644df6b48f99d782fe3323219247a8988851dd6fbccb9b2ea1422b268",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/budget_feasibility_patterns.csv",
+        "rows": 30,
+        "columns": 7,
+        "saved_sha256": "b0ba200fbecbca6247ae7c0bbf48f900ea7e52780ff7d15318ecec4bb7a7dbc9",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/cross_collection_density_summary.csv",
+        "rows": 120,
+        "columns": 32,
+        "saved_sha256": "37c1ddcbc704a18cb077e7c0329a9400c2fab1c5c4cc8de513b3f0542dee8171",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      },
+      {
+        "path": "full_paper_extension/cross_collection_effect_statistics.csv",
+        "rows": 12,
+        "columns": 11,
+        "saved_sha256": "6be695ba8263eb204de7696b1dfc1c4445c3485aee35f1705e8b73c9430a614f",
+        "comparison": "all cells match; numeric atol=1e-12 rtol=1e-10"
+      }
+    ],
+    "original_outputs_overwritten": false
+  },
+  "preservation": {
+    "tracked_files_verified": 366,
+    "tracked_files_changed": [],
+    "existing_extension_files_verified": 282,
+    "existing_extension_files_changed": [],
+    "original_published_files": {
+      ".gitignore": "6bb636b8e225da1ed339ad41fe4f95757812a962fc153649604eb5af6b3fe81b",
+      "ANALYSIS_PLAN.md": "8f40b39f2828686dbc179c8d23cb21bac59e8e78bccea523d417693b40830bef",
+      "METRIC_PROTOCOL.md": "881bd035e570540c86ecda83ac4c08f2dd908d08d8958cbc19743833b5ca9276",
+      "NOVELTY_AUDIT.md": "8931df6908eab63dbb24f3452ee6563d0922b0442be60135e5942554afb8f571",
+      "FALSE_SAFETY_FORMULATION.md": "197871c9537cd11720167efb74c70838d5371d10ea06aa141104b0dbcc5c3778",
+      "analyze_false_safety.py": "5bc2d9f3d589e83598e48213af3d9a03a3c284e1c106f3d9801b1308cd96cec5",
+      "false_safety_metrics.py": "30fbca32c9014042dc8fb69cccfb791bf75fb93ae16dc6ea7e04083c6a383e92",
+      "test_false_safety.py": "12bb4425de1c05fb424f3c89276301b7ea48c7f6e5ac972e51510f28376ea850",
+      "data/2019qrels-pass.txt": "8a1f10d550732e4cd91d7fc49846a3784de4040972f583e69285a88f3c5fee92",
+      "data/selected_score_gap_trec_ood.csv": "0899e4ff5173386173c3759114b3c1a98a74a91052671d711139c22ec276a7e1",
+      "data/score_gap_protocol.json": "1cbfb6aa7ce708297f9c35bcacb693a3aabae61c47f8a1f5a254f222fad5d0d8"
+    },
+    "embeddings_generated": false,
+    "index_rebuilt": false,
+    "controller_retrained": false,
+    "retrieval_rerun": false
+  },
+  "publication_scope": "2019 false-safety and FiQA oracle replication; broader 2020/corpus/DARTH files preserved locally outside this commit",
+  "clean_checkout_verification": {
+    "status": "PASS",
+    "worktree_base": "c41c089554a2596667c2626f7fa35118a586f10c",
+    "source": "clean origin/main worktree plus only explicit publication allowlist",
+    "commands": [
+      {
+        "command": "-B -m unittest discover -s full_paper_extension -p test_false_safety.py -v",
+        "status": "PASS"
+      },
+      {
+        "command": "-B -m unittest discover -s full_paper_extension/tests -v",
+        "status": "PASS"
+      },
+      {
+        "command": "-B full_paper_extension/verify_saved_results.py",
+        "status": "PASS"
+      },
+      {
+        "command": "-B full_paper_extension/plot_verified_results.py --output-dir full_paper_extension/cache/figure_check",
+        "status": "PASS"
+      }
+    ],
+    "figure_manifest_and_PNG_SVG_byte_identity": "PASS",
+    "environment": "Existing Python environment; Matplotlib dependencies supplied from local ignored .plot_deps through PYTHONPATH. No new dependency installation.",
+    "models_indexes_embeddings_or_original_local_data_accessed": false,
+    "FiQA_LF_checkout_verified": true
+  },
+  "limitations": [
+    "FULL pooled qrels are not exhaustive relevance truth.",
+    "Dependent fixed query/budget/seed observations; no unseen-query guarantee.",
+    "FiQA is oracle mismatch replication, not judgment-density replication or controller transfer.",
+    "Original FiQA CI-generating script unavailable; new retrospective paired bootstrap and separate sensitivity declared.",
+    "No universal CURA advantage over the post-hoc fixed frontier."
+  ]
+}

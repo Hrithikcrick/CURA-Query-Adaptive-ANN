@@ -1,0 +1,191 @@
+{
+  "files": [
+    {
+      "path": "full_paper_extension/.gitattributes",
+      "change": "added",
+      "sha256": "6f61701d68bc760c41462e1dbd0d25bfd64df256eced68b303f307ef9aff4bea",
+      "bytes": 253
+    },
+    {
+      "path": "full_paper_extension/.gitignore",
+      "change": "added",
+      "sha256": "6bb636b8e225da1ed339ad41fe4f95757812a962fc153649604eb5af6b3fe81b",
+      "bytes": 81
+    },
+    {
+      "path": "full_paper_extension/README.md",
+      "change": "added",
+      "sha256": "e9cb3a9206bd2eb10fb0dda17506b68d0d770f8205af32fd311293efb5fc1dba",
+      "bytes": 5472
+    },
+    {
+      "path": "full_paper_extension/ANALYSIS_PLAN.md",
+      "change": "added",
+      "sha256": "8f40b39f2828686dbc179c8d23cb21bac59e8e78bccea523d417693b40830bef",
+      "bytes": 5936
+    },
+    {
+      "path": "full_paper_extension/METRIC_PROTOCOL.md",
+      "change": "added",
+      "sha256": "881bd035e570540c86ecda83ac4c08f2dd908d08d8958cbc19743833b5ca9276",
+      "bytes": 17909
+    },
+    {
+      "path": "full_paper_extension/NOVELTY_AUDIT.md",
+      "change": "added",
+      "sha256": "8931df6908eab63dbb24f3452ee6563d0922b0442be60135e5942554afb8f571",
+      "bytes": 22568
+    },
+    {
+      "path": "full_paper_extension/FALSE_SAFETY_FORMULATION.md",
+      "change": "added",
+      "sha256": "197871c9537cd11720167efb74c70838d5371d10ea06aa141104b0dbcc5c3778",
+      "bytes": 3932
+    },
+    {
+      "path": "full_paper_extension/analyze_false_safety.py",
+      "change": "added",
+      "sha256": "5bc2d9f3d589e83598e48213af3d9a03a3c284e1c106f3d9801b1308cd96cec5",
+      "bytes": 43419
+    },
+    {
+      "path": "full_paper_extension/false_safety_metrics.py",
+      "change": "added",
+      "sha256": "30fbca32c9014042dc8fb69cccfb791bf75fb93ae16dc6ea7e04083c6a383e92",
+      "bytes": 8562
+    },
+    {
+      "path": "full_paper_extension/test_false_safety.py",
+      "change": "added",
+      "sha256": "12bb4425de1c05fb424f3c89276301b7ea48c7f6e5ac972e51510f28376ea850",
+      "bytes": 6448
+    },
+    {
+      "path": "full_paper_extension/data/2019qrels-pass.txt",
+      "change": "added",
+      "sha256": "8a1f10d550732e4cd91d7fc49846a3784de4040972f583e69285a88f3c5fee92",
+      "bytes": 187092
+    },
+    {
+      "path": "full_paper_extension/data/selected_score_gap_trec_ood.csv",
+      "change": "added",
+      "sha256": "0899e4ff5173386173c3759114b3c1a98a74a91052671d711139c22ec276a7e1",
+      "bytes": 10001
+    },
+    {
+      "path": "full_paper_extension/data/score_gap_protocol.json",
+      "change": "added",
+      "sha256": "1cbfb6aa7ce708297f9c35bcacb693a3aabae61c47f8a1f5a254f222fad5d0d8",
+      "bytes": 3366
+    },
+    {
+      "path": "full_paper_extension/false_safety_audit.py",
+      "change": "added",
+      "sha256": "068af776eb319d2753c16845bfe25a3f9a15e2356270d8f898a3457aa8bbca05",
+      "bytes": 14188
+    },
+    {
+      "path": "full_paper_extension/fiqa_oracle_robustness.py",
+      "change": "added",
+      "sha256": "20ba54a72f59d2fd80b56525fb72d27a7a413034836c8f9fc086036bbd006db5",
+      "bytes": 10098
+    },
+    {
+      "path": "full_paper_extension/verify_saved_results.py",
+      "change": "added",
+      "sha256": "28348934d2c9eb583287cd1caa5cb75374931a989bbb99b64d86a5732be36d6c",
+      "bytes": 4088
+    },
+    {
+      "path": "full_paper_extension/plot_verified_results.py",
+      "change": "added",
+      "sha256": "9be10a766a069fe42b6cd2f95d7a4370e82b27f124a49f672a317218defcf3a9",
+      "bytes": 5906
+    },
+    {
+      "path": "full_paper_extension/tests/test_false_safety_audit.py",
+      "change": "added",
+      "sha256": "49b0a19856076ff8015241ec3f9c7dd0c54899ee15b7cfd885b2c65fecd59c83",
+      "bytes": 2493
+    },
+    {
+      "path": "full_paper_extension/tests/test_fiqa_oracle_robustness.py",
+      "change": "added",
+      "sha256": "f4c0bf3ab79f1e37e41fa37d242c9a153158bbd7a3f749a63ea3ed69593df7e0",
+      "bytes": 3866
+    },
+    {
+      "path": "full_paper_extension/VERIFIED_SAVED_DATA_RESULTS.json",
+      "change": "added",
+      "sha256": "2580797e923c92ad670665104b45bea47ef60a90f93c2c367574eaec395b1055",
+      "bytes": 11544
+    },
+    {
+      "path": "full_paper_extension/RESEARCH_EXTENSION_REPORT.md",
+      "change": "added",
+      "sha256": "1e112fbfca88b12a203abf114f41f68d5831dd5786fbd3dd3c112fbee04f86ce",
+      "bytes": 7532
+    },
+    {
+      "path": "full_paper_extension/MANUSCRIPT_ADDENDUM.tex",
+      "change": "added",
+      "sha256": "f70ac40cd7d804273774f8cfa6c5ee159714b2e524a0190b830cb8b810a78ce8",
+      "bytes": 2896
+    },
+    {
+      "path": "full_paper_extension/figures/verified/trec_false_safety_conditional.png",
+      "change": "added",
+      "sha256": "ed63c19313882cadcb3f6f561424898806d94ac0364ed6244ae2fefc84e3070f",
+      "bytes": 70919
+    },
+    {
+      "path": "full_paper_extension/figures/verified/trec_false_safety_conditional.svg",
+      "change": "added",
+      "sha256": "fd2f007d9323dfb18e4169d107406f84837747601f5d9835f2ee7dc11754b48a",
+      "bytes": 48945
+    },
+    {
+      "path": "full_paper_extension/figures/verified/trec_tolerance_sensitivity.png",
+      "change": "added",
+      "sha256": "0461bcf0c5abddc36f94ab1aac9a652a52c35748bc0245e4484fca5bca75d74e",
+      "bytes": 98545
+    },
+    {
+      "path": "full_paper_extension/figures/verified/trec_tolerance_sensitivity.svg",
+      "change": "added",
+      "sha256": "c855cf5d4bd9b940c2439234c6d1c7d5dae2c9036cac68668153b40132c5b9f9",
+      "bytes": 50864
+    },
+    {
+      "path": "full_paper_extension/figures/verified/fiqa_oracle_replication.png",
+      "change": "added",
+      "sha256": "bed783c21e965d66c2f2a9f8a43f7d3f5930edf5e749b9674d259d62b8de0af8",
+      "bytes": 87258
+    },
+    {
+      "path": "full_paper_extension/figures/verified/fiqa_oracle_replication.svg",
+      "change": "added",
+      "sha256": "2a431303590efc086c6fa060b5de58d34bffd2a0c1d187eff024465d98a9cbe1",
+      "bytes": 60123
+    },
+    {
+      "path": "full_paper_extension/figures/verified/manifest.json",
+      "change": "added",
+      "sha256": "319a8fd98809cb62753e8b5c6b5588909d44558b9917f90045367941e928f0b6",
+      "bytes": 1593
+    },
+    {
+      "path": "full_paper_extension/PUSH_VERIFICATION.json",
+      "change": "added",
+      "sha256": "aeb128bbb2441f19e6531ae90fc51834475ad2e4dcba9b613743fe072c4e859b",
+      "bytes": 10095
+    },
+    {
+      "path": "full_paper_extension/PUSH_FILE_MANIFEST.json",
+      "change": "added",
+      "sha256": null,
+      "note": "Self hash excluded; git commit/tree identity covers this manifest."
+    }
+  ],
+  "file_count": 31
+}

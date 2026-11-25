@@ -1,0 +1,259 @@
+{
+  "status": "PASS",
+  "verification_date": "2026-11-26",
+  "provenance": "Existing local research inputs; no named ZIP or original push-kit summary was found. This summary and focused verification utilities were created retrospectively on 2026-11-26.",
+  "trec_false_safety": {
+    "status": "PASS",
+    "utility_origin": "New verification utility, written 2026-11-26; not recovered original extension code",
+    "collection": "TREC DL 2019",
+    "query_count": 43,
+    "efSearch": [
+      10,
+      16,
+      24,
+      32,
+      48,
+      64,
+      96,
+      128,
+      192,
+      256
+    ],
+    "full_query_budget_pairs": 430,
+    "paired_thinning_seeds": 50,
+    "saved_rows": 64930,
+    "score_reproduction_max_absolute_error": 0.0,
+    "saved_selections_match_paired_deterministic_PCG64_intervention": true,
+    "recall_reproduction_max_absolute_error": 0.0,
+    "independently_rescored_rows": 64930,
+    "rankings_unchanged": true,
+    "ANN_recall_unchanged": true,
+    "fixed_work_unchanged": true,
+    "frozen_CURA_selections_and_work_unchanged": true,
+    "inputs_unchanged_during_verification": true,
+    "tolerance_sensitivity": [
+      {
+        "tolerance": 0.01,
+        "full_unsafe_pairs": 14,
+        "conditions": {
+          "50_PERCENT_POSITIVES": {
+            "evaluated_pair_instances": 21500,
+            "full_unsafe_pair_instances": 700,
+            "false_safe_count": 190,
+            "conditional_false_safe_rate": 0.2714285714285714,
+            "all_pair_false_safe_rate": 0.008837209302325582,
+            "false_safe_positive_exact_count": 181,
+            "false_safe_zero_exact_count": 9,
+            "false_safe_positive_exact_fraction": 0.9526315789473684,
+            "false_unsafe_count": 91
+          },
+          "25_PERCENT_POSITIVES": {
+            "evaluated_pair_instances": 21500,
+            "full_unsafe_pair_instances": 700,
+            "false_safe_count": 350,
+            "conditional_false_safe_rate": 0.5,
+            "all_pair_false_safe_rate": 0.01627906976744186,
+            "false_safe_positive_exact_count": 249,
+            "false_safe_zero_exact_count": 101,
+            "false_safe_positive_exact_fraction": 0.7114285714285714,
+            "false_unsafe_count": 78
+          },
+          "ONE_POSITIVE_PER_QUERY": {
+            "evaluated_pair_instances": 21500,
+            "full_unsafe_pair_instances": 700,
+            "false_safe_count": 608,
+            "conditional_false_safe_rate": 0.8685714285714285,
+            "all_pair_false_safe_rate": 0.02827906976744186,
+            "false_safe_positive_exact_count": 72,
+            "false_safe_zero_exact_count": 536,
+            "false_safe_positive_exact_fraction": 0.11842105263157894,
+            "false_unsafe_count": 6
+          }
+        }
+      },
+      {
+        "tolerance": 0.025,
+        "full_unsafe_pairs": 14,
+        "conditions": {
+          "50_PERCENT_POSITIVES": {
+            "evaluated_pair_instances": 21500,
+            "full_unsafe_pair_instances": 700,
+            "false_safe_count": 192,
+            "conditional_false_safe_rate": 0.2742857142857143,
+            "all_pair_false_safe_rate": 0.008930232558139534,
+            "false_safe_positive_exact_count": 183,
+            "false_safe_zero_exact_count": 9,
+            "false_safe_positive_exact_fraction": 0.953125,
+            "false_unsafe_count": 70
+          },
+          "25_PERCENT_POSITIVES": {
+            "evaluated_pair_instances": 21500,
+            "full_unsafe_pair_instances": 700,
+            "false_safe_count": 351,
+            "conditional_false_safe_rate": 0.5014285714285714,
+            "all_pair_false_safe_rate": 0.016325581395348836,
+            "false_safe_positive_exact_count": 250,
+            "false_safe_zero_exact_count": 101,
+            "false_safe_positive_exact_fraction": 0.7122507122507122,
+            "false_unsafe_count": 69
+          },
+          "ONE_POSITIVE_PER_QUERY": {
+            "evaluated_pair_instances": 21500,
+            "full_unsafe_pair_instances": 700,
+            "false_safe_count": 608,
+            "conditional_false_safe_rate": 0.8685714285714285,
+            "all_pair_false_safe_rate": 0.02827906976744186,
+            "false_safe_positive_exact_count": 72,
+            "false_safe_zero_exact_count": 536,
+            "false_safe_positive_exact_fraction": 0.11842105263157894,
+            "false_unsafe_count": 6
+          }
+        }
+      },
+      {
+        "tolerance": 0.05,
+        "full_unsafe_pairs": 10,
+        "conditions": {
+          "50_PERCENT_POSITIVES": {
+            "evaluated_pair_instances": 21500,
+            "full_unsafe_pair_instances": 500,
+            "false_safe_count": 107,
+            "conditional_false_safe_rate": 0.214,
+            "all_pair_false_safe_rate": 0.0049767441860465115,
+            "false_safe_positive_exact_count": 98,
+            "false_safe_zero_exact_count": 9,
+            "false_safe_positive_exact_fraction": 0.9158878504672897,
+            "false_unsafe_count": 117
+          },
+          "25_PERCENT_POSITIVES": {
+            "evaluated_pair_instances": 21500,
+            "full_unsafe_pair_instances": 500,
+            "false_safe_count": 216,
+            "conditional_false_safe_rate": 0.432,
+            "all_pair_false_safe_rate": 0.010046511627906977,
+            "false_safe_positive_exact_count": 141,
+            "false_safe_zero_exact_count": 75,
+            "false_safe_positive_exact_fraction": 0.6527777777777778,
+            "false_unsafe_count": 93
+          },
+          "ONE_POSITIVE_PER_QUERY": {
+            "evaluated_pair_instances": 21500,
+            "full_unsafe_pair_instances": 500,
+            "false_safe_count": 411,
+            "conditional_false_safe_rate": 0.822,
+            "all_pair_false_safe_rate": 0.01911627906976744,
+            "false_safe_positive_exact_count": 54,
+            "false_safe_zero_exact_count": 357,
+            "false_safe_positive_exact_fraction": 0.13138686131386862,
+            "false_unsafe_count": 9
+          }
+        }
+      }
+    ],
+    "source_sha256": {
+      "sigir_analysis/trec_judgment_density_per_query.csv": "4159edb769fc2cb66252089ea05f4e54e8d762236ee4b1a662c4907bec1fde09",
+      "sigir_analysis/trec_exact_rankings.csv": "af12e06cd4c2216f6d6e1f9ce35f0747e10d0e693a49090fafd03b59176c7d74",
+      "sigir_analysis/trec_hnsw_rankings.csv": "88ecf52072c28faadff12f15da7e1140d6e96c47436fce1a0cc659cfab57f943",
+      "sigir_analysis/trec_thinned_positive_judgments.jsonl.gz": "d8da04851c406e33485a0d139c2f9cbdc8ad7dca86482db6d9649d868f046906",
+      "full_paper_extension/data/2019qrels-pass.txt": "8a1f10d550732e4cd91d7fc49846a3784de4040972f583e69285a88f3c5fee92",
+      "sigir_analysis/trec_ranking_provenance.json": "bb2a1652c6929fa685ce6e889ff6de821190e96a5114e16d01c661c587c9138e",
+      "sigir_analysis/qrels_recovery.json": "2db844c4bc4c6c93d8d1ca1915e6f6952a09c1c951c59c09d34c6ccbeb21d5ce",
+      "sigir_analysis/trec_fixed_risk_work_by_density.csv": "4b287697ba98f62c755e848575e3cd8300f5aecd521e8108989daab9e5b2c429",
+      "sigir_analysis/trec_cura_by_density.csv": "4eaf1401596c0483dd7b108bd688d0ad6423e0fefc6453e39f34b9c414e1612f",
+      "msmarco_large/msmarco_1000000_q1000/research_grade_validation/top10_query_budget_results.csv": "8ad0627fbb543208b94db7e659ce7bc5b9102dbf997d0799d2d39dc587397cfe"
+    },
+    "limitations": [
+      "FULL is the original pooled judgment set, not exhaustive relevance truth.",
+      "Conditional percentages use FULL-unsafe pairs repeated across paired seeds, not all 430 pairs.",
+      "Budgets within queries and seeds are dependent; counts are descriptive, not independent trials.",
+      "This verifies the saved TREC2019 intervention and does not establish cross-domain controller transfer."
+    ]
+  },
+  "fiqa_oracle_replication": {
+    "status": "PASS",
+    "utility_origin": "New read-only verification utility created 2026-11-26; not a recovered original script",
+    "results": {
+      "source_rows": 6480,
+      "total_queries": 648,
+      "exact_positive_queries": 305,
+      "jointly_feasible_exact_positive_queries": 303,
+      "saved_oracle_rows_compared": 648,
+      "saved_oracle_mismatches": 0,
+      "mean_ANN_safe_ef": 24.085808580858085,
+      "mean_IR_safe_ef": 15.524752475247524,
+      "mean_ANN_minus_IR_gap": 8.561056105610561,
+      "gap_ci_low": 5.498184818481849,
+      "gap_ci_high": 11.62392739273927,
+      "independent_CI_sensitivity": {
+        "seed": 20261126,
+        "resamples": 50000,
+        "gap_ci_low": 5.531353135313531,
+        "gap_ci_high": 11.584158415841584,
+        "method": "Same paired-query percentile bootstrap with independently declared verification-date seed"
+      },
+      "IR_safe_lower": 120,
+      "equal_budgets": 166,
+      "IR_safe_higher": 17,
+      "excluded_exact_positive_query_ids": [
+        "4946",
+        "5862"
+      ]
+    },
+    "supplied_claim_checks": {
+      "total_queries": true,
+      "exact_positive_queries": true,
+      "jointly_feasible_exact_positive_queries": true,
+      "mean_ANN_safe_ef": true,
+      "mean_IR_safe_ef": true,
+      "mean_ANN_minus_IR_gap": true,
+      "gap_ci_low": true,
+      "gap_ci_high": true,
+      "IR_safe_lower": true,
+      "equal_budgets": true,
+      "IR_safe_higher": true
+    },
+    "protocol": {
+      "ANN_safe": "ANN_Recall10 >= 0.90",
+      "IR_safe": "signed nDCG_loss <= 0.025",
+      "candidate_efSearch": [
+        10,
+        16,
+        24,
+        32,
+        48,
+        64,
+        96,
+        128,
+        192,
+        256
+      ],
+      "minimum": "Smallest safe tested budget, no monotonicity assumption; infeasible stays missing",
+      "cohort": "Exact-reference nDCG@10 > 0 and both minima finite",
+      "CI": "Paired-query nonparametric bootstrap; percentile 2.5 and 97.5; numpy default_rng/PCG64",
+      "bootstrap_seed": 42,
+      "bootstrap_resamples": 10000,
+      "bootstrap_order": "Ascending string FiQA query ID, matching original pilot and saved-oracle row order",
+      "CI_provenance": "New explicitly declared verification estimator reproduces supplied rounded CI; original CI-generating script not recovered",
+      "analysis_status": "Retrospective verification; no preregistration claim"
+    },
+    "inputs": {
+      "beir_fiqa/fiqa_query_budget_results.csv": "8c49a2ae7eb5815ad8636b0c398aeabef29b97b8fbd3a60fca4382a88e60c0a6",
+      "beir_fiqa/fiqa_oracle_budgets.csv": "5eac03a9f3b0d15b40f130ac1266a38aa4bf574acfce5cbdcc8c3604b8625c0a"
+    },
+    "software": {
+      "python": "3.12.10",
+      "numpy": "2.5.3",
+      "pandas": "3.1.0"
+    },
+    "limitations": [
+      "Diagnostic outcome-aware oracle comparison, not a deployable policy or CURA controller transfer experiment.",
+      "Does not replicate TREC judgment-density false safety; FiQA judgments are unchanged.",
+      "The CI resamples the 303 finite paired query gaps conditional on saved retrieval and exact-positive/cohort selection.",
+      "Two exact-positive queries have no IR-safe tested budget; no grid-maximum substitution is used."
+    ],
+    "input_canonical_LF_sha256": {
+      "beir_fiqa/fiqa_query_budget_results.csv": "70dcd79f5d557ebaa1450bfcc1f15b5ca9229dba64ef2c5932fdd94a6012ee43",
+      "beir_fiqa/fiqa_oracle_budgets.csv": "cd54f5362283e19338f7bae86b6f323f90285cde55d522b43feebd3583cd6671"
+    }
+  }
+}

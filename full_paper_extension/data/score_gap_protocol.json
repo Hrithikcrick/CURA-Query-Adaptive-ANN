@@ -1,0 +1,80 @@
+{
+  "ANN_recall_target": 0.9,
+  "IR_loss_tolerance": 0.025,
+  "Recall100_available": false,
+  "actual_traversal_early_exit": false,
+  "all_probe_search_costs_accounted": true,
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 42,
+  "cached_simulation": true,
+  "candidate_ef_values": [
+    10,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192,
+    256
+  ],
+  "candidates_evaluated": 199,
+  "chosen_calibration": {
+    "IR_violation_Wilson_upper": 0.04316572879269027,
+    "IR_violation_rate": 0.015,
+    "mean_search_work": 3288.09,
+    "queries": 200,
+    "unsafe_count": 3
+  },
+  "chosen_training": {
+    "IR_violation_Wilson_upper": 0.017014710415336507,
+    "IR_violation_rate": 0.006666666666666667,
+    "mean_search_work": 3160.3566666666666,
+    "queries": 600,
+    "unsafe_count": 4
+  },
+  "cost_definition": "Stop: actual cached probe_ndis/probe_latency_ms. Fallback>10: probe plus selected-budget distance_computations/mean_latency_ms. No traversal reuse assumed.",
+  "effectiveness_source": "Existing per-query/per-budget top10 sweep at selected efSearch; ef10 probe work matches original ef10 sweep for every query. Probe result IDs were not saved separately; deterministic same-index/budget equivalence is assumed.",
+  "exact_reference_features_used": false,
+  "feasible_candidates": 28,
+  "features_inference_time_only": true,
+  "features_used": [
+    "probe_gap_1_10"
+  ],
+  "frozen_policy": {
+    "candidate_id": 127,
+    "comparison": ">=",
+    "fallback_ef": 96,
+    "feature": "probe_gap_1_10",
+    "probe_ef": 10,
+    "threshold": 0.2663841247558594
+  },
+  "frozen_policy_sha256": "8b200a96e6584f3666f70fb9338fe237b9f1fdee35acbab8be90d2fde730dd2d",
+  "limitations": [
+    "Score spread is a simple confidence heuristic, not relevance or calibrated query-level risk probability.",
+    "Calibration is used for candidate selection; Wilson is pointwise with no multiple-selection correction or formal held-out risk guarantee.",
+    "Only one feature family and one two-stage policy are tested; no LADR/official DARTH/official Patience claim.",
+    "Cached budget selection is not actual in-traversal early termination; selected-search reuse is not assumed.",
+    "Latency combines saved probe timing and selected-budget mean; p95 is across query estimates, not end-to-end request percentiles; policy overhead not measured.",
+    "Top10 caches do not contain compatible policy Recall@100; values remain blank, not inferred from another task.",
+    "Only 43 OOD queries; empirical safety rates may be imprecise."
+  ],
+  "method": "Score-Gap-Budget",
+  "nominal_IR_risk_target": 0.05,
+  "ood_used_for_selection": false,
+  "query_counts": {
+    "CALIBRATION": 200,
+    "MSMARCO_TEST": 200,
+    "TRAIN": 600,
+    "TREC_DL_2019_OOD": 43
+  },
+  "randomization_permutations": 20000,
+  "randomization_seed": 1042,
+  "seed": 42,
+  "selection_rule": "Require training and calibration two-sided 95% Wilson upper<=target; minimize calibration mean realized work, then calibration violation, training work, fallback ef, candidate ID",
+  "status": "COMPLETED_CACHED_SCORE_GAP_BUDGET_SIMULATION",
+  "test_used_for_selection": false,
+  "threshold_candidate_generation": "Approximate probe_gap_1_10 training-only quantiles at 0,5,...,100 percent plus always-fallback; fallback10 canonicalized",
+  "threshold_tuned_on_train_calibration_only": true
+}

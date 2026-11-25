@@ -1,0 +1,45 @@
+% Retrospective saved-data verification addendum, 26 November 2026.
+% Separate from the original submitted CURA manuscript; not a compiled submission.
+\section{Judgment-induced safety disagreement and cross-domain oracle budgets}
+
+We evaluate disagreement with the available pooled TREC DL 2019 judgments,
+denoted FULL, without interpreting that pool as exhaustive relevance truth.
+For query $q$ and budget $e$, let the loss be
+$L(q,e)=\max(0,\mathrm{nDCG}_{\rm exact}@10-\mathrm{nDCG}_{e}@10)$.
+A false-safe instance satisfies $L_{\rm FULL}>\epsilon$ and
+$L_{\rm thin}\leq\epsilon$, holding rankings and work fixed.
+The conditional masking fraction divides by FULL-unsafe instances, whereas
+the all-pair false-safe rate divides by every tested query--budget instance.
+
+There are 43 queries and ten efSearch budgets. At $\epsilon=0.025$,
+14 of 430 FULL pairs are unsafe. Across 50 paired deterministic thinning
+seeds, 50\%, 25\%, and one-positive-per-query retention mask respectively
+$192/700=27.43\%$, $351/700=50.14\%$, and $608/700=86.86\%$ of
+FULL-unsafe instances. The corresponding all-pair rates are 0.893\%,
+1.633\%, and 2.828\%. At 50\% retention, 183 of 192 false-safe instances
+(95.31\%) retain positive exact-reference nDCG under thinning. These
+dependent instances do not constitute independent Bernoulli trials.
+At tolerances 0.01 and 0.05, the one-positive masking fractions remain
+86.86\% and 82.20\%, respectively; FULL-unsafe denominators are 14 and 10
+pairs. All 64,930 saved scoring rows reproduce independently with zero
+score or ANN-recall error. Frozen rankings, selections, and work are unchanged.
+
+Separately, recomputing FiQA oracle minima from saved query--budget records
+matches all 648 saved oracle rows. Of 305 exact-positive queries, 303 have
+both feasible minima under ANN Recall@10 $\geq0.90$ and nDCG loss
+$\leq0.025$. Mean ANN-safe and IR-safe efSearch are 24.086 and 15.525,
+giving a mean gap of 8.561 ef units; IR requires a lower, equal, or higher
+budget for 120, 166, or 17 queries. A retrospective paired-query percentile
+bootstrap with 10,000 resamples and PCG64 seed 42 reproduces the supplied
+95\% interval $[5.498,11.624]$. The original interval-generating script was
+not recovered. A separately declared 50,000-resample sensitivity with seed
+20261126 gives $[5.531,11.584]$. Infeasible minima remain missing.
+
+FiQA replicates oracle ANN-versus-IR budget mismatch in another domain;
+it does not replicate judgment-density false safety or establish CURA
+controller transfer. These diagnostics also do not show that CURA universally
+beats fixed HNSW: the calibration-selected fixed baseline can be beaten,
+while a post-hoc risk-matched fixed budget can be cheaper than the current
+CURA implementation. The research question concerns when utility-aware
+budgets deliver genuine gains and how judgment completeness and risk
+calibration affect those gains.

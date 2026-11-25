@@ -1,0 +1,58 @@
+{
+  "source_sha256": "2580797e923c92ad670665104b45bea47ef60a90f93c2c367574eaec395b1055",
+  "figures": [
+    {
+      "name": "trec_false_safety_conditional",
+      "plotted_values": [
+        27.42857142857143,
+        50.142857142857146,
+        86.85714285714286
+      ],
+      "files": {
+        "png": "ed63c19313882cadcb3f6f561424898806d94ac0364ed6244ae2fefc84e3070f",
+        "svg": "fd2f007d9323dfb18e4169d107406f84837747601f5d9835f2ee7dc11754b48a"
+      }
+    },
+    {
+      "name": "trec_tolerance_sensitivity",
+      "plotted_values": {
+        "0.01": [
+          27.142857142857142,
+          50.0,
+          86.85714285714286
+        ],
+        "0.025": [
+          27.42857142857143,
+          50.142857142857146,
+          86.85714285714286
+        ],
+        "0.05": [
+          21.4,
+          43.2,
+          82.19999999999999
+        ]
+      },
+      "files": {
+        "png": "0461bcf0c5abddc36f94ab1aac9a652a52c35748bc0245e4484fca5bca75d74e",
+        "svg": "c855cf5d4bd9b940c2439234c6d1c7d5dae2c9036cac68668153b40132c5b9f9"
+      }
+    },
+    {
+      "name": "fiqa_oracle_replication",
+      "plotted_values": {
+        "counts": [
+          120,
+          166,
+          17
+        ],
+        "mean_gap": 8.561056105610561,
+        "ANN_mean": 24.085808580858085,
+        "IR_mean": 15.524752475247524
+      },
+      "files": {
+        "png": "bed783c21e965d66c2f2a9f8a43f7d3f5930edf5e749b9674d259d62b8de0af8",
+        "svg": "2a431303590efc086c6fa060b5de58d34bffd2a0c1d187eff024465d98a9cbe1"
+      }
+    }
+  ]
+}

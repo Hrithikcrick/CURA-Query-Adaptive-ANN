@@ -1,0 +1,8 @@
+cache/
+third_party/
+__pycache__/
+.mplconfig/
+previews/
+*.partial
+!data/
+!data/**
